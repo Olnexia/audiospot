@@ -2,18 +2,23 @@ package com.epam.audiospot.entity;
 
 public class User implements Entity {
     private final String login;
-    private final String password;
+    private final String role;
 
-    public User(String login, String password) {
+    public User(String login,String role){
         this.login = login;
-        this.password = password;
+        this.role = role;
     }
+
+//    public User(String login, String password) {
+//        this.login = login;
+//        this.password = password;
+//    }
 
     public String getLogin() {
         return login;
     }
 
-    public String getPassword() {
-        return password;
+    public String getRole() {
+        return role;
     }
 }

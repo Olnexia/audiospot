@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public class UserService implements Service {
 
-    public Optional<User> login(String login , String password){
-        UserByLoginAndPasswordSpecification specification = new UserByLoginAndPasswordSpecification();
-    }
+//    public Optional<User> login(String login , String password){
+//        UserByLoginAndPasswordSpecification specification = new UserByLoginAndPasswordSpecification();
+//    }
 }

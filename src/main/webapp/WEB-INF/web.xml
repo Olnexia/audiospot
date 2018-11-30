@@ -10,13 +10,13 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <servlet>
-    <servlet-name>test</servlet-name>
+    <servlet-name>controller</servlet-name>
     <servlet-class>com.epam.audiospot.controller.Controller</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>test</servlet-name>
-    <url-pattern>/test</url-pattern>
+    <servlet-name>controller</servlet-name>
+    <url-pattern>/controller</url-pattern>
   </servlet-mapping>
 
 </web-app>

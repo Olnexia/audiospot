@@ -6,7 +6,7 @@ public class CommandFactory {
         switch (command){
             case "login":
                 return new LoginCommand();
-            default: throw new IllegalArgumentException();
+            default: throw new IllegalArgumentException("Unknown command " + command);
         }
     }
 }
