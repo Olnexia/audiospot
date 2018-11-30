@@ -4,5 +4,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <h1>AudioSpot</h1>
-<a href="${pageContext.servletContext.contextPath}/controller?command=showPlaylists">Playlists</a>
-    <a href="${pageContext.servletContext.contextPath}/controller?command=buyTrack">Buy track</a>
+
+<c:if test="${sessionScope.user.role eq 'admin'}">
+<a href="${pageContext.servletContext.contextPath}/controller?command=addPlaylist">Add playlists</a>
+    <a href="${pageContext.servletContext.contextPath}/controller?command=userManage">User manage</a>
+    </c:if>
+    <c:if test="${sessionScope.user.role eq 'client'}">
+    <a href="${pageContext.servletContext.contextPath}/controller?command=showPlaylist">My playlist</a>
+     <a href="${pageContext.servletContext.contextPath}/controller?command=byTracks">Buy new tracks</a>
+    </c:if>

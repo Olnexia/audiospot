@@ -17,7 +17,7 @@ public class LoginCommand implements Command {
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
 
         HttpSession session = request.getSession(true);
-        session.setAttribute("login",new User("Olnexia","admin"));
+        session.setAttribute("user",new User("Olnexia","admin"));
         return CommandResult.forward("/WEB-INF/pages/main.jsp");
 
 //        UserService service = new UserService();

@@ -5,6 +5,6 @@
 
    <body>
    <jsp:include page = "../fragments/header.jsp"/>
-   <h2>hello to AudioSpot</h2>
+   <h2></h2>
    </body>
 </html>
