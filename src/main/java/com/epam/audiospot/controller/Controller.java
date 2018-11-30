@@ -27,11 +27,12 @@ public class Controller extends HttpServlet {
         processRequest(request, response);
     }
 
-    private void processRequest(HttpServletRequest request, HttpServletResponse response){
+    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
         String command = request.getParameter(TARGET_PARAMETER);
         Command action = CommandFactory.create(command);
-        CommandResult page = null;
-        page = action.execute(request,response);
+        CommandResult commandResult = null;
+        commandResult = action.execute(request,response);
+        request.getRequestDispatcher(commandResult.getPage()).forward(request,response);
     }
 
     private void dispath(HttpServletRequest request,HttpServletResponse response){

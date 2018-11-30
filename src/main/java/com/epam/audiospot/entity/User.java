@@ -1,6 +1,8 @@
 package com.epam.audiospot.entity;
 
-public class User implements Entity {
+import java.io.Serializable;
+
+public class User implements Entity, Serializable {
     private final String login;
     private final String role;
 
