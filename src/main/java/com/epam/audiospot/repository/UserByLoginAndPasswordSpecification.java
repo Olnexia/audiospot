@@ -1,5 +1,8 @@
 package com.epam.audiospot.repository;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class UserByLoginAndPasswordSpecification implements Specification {
     private String login;
     private String password;
@@ -11,6 +14,11 @@ public class UserByLoginAndPasswordSpecification implements Specification {
 
     @Override
     public String toSql() {
-        throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException(); //Query with ? instead of params
+    }
+
+    @Override
+    public List<String> getParameters() {
+        return Arrays.asList(login,password);
     }
 }
