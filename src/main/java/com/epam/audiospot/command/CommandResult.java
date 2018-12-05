@@ -2,11 +2,11 @@ package com.epam.audiospot.command;
 
 public class CommandResult {
     private final String page;
-    private final boolean isRedirect;
+    private final boolean redirect;
 
     private CommandResult(String page, boolean isRedirect) {
         this.page = page;
-        this.isRedirect = isRedirect;
+        this.redirect = isRedirect;
     }
 
     public static CommandResult forward(String page){
@@ -22,6 +22,6 @@ public class CommandResult {
     }
 
     public boolean isRedirect() {
-        return isRedirect;
+        return redirect;
     }
 }

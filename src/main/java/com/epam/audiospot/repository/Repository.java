@@ -1,8 +1,7 @@
 package com.epam.audiospot.repository;
 
 import com.epam.audiospot.entity.Entity;
-import com.sun.tools.javac.util.List;
-
+import java.util.List;
 import java.util.Optional;
 
 public interface Repository<T extends Entity> {
