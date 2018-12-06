@@ -3,6 +3,7 @@ package com.epam.audiospot.controller;
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandFactory;
 import com.epam.audiospot.command.CommandResult;
+import com.epam.audiospot.exception.CommandCreationException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -28,11 +29,14 @@ public class Controller extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
-
-        String command = request.getParameter(TARGET_PARAMETER);
-        Command action = CommandFactory.create(command);
-        CommandResult commandResult = action.execute(request,response);
-        request.getRequestDispatcher(commandResult.getPage()).forward(request,response);
+        try {
+            String command = request.getParameter(TARGET_PARAMETER);
+            Command action = CommandFactory.create(command);
+            CommandResult commandResult = action.execute(request, response);
+            request.getRequestDispatcher(commandResult.getPage()).forward(request, response);
+        }catch (CommandCreationException e) {
+            //logging?
+        }
     }
 
     private void dispath(HttpServletRequest request,HttpServletResponse response){

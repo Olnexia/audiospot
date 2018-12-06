@@ -3,30 +3,32 @@ package com.epam.audiospot.repository;
 
 import com.epam.audiospot.builder.Builder;
 import com.epam.audiospot.entity.Entity;
+import com.epam.audiospot.exception.RepositoryException;
+
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class AbstractRepository<T > implements Repository<T>{
+public abstract class AbstractRepository<T extends Entity> implements Repository<T>{
 
-     public List<T> executeQuery(String query, String...params){
+     public List<T> executeQuery(String query, String...params)throws RepositoryException{
 
          try {
-             Connection connection = getConnetion();
+             Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query,params);
              ResultSet resultSet = preparedStatement.executeQuery(query);
 
              List<T> entities = new ArrayList <>();
-             Builder builder = getBuilder();
+             Builder<T> builder = getBuilder();
              while(resultSet.next()){
                  T entity = builder.build(resultSet);
                  entities.add(entity);
              }
              return entities;
          }catch (SQLException e) {
-             //Some ex
+             throw new RepositoryException(e.getMessage(),e);
          }
      }
 
@@ -56,4 +58,8 @@ public abstract class AbstractRepository<T > implements Repository<T>{
     }
 
     public abstract Builder<T> getBuilder();
+
+     private Connection getConnection() {
+         return null;
+     }
 }

@@ -14,6 +14,8 @@
          <input type = "password" name = "password"/>
       </label>
       <br/>
+      ${errorLoginPassMessage}
+      <br/>
       <input type = "submit" value = "Log in">
    </form>
    </body>

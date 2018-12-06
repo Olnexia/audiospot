@@ -7,7 +7,7 @@
 <c:if test="${sessionScope.user.role eq 'admin'}">
     <a href="${pageContext.servletContext.contextPath}/controller?command=addTrack">Add new track</a>
     <a href="${pageContext.servletContext.contextPath}/controller?command=addAlbum">Add new album</a>
-    <a href="${pageContext.servletContext.contextPath}/controller?command=showPlaylis ts">Playlists</a>
+    <a href="${pageContext.servletContext.contextPath}/controller?command=showPlaylists">Playlists</a>
     <a href="${pageContext.servletContext.contextPath}/controller?command=showClients">Clients</a>
 
 </c:if>

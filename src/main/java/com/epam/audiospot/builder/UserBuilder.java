@@ -7,14 +7,14 @@ import java.sql.SQLException;
 
 public class UserBuilder {
 
-    public User build(ResultSet resultSet){
-
-        try {
-            resultSet.getLong("id");
-            resultSet.
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-    }
+//    public User build(ResultSet resultSet){
+//
+//        try {
+//            resultSet.getLong("id");
+//            resultSet.getString("role");
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
 }
