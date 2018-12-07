@@ -17,7 +17,8 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
 
          try {
              Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(query,params);
+             PreparedStatement preparedStatement = connection.prepareStatement(query);
+
              ResultSet resultSet = preparedStatement.executeQuery(query);
 
              List<T> entities = new ArrayList <>();
