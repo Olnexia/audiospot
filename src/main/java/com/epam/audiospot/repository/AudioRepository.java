@@ -7,9 +7,8 @@ import com.epam.audiospot.entity.AudioTrack;
 public class AudioRepository extends AbstractRepository<AudioTrack> {
 
 
-
     @Override
-    public Builder getBuilder() {
+    public Builder <AudioTrack> getBuilder() {
         return new AudioBuilder();
     }
 }

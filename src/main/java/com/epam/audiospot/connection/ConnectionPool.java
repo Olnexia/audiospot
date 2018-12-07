@@ -48,8 +48,7 @@ public class ConnectionPool {
         lock.lock();
         try {
             semaphore.acquire();
-            ConnectionWrapper connection = pool.poll();
-            return connection;
+            return pool.poll();
         } catch (InterruptedException e) {
             throw new ConnectionPoolException(e.getMessage(), e);
         }finally {
