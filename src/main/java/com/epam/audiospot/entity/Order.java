@@ -3,9 +3,10 @@ package com.epam.audiospot.entity;
 import java.time.LocalDate;
 
 public class Order implements Entity {
-    private final long id;
+    private final Long id;
+    private final Long userId;
     private final LocalDate orderDate;
-    private final long userId;
+    private boolean paid;
 
     public Order(long orderId, LocalDate orderDate, long userId) {
         this.id = orderId;
@@ -13,15 +14,23 @@ public class Order implements Entity {
         this.userId = userId;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
+    }
+
+    public Long getUserId() {
+        return userId;
     }
 
     public LocalDate getOrderDate() {
         return orderDate;
     }
 
-    public long getUserId() {
-        return userId;
+    public boolean isPaid() {
+        return paid;
+    }
+
+    public void setPaid(boolean paid) {
+        this.paid = paid;
     }
 }

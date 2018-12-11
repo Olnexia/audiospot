@@ -1,23 +1,25 @@
 package com.epam.audiospot.entity;
 
 import java.math.BigDecimal;
-import java.time.Year;
 
 public class AudioTrack implements Entity {
     private final Long id;
-    private final String title;
-    private final BigDecimal price;
-    private final Long artistId;
-    private final Year releaseYear;
     private final Long albumId;
+    private final Long artistId;
+    private final String title;
+    private final int releaseYear;
+    private final Genre genre;
+    private BigDecimal price;
 
-    public AudioTrack(long id, String title, BigDecimal price, long artistId,Year releaseYear, Long albumId) {
+    public AudioTrack(Long id, Long albumId, Long artistId, String title,
+                      BigDecimal price, int releaseYear, Genre genre) {
         this.id = id;
+        this.albumId = albumId;
+        this.artistId = artistId;
         this.title = title;
         this.price = price;
-        this.artistId = artistId;
         this.releaseYear = releaseYear;
-        this.albumId = albumId;
+        this.genre = genre;
     }
 
     public long getId() {
@@ -40,7 +42,11 @@ public class AudioTrack implements Entity {
         return albumId;
     }
 
-    public Year getReleaseYear() {
+    public int getReleaseYear() {
         return releaseYear;
+    }
+
+    public Genre getGenre() {
+        return genre;
     }
 }

@@ -1,16 +1,14 @@
 package com.epam.audiospot.entity;
 
 public class Artist implements Entity {
-    private final long id;
-    private final String name;
-    private final String country;
-    private final Genre genre;
+    private final Long id;
+    private String name;
+    private String country;
 
-    public Artist(long id, String name, String country, Genre genre) {
+    public Artist(long id, String name, String country) {
         this.id = id;
         this.name = name;
         this.country = country;
-        this.genre = genre;
     }
 
     public long getId() {
@@ -25,8 +23,5 @@ public class Artist implements Entity {
         return country;
     }
 
-    public Genre getGenre() {
-        return genre;
-    }
 }
 

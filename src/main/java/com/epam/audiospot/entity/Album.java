@@ -1,7 +1,7 @@
 package com.epam.audiospot.entity;
 
 public class Album implements Entity {
-    private final long id;
+    private final Long id;
     private final String title;
     private final long artistId;
 

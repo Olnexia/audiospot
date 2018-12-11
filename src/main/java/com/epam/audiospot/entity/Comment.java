@@ -1,20 +1,20 @@
 package com.epam.audiospot.entity;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Comment implements Entity{
-    private final long id;
+    private final Long id;
+    private final Long userId;
+    private final Long trackId;
     private final String text;
-    private final LocalDate date;
-    private final long userId;
-    private final long trackId;
+    private final LocalDateTime dateTime;
 
-    public Comment(long id, String text, LocalDate date, long userId, long trackId) {
+    public Comment(long id, long userId, long trackId, String text, LocalDateTime dateTime) {
         this.id = id;
-        this.text = text;
-        this.date = date;
         this.userId = userId;
         this.trackId = trackId;
+        this.text = text;
+        this.dateTime = dateTime;
     }
 
     public long getId() {
@@ -25,8 +25,8 @@ public class Comment implements Entity{
         return text;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDateTime getDateTime() {
+        return dateTime;
     }
 
     public long getUserId() {
