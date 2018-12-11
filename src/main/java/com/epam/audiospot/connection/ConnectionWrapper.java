@@ -10,9 +10,11 @@ import java.util.Properties;
 public class ConnectionWrapper {
     private Connection connection;
 
-    public ConnectionWrapper(String url, Properties properties) throws ConnectionException{
+    public ConnectionWrapper(String url, String user, String password) throws ConnectionException{
         try{
-            connection = DriverManager.getConnection(url,properties);
+//            connection = DriverManager.getConnection(url,properties);
+            DriverManager.registerDriver(new com.mysql.jdbc.Driver ());
+            connection = DriverManager.getConnection(url,user,password);
         }catch (SQLException e){
             throw new ConnectionException(e.getMessage(),e);
         }

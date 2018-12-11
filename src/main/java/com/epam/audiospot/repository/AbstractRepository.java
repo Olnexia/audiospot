@@ -34,29 +34,11 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
          }
      }
 
-    @Override
-    public void add(T object) {
-         throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void remove(T object) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void update(T object) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public List <T> query(Specification specification) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public Optional<T> queryForSingleResult(Specification specification) {
-        return Optional.empty();
+    public Optional<T> queryForSingleResult(Specification specification) throws RepositoryException {
+        String preparedQuery = specification.toSql();
+        List<Object> parameters = specification.getParameters();
+        List<T> entities = executeQuery(preparedQuery,parameters);
+        return Optional.of(entities.get(0));
     }
 
     public abstract Builder<T> getBuilder();

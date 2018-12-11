@@ -1,9 +1,11 @@
 package com.epam.audiospot.repository;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class UserByLoginAndPasswordSpecification implements Specification {
+    private static final String USERS_PREPARED_QUERY = "SELECT * FROM user WHERE login = ? AND password = ?";
     private String login;
     private String password;
 
@@ -14,11 +16,11 @@ public class UserByLoginAndPasswordSpecification implements Specification {
 
     @Override
     public String toSql() {
-        throw new UnsupportedOperationException(); //Query with ? instead of params
+        return USERS_PREPARED_QUERY;
     }
 
     @Override
     public List<Object> getParameters() {
-        return Arrays.asList(login,password);
+        return new ArrayList <Object>(Arrays.asList(login,password));
     }
 }
