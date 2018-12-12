@@ -14,7 +14,7 @@ public class ConnectionPool {
     private static AtomicBoolean initialized = new AtomicBoolean(false);
     private static Lock lock = new ReentrantLock();
     private static ConnectionPool instance = null;
-    private Semaphore semaphore;
+    private Semaphore semaphore = new Semaphore(INITIAL_POOL_SIZE);
     private Queue<ConnectionWrapper> pool;
 
     public static ConnectionPool getInstance() throws ConnectionPoolException{

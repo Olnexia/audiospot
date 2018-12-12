@@ -27,7 +27,7 @@ public class UserBuilder implements Builder<User> {
         String password = resultSet.getString(PASSWORD_LABEL);
         BigDecimal account = resultSet.getBigDecimal(ACCOUNT_LABEL);
         String roleContent = resultSet.getString(ROLE_LABEL);
-        Role role = Role.valueOf(roleContent);
+        Role role = Role.valueOf(roleContent.toUpperCase());
         return new User(id,name,surname,login,password,account,role,playlistId);
     }
 }

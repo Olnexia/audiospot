@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class UserByLoginAndPasswordSpecification implements Specification {
-    private static final String USERS_PREPARED_QUERY = "SELECT * FROM user WHERE login = ? AND password = ?";
+    private static final String USERS_PREPARED_QUERY = "WHERE login = ? AND password = ?";
     private String login;
     private String password;
 

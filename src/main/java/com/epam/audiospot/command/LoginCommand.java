@@ -2,7 +2,6 @@ package com.epam.audiospot.command;
 
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.CommandExecutionException;
-import com.epam.audiospot.exception.LoginException;
 import com.epam.audiospot.service.UserService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,14 +21,9 @@ public class LoginCommand implements Command {
         String password = request.getParameter(PASSWORD_PARAMETER);
 
         UserService service = new UserService();
-        Optional<User> user = Optional.empty();
-//        Optional<User> user = Optional.of(new User(Long.MIN_VALUE,"Andrey","f","Olnexia","admin", BigDecimal.ONE, Role.ADMIN,Long.MIN_VALUE));
+        Optional<User> user;
         CommandResult page;
-        try {
-            user = service.login(login,password);
-        } catch (LoginException e) {
-            throw new CommandExecutionException(e.getMessage(),e);
-        }
+        user = service.login(login,password);
         if(user.isPresent()){
             request.setAttribute(USER_PARAMETER,user.get());
             session.setAttribute(USER_PARAMETER,user.get());

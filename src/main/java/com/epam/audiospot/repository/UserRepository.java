@@ -7,10 +7,11 @@ import com.epam.audiospot.exception.RepositoryException;
 import java.util.List;
 
 public class UserRepository extends AbstractRepository<User> {
+    private static final String TABLE_NAME = "user";
 
     @Override
     public List<User> query(Specification specification) throws RepositoryException{
-        String preparedQuery = specification.toSql();
+        String preparedQuery= specification.toSql();
         List<Object> parameters = specification.getParameters();
         try {
             return executeQuery(preparedQuery,parameters);
@@ -39,5 +40,10 @@ public class UserRepository extends AbstractRepository<User> {
     public void update(User object) {
         throw new UnsupportedOperationException();
 
+    }
+
+    @Override
+    public String getTableName() {
+        return TABLE_NAME;
     }
 }

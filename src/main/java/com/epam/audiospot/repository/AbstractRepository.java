@@ -12,16 +12,18 @@ import java.util.List;
 import java.util.Optional;
 
 public abstract class AbstractRepository<T extends Entity> implements Repository<T>{
+    private static final String SELECT_ALL = "SELECT* FROM";
 
-     protected List<T> executeQuery(String query, Object...params)throws RepositoryException {
+     protected List<T> executeQuery(String query, List<Object>params)throws RepositoryException {
          try {
+             String preparedQuery = SELECT_ALL + " " + getTableName() + " " + query;
              ConnectionPool connectionPool = ConnectionPool.getInstance();
              ConnectionWrapper connectionWrapper = connectionPool.getConnection();
-             PreparedStatement preparedStatement = connectionWrapper.getPreparedStatement(query);
-             for(int i =0;i<params.length;i++){
-                 preparedStatement.setObject(i,params[i]);
+             PreparedStatement preparedStatement = connectionWrapper.getPreparedStatement(preparedQuery);
+             for(int i =0;i<params.size();i++){
+                 preparedStatement.setObject(i+1,params.get(i));
              }
-             ResultSet resultSet = preparedStatement.executeQuery(query);
+             ResultSet resultSet = preparedStatement.executeQuery();
              List <T> entities = new ArrayList <>();
              Builder <T> builder = getBuilder();
              while (resultSet.next()) {
@@ -34,6 +36,7 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
          }
      }
 
+
     public Optional<T> queryForSingleResult(Specification specification) throws RepositoryException {
         String preparedQuery = specification.toSql();
         List<Object> parameters = specification.getParameters();
@@ -42,4 +45,5 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
     }
 
     public abstract Builder<T> getBuilder();
+     public abstract String getTableName();
 }

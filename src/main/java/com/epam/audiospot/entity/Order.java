@@ -1,5 +1,6 @@
 package com.epam.audiospot.entity;
 
+
 import java.time.LocalDate;
 
 public class Order implements Entity {

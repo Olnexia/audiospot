@@ -38,4 +38,9 @@ public class AudioRepository extends AbstractRepository<AudioTrack> {
     public Builder <AudioTrack> getBuilder() {
         return new AudioBuilder();
     }
+
+    @Override
+    public String getTableName() {
+        return null;
+    }
 }

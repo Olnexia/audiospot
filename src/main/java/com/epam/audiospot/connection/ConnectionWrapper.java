@@ -5,15 +5,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Properties;
 
 public class ConnectionWrapper {
     private Connection connection;
 
     public ConnectionWrapper(String url, String user, String password) throws ConnectionException{
         try{
-//            connection = DriverManager.getConnection(url,properties);
-            DriverManager.registerDriver(new com.mysql.jdbc.Driver ());
             connection = DriverManager.getConnection(url,user,password);
         }catch (SQLException e){
             throw new ConnectionException(e.getMessage(),e);
