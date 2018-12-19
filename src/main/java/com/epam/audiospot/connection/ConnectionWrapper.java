@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class ConnectionWrapper {
+public class ConnectionWrapper{
     private Connection connection;
 
     public ConnectionWrapper(String url, String user, String password) throws ConnectionException{
@@ -36,15 +36,4 @@ public class ConnectionWrapper {
             }
         }
     }
-
-    public void closeConnection() {
-        if (connection != null) {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                //log or exc
-            }
-        }
-    }
-
 }

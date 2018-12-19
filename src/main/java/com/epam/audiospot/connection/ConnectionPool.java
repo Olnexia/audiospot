@@ -2,6 +2,8 @@ package com.epam.audiospot.connection;
 
 import com.epam.audiospot.exception.ConnectionException;
 import com.epam.audiospot.exception.ConnectionPoolException;
+
+import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.Semaphore;
@@ -9,7 +11,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class ConnectionPool {
+public class ConnectionPool{
     private static final int INITIAL_POOL_SIZE = 10;
     private static AtomicBoolean initialized = new AtomicBoolean(false);
     private static Lock lock = new ReentrantLock();

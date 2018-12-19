@@ -16,7 +16,6 @@ public class LoginCommand implements Command {
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws CommandExecutionException {
 
-        HttpSession session = request.getSession(true);
         String login = request.getParameter(LOGIN_PARAMETER);
         String password = request.getParameter(PASSWORD_PARAMETER);
 
@@ -25,6 +24,7 @@ public class LoginCommand implements Command {
         CommandResult page;
         user = service.login(login,password);
         if(user.isPresent()){
+            HttpSession session = request.getSession(true);
             request.setAttribute(USER_PARAMETER,user.get());
             session.setAttribute(USER_PARAMETER,user.get());
             page = CommandResult.forward("/WEB-INF/pages/main.jsp");

@@ -2,11 +2,18 @@ package com.epam.audiospot.repository;
 
 import com.epam.audiospot.builder.AudioBuilder;
 import com.epam.audiospot.builder.Builder;
+import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.entity.AudioTrack;
 import com.epam.audiospot.exception.RepositoryException;
+
+import java.sql.Connection;
 import java.util.List;
 
 public class AudioRepository extends AbstractRepository<AudioTrack> {
+
+    public AudioRepository(ConnectionWrapper connection){
+        super(connection);
+    }
 
     @Override
     public void add(AudioTrack object) {

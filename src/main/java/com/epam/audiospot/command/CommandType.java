@@ -14,7 +14,8 @@ public enum CommandType {
     SHOW_PLAYLISTS("showPlaylists",new ShowPlaylistsCommand()),
     SHOW_CLIENTS("showClients",new ShowClientsCommand()),
     SHOW_PLAYLIST("showPlaylist",new ShowPlaylistCommand()),
-    BUY_TRACKS("buyTracks",new BuyTracksCommand());
+    BUY_TRACKS("buyTracks",new BuyTracksCommand()),
+    LOGOUT("logout",new LogoutCommand());
 
     private Command command;
     private String commandText;

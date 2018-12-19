@@ -2,13 +2,9 @@ package com.epam.audiospot.command.admin;
 
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
-import com.epam.audiospot.entity.Role;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.CommandExecutionException;
-import com.epam.audiospot.repository.UserByRoleSpecification;
-import com.epam.audiospot.repository.UserRepository;
 import com.epam.audiospot.service.UserService;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;

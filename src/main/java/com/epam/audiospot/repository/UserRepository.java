@@ -2,12 +2,17 @@ package com.epam.audiospot.repository;
 
 import com.epam.audiospot.builder.Builder;
 import com.epam.audiospot.builder.UserBuilder;
+import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.RepositoryException;
 import java.util.List;
 
 public class UserRepository extends AbstractRepository<User> {
     private static final String TABLE_NAME = "user";
+
+    public UserRepository(ConnectionWrapper connection){
+        super(connection);
+    }
 
     @Override
     public List<User> query(Specification specification) throws RepositoryException{
