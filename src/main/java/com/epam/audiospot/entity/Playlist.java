@@ -7,4 +7,9 @@ public class Playlist implements Entity {
     public void setId(Long id) {
         this.id = id;
     }
+
+    @Override
+    public Long getId() {
+        return id;
+    }
 }

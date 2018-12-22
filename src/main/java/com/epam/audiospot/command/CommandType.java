@@ -6,6 +6,7 @@ import com.epam.audiospot.command.client.ShowPlaylistCommand;
 
 public enum CommandType {
     LOGIN("login", new LoginCommand()),
+    HOME("home", new HomeCommand()),
     ADD_TRACK("addTrack",new AddTrackCommand()),
     SUBMIT_TRACK("submitTrack",new SubmitTrackCommand()),
     ADD_ALBUM("addAlbum",new AddAlbumCommand()),

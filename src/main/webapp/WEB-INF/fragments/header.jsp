@@ -13,7 +13,7 @@
 <body>
     <header class="header-fixed">
         <div class="header-limiter">
-            <h1><a href="#">Audio<span>Spot</span></a></h1>
+            <h1><a href="${pageContext.servletContext.contextPath}/controller?command=home">Audio<span>Spot</span></a></h1>
             <nav>
                 <%--<form>--%>
                     <%--<select id="language" name="language" onchange="submit()">--%>

@@ -17,7 +17,7 @@ public class Comment implements Entity{
         this.dateTime = dateTime;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -29,11 +29,11 @@ public class Comment implements Entity{
         return dateTime;
     }
 
-    public long getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public long getTrackId() {
+    public Long getTrackId() {
         return trackId;
     }
 
