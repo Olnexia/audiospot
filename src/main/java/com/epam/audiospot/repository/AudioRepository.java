@@ -4,20 +4,14 @@ import com.epam.audiospot.builder.AudioBuilder;
 import com.epam.audiospot.builder.Builder;
 import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.entity.AudioTrack;
-import com.epam.audiospot.exception.RepositoryException;
-
-import java.sql.Connection;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AudioRepository extends AbstractRepository<AudioTrack> {
+    private static final String TABLE_NAME = "audiotrack";
 
     public AudioRepository(ConnectionWrapper connection){
         super(connection);
-    }
-
-    @Override
-    public void add(AudioTrack object) {
-        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -31,23 +25,24 @@ public class AudioRepository extends AbstractRepository<AudioTrack> {
     }
 
     @Override
-    public List<AudioTrack> query(Specification specification) throws RepositoryException {
-        String preparedQuery = specification.toSql();
-        List<Object> parameters = specification.getParameters();
-        try {
-            return executeQuery(preparedQuery,parameters);
-        } catch (RepositoryException e) {
-            throw new RepositoryException(e.getMessage(),e);
-        }
-    }
-
-    @Override
     public Builder <AudioTrack> getBuilder() {
         return new AudioBuilder();
     }
 
     @Override
     public String getTableName() {
-        return null;
+        return TABLE_NAME;
+    }
+
+    @Override
+    public Map<String, Object> getFields(AudioTrack track) {
+        Map<String,Object> fields = new HashMap<>();
+        fields.put(AudioTrack.AUTHOR_ID_LABEL,track.getArtist().getId());
+        fields.put(AudioTrack.ALBUM_ID_LABEL,track.getAlbumId());
+        fields.put(AudioTrack.TITLE_LABEL,track.getTitle());
+        fields.put(AudioTrack.GENRE_LABEL,track.getGenre());
+        fields.put(AudioTrack.PRICE_LABEL,track.getPrice());
+        fields.put(AudioTrack.RELEASE_YEAR_LABEL,track.getReleaseYear());
+        return fields;
     }
 }

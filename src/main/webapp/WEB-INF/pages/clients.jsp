@@ -1,10 +1,10 @@
-<html>
 <%@ page contentType = "text/html;charset=utf-8"
          isELIgnored ="false"
          pageEncoding ="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:include page = "../fragments/header.jsp"/>
 
+<html>
 <body>
 <div class="content">
     <h2>Clients</h2>
@@ -28,6 +28,5 @@
         </c:forEach>
     </table>
 </div>
-
 </body>
 </html>

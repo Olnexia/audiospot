@@ -4,8 +4,10 @@ import com.epam.audiospot.builder.Builder;
 import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.entity.Playlist;
 import com.epam.audiospot.exception.RepositoryException;
+import com.epam.audiospot.repository.specification.Specification;
 
 import java.util.List;
+import java.util.Map;
 
 public class PlaylistRepository extends AbstractRepository<Playlist> {
     private static final String TABLE_NAME = "user";
@@ -25,6 +27,11 @@ public class PlaylistRepository extends AbstractRepository<Playlist> {
     }
 
     @Override
+    public Map<String, Object> getFields(Playlist object) {
+        return null;
+    }
+
+    @Override
     public void add(Playlist object) {
 
     }
@@ -37,10 +44,5 @@ public class PlaylistRepository extends AbstractRepository<Playlist> {
     @Override
     public void update(Playlist object) {
 
-    }
-
-    @Override
-    public List<Playlist> query(Specification specification) throws RepositoryException {
-        return null;
     }
 }

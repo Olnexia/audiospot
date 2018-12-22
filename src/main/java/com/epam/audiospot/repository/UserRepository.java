@@ -5,7 +5,11 @@ import com.epam.audiospot.builder.UserBuilder;
 import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.RepositoryException;
+import com.epam.audiospot.repository.specification.Specification;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class UserRepository extends AbstractRepository<User> {
     private static final String TABLE_NAME = "user";
@@ -15,24 +19,12 @@ public class UserRepository extends AbstractRepository<User> {
     }
 
     @Override
-    public List<User> query(Specification specification) throws RepositoryException{
-        String preparedQuery= specification.toSql();
-        List<Object> parameters = specification.getParameters();
-        try {
-            return executeQuery(preparedQuery,parameters);
-        } catch (RepositoryException e) {
-            throw new RepositoryException(e.getMessage(),e);
-        }
-    }
-
-    @Override
     public Builder<User> getBuilder() {
         return new UserBuilder();
     }
 
     @Override
-    public void add(User object) {
-        throw new UnsupportedOperationException();
+    public void add(User user) {
     }
 
     @Override
@@ -50,5 +42,19 @@ public class UserRepository extends AbstractRepository<User> {
     @Override
     public String getTableName() {
         return TABLE_NAME;
+    }
+
+    @Override
+    public Map<String, Object> getFields(User user) {
+        Map<String,Object> fields = new HashMap <>();
+        fields.put(User.ID_LABEL,user.getId());
+        fields.put(User.LOGIN_LABEL,user.getLogin());
+        fields.put(User.PASSWORD_LABEL,user.getPassword());
+        fields.put(User.NAME_LABEL,user.getName());
+        fields.put(User.SURNAME_LABEL,user.getSurname());
+        fields.put(User.PLAYLIST_ID_LABEL,user.getPlaylistId());
+        fields.put(User.ACCOUNT_LABEL,user.getAccount());
+        fields.put(User.ROLE_LABEL,user.getRole());
+        return fields;
     }
 }

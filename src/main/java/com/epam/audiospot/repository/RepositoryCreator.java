@@ -2,6 +2,7 @@ package com.epam.audiospot.repository;
 
 import com.epam.audiospot.connection.ConnectionPool;
 import com.epam.audiospot.connection.ConnectionWrapper;
+import com.epam.audiospot.entity.Artist;
 import com.epam.audiospot.exception.ConnectionPoolException;
 import com.epam.audiospot.exception.RepositoryException;
 
@@ -27,13 +28,13 @@ public class RepositoryCreator implements AutoCloseable {
         return new AudioRepository(connection);
     }
 
+    public ArtistRepository getArtistRepository(){
+        return new ArtistRepository(connection);
+    }
+
     @Override
-    public void close() throws RepositoryException{
-        try {
-            ConnectionPool connectionPool = ConnectionPool.getInstance();
-            connectionPool.releaseConnection(connection);
-        }catch (ConnectionPoolException e){
-            throw new RepositoryException(e.getMessage(),e);
-        }
+    public void close(){
+        ConnectionPool connectionPool = ConnectionPool.getInstance();
+        connectionPool.releaseConnection(connection);
     }
 }

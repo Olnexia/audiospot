@@ -1,17 +1,21 @@
 package com.epam.audiospot.entity;
 
 public class Artist implements Entity {
-    private final Long id;
+    public static final String ID_LABEL = "artist_id";
+    public static final String NAME_LABEL = "name";
+    public static final String COUNTRY_LABEL = "country";
+
+    private Long id;
     private String name;
     private String country;
 
-    public Artist(long id, String name, String country) {
+    public Artist(Long id, String name, String country) {
         this.id = id;
         this.name = name;
         this.country = country;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -23,5 +27,8 @@ public class Artist implements Entity {
         return country;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
 

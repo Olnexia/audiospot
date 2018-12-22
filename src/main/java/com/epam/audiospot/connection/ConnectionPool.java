@@ -2,8 +2,6 @@ package com.epam.audiospot.connection;
 
 import com.epam.audiospot.exception.ConnectionException;
 import com.epam.audiospot.exception.ConnectionPoolException;
-
-import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.Semaphore;
@@ -13,13 +11,14 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class ConnectionPool{
     private static final int INITIAL_POOL_SIZE = 10;
-    private static AtomicBoolean initialized = new AtomicBoolean(false);
-    private static Lock lock = new ReentrantLock();
+    private static final AtomicBoolean initialized = new AtomicBoolean(false);
+    private static final Lock lock = new ReentrantLock();
     private static ConnectionPool instance = null;
-    private Semaphore semaphore = new Semaphore(INITIAL_POOL_SIZE);
+
+    private final Semaphore semaphore = new Semaphore(INITIAL_POOL_SIZE);
     private Queue<ConnectionWrapper> pool;
 
-    public static ConnectionPool getInstance() throws ConnectionPoolException{
+    public static ConnectionPool getInstance(){
         if(!initialized.get()) {
             try {
                 lock.lock();
@@ -29,7 +28,7 @@ public class ConnectionPool{
                     initialized.set(true);
                 }
             }catch (ConnectionException e){
-                throw new ConnectionPoolException(e.getMessage(),e);
+                throw new IllegalStateException(e.getMessage(),e);
             }finally {
                 lock.unlock();
             }
@@ -47,8 +46,8 @@ public class ConnectionPool{
     }
 
     public ConnectionWrapper getConnection() throws ConnectionPoolException{
-        lock.lock();
         try {
+            lock.lock();
             semaphore.acquire();
             return pool.poll();
         } catch (InterruptedException e) {

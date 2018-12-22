@@ -1,15 +1,13 @@
 package com.epam.audiospot.command;
 
-import com.epam.audiospot.command.admin.AddAlbumCommand;
-import com.epam.audiospot.command.admin.AddTrackCommand;
-import com.epam.audiospot.command.admin.ShowClientsCommand;
-import com.epam.audiospot.command.admin.ShowPlaylistsCommand;
+import com.epam.audiospot.command.admin.*;
 import com.epam.audiospot.command.client.BuyTracksCommand;
 import com.epam.audiospot.command.client.ShowPlaylistCommand;
 
 public enum CommandType {
     LOGIN("login", new LoginCommand()),
     ADD_TRACK("addTrack",new AddTrackCommand()),
+    SUBMIT_TRACK("submitTrack",new SubmitTrackCommand()),
     ADD_ALBUM("addAlbum",new AddAlbumCommand()),
     SHOW_PLAYLISTS("showPlaylists",new ShowPlaylistsCommand()),
     SHOW_CLIENTS("showClients",new ShowClientsCommand()),

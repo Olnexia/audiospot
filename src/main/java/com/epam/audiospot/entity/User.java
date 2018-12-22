@@ -4,8 +4,17 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 public class User implements Entity, Serializable {
-    private final Long id;
-    private final Long playlistId;
+    public static final String ID_LABEL = "user_id";
+    public static final String PLAYLIST_ID_LABEL = "playlist_id";
+    public static final String NAME_LABEL = "name";
+    public static final String SURNAME_LABEL = "surname";
+    public static final String LOGIN_LABEL = "login";
+    public static final String PASSWORD_LABEL = "password";
+    public static final String ACCOUNT_LABEL = "account";
+    public static final String ROLE_LABEL = "role";
+
+    private Long id;
+    private Long playlistId;
     private String name;
     private String surname;
     private String login;
@@ -55,5 +64,10 @@ public class User implements Entity, Serializable {
 
     public Long getPlaylistId() {
         return playlistId;
+    }
+
+    @Override
+    public void setId(Long id) {
+        this.id = id;
     }
 }

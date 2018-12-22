@@ -20,9 +20,8 @@ public class LoginCommand implements Command {
         String password = request.getParameter(PASSWORD_PARAMETER);
 
         UserService service = new UserService();
-        Optional<User> user;
         CommandResult page;
-        user = service.login(login,password);
+        Optional<User> user = service.login(login,password);
         if(user.isPresent()){
             HttpSession session = request.getSession(true);
             request.setAttribute(USER_PARAMETER,user.get());

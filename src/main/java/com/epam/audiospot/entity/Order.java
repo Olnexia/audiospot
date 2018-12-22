@@ -1,12 +1,11 @@
 package com.epam.audiospot.entity;
 
-
 import java.time.LocalDate;
 
 public class Order implements Entity {
-    private final Long id;
-    private final Long userId;
-    private final LocalDate orderDate;
+    private Long id;
+    private Long userId;
+    private LocalDate orderDate;
     private boolean paid;
 
     public Order(long orderId, LocalDate orderDate, long userId) {
@@ -33,5 +32,10 @@ public class Order implements Entity {
 
     public void setPaid(boolean paid) {
         this.paid = paid;
+    }
+
+    @Override
+    public void setId(Long id) {
+        this.id = id;
     }
 }

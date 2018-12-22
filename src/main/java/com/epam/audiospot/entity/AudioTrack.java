@@ -3,26 +3,49 @@ package com.epam.audiospot.entity;
 import java.math.BigDecimal;
 
 public class AudioTrack implements Entity {
-    private final Long id;
-    private final Long albumId;
-    private final Long artistId;
-    private final String title;
-    private final int releaseYear;
-    private final Genre genre;
+    public static final String ID_LABEL = "audiotrack_id";
+    public static final String ALBUM_ID_LABEL = "album_id";
+    public static final String AUTHOR_ID_LABEL = "author_id";
+    public static final String AUTHOR_LABEL = "author";
+    public static final String TITLE_LABEL = "title";
+    public static final String PRICE_LABEL = "price";
+    public static final String RELEASE_YEAR_LABEL = "release_year";
+    public static final String GENRE_LABEL = "genre";
+
+    private Long id;
+    private Long albumId;
+    private Artist artist;
+    private String title;
+    private int releaseYear;
+    private Genre genre;
     private BigDecimal price;
 
-    public AudioTrack(Long id, Long albumId, Long artistId, String title,
+    public AudioTrack(Long id, Long albumId, Artist artist, String title,
                       BigDecimal price, int releaseYear, Genre genre) {
         this.id = id;
         this.albumId = albumId;
-        this.artistId = artistId;
+        this.artist = artist;
         this.title = title;
         this.price = price;
         this.releaseYear = releaseYear;
         this.genre = genre;
     }
 
-    public long getId() {
+    public static AudioTrack single(Artist artist, String title, BigDecimal price, int releaseYear, Genre genre){
+        return new AudioTrack(null,null,artist,title,price,releaseYear,genre);
+    }
+
+    public AudioTrack( Long albumId, Artist artist, String title,
+                      BigDecimal price, int releaseYear, Genre genre) {
+        this.albumId = albumId;
+        this.artist = artist;
+        this.title = title;
+        this.price = price;
+        this.releaseYear = releaseYear;
+        this.genre = genre;
+    }
+
+    public Long getId() {
         return id;
     }
 
@@ -34,11 +57,11 @@ public class AudioTrack implements Entity {
         return price;
     }
 
-    public long getArtistId() {
-        return artistId;
+    public Artist getArtist() {
+        return artist;
     }
 
-    public long getAlbumId() {
+    public Long getAlbumId() {
         return albumId;
     }
 
@@ -48,5 +71,10 @@ public class AudioTrack implements Entity {
 
     public Genre getGenre() {
         return genre;
+    }
+
+    @Override
+    public void setId(Long id) {
+        this.id = id;
     }
 }

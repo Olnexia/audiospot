@@ -1,9 +1,9 @@
 package com.epam.audiospot.entity;
 
 public class Album implements Entity {
-    private final Long id;
-    private final String title;
-    private final long artistId;
+    private  Long id;
+    private  String title;
+    private  long artistId;
 
     public Album(long id, String title, long artistId) {
         this.id = id;
@@ -21,5 +21,9 @@ public class Album implements Entity {
 
     public long getArtistId() {
         return artistId;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

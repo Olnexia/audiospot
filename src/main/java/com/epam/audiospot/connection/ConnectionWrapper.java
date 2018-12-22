@@ -1,10 +1,8 @@
 package com.epam.audiospot.connection;
 
 import com.epam.audiospot.exception.ConnectionException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+
+import java.sql.*;
 
 public class ConnectionWrapper{
     private Connection connection;
@@ -20,6 +18,16 @@ public class ConnectionWrapper{
     public PreparedStatement getPreparedStatement(String query) throws SQLException {
         if (connection != null) {
             PreparedStatement statement = connection.prepareStatement(query);
+            if (statement != null) {
+                return statement;
+            }
+        }
+        throw new SQLException("connection or statement is null");
+    }
+
+    public PreparedStatement getPreparedStatementGeneratedKeys(String query) throws SQLException {
+        if (connection != null) {
+            PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             if (statement != null) {
                 return statement;
             }

@@ -40,6 +40,17 @@ public class Controller extends HttpServlet {
         }
     }
 
+//    private void processLanguage(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
+//        try {
+//            String command = request.getParameter(COMMAND_PARAMETER);
+//            Command action = CommandFactory.create(command);
+//            CommandResult commandResult = action.execute(request, response);
+//            request.getRequestDispatcher(commandResult.getPage()).forward(request, response);
+//        }catch (CommandCreationException | CommandExecutionException e) {
+//            throw new IllegalArgumentException(e.getMessage(),e); //Just to see
+//        }
+//    }
+
     private void dispath(HttpServletRequest request,HttpServletResponse response){
 
     }

@@ -16,7 +16,7 @@ public class ConnectionFactory {
             String user = resource.getString(USER_PROPERTY);
             String password = resource.getString(PASSWORD_PROPERTY);
             return new ConnectionWrapper(url,user,password);
-        }catch ( ConnectionException e){
+        }catch ( ConnectionException e){ //connectionException extends RuntimeException
             throw new ConnectionException(e.getMessage(),e);
         }
     }

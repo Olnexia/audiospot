@@ -1,5 +1,23 @@
 package com.epam.audiospot.entity;
 
 public enum Genre {
-    ROCK,CLASSIC,POP,RAP
+    CLASSIC("classic"),
+    POP("pop"),
+    RAP("rap"),
+    ROCK("rock");
+
+    private String value;
+
+    Genre(String value) {
+        this.value = value;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString().toLowerCase();
+    }
 }
