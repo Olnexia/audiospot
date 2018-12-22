@@ -24,22 +24,6 @@ public class UserRepository extends AbstractRepository<User> {
     }
 
     @Override
-    public void add(User user) {
-    }
-
-    @Override
-    public void remove(User object) {
-        throw new UnsupportedOperationException();
-
-    }
-
-    @Override
-    public void update(User object) {
-        throw new UnsupportedOperationException();
-
-    }
-
-    @Override
     public String getTableName() {
         return TABLE_NAME;
     }

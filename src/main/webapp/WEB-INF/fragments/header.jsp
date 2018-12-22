@@ -23,8 +23,7 @@
                 <%--</form>--%>
 
                 <c:if test="${sessionScope.user.role ne null}">
-                    <a href="#">${sessionScope.user.login}</a>
-                    <a href="#" class="selected">Balance: ${sessionScope.user.account}</a>
+                    <a href="#" class = "selected">${sessionScope.user.login}</a>
                     <a href="${pageContext.servletContext.contextPath}/controller?command=logout">Log out</a>
                 </c:if>
                     <li><a href="?language=en">en</a></li>
@@ -51,6 +50,7 @@
                     <ul data-menu="main" class="menu__level">
                         <li class="menu__item"><a href="${pageContext.servletContext.contextPath}/controller?command=showPlaylist">My playlist</a></li>
                         <li class="menu__item"><a href="${pageContext.servletContext.contextPath}/controller?command=buyTracks">Buy new tracks</a></li>
+                        <li class="menu__item"><a href="${pageContext.servletContext.contextPath}/controller?command=payOrder">Pay an order</a></li>
                     </ul>
                 </c:if>
             </div>

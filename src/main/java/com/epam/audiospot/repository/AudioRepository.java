@@ -15,16 +15,6 @@ public class AudioRepository extends AbstractRepository<AudioTrack> {
     }
 
     @Override
-    public void remove(AudioTrack object) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void update(AudioTrack object) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
     public Builder <AudioTrack> getBuilder() {
         return new AudioBuilder();
     }

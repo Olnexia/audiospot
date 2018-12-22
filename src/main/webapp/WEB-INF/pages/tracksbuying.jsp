@@ -16,7 +16,7 @@
                     <td>${track.releaseYear}</td>
                     <td>${track.genre.value}</td>
                     <td>${track.price}</td>
-                    <td><a href="#">Add to and order</a></td>
+                    <td><a href="${pageContext.servletContext.contextPath}/controller?command=orderTrack&trackId=${track.id}">Add to an order</a></td>
                 </tr>
             </c:forEach>
         </table>

@@ -6,7 +6,6 @@ import com.epam.audiospot.entity.Entity;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.repository.specification.Specification;
-
 import java.sql.*;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -52,23 +51,24 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
     }
 
     @Override
+    public void save(T object) throws RepositoryException{
+        if(object.getId()==null){
+            add(object);
+        }else{
+            update(object);
+        }
+    }
+
+    @Override
     public void add(T object) throws RepositoryException {
-        //building method + tests
         Map<String,Object> fields = getFields(object);
-        String fieldNames = "(" + String.join(",", fields.keySet()) + ")";
-
-        String fieldValues="VALUES("+String.join(",", fields.values()
-                .stream()
-                .map(name -> ("'" + name + "'"))
-                .collect(Collectors.toList())).replaceAll("'null'","NULL")+ ");";
-
-        String preparedInsert = String.join(" ", INSERT, getTableName(),fieldNames,fieldValues);
+        String insertQuery = buildInsertQuery(object,fields);
         try{
-            PreparedStatement preparedStatement = connection.getPreparedStatementGeneratedKeys(preparedInsert);
+            PreparedStatement preparedStatement = connection.getPreparedStatementGeneratedKeys(insertQuery);
             int affectedRows = preparedStatement.executeUpdate();
 
             if (affectedRows == 0) {
-                throw new RepositoryException("Creating user failed, no rows affected.");
+                throw new RepositoryException("Creating failed, no rows affected.");
             }
 
             try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
@@ -76,7 +76,7 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
                     object.setId(generatedKeys.getLong(1));
                 }
                 else {
-                    throw new RepositoryException("Creating user failed, no ID obtained.");
+                    throw new RepositoryException("Creating failed, no ID obtained.");
                 }
             }
         }catch (SQLException e){
@@ -85,10 +85,55 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
     }
 
     @Override
+    public void update(T object) throws RepositoryException {
+        Map<String,Object> fields = getFields(object);
+        String updateQuery = buildUpdateQuery(object,fields);
+        try{
+            PreparedStatement preparedStatement = connection.getPreparedStatementGeneratedKeys(updateQuery);
+            int affectedRows = preparedStatement.executeUpdate();
+
+            if (affectedRows == 0) {
+                throw new RepositoryException("Updating failed, no rows affected.");
+            }
+        }catch (SQLException e){
+            throw new RepositoryException(e.getMessage(),e);
+        }
+    }
+
+    @Override
+    public void remove(T object) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public List<T> query(Specification specification) throws RepositoryException{
         String preparedQuery= specification.toSql();
         List<Object> parameters = specification.getParameters();
         return executeQuery(preparedQuery,parameters);
+    }
+
+    public String buildInsertQuery(T object, Map<String,Object> fields){
+        String fieldNames = "(" + String.join(",", fields.keySet()) + ")";
+
+        String fieldValues="VALUES("+String.join(",", fields.values()
+                .stream()
+                .map(name -> ("'" + name + "'"))
+                .collect(Collectors.toList())).replaceAll("'null'","NULL")
+                .replaceAll("'true'","true")
+                .replaceAll("'false'","false")+ ");";
+
+        return String.join(" ", INSERT, getTableName(),fieldNames,fieldValues);
+    }
+
+    //NOT TESTED
+    public String buildUpdateQuery(T object, Map<String,Object> fields){
+        String setValues = "SET "+String.join(",", fields.entrySet()
+                .stream()
+                .map(entry -> entry.getKey()+"= '"+entry.getValue()+"'")
+                .collect(Collectors.toList())).replaceAll("'null'","NULL")
+                .replaceAll("'true'","true")
+                .replaceAll("'false'","false");
+        return String.join(" ","update",getTableName(),setValues,"WHERE id='",object.getId().toString()+"';");
     }
 
     public abstract Builder<T> getBuilder();

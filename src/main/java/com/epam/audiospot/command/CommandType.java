@@ -13,6 +13,7 @@ public enum CommandType {
     SHOW_CLIENTS("showClients",new ShowClientsCommand()),
     SHOW_PLAYLIST("showPlaylist",new ShowPlaylistCommand()),
     BUY_TRACKS("buyTracks",new BuyTracksCommand()),
+    ORDER_TRACK("orderTrack",new OrderTrackCommand()),
     LOGOUT("logout",new LogoutCommand());
 
     private Command command;

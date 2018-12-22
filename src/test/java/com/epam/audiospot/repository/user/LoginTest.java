@@ -2,6 +2,7 @@ package com.epam.audiospot.repository.user;
 
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.CommandExecutionException;
+import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.UserService;
 import org.junit.Assert;
 import org.junit.Test;
@@ -15,7 +16,7 @@ public class LoginTest {
     private static final String TEST_PASSWORD = "123";
 
     @Test
-    public void shouldReturnListOfUsers() throws CommandExecutionException {
+    public void shouldReturnListOfUsers() throws ServiceException {
         //given
         UserService userService = new UserService();
         //when

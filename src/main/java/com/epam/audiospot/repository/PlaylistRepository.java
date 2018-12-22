@@ -35,14 +35,4 @@ public class PlaylistRepository extends AbstractRepository<Playlist> {
     public void add(Playlist object) {
 
     }
-
-    @Override
-    public void remove(Playlist object) {
-
-    }
-
-    @Override
-    public void update(Playlist object) {
-
-    }
 }

@@ -3,6 +3,7 @@ package com.epam.audiospot.repository;
 import com.epam.audiospot.connection.ConnectionPool;
 import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.entity.Artist;
+import com.epam.audiospot.entity.Order;
 import com.epam.audiospot.exception.ConnectionPoolException;
 import com.epam.audiospot.exception.RepositoryException;
 
@@ -30,6 +31,14 @@ public class RepositoryCreator implements AutoCloseable {
 
     public ArtistRepository getArtistRepository(){
         return new ArtistRepository(connection);
+    }
+
+    public OrderRepository getOrderRepository(){
+        return new OrderRepository(connection);
+    }
+
+    public OrderedTrackRepository getOrderedTrackRepository(){
+        return new OrderedTrackRepository(connection);
     }
 
     @Override
