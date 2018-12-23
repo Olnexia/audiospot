@@ -12,6 +12,7 @@ public class UserBuilder implements Builder<User> {
     public User build(ResultSet resultSet) throws SQLException {
         Long id = resultSet.getLong(User.ID_LABEL);
         Long playlistId = resultSet.getLong(User.PLAYLIST_ID_LABEL);
+        playlistId = resultSet.wasNull() ? null : playlistId;
         String name = resultSet.getString(User.NAME_LABEL);
         String surname = resultSet.getString(User.SURNAME_LABEL);
         String login = resultSet.getString(User.LOGIN_LABEL);

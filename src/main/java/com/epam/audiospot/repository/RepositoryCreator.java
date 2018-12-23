@@ -41,6 +41,14 @@ public class RepositoryCreator implements AutoCloseable {
         return new OrderedTrackRepository(connection);
     }
 
+    public PlaylistRepository getPlaylistRepository(){
+        return new PlaylistRepository(connection);
+    }
+
+    public TrackAtPlaylistRepository getTrackAtPlaylistRepository(){
+        return new TrackAtPlaylistRepository(connection);
+    }
+
     @Override
     public void close(){
         ConnectionPool connectionPool = ConnectionPool.getInstance();

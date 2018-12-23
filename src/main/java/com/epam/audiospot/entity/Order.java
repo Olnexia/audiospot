@@ -3,7 +3,7 @@ package com.epam.audiospot.entity;
 import java.time.LocalDate;
 
 public class Order implements Entity {
-    public static final String ID_LABEL = "order_id";
+    public static final String ID_LABEL = "audio_order_id";
     public static final String USER_ID_LABEL = "user_id";
     public static final String ORDER_DATE_LABEL = "date";
     public static final String PAID_LABEL = "paid";

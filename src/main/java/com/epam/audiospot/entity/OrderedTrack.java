@@ -1,9 +1,8 @@
 package com.epam.audiospot.entity;
 
 public class OrderedTrack implements Entity {
-
     public static final String ID_LABEL = "ordered_track_id";
-    public static final String ORDER_ID_LABEL = "order_id";
+    public static final String ORDER_ID_LABEL = "audio_order_id";
     public static final String AUDIOTRACK_LABEL = "audiotrack_id";
 
     private Long id;

@@ -11,7 +11,9 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public abstract class AbstractRepository<T extends Entity> implements Repository<T>{
-    private static final String SELECT_ALL = "SELECT* FROM";
+//    private static final String SELECT_ALL = "SELECT* FROM";
+//    private static final String SELECT = "SELECT ? FROM ?";
+//    private static final String ALL = "*";
     private static final String INSERT = "INSERT INTO";
     private ConnectionWrapper connection;
 
@@ -20,9 +22,9 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
     }
 
     public List<T> executeQuery(String query, List<Object>params)throws RepositoryException {
-        String preparedQuery = SELECT_ALL + " " + getTableName() + " " + query;
+//        String preparedQuery = SELECT_ALL + " " + getTableName() + " " + query;
         try {
-            PreparedStatement preparedStatement = connection.getPreparedStatement(preparedQuery);
+            PreparedStatement preparedStatement = connection.getPreparedStatement(query);
             for (int i = 0; i < params.size(); i++) {
                 preparedStatement.setObject(i + 1, params.get(i));
             }
@@ -39,15 +41,34 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
         }
     }
 
+//    //Make class for builders
+//    public PreparedStatement buildSelectQuery(String target,String source,String query, List<Object>params) throws SQLException{
+//        String preparedQuery = SELECT + " " +query;
+//        PreparedStatement preparedStatement = connection.getPreparedStatement(preparedQuery);
+//        preparedStatement.setString(1,target);
+//        preparedStatement.setString(2,source);
+//        for (int i = 0; i < params.size(); i++) {
+//            preparedStatement.setObject(i + 3, params.get(i));
+//        }
+//        return preparedStatement;
+//    }
+
     public List<T> queryForAll() throws RepositoryException{
-        return executeQuery("", Collections.emptyList());
+        String preparedQuery = String.join(" ","select",getTableName()+".*","from",getTableName());
+        return executeQuery(preparedQuery, Collections.emptyList());
     }
 
     public Optional<T> queryForSingleResult(Specification specification) throws RepositoryException {
-        String preparedQuery = specification.toSql();
-        List<Object> parameters = specification.getParameters();
-        List<T> entities = executeQuery(preparedQuery,parameters);
+        List<T> entities = query(specification);
         return (!entities.isEmpty())?Optional.of(entities.get(0)):Optional.empty();
+    }
+
+    @Override
+    public List<T> query(Specification specification) throws RepositoryException{
+        String specificationQuery= specification.toSql();
+        List<Object> parameters = specification.getParameters();
+        String preparedQuery = String.join(" ","SELECT",getTableName()+".*","FROM",getTableName(),specificationQuery);
+        return executeQuery(preparedQuery,parameters);
     }
 
     @Override
@@ -105,12 +126,6 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
         throw new UnsupportedOperationException();
     }
 
-    @Override
-    public List<T> query(Specification specification) throws RepositoryException{
-        String preparedQuery= specification.toSql();
-        List<Object> parameters = specification.getParameters();
-        return executeQuery(preparedQuery,parameters);
-    }
 
     public String buildInsertQuery(T object, Map<String,Object> fields){
         String fieldNames = "(" + String.join(",", fields.keySet()) + ")";
@@ -133,7 +148,8 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
                 .collect(Collectors.toList())).replaceAll("'null'","NULL")
                 .replaceAll("'true'","true")
                 .replaceAll("'false'","false");
-        return String.join(" ","update",getTableName(),setValues,"WHERE id='",object.getId().toString()+"';");
+        return String.join(" ","update",getTableName(),setValues,"WHERE", getTableName()+"_id='",object.getId().toString()+"';");
+
     }
 
     public abstract Builder<T> getBuilder();

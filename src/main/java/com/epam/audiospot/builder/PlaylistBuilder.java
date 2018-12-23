@@ -8,6 +8,9 @@ public class PlaylistBuilder implements Builder<Playlist> {
 
     @Override
     public Playlist build(ResultSet resultSet) throws SQLException {
-        return null;
+        Long id = resultSet.getLong(Playlist.ID_LABEL);
+        String title = resultSet.getString(Playlist.TITLE_LABEL);
+        String description = resultSet.getString(Playlist.DESCRIPTION_LABEL);
+        return new Playlist(id,title,description);
     }
 }
