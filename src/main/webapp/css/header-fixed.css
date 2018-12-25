@@ -17,15 +17,10 @@
 	margin: 0 auto;
 }
 
-/*	The header placeholder. It is displayed when the header is fixed to the top of the
-	browser window, in order to prevent the content of the page from jumping up. */
-
 .header-fixed-placeholder{
 	height: 80px;
 	display: none;
 }
-
-/* Logo */
 
 .header-fixed .header-limiter h1 {
 	float: left;
@@ -128,140 +123,58 @@ body.fixed .header-fixed .header-limiter nav {
 
 }
 
-/*
-	 We are clearing the body's margin and padding, so that the header fits properly.
-	 We are also adding a height to demonstrate the scrolling behavior. You can remove
-	 these styles.
- */
-
 .content{
 	position: fixed;
-	top: 120px;
-	left: 300px;
+    top: 80px;
+    left: 260px;
+    right: 0px;
+}
+
+.left-lined{
+    border-left: 1px solid #ececec;
+    margin-left: -3px;
+    top: 0;
 }
 
 .menu {
-	position: fixed;
-	top: 120px;
-	left: 0;
-	width: 300px;
-	height: calc(100vh - 120px);
-}
-
-.menu__wrap {
-	position: absolute;
-	top: 3.5em;
-	bottom: 0;
-	overflow: hidden;
-	width: 100%;
-}
-
-.menu__level {
-	position: absolute;
-	top: 0;
-	left: 0;
-	overflow: hidden;
-	overflow-y: scroll;
-	width: calc(100% + 50px);
 	height: 100%;
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
+	width: 260px;
+	position: fixed;
+	z-index: 1;
+	top: 80px;
+	left: 0;
+	overflow-x: hidden;
+	padding-top: 20px;
+	border-right: 2px solid;
+	border-color: #ececec;
 }
 
-.menu__link {
-	font-weight: 600;
-	font-family: feather;
-	position: relative;
-	padding: 1em 2.5em 1em 1.5em;
-	color: #bdbdbd;
-	-webkit-transition: color 0.1s;
-	transition: color 0.1s;
+.menu a {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
 }
 
-.menu__link:hover{
-	color: #5c5edc;
+.menu a:hover {
+	color: #333333;
 }
 
-.menu__link--current::before {
-	content: '\00B7';
-	font-size: 1.5em;
-	line-height: 0;
-	position: absolute;
-	top: 50%;
-	left: 0.5em;
-	height: 4px;
-	color: #5c5edc;
+.main {
+	margin-left: 160px;
+	font-size: 28px;
+	padding: 0px 10px;
 }
 
-[class^='animate-'],
-[class*=' animate-'] {
-	visibility: visible;
-}
-
-.menu__breadcrumbs {
-	font-size: 0.65em;
-	line-height: 1;
-	position: relative;
-	padding: 2.5em 3.75em 1.5em 2.5em;
-}
-
-.menu__breadcrumbs a {
-	font-weight: bold;
-	display: inline-block;
-	cursor: pointer;
-	vertical-align: middle;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	color: #5c5edc;
-}
-
-.menu__breadcrumbs a:last-child {
-	pointer-events: none;
-}
-
-.menu__breadcrumbs a:hover {
-	color: #8182e0;
-}
-
-.menu__breadcrumbs a:not(:last-child)::after {
-	content: '\e902';
-	font-family: 'feather';
-	display: inline-block;
-	padding: 0 0.5em;
-	color: #33353e;
-}
-
-.menu__breadcrumbs a:not(:last-child):hover::after {
-	color: #33353e;
-}
-
-.menu__back {
-	font-size: 1.05em;
-	position: absolute;
-	z-index: 100;
-	top: 0;
-	right: 2.25em;
-	margin: 0;
-	padding: 1.365em 0.65em 0 0;
-	cursor: pointer;
-	color: #2a2b30;
-	border: none;
-	background: none;
-}
-
-.menu__back--hidden {
-	pointer-events: none;
-	opacity: 0;
-}
-
-.menu__back:hover,
-.menu__back:focus {
-	color: #fff;
-	outline: none;
+@media screen and (max-height: 450px) {
+	.menu {padding-top: 15px;}
+	.menu a {font-size: 18px;}
 }
 
 body{
     margin: 0;
     padding: 0;
+	font-family: Cookie, Arial, Helvetica, sans-serif;
 }
+

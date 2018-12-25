@@ -2,13 +2,11 @@ package com.epam.audiospot.command;
 
 import com.epam.audiospot.entity.AudioTrack;
 import com.epam.audiospot.entity.Order;
-import com.epam.audiospot.entity.Playlist;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.CommandExecutionException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.AudioTrackService;
 import com.epam.audiospot.service.OrderService;
-import com.epam.audiospot.service.PlaylistService;
 import org.mockito.Mockito;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -59,17 +57,6 @@ public class SubmitPaymentCommand implements Command {
             if(verifier.verify(cardNumber,cvc,expiry,orderTotalPrice)) {
                 order.setPaid(true);
                 orderService.saveOrder(order);
-                PlaylistService playlistService = new PlaylistService();
-
-                Long playlistId = user.getPlaylistId();
-                if(playlistId==null) {
-                    Playlist playlist = Playlist.personal();
-                    playlistService.savePlaylist(playlist);
-                    playlistId = playlist.getId();
-                }
-                for(AudioTrack audioTrack:orderedTracks){
-                    playlistService.addTrack(playlistId,audioTrack.getId());
-                }
             }
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);

@@ -21,40 +21,47 @@
                         <%--<option value="ru_RU" ${language == 'ru_RU' ? 'selected' : ''}>Russian</option>--%>
                     <%--</select>--%>
                 <%--</form>--%>
+                    <c:if test="${sessionScope.user.role ne null}">
+                        <a href="#" class = "selected">${sessionScope.user.login}</a>
+                    </c:if>
 
-                <c:if test="${sessionScope.user.role ne null}">
-                    <a href="#" class = "selected">${sessionScope.user.login}</a>
-                    <a href="${pageContext.servletContext.contextPath}/controller?command=logout">Log out</a>
-                </c:if>
-                    <li><a href="?language=en">en</a></li>
-                    <li><a href="?language=ru">ru</a></li>
+                    <%--??????????--%>
+
+                    <a href="${pageContext.request.requestURL}/?language=en">en</a>
+                    <a class = left-lined href="${pageContext.servletContext.contextPath}/?language=ru">ru</a>
+
+                    <c:if test="${sessionScope.user.role ne null}">
+                        <a href="${pageContext.servletContext.contextPath}/controller?command=logout">Log out</a>
+                    </c:if>
             </nav>
         </div>
     </header>
 
     <!-- Main container -->
+    <c:if test="${sessionScope.user.role.value ne null}">
     <div class="container">
         <!-- Menu -->
         <nav id="ml-menu" class="menu">
-            <div class="menu__wrap">
+            <div class="menu_wrap">
                 <c:if test="${sessionScope.user.role.value eq 'admin'}">
-                    <ul data-menu="main" class="menu__level">
-                        <li class="menu__item"><a href="${pageContext.servletContext.contextPath}/controller?command=addTrack">Add new track</a></li>
-                        <li class="menu__item"><a href="${pageContext.servletContext.contextPath}/controller?command=addAlbum">Add new album</a></li>
-                        <li class="menu__item"><a href="${pageContext.servletContext.contextPath}/controller?command=showPlaylists">Playlists</a></li>
-                        <li class="menu__item"><a href="${pageContext.servletContext.contextPath}/controller?command=showClients">Clients</a></li>
+                    <ul data-menu="main" class="menu_level">
+                        <li class="menu_item"><a href="${pageContext.servletContext.contextPath}/controller?command=addTrack">Add new track</a></li>
+                        <li class="menu_item"><a href="${pageContext.servletContext.contextPath}/controller?command=addAlbum">Add new album</a></li>
+                        <li class="menu_item"><a href="${pageContext.servletContext.contextPath}/controller?command=showPlaylists">Playlists</a></li>
+                        <li class="menu_item"><a href="${pageContext.servletContext.contextPath}/controller?command=showClients">Clients</a></li>
                     </ul>
                 </c:if>
 
                 <c:if test="${sessionScope.user.role.value eq 'client'}">
-                    <ul data-menu="main" class="menu__level">
-                        <li class="menu__item"><a href="${pageContext.servletContext.contextPath}/controller?command=showPlaylist">My playlist</a></li>
-                        <li class="menu__item"><a href="${pageContext.servletContext.contextPath}/controller?command=buyTracks">Buy new tracks</a></li>
-                        <li class="menu__item"><a href="${pageContext.servletContext.contextPath}/controller?command=payOrder">Pay an order</a></li>
+                    <ul data-menu="main" class="menu_level">
+                        <li class="menu_item"><a href="${pageContext.servletContext.contextPath}/controller?command=showPlaylist">My playlist</a></li>
+                        <li class="menu_item"><a href="${pageContext.servletContext.contextPath}/controller?command=buyTracks">Buy new tracks</a></li>
+                        <li class="menu_item"><a href="${pageContext.servletContext.contextPath}/controller?command=payOrder">Pay an order</a></li>
                     </ul>
                 </c:if>
             </div>
         </nav>
     </div>
+    </c:if>
 </body>
 </html>

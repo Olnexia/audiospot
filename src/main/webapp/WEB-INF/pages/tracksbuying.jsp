@@ -5,6 +5,9 @@
 <jsp:include page = "../fragments/header.jsp"/>
 
 <html>
+<head>
+    <title></title>
+</head>
     <body>
     <div class="content">
         <h2>Available tracks</h2>

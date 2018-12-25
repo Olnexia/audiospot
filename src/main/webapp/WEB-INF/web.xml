@@ -42,4 +42,13 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 
+  <filter>
+    <filter-name>SessionLocaleFilter</filter-name>
+    <filter-class>com.epam.audiospot.filters.SessionLocaleFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SessionLocaleFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
 </web-app>

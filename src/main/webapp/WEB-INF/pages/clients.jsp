@@ -5,6 +5,11 @@
 <jsp:include page = "../fragments/header.jsp"/>
 
 <html>
+<head>
+    <title>
+
+    </title>
+</head>
 <body>
 <div class="content">
     <h2>Clients</h2>

@@ -1,6 +1,7 @@
 package com.epam.audiospot.entity;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class AudioTrack implements Entity {
     public static final String ID_LABEL = "audiotrack_id";
@@ -43,6 +44,38 @@ public class AudioTrack implements Entity {
         this.price = price;
         this.releaseYear = releaseYear;
         this.genre = genre;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object){
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
+        AudioTrack that = (AudioTrack)object;
+        return getReleaseYear() == that.getReleaseYear() &&
+                Objects.equals(getId(), that.getId()) &&
+                Objects.equals(getAlbumId(), that.getAlbumId()) &&
+                Objects.equals(getArtist(), that.getArtist()) &&
+                Objects.equals(getTitle(), that.getTitle()) &&
+                getGenre() == that.getGenre() &&
+                Objects.equals(getPrice(), that.getPrice());
+    }
+
+    @Override
+    public int hashCode() {
+        int result =17;
+        final int prime = 31;
+        result = prime * result + getId().hashCode();
+        result = prime * result + getTitle().hashCode();
+        result = prime * result + Integer.valueOf(getReleaseYear()).hashCode();
+        result = prime * result + getAlbumId().hashCode();
+        result = prime * result + getPrice().hashCode();
+        result = prime * result + getArtist().hashCode();
+        result = prime * result + getGenre().hashCode();
+        return result;
     }
 
     public Long getId() {

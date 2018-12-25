@@ -5,7 +5,6 @@ import java.math.BigDecimal;
 
 public class User implements Entity, Serializable {
     public static final String ID_LABEL = "user_id";
-    public static final String PLAYLIST_ID_LABEL = "playlist_id";
     public static final String NAME_LABEL = "name";
     public static final String SURNAME_LABEL = "surname";
     public static final String LOGIN_LABEL = "login";
@@ -14,7 +13,6 @@ public class User implements Entity, Serializable {
     public static final String ROLE_LABEL = "role";
 
     private Long id;
-    private Long playlistId;
     private String name;
     private String surname;
     private String login;
@@ -23,7 +21,7 @@ public class User implements Entity, Serializable {
     private Role role;
 
     public User(Long id, String name, String surname, String login, String password,
-                BigDecimal account, Role role, Long playlistId) {
+                BigDecimal account, Role role) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -31,7 +29,6 @@ public class User implements Entity, Serializable {
         this.password = password;
         this.account = account;
         this.role = role;
-        this.playlistId = playlistId;
     }
 
     public Long getId() {
@@ -62,12 +59,9 @@ public class User implements Entity, Serializable {
         return role;
     }
 
-    public Long getPlaylistId() {
-        return playlistId;
-    }
-
     @Override
     public void setId(Long id) {
         this.id = id;
     }
+
 }

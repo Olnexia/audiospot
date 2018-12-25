@@ -1,7 +1,6 @@
 package com.epam.audiospot.builder;
 
 import com.epam.audiospot.entity.Artist;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

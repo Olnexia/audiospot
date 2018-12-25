@@ -2,6 +2,7 @@ package com.epam.audiospot.command;
 
 import com.epam.audiospot.command.admin.*;
 import com.epam.audiospot.command.client.BuyTracksCommand;
+import com.epam.audiospot.command.client.PayForOrderCommand;
 import com.epam.audiospot.command.client.ShowPlaylistCommand;
 
 public enum CommandType {
@@ -15,7 +16,7 @@ public enum CommandType {
     SHOW_PLAYLIST("showPlaylist",new ShowPlaylistCommand()),
     BUY_TRACKS("buyTracks",new BuyTracksCommand()),
     ORDER_TRACK("orderTrack",new OrderTrackCommand()),
-    PAY_ORDER("payOrder",new PayOrderCommand()),
+    PAY_ORDER("payOrder",new PayForOrderCommand()),
     SUBMIT_PAYMENT("submitPayment",new SubmitPaymentCommand()),
     LOGOUT("logout",new LogoutCommand());
 

@@ -1,5 +1,6 @@
 package com.epam.audiospot.service;
 
+import com.epam.audiospot.entity.Playlist;
 import com.epam.audiospot.entity.Role;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.CommandExecutionException;
@@ -30,6 +31,15 @@ public class UserService implements Service {
             UserRepository repository = repositoryCreator.getUserRepository();
             return repository.query(userByRoleSpecification);
         } catch (RepositoryException e) {
+            throw new ServiceException(e.getMessage(),e);
+        }
+    }
+
+    public void saveUser(User user) throws ServiceException{
+        try(RepositoryCreator repositoryCreator = new RepositoryCreator()){
+            UserRepository repository = repositoryCreator.getUserRepository();
+            repository.save(user);
+        }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);
         }
     }

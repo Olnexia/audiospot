@@ -1,0 +1,16 @@
+.welcome{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.welcome h2{
+    color: #818181;
+}
+
+.center-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
