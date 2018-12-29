@@ -5,7 +5,6 @@ import com.epam.audiospot.command.factory.CommandFactory;
 import com.epam.audiospot.command.CommandResult;
 import com.epam.audiospot.exception.CommandCreationException;
 import com.epam.audiospot.exception.CommandExecutionException;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -44,18 +43,7 @@ public class Controller extends HttpServlet {
         }
     }
 
-//    private void processLanguage(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
-//        try {
-//            String command = request.getParameter(COMMAND_PARAMETER);
-//            Command action = CommandFactory.create(command);
-//            CommandResult commandResult = action.execute(request, response);
-//            request.getRequestDispatcher(commandResult.getPage()).forward(request, response);
-//        }catch (CommandCreationException | CommandExecutionException e) {
-//            throw new IllegalArgumentException(e.getMessage(),e); //Just to see
-//        }
-//    }
-
-    private void dispath(HttpServletRequest request,HttpServletResponse response){
+    private void dispath(HttpServletRequest request,HttpServletResponse response,CommandResult commandResult){
 
     }
 }

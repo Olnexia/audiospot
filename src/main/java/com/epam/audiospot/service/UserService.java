@@ -1,14 +1,13 @@
 package com.epam.audiospot.service;
 
-import com.epam.audiospot.entity.Playlist;
 import com.epam.audiospot.entity.Role;
 import com.epam.audiospot.entity.User;
-import com.epam.audiospot.exception.CommandExecutionException;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.repository.*;
 import com.epam.audiospot.repository.specification.UserByLoginAndPasswordSpecification;
 import com.epam.audiospot.repository.specification.UserByRoleSpecification;
+import org.apache.commons.codec.digest.DigestUtils;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +15,8 @@ import java.util.Optional;
 public class UserService implements Service {
 
     public Optional<User> login(String login , String password) throws ServiceException {
-        UserByLoginAndPasswordSpecification specification = new UserByLoginAndPasswordSpecification(login,password);
+        String md5Password = DigestUtils.md5Hex(password).toUpperCase();
+        UserByLoginAndPasswordSpecification specification = new UserByLoginAndPasswordSpecification(login,md5Password);
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             UserRepository repository = repositoryCreator.getUserRepository();
             return repository.queryForSingleResult(specification);
