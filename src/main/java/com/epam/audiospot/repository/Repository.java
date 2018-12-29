@@ -10,6 +10,6 @@ public interface Repository<T extends Entity> {
     void save(T object) throws RepositoryException;
     void add(T object) throws RepositoryException;
     void update (T object) throws RepositoryException;
-    void remove (T object);
+    void remove (T object) throws RepositoryException;
     List<T> query(Specification specification) throws RepositoryException;
 }

@@ -2,6 +2,7 @@ package com.epam.audiospot.command.client;
 
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
+import com.epam.audiospot.command.Page;
 import com.epam.audiospot.entity.AudioTrack;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.CommandExecutionException;
@@ -21,12 +22,11 @@ public class ShowPlaylistCommand implements Command {
         HttpSession session = request.getSession(false);
         User user = (User) session.getAttribute(USER_SESSION_PARAMETER);
         try {
-//            Long playlistId = user.getPlaylistId();
             List<AudioTrack> orderedTracks = trackService.findTracksAtPlaylist(user.getId());
             request.setAttribute("tracks", orderedTracks);
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);
         }
-        return CommandResult.forward("/WEB-INF/pages/playlist.jsp");
+        return CommandResult.forward(Page.PLAYLIST.getPath());
     }
 }

@@ -1,6 +1,8 @@
-package com.epam.audiospot.command;
+package com.epam.audiospot.command.client;
 
-import com.epam.audiospot.command.client.BuyTracksCommand;
+import com.epam.audiospot.command.Command;
+import com.epam.audiospot.command.CommandResult;
+import com.epam.audiospot.command.Page;
 import com.epam.audiospot.entity.Order;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.CommandExecutionException;
@@ -11,21 +13,22 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
-public class OrderTrackCommand implements Command {
+public class CancelOrderCommand implements Command {
     private static final String USER_SESSION_PARAMETER = "user";
-    private static final String TRACK_ID_REQUEST_PARAMETER = "trackId";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws CommandExecutionException {
         HttpSession session = request.getSession(false);
         User user = (User)session.getAttribute(USER_SESSION_PARAMETER);
-        Long trackId = Long.parseLong(request.getParameter(TRACK_ID_REQUEST_PARAMETER));
         OrderService service = new OrderService();
         try{
-            service.orderTrack(user.getId(),trackId);
+            Optional<Order> order = service.findOrder(user.getId(),false);
+            if(order.isPresent()){
+                service.deleteOrder(order.get());
+            }
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);
         }
-        return CommandType.BUY_TRACKS.getCommand().execute(request,response);
+        return CommandResult.forward(Page.PAY_ORDER.getPath());
     }
 }

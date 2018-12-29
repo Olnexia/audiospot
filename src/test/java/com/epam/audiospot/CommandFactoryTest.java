@@ -1,8 +1,8 @@
 package com.epam.audiospot;
 
 import com.epam.audiospot.command.Command;
-import com.epam.audiospot.command.CommandFactory;
-import com.epam.audiospot.command.LoginCommand;
+import com.epam.audiospot.command.factory.CommandFactory;
+import com.epam.audiospot.command.common.LoginCommand;
 import com.epam.audiospot.exception.CommandCreationException;
 import org.junit.Assert;
 import org.junit.Test;

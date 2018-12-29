@@ -2,11 +2,11 @@
 <%@ page contentType = "text/html;charset=utf-8"
          isELIgnored ="false"
          pageEncoding ="utf-8"%>
-<jsp:include page = "../fragments/header.jsp"/>
 
 <html>
 <head>
     <title>My playlist</title>
+    <jsp:include page = "../fragments/header.jsp"/>
 </head>
 <body>
 <div class="content">

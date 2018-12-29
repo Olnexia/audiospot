@@ -20,9 +20,8 @@ public class AudioBuilder implements Builder<AudioTrack> {
         Long authorId = resultSet.getLong(AudioTrack.AUTHOR_ID_LABEL);
 
         ArtistService artistService = new ArtistService();
-        Artist artist;
         Optional<Artist> artistOptional = artistService.getArtist(authorId);
-        artist = artistOptional.orElse(null);
+        Artist artist = artistOptional.orElse(null);
 
         int releaseYear = resultSet.getInt(AudioTrack.RELEASE_YEAR_LABEL);
         Long albumId = resultSet.getLong(AudioTrack.ALBUM_ID_LABEL);

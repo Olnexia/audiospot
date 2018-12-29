@@ -2,6 +2,7 @@ package com.epam.audiospot.command.client;
 
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
+import com.epam.audiospot.command.Page;
 import com.epam.audiospot.entity.AudioTrack;
 import com.epam.audiospot.entity.Order;
 import com.epam.audiospot.entity.User;
@@ -37,9 +38,9 @@ public class PayForOrderCommand implements Command {
                 BigDecimal orderTotalPrice = prices.stream().reduce(BigDecimal.ZERO,BigDecimal::add);
                 request.setAttribute("orderTotalPrice",orderTotalPrice);
             }
-            return CommandResult.forward("/WEB-INF/pages/payorder.jsp");
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);
         }
+        return CommandResult.forward(Page.PAY_ORDER.getPath());
     }
 }

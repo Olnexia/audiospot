@@ -2,6 +2,7 @@ package com.epam.audiospot.command.admin;
 
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
+import com.epam.audiospot.command.Page;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.CommandExecutionException;
 import com.epam.audiospot.exception.ServiceException;
@@ -21,6 +22,6 @@ public class ShowClientsCommand implements Command {
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);
         }
-        return CommandResult.forward("/WEB-INF/pages/clients.jsp");
+        return CommandResult.forward(Page.CLIENTS.getPath());
     }
 }

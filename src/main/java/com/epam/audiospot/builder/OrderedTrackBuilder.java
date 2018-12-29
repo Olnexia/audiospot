@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class OrderedTrackBuilder implements Builder<OrderedTrack> {
+
     @Override
     public OrderedTrack build(ResultSet resultSet) throws SQLException {
         Long id = resultSet.getLong(OrderedTrack.ID_LABEL);

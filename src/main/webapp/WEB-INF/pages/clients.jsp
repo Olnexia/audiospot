@@ -1,14 +1,19 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <%@ page contentType = "text/html;charset=utf-8"
          isELIgnored ="false"
          pageEncoding ="utf-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<jsp:include page = "../fragments/header.jsp"/>
 
+<fmt:setLocale value="${sessionScope.lang}"/>
+
+<fmt:bundle basename="pagecontent" prefix ="login.">
 <html>
 <head>
     <title>
 
     </title>
+    <jsp:include page = "../fragments/header.jsp"/>
 </head>
 <body>
 <div class="content">
@@ -29,9 +34,13 @@
                 <td>${client.login}</td>
                 <td>${client.account}</td>
                 <td><a href="#">Add bonus</a></td>
+                <%--<c:if test="${sessionScope.user.active eq true}">--%>
+                    <%--<td><a href="#">Block</a></td>--%>
+                <%--</c:if>--%>
             </tr>
         </c:forEach>
     </table>
 </div>
 </body>
 </html>
+</fmt:bundle>

@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class TrackAtPlaylistBuilder implements Builder<TrackAtPlaylist> {
+
     @Override
     public TrackAtPlaylist build(ResultSet resultSet) throws SQLException {
         Long id = resultSet.getLong(TrackAtPlaylist.ID_LABEL);

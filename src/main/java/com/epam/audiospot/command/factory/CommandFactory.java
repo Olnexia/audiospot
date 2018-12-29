@@ -1,5 +1,6 @@
-package com.epam.audiospot.command;
+package com.epam.audiospot.command.factory;
 
+import com.epam.audiospot.command.Command;
 import com.epam.audiospot.exception.CommandCreationException;
 
 public class CommandFactory {
@@ -9,7 +10,7 @@ public class CommandFactory {
             CommandType commandType = CommandType.getCurrentCommand(commandText);
             return commandType.getCommand();
         }catch (IllegalArgumentException e) {
-            throw new CommandCreationException(e.getMessage(),e);
+            throw new CommandCreationException(e.getMessage(),e); //TODO mb extends runtime exc?
         }
     }
 }

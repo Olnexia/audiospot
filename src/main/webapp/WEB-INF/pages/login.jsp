@@ -4,15 +4,15 @@
 <%@ page contentType = "text/html;charset=utf-8"
          isELIgnored ="false"
          pageEncoding ="utf-8"%>
-<jsp:include page = "../fragments/header.jsp"/>
-<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
-<fmt:setLocale value="${language}"/>
+
+<fmt:setLocale value="${sessionScope.lang}"/>
 <fmt:bundle basename="pagecontent" prefix ="login.">
 
 <html>
 <head>
     <title><fmt:message key="title"/></title>
     <style><jsp:include page = "/css/login.css"/></style>
+    <jsp:include page = "../fragments/header.jsp"/>
 </head>
    <body>
    <div class="login-page">

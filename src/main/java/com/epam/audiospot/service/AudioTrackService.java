@@ -7,6 +7,7 @@ import com.epam.audiospot.repository.AudioRepository;
 import com.epam.audiospot.repository.RepositoryCreator;
 import com.epam.audiospot.repository.specification.AudioTrackByOrderIdSpecification;
 import com.epam.audiospot.repository.specification.AudioTracksByUserIdSpecification;
+import com.epam.audiospot.repository.specification.AvailableTracksByUserIdSpecification;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -67,22 +68,13 @@ public class AudioTrackService implements Service {
         }
     }
 
-    public List<AudioTrack> findAvailableTracks(User user) throws ServiceException{
-            AudioTrackService trackService = new AudioTrackService();
-            List<AudioTrack> availableTracks = trackService.findAllTracks();
-            OrderService orderService = new OrderService();
-            Optional<Order> order = orderService.findOrder(user.getId(),false);
-            if(order.isPresent()){
-                Long orderId = order.get().getId();
-                List<AudioTrack> orderedTracks = trackService.findOrderedTracks(orderId);
-                availableTracks = availableTracks.stream()
-                        .filter(t -> !orderedTracks.contains(t))
-                        .collect(Collectors.toList());
-            }
-            List<AudioTrack> tracksAtPlaylist = trackService.findTracksAtPlaylist(user.getId());
-            return  availableTracks.stream()
-                    .filter(t -> !tracksAtPlaylist.contains(t))
-                    .collect(Collectors.toList());
-
+    public List<AudioTrack> findAvailableTracks(Long userId) throws ServiceException{
+        AvailableTracksByUserIdSpecification specification = new AvailableTracksByUserIdSpecification(userId);
+        try(RepositoryCreator repositoryCreator = new RepositoryCreator()) {
+            AudioRepository repository = repositoryCreator.getAudioRepository();
+            return repository.query(specification);
+        }catch (RepositoryException e){
+            throw new ServiceException(e.getMessage(),e);
+        }
     }
 }

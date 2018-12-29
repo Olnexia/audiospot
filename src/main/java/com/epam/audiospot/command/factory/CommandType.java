@@ -1,21 +1,26 @@
-package com.epam.audiospot.command;
+package com.epam.audiospot.command.factory;
 
+import com.epam.audiospot.command.*;
 import com.epam.audiospot.command.admin.*;
-import com.epam.audiospot.command.client.BuyTracksCommand;
-import com.epam.audiospot.command.client.PayForOrderCommand;
-import com.epam.audiospot.command.client.ShowPlaylistCommand;
+import com.epam.audiospot.command.client.*;
+import com.epam.audiospot.command.common.ChangeLanguageCommand;
+import com.epam.audiospot.command.common.HomeCommand;
+import com.epam.audiospot.command.common.LoginCommand;
+import com.epam.audiospot.command.common.LogoutCommand;
 
 public enum CommandType {
     LOGIN("login", new LoginCommand()),
     HOME("home", new HomeCommand()),
+    CHANGE_LANGUAGE("changeLang", new ChangeLanguageCommand()),
     ADD_TRACK("addTrack",new AddTrackCommand()),
     SUBMIT_TRACK("submitTrack",new SubmitTrackCommand()),
     ADD_ALBUM("addAlbum",new AddAlbumCommand()),
-    SHOW_PLAYLISTS("showPlaylists",new ShowPlaylistsCommand()),
+    SHOW_AUDIOSETS("showAudioSets",new ShowAudioSetsCommand()),
     SHOW_CLIENTS("showClients",new ShowClientsCommand()),
     SHOW_PLAYLIST("showPlaylist",new ShowPlaylistCommand()),
     BUY_TRACKS("buyTracks",new BuyTracksCommand()),
     ORDER_TRACK("orderTrack",new OrderTrackCommand()),
+    DELETE_ORDER("cancelOrder",new CancelOrderCommand()),
     PAY_ORDER("payOrder",new PayForOrderCommand()),
     SUBMIT_PAYMENT("submitPayment",new SubmitPaymentCommand()),
     LOGOUT("logout",new LogoutCommand());

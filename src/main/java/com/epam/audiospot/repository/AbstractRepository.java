@@ -11,9 +11,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public abstract class AbstractRepository<T extends Entity> implements Repository<T>{
-//    private static final String SELECT_ALL = "SELECT* FROM";
-//    private static final String SELECT = "SELECT ? FROM ?";
-//    private static final String ALL = "*";
     private static final String INSERT = "INSERT INTO";
     private ConnectionWrapper connection;
 
@@ -22,7 +19,6 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
     }
 
     public List<T> executeQuery(String query, List<Object>params)throws RepositoryException {
-//        String preparedQuery = SELECT_ALL + " " + getTableName() + " " + query;
         try {
             PreparedStatement preparedStatement = connection.getPreparedStatement(query);
             for (int i = 0; i < params.size(); i++) {
@@ -41,18 +37,6 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
         }
     }
 
-//    //Make class for builders
-//    public PreparedStatement buildSelectQuery(String target,String source,String query, List<Object>params) throws SQLException{
-//        String preparedQuery = SELECT + " " +query;
-//        PreparedStatement preparedStatement = connection.getPreparedStatement(preparedQuery);
-//        preparedStatement.setString(1,target);
-//        preparedStatement.setString(2,source);
-//        for (int i = 0; i < params.size(); i++) {
-//            preparedStatement.setObject(i + 3, params.get(i));
-//        }
-//        return preparedStatement;
-//    }
-
     public List<T> queryForAll() throws RepositoryException{
         String preparedQuery = String.join(" ","select",getTableName()+".*","from",getTableName());
         return executeQuery(preparedQuery, Collections.emptyList());
@@ -65,7 +49,7 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
 
     @Override
     public List<T> query(Specification specification) throws RepositoryException{
-        String specificationQuery= specification.toSql();
+        String specificationQuery = specification.toSql();
         List<Object> parameters = specification.getParameters();
         String preparedQuery = String.join(" ","SELECT",getTableName()+".*","FROM",getTableName(),specificationQuery);
         return executeQuery(preparedQuery,parameters);
@@ -122,10 +106,24 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
     }
 
     @Override
-    public void remove(T object) {
-        throw new UnsupportedOperationException();
+    public void remove(T object) throws RepositoryException{
+        String deleteQuery = buildDeleteQuery(object);
+        try{
+            PreparedStatement preparedStatement = connection.getPreparedStatementGeneratedKeys(deleteQuery);
+            int affectedRows = preparedStatement.executeUpdate();
+
+            if (affectedRows == 0) {
+                throw new RepositoryException("Deleting failed, no rows affected.");
+            }
+        }catch (SQLException e){
+            throw new RepositoryException(e.getMessage(),e);
+        }
     }
 
+
+    public String buildDeleteQuery(T object){
+        return String.join(" ","DELETE FROM",getTableName(),"WHERE",getTableName()+"_id='",object.getId().toString()+"';");
+    }
 
     public String buildInsertQuery(T object, Map<String,Object> fields){
         String fieldNames = "(" + String.join(",", fields.keySet()) + ")";
@@ -140,7 +138,6 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
         return String.join(" ", INSERT, getTableName(),fieldNames,fieldValues);
     }
 
-    //NOT TESTED
     public String buildUpdateQuery(T object, Map<String,Object> fields){
         String setValues = "SET "+String.join(",", fields.entrySet()
                 .stream()

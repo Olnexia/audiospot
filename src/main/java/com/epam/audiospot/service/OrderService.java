@@ -1,5 +1,6 @@
 package com.epam.audiospot.service;
 
+import com.epam.audiospot.entity.AudioTrack;
 import com.epam.audiospot.entity.Order;
 import com.epam.audiospot.entity.OrderedTrack;
 import com.epam.audiospot.exception.RepositoryException;
@@ -8,8 +9,11 @@ import com.epam.audiospot.repository.OrderRepository;
 import com.epam.audiospot.repository.OrderedTrackRepository;
 import com.epam.audiospot.repository.RepositoryCreator;
 import com.epam.audiospot.repository.specification.OrderByUserIdAndStatusSpecification;
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class OrderService implements Service {
 
@@ -48,6 +52,23 @@ public class OrderService implements Service {
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);
         }
+    }
+
+    public void deleteOrder(Order order)throws ServiceException{
+        try(RepositoryCreator repositoryCreator = new RepositoryCreator()){
+            OrderRepository repository = repositoryCreator.getOrderRepository();
+            repository.remove(order);
+        }catch (RepositoryException e){
+            throw new ServiceException(e.getMessage(),e);
+        }
+    }
+
+    //TODO make test
+    public BigDecimal calculateTotalPrice(Long orderId) throws ServiceException{
+        AudioTrackService trackService = new AudioTrackService();
+        List<AudioTrack> orderedTracks = trackService.findOrderedTracks(orderId);
+        List<BigDecimal> prices = orderedTracks.stream().map(AudioTrack::getPrice).collect(Collectors.toList());
+        return prices.stream().reduce(BigDecimal.ZERO,BigDecimal::add);
     }
 }
 

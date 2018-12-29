@@ -13,7 +13,7 @@ public class Order implements Entity {
     private LocalDate orderDate;
     private boolean paid;
 
-    public Order(Long orderId, long userId, LocalDate orderDate,boolean paid) {
+    public Order(Long orderId, Long userId, LocalDate orderDate,boolean paid) {
         this.id = orderId;
         this.orderDate = orderDate;
         this.userId = userId;

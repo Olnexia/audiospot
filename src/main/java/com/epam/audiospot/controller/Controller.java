@@ -1,7 +1,7 @@
 package com.epam.audiospot.controller;
 
 import com.epam.audiospot.command.Command;
-import com.epam.audiospot.command.CommandFactory;
+import com.epam.audiospot.command.factory.CommandFactory;
 import com.epam.audiospot.command.CommandResult;
 import com.epam.audiospot.exception.CommandCreationException;
 import com.epam.audiospot.exception.CommandExecutionException;
@@ -34,7 +34,11 @@ public class Controller extends HttpServlet {
             String command = request.getParameter(COMMAND_PARAMETER);
             Command action = CommandFactory.create(command);
             CommandResult commandResult = action.execute(request, response);
-            request.getRequestDispatcher(commandResult.getPage()).forward(request, response);
+            if (commandResult.isRedirect()) {
+                response.sendRedirect(commandResult.getPage());
+            } else {
+                request.getRequestDispatcher(commandResult.getPage()).forward(request, response);
+            }
         }catch (CommandCreationException | CommandExecutionException e) {
             throw new IllegalArgumentException(e.getMessage(),e); //Just to see
         }

@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 
 public class OrderBuilder implements Builder<Order> {
+
     @Override
     public Order build(ResultSet resultSet) throws SQLException {
         Long id = resultSet.getLong(Order.ID_LABEL);
