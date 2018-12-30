@@ -17,6 +17,7 @@ public enum CommandType {
     ADD_ALBUM("addAlbum",new AddAlbumCommand()),
     SHOW_AUDIOSETS("showAudioSets",new ShowAudioSetsCommand()),
     SHOW_CLIENTS("showClients",new ShowClientsCommand()),
+    CHANGE_CLIENT_STATUS("changeClientStatus",new ChangeClientStatusCommand()),
     SHOW_PLAYLIST("showPlaylist",new ShowPlaylistCommand()),
     BUY_TRACKS("buyTracks",new BuyTracksCommand()),
     ORDER_TRACK("orderTrack",new OrderTrackCommand()),

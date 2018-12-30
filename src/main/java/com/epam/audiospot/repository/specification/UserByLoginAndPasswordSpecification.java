@@ -1,7 +1,5 @@
 package com.epam.audiospot.repository.specification;
 
-import com.epam.audiospot.repository.specification.Specification;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

@@ -1,7 +1,6 @@
 package com.epam.audiospot.entity;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 public class User implements Entity, Serializable {
     public static final String ID_LABEL = "user_id";
@@ -9,7 +8,8 @@ public class User implements Entity, Serializable {
     public static final String SURNAME_LABEL = "surname";
     public static final String LOGIN_LABEL = "login";
     public static final String PASSWORD_LABEL = "password";
-    public static final String ACCOUNT_LABEL = "account";
+    public static final String ACTIVE_LABEL = "active";
+    public static final String DISCOUNT_LABEL = "discount";
     public static final String ROLE_LABEL = "role";
 
     private Long id;
@@ -17,17 +17,19 @@ public class User implements Entity, Serializable {
     private String surname;
     private String login;
     private String password;
-    private BigDecimal account;
+    private boolean active;
+    private int discount;
     private Role role;
 
     public User(Long id, String name, String surname, String login, String password,
-                BigDecimal account, Role role) {
+                boolean active, int discount, Role role) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.login = login;
         this.password = password;
-        this.account = account;
+        this.active = active;
+        this.discount = discount;
         this.role = role;
     }
 
@@ -51,8 +53,12 @@ public class User implements Entity, Serializable {
         return password;
     }
 
-    public BigDecimal getAccount() {
-        return account;
+    public int getDiscount() {
+        return discount;
+    }
+
+    public boolean isActive() {
+        return active;
     }
 
     public Role getRole() {
@@ -64,4 +70,11 @@ public class User implements Entity, Serializable {
         this.id = id;
     }
 
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public void setDiscount(int discount) {
+        this.discount = discount;
+    }
 }

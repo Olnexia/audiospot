@@ -20,9 +20,7 @@
            <h1><fmt:message key="hello"/></h1>
            <h2><fmt:message key="slogan"/></h2>
        </div>
-       <div class ="center-img">
-           <img src="images/listen-to-music-png.png"/>
-       </div>
+       <div class ="main-img"></div>
        </div>
    </body>
 </html>

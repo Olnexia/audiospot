@@ -36,7 +36,8 @@ public class UserRepository extends AbstractRepository<User> {
         fields.put(User.PASSWORD_LABEL,user.getPassword());
         fields.put(User.NAME_LABEL,user.getName());
         fields.put(User.SURNAME_LABEL,user.getSurname());
-        fields.put(User.ACCOUNT_LABEL,user.getAccount());
+        fields.put(User.ACTIVE_LABEL,user.isActive());
+        fields.put(User.DISCOUNT_LABEL,user.getDiscount());
         fields.put(User.ROLE_LABEL,user.getRole());
         return fields;
     }

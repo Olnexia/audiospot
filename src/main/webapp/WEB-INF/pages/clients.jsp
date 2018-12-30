@@ -7,36 +7,45 @@
 
 <fmt:setLocale value="${sessionScope.lang}"/>
 
-<fmt:bundle basename="pagecontent" prefix ="login.">
+<fmt:bundle basename="pagecontent" prefix ="clients.">
 <html>
 <head>
-    <title>
-
-    </title>
+    <title><fmt:message key="title"/></title>
+    <style><jsp:include page = "/css/table.css"/></style>
     <jsp:include page = "../fragments/header.jsp"/>
 </head>
 <body>
 <div class="content">
-    <h2>Clients</h2>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>name</th>
-            <th>surname</th>
-            <th>login</th>
-            <th>account</th>
+    <table class="table">
+        <tr class="tr">
+            <th class="th">ID</th>
+            <th class="th"><fmt:message key="name"/></th>
+            <th class="th"><fmt:message key="surname"/></th>
+            <th class="th"><fmt:message key="login"/></th>
+            <th class="th"><fmt:message key="discount"/></th>
+            <th class="th"><fmt:message key="status"/></th>
+            <th></th>
         </tr>
         <c:forEach items="${clients}" var="client" varStatus="status">
-            <tr>
-                <td>${client.id}</td>
-                <td>${client.name}</td>
-                <td>${client.surname}</td>
-                <td>${client.login}</td>
-                <td>${client.account}</td>
-                <td><a href="#">Add bonus</a></td>
-                <%--<c:if test="${sessionScope.user.active eq true}">--%>
-                    <%--<td><a href="#">Block</a></td>--%>
-                <%--</c:if>--%>
+            <tr class="tr">
+                <td class="td">${client.id}</td>
+                <td class="td">${client.name}</td>
+                <td class="td">${client.surname}</td>
+                <td class="td">${client.login}</td>
+                <td class="td">${client.discount}</td>
+                <td class="td">
+                    <c:if test="${client.active eq true}"><fmt:message key="active"/></c:if>
+                    <c:if test="${client.active eq false}"><fmt:message key="blocked"/></c:if>
+                </td>
+                <td class="manage-buttons">
+                    <a class="change-bonus" href ="#"><fmt:message key="changeBonus"/></a>
+                    <c:if test="${client.active eq true}">
+                        <a class="block" href="${pageContext.servletContext.contextPath}/controller?command=changeClientStatus&userId=${client.id}"><fmt:message key="block"/></a>
+                    </c:if>
+                    <c:if test="${client.active eq false}">
+                        <a class="block" href="${pageContext.servletContext.contextPath}/controller?command=changeClientStatus&userId=${client.id}"><fmt:message key="unblock"/></a>
+                    </c:if>
+                </td>
             </tr>
         </c:forEach>
     </table>

@@ -15,6 +15,7 @@ import java.util.Optional;
 public class LoginCommand implements Command {
     private static final String LOGIN_REQUEST_PARAMETER = "login";
     private static final String PASSWORD_REQUEST_PARAMETER = "password";
+    private static final String WRONG_INPUT_REQUEST_PARAMETER = "wrongInput";
     private static final String USER_SESSION_PARAMETER = "user";
 
     @Override
@@ -33,10 +34,7 @@ public class LoginCommand implements Command {
                 page = CommandResult.forward(Page.MAIN.getPath());
             }else {
                 page = CommandResult.forward(Page.LOGIN.getPath());
-                //TODO add some message like wrong password or login
-//            request.setAttribute("errorLoginPassMessage",
-//                    MessageManager.getProperty("message.loginerror"));
-//            page = ConfigurationManager.getProperty("path.page.login");
+                request.setAttribute(WRONG_INPUT_REQUEST_PARAMETER,true);
             }
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);
