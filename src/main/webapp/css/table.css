@@ -10,7 +10,7 @@ table.table {
     margin-bottom: 5px;
 }
 
-.table thead tr{
+.table thead tr,.table tfoot tr{
     background: #4D4D4D;
     font-family: 'Open Sans Condensed', sans-serif;
     color: #848484;

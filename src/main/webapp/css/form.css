@@ -66,9 +66,30 @@
     padding: 8px 18px;
     text-decoration: none;
     text-transform: uppercase;
+    width: 160px;
+    text-align: center;
 }
+
+.form-style .button:hover,
 .form-style input[type="button"]:hover,
 .form-style input[type="submit"]:hover {
-    background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
-    background-color:#34CACA;
+    background: #34CACA linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
 }
+
+.form-style .buttons{
+    display: flex;
+    justify-content:space-around;
+    flex-flow: wrap;
+}
+
+@media screen and (max-width: 600px) {
+    .form-style{
+        width: 100%;
+        margin: 0;
+        padding-right: 0;
+    }
+    .form-style h2{
+        margin-right: 0;
+    }
+}
+

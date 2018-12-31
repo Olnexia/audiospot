@@ -28,7 +28,7 @@
 
             <c:if test="${sessionScope.user.role.value eq 'client'}">
                 <a href="${pageContext.servletContext.contextPath}/controller?command=showPlaylist"><fmt:message key="myPlaylist"/></a>
-                <a href="${pageContext.servletContext.contextPath}/controller?command=buyTracks"><fmt:message key="buyNewTrack"/></a>
+                <a href="${pageContext.servletContext.contextPath}/controller?command=buyTracks"><fmt:message key="orderNewTrack"/></a>
                 <a href="${pageContext.servletContext.contextPath}/controller?command=payOrder"><fmt:message key="PayOrder"/></a>
             </c:if>
 

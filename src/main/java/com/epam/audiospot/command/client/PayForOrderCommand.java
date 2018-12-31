@@ -31,7 +31,7 @@ public class PayForOrderCommand implements Command {
             Optional<Order> order = orderService.findOrder(user.getId(),false);
             if(order.isPresent()){
                 Long orderId = order.get().getId();
-                request.setAttribute("orderedId",orderId);
+                request.setAttribute("orderId",orderId);
                 List<AudioTrack> orderedTracks = trackService.findOrderedTracks(orderId);
                 request.setAttribute("orderedTracks",orderedTracks);
                 List<BigDecimal> prices = orderedTracks.stream().map(AudioTrack::getPrice).collect(Collectors.toList());

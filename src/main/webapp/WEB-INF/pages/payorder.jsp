@@ -6,61 +6,95 @@
          pageEncoding ="utf-8"%>
 
 <fmt:setLocale value="${sessionScope.lang}"/>
-<fmt:bundle basename="pagecontent" prefix ="addTrack.">
 
+<fmt:bundle basename="pagecontent" prefix ="payorder.">
 <html>
 <head>
-    <title>Pay an order</title>
+    <title><fmt:message key="pageTitle"/></title>
     <style><jsp:include page = "/css/form.css"/></style>
+    <style><jsp:include page = "/css/table.css"/></style>
     <jsp:include page = "../fragments/header.jsp"/>
 </head>
 <body>
 <div class="content">
-    <h2>Pay an order</h2>
         <c:if test="${orderedTracks eq null}">
-            <h3>Nothing to pay for</h3>
+            <h3><fmt:message key="emptyOrder"/></h3>
         </c:if>
+
         <c:if test="${orderedTracks ne null}">
             <div class="form-style">
                 <h2><fmt:message key="details"/></h2>
                 <form action = "${pageContext.servletContext.contextPath}/controller?command=submitPayment" method ="post">
-                    <label for="frmCCNum">
-                        <input type="text" name="cardNumber" id="frmCCNum" required autocomplete="cc-number">
+                    <label>
+                        <input type="text" name="cardNumber" required placeholder="<fmt:message key="cardNumber"/>" autocomplete="cc-number">
                     </label>
-                    <label for="frmCCCVC">
-                        <input type="text" name="cvc" id="frmCCCVC" required autocomplete="cc-csc">
-
+                    <label>
+                        <input type="text" name="cvc" required placeholder="<fmt:message key="cvc"/>" autocomplete="cc-csc">
                     </label>
-                    <label for="frmCCExp">
-                        <input type="text" name="ccExp" id="frmCCExp" required placeholder="MM-YYYY" autocomplete="cc-exp">
-
+                    <label>
+                        <input type="text" name="ccExp" required placeholder="<fmt:message key="expiry"/>" autocomplete="cc-exp">
                     </label>
-                    <label title="<fmt:message key="pay"/>">
-                        <input type="submit" value="<fmt:message key="Pay"/>"/>
-                    </label>
-                    <a class="button" href ="${pageContext.servletContext.contextPath}/controller?command=cancelOrder" >Cancel order</a>
+                    <div class="buttons">
+                        <label>
+                            <input type="submit" value="<fmt:message key="pay"/>"/>
+                        </label>
+                        <div>
+                            <a class="button" href ="${pageContext.servletContext.contextPath}/controller?command=cancelOrder" >
+                                <fmt:message key="cancel"/>
+                            </a>
+                        </div>
+                    </div>
                 </form>
             </div>
-            <table>
-                <th>Ordered tracks in order № ${orderedId}</th>
-                <c:forEach items="${orderedTracks}" var="track"  varStatus="status">
+            <div>
+                <table class="table">
+                    <caption><fmt:message key="tableCaption"/> ${orderId}</caption>
+                    <thead>
                     <tr>
-                        <td>${track.artist.name}</td>
-                        <td>${track.title}</td>
-                        <td>${track.releaseYear}</td>
-                        <td>${track.genre.value}</td>
-                        <td>${track.price}</td>
+                        <th><fmt:message key="artist"/></th>
+                        <th><fmt:message key="title"/></th>
+                        <th><fmt:message key="year"/></th>
+                        <th><fmt:message key="genre"/></th>
+                        <th><fmt:message key="price"/></th>
                     </tr>
-                </c:forEach>
-                <tr>
-                    <td>Total price</td>
-                    <td>${orderTotalPrice}</td>
-
-                </tr>
-            </table>
-
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${orderedTracks}" var="track"  varStatus="status">
+                        <tr>
+                            <td>${track.artist.name}</td>
+                            <td>${track.title}</td>
+                            <td>${track.releaseYear}</td>
+                            <c:choose>
+                                <c:when test = "${track.genre.value eq 'rock'}">
+                                    <td><fmt:message key="rock"/></td>
+                                </c:when>
+                                <c:when test = "${track.genre.value eq 'rap'}">
+                                    <td><fmt:message key="rap"/></td>
+                                </c:when>
+                                <c:when test = "${track.genre.value eq 'classic'}">
+                                    <td><fmt:message key="classic"/></td>
+                                </c:when>
+                                <c:when test = "${track.genre.value eq 'pop'}">
+                                    <td><fmt:message key="pop"/></td>
+                                </c:when>
+                            </c:choose>
+                            <td>${track.price}</td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><fmt:message key="totalPrice"/></td>
+                        <td>${orderTotalPrice}</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
         </c:if>
 </div>
-    </body>
-    </html>
-    </fmt:bundle>
+</body>
+</html>
+</fmt:bundle>
