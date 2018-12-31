@@ -17,6 +17,7 @@ public class LoginCommand implements Command {
     private static final String PASSWORD_REQUEST_PARAMETER = "password";
     private static final String WRONG_INPUT_REQUEST_PARAMETER = "wrongInput";
     private static final String USER_SESSION_PARAMETER = "user";
+    private static final String BLOCKED_REQUEST_PARAMETER = "blocked";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws CommandExecutionException {
@@ -26,12 +27,17 @@ public class LoginCommand implements Command {
         UserService service = new UserService();
         CommandResult page;
         try{
-            Optional<User> user = service.login(login,password);
-            if(user.isPresent()){
-                HttpSession session = request.getSession(true);
-                request.setAttribute(USER_SESSION_PARAMETER,user.get());
-                session.setAttribute(USER_SESSION_PARAMETER,user.get());
-                page = CommandResult.forward(Page.MAIN.getPath());
+            Optional<User> userOptional = service.login(login,password);
+            if(userOptional.isPresent()){
+                User user = userOptional.get();
+                if(user.isActive()){
+                    HttpSession session = request.getSession(true);
+                    session.setAttribute(USER_SESSION_PARAMETER,user);
+                    page = CommandResult.forward(Page.MAIN.getPath());
+                }else{
+                    request.setAttribute(BLOCKED_REQUEST_PARAMETER,true);
+                    page = CommandResult.forward(Page.LOGIN.getPath());
+                }
             }else {
                 page = CommandResult.forward(Page.LOGIN.getPath());
                 request.setAttribute(WRONG_INPUT_REQUEST_PARAMETER,true);
