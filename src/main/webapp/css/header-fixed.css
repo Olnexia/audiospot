@@ -39,7 +39,7 @@
 .content{
     display: flex;
     flex-wrap: wrap;
-    margin-top: 80px;
+    margin-top: 65px;
 }
 
 @media screen and (max-width: 700px) {
@@ -47,7 +47,7 @@
         flex-direction: column;
     }
     .header{
-        padding: 0px;
+        padding: 0;
     }
     .logo{
         margin-right:initial;
@@ -70,7 +70,6 @@ body{
 a.button{
 	-webkit-appearance: button;
 	-moz-appearance: button;
-	appearance: button;
 	text-decoration: none;
 	color:initial;
 }

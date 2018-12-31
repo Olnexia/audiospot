@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class Controller extends HttpServlet {
-    private static final String COMMAND_PARAMETER = "command";
+    private static final String COMMAND_REQUEST_PARAMETER = "command";
 
     public void init() throws ServletException {
         super.init();
@@ -30,7 +30,7 @@ public class Controller extends HttpServlet {
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
         try {
-            String command = request.getParameter(COMMAND_PARAMETER);
+            String command = request.getParameter(COMMAND_REQUEST_PARAMETER);
             Command action = CommandFactory.create(command);
             CommandResult commandResult = action.execute(request, response);
             if (commandResult.isRedirect()) {
@@ -39,11 +39,7 @@ public class Controller extends HttpServlet {
                 request.getRequestDispatcher(commandResult.getPage()).forward(request, response);
             }
         }catch (CommandCreationException | CommandExecutionException e) {
-            throw new IllegalArgumentException(e.getMessage(),e); //Just to see
+            //TODO mb error page
         }
-    }
-
-    private void dispath(HttpServletRequest request,HttpServletResponse response,CommandResult commandResult){
-
     }
 }
