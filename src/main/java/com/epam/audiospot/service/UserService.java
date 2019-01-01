@@ -9,7 +9,6 @@ import com.epam.audiospot.repository.specification.UserByIdSpecification;
 import com.epam.audiospot.repository.specification.UserByLoginAndPasswordSpecification;
 import com.epam.audiospot.repository.specification.UserByRoleSpecification;
 import org.apache.commons.codec.digest.DigestUtils;
-
 import java.util.List;
 import java.util.Optional;
 

@@ -1,13 +1,12 @@
 package com.epam.audiospot.connection;
 
 import com.epam.audiospot.exception.ConnectionException;
-
 import java.sql.*;
 
 public class ConnectionWrapper{
     private Connection connection;
 
-    public ConnectionWrapper(String url, String user, String password) throws ConnectionException{
+    public ConnectionWrapper(String url, String user, String password){
         try{
             connection = DriverManager.getConnection(url,user,password);
         }catch (SQLException e){
@@ -40,7 +39,7 @@ public class ConnectionWrapper{
             try {
                 statement.close();
             } catch (SQLException e) {
-                //log or exc
+                throw new ConnectionException(e.getMessage(),e);
             }
         }
     }

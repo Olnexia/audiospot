@@ -8,12 +8,15 @@ import com.epam.audiospot.entity.Genre;
 import com.epam.audiospot.exception.CommandExecutionException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.AudioTrackService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
 
 public class SubmitTrackCommand implements Command {
     private static final String ARTIST_LABEL = "artist";
+    private static final Logger logger = LogManager.getLogger(SubmitTrackCommand.class);
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws CommandExecutionException {
@@ -27,6 +30,7 @@ public class SubmitTrackCommand implements Command {
         try{
             AudioTrack track = service.buildTrack(title,price,releaseYear,genre,artistName);
             service.submitTrack(track);
+            logger.info("New track with id "+track.getId()+" added.");
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);
         }

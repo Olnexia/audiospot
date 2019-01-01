@@ -7,13 +7,15 @@ import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.CommandExecutionException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.UserService;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Optional;
 
 public class ChangeClientStatusCommand implements Command {
     private static final String USER_ID_REQUEST_PARAMETER = "userId";
+    private static final Logger logger = LogManager.getLogger(ChangeClientStatusCommand.class);
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws CommandExecutionException {
@@ -26,6 +28,11 @@ public class ChangeClientStatusCommand implements Command {
                 boolean status = user.isActive();
                 user.setActive(!status);
                 service.saveUser(user);
+                if(user.isActive()){
+                    logger.info("User with id "+user.getId()+" unblocked.");
+                }else{
+                    logger.info("User with id "+user.getId()+" blocked.");
+                }
             }
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);

@@ -15,9 +15,6 @@ import java.util.Optional;
 public class LoginCommand implements Command {
     private static final String LOGIN_REQUEST_PARAMETER = "login";
     private static final String PASSWORD_REQUEST_PARAMETER = "password";
-    private static final String WRONG_INPUT_REQUEST_PARAMETER = "wrongInput";
-    private static final String USER_SESSION_PARAMETER = "user";
-    private static final String BLOCKED_REQUEST_PARAMETER = "blocked";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws CommandExecutionException {
@@ -32,15 +29,15 @@ public class LoginCommand implements Command {
                 User user = userOptional.get();
                 if(user.isActive()){
                     HttpSession session = request.getSession(true);
-                    session.setAttribute(USER_SESSION_PARAMETER,user);
+                    session.setAttribute("user",user);
                     page = CommandResult.forward(Page.MAIN.getPath());
                 }else{
-                    request.setAttribute(BLOCKED_REQUEST_PARAMETER,true);
+                    request.setAttribute("blocked",true);
                     page = CommandResult.forward(Page.LOGIN.getPath());
                 }
             }else {
                 page = CommandResult.forward(Page.LOGIN.getPath());
-                request.setAttribute(WRONG_INPUT_REQUEST_PARAMETER,true);
+                request.setAttribute("wrongInput",true);
             }
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);

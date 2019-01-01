@@ -1,9 +1,8 @@
-package com.epam.audiospot;
+package com.epam.audiospot.command.factory;
 
 import com.epam.audiospot.command.Command;
-import com.epam.audiospot.command.factory.CommandFactory;
 import com.epam.audiospot.command.common.LoginCommand;
-import com.epam.audiospot.exception.CommandCreationException;
+import com.epam.audiospot.exception.IllegalCommandException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,7 +10,7 @@ public class CommandFactoryTest {
     private static final String TEST_COMMAND = "login";
 
     @Test
-    public void shouldCreateLoginCommandWhenInputIsLogin() throws CommandCreationException {
+    public void shouldCreateLoginCommandWhenInputIsLogin() throws IllegalCommandException {
         //given
         //when
         Command actual = CommandFactory.create(TEST_COMMAND);

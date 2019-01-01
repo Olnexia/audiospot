@@ -1,6 +1,5 @@
 package com.epam.audiospot.connection;
 
-import com.epam.audiospot.exception.ConnectionException;
 import com.epam.audiospot.exception.ConnectionPoolException;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -27,8 +26,6 @@ public class ConnectionPool{
                     initConnectionPool(instance);
                     initialized.set(true);
                 }
-            }catch (ConnectionException e){
-                throw new IllegalStateException(e.getMessage(),e);
             }finally {
                 lock.unlock();
             }
@@ -36,7 +33,7 @@ public class ConnectionPool{
         return instance;
     }
 
-    private static void initConnectionPool(ConnectionPool connectionPool) throws ConnectionException {
+    private static void initConnectionPool(ConnectionPool connectionPool){
         Queue<ConnectionWrapper> connections = new LinkedList <>();
         for (int i = 0; i < INITIAL_POOL_SIZE; i++) {
             ConnectionWrapper connection = ConnectionFactory.getInstance();
@@ -45,7 +42,7 @@ public class ConnectionPool{
         connectionPool.setPool(connections);
     }
 
-    public ConnectionWrapper getConnection() throws ConnectionPoolException{
+    public ConnectionWrapper getConnection() {
         try {
             lock.lock();
             semaphore.acquire();

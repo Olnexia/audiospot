@@ -1,8 +1,7 @@
-package com.epam.audiospot;
+package com.epam.audiospot.connection;
 
-import com.epam.audiospot.connection.ConnectionFactory;
-import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.exception.ConnectionException;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class ConnectionFactoryTest {
@@ -12,5 +11,6 @@ public class ConnectionFactoryTest {
         //when
         ConnectionWrapper actual = ConnectionFactory.getInstance();
         //then
+        Assert.assertNotNull(actual);
     }
 }

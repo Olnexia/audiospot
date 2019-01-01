@@ -3,8 +3,9 @@ package com.epam.audiospot.controller;
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.factory.CommandFactory;
 import com.epam.audiospot.command.CommandResult;
-import com.epam.audiospot.exception.CommandCreationException;
 import com.epam.audiospot.exception.CommandExecutionException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,22 +14,23 @@ import java.io.IOException;
 
 public class Controller extends HttpServlet {
     private static final String COMMAND_REQUEST_PARAMETER = "command";
+    private static final Logger logger = LogManager.getLogger(Controller.class);
 
     public void init() throws ServletException {
         super.init();
     }
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException,ServletException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) {
         processRequest(request,response);
     }
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response){
         processRequest(request, response);
     }
 
-    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
+    private void processRequest(HttpServletRequest request, HttpServletResponse response) {
         try {
             String command = request.getParameter(COMMAND_REQUEST_PARAMETER);
             Command action = CommandFactory.create(command);
@@ -38,8 +40,8 @@ public class Controller extends HttpServlet {
             } else {
                 request.getRequestDispatcher(commandResult.getPage()).forward(request, response);
             }
-        }catch (CommandCreationException | CommandExecutionException e) {
-            //TODO mb error page
+        }catch (CommandExecutionException | ServletException | IOException e) {
+            logger.error(e.getMessage());
         }
     }
 }

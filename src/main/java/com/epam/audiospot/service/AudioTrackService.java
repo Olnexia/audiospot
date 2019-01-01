@@ -8,11 +8,9 @@ import com.epam.audiospot.repository.RepositoryCreator;
 import com.epam.audiospot.repository.specification.AudioTrackByOrderIdSpecification;
 import com.epam.audiospot.repository.specification.AudioTracksByUserIdSpecification;
 import com.epam.audiospot.repository.specification.AvailableTracksByUserIdSpecification;
-
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class AudioTrackService implements Service {
 
@@ -21,15 +19,6 @@ public class AudioTrackService implements Service {
             AudioRepository repository = repositoryCreator.getAudioRepository();
             repository.add(track);
         }catch (RepositoryException e){
-            throw new ServiceException(e.getMessage(),e);
-        }
-    }
-
-    public List<AudioTrack> findAllTracks() throws ServiceException{
-        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
-            AudioRepository repository = repositoryCreator.getAudioRepository();
-            return repository.queryForAll();
-        } catch (RepositoryException e) {
             throw new ServiceException(e.getMessage(),e);
         }
     }

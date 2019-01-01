@@ -2,23 +2,13 @@ package com.epam.audiospot.repository;
 
 import com.epam.audiospot.connection.ConnectionPool;
 import com.epam.audiospot.connection.ConnectionWrapper;
-import com.epam.audiospot.entity.Artist;
-import com.epam.audiospot.entity.Order;
-import com.epam.audiospot.exception.ConnectionPoolException;
-import com.epam.audiospot.exception.RepositoryException;
-
-//Maybe change to classic factory method?
 
 public class RepositoryCreator implements AutoCloseable {
     private ConnectionWrapper connection ;
 
-    public RepositoryCreator() throws RepositoryException {
-        try {
-            ConnectionPool connectionPool = ConnectionPool.getInstance();
-            this.connection = connectionPool.getConnection();
-        }catch(ConnectionPoolException e){
-            throw new RepositoryException(e.getMessage(),e);
-        }
+    public RepositoryCreator() {
+        ConnectionPool connectionPool = ConnectionPool.getInstance();
+        this.connection = connectionPool.getConnection();
     }
 
     public UserRepository getUserRepository(){

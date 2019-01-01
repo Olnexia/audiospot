@@ -1,7 +1,6 @@
 package com.epam.audiospot.service;
 
 import com.epam.audiospot.entity.Artist;
-import com.epam.audiospot.exception.CommandExecutionException;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.repository.ArtistRepository;

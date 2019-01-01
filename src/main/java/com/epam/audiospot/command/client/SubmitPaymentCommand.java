@@ -9,6 +9,8 @@ import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.CommandExecutionException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.OrderService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -20,14 +22,13 @@ public class SubmitPaymentCommand implements Command {
     private static final String CVC_NUMBER_REQUEST_PARAMETER = "cvc";
     private static final String EXP_DATE_REQUEST_PARAMETER = "ccExp";
     private static final String USER_SESSION_PARAMETER = "user";
+    private static final Logger logger = LogManager.getLogger(SubmitPaymentCommand.class);
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws CommandExecutionException {
         String cardNumber = request.getParameter(CARD_NUMBER_REQUEST_PARAMETER);
         String cvc = request.getParameter(CVC_NUMBER_REQUEST_PARAMETER);
         String expiry = request.getParameter(EXP_DATE_REQUEST_PARAMETER);
-
-        //TODO think about order handling like where would be order setted to true
         HttpSession session = request.getSession(false);
         User user = (User)session.getAttribute(USER_SESSION_PARAMETER);
         try{
@@ -40,11 +41,10 @@ public class SubmitPaymentCommand implements Command {
                 if(verifier.verify(cardNumber,cvc,expiry,orderTotalPrice)){
                     order.setPaid(true);
                     orderService.saveOrder(order);
+                    logger.info("Payment of order " + order.getId()+" is successful.");
                 }else {
-                    //not enougth money
+                    logger.info("Payment of order " + order.getId()+" not passed.");
                 }
-            }else{
-                //nothing to pay for
             }
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);
