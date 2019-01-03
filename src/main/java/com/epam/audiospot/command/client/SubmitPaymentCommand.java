@@ -1,9 +1,6 @@
 package com.epam.audiospot.command.client;
 
-import com.epam.audiospot.command.Command;
-import com.epam.audiospot.command.CommandResult;
-import com.epam.audiospot.command.Page;
-import com.epam.audiospot.command.PaymentVerifier;
+import com.epam.audiospot.command.*;
 import com.epam.audiospot.entity.Order;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.CommandExecutionException;
@@ -49,6 +46,6 @@ public class SubmitPaymentCommand implements Command {
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);
         }
-        return CommandResult.forward(Page.PAY_ORDER.getPath());
+        return CommandResult.redirect(Redirect.SHOW_PLAYLIST.getPath());
     }
 }

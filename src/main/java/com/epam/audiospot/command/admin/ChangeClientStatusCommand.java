@@ -2,6 +2,7 @@ package com.epam.audiospot.command.admin;
 
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
+import com.epam.audiospot.command.Redirect;
 import com.epam.audiospot.command.factory.CommandType;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.CommandExecutionException;
@@ -37,7 +38,6 @@ public class ChangeClientStatusCommand implements Command {
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);
         }
-        Command showClientsCommand = CommandType.SHOW_CLIENTS.getCommand();
-        return showClientsCommand.execute(request,response);
+        return CommandResult.redirect(Redirect.SHOW_CLIENTS.getPath());
     }
 }

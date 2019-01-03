@@ -37,7 +37,9 @@
                            <button type="submit"><fmt:message key="loginButtonMessage"/></button>
                        </label>
                        <div class="message">
-                           <p class=""><fmt:message key="registeredQuestion"/> <a href="#"><fmt:message key="createAnAccount"/></a></p>
+                           <p class=""><fmt:message key="registeredQuestion"/>
+                               <a href="#"><fmt:message key="createAnAccount"/></a>
+                           </p>
                            <c:if test="${wrongInput eq true}">
                                <p class ="error"><fmt:message key="wrongInput"/></p>
                            </c:if>
@@ -45,7 +47,6 @@
                                <p class ="error"><fmt:message key="blocked"/></p>
                            </c:if>
                        </div>
-
                    </form>
                </div>
            </div>

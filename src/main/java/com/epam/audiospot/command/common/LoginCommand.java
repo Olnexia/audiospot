@@ -2,7 +2,8 @@ package com.epam.audiospot.command.common;
 
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
-import com.epam.audiospot.command.Page;
+import com.epam.audiospot.command.Forward;
+import com.epam.audiospot.command.Redirect;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.CommandExecutionException;
 import com.epam.audiospot.exception.ServiceException;
@@ -22,7 +23,7 @@ public class LoginCommand implements Command {
         String password = request.getParameter(PASSWORD_REQUEST_PARAMETER);
 
         UserService service = new UserService();
-        CommandResult page;
+        CommandResult commandResult;
         try{
             Optional<User> userOptional = service.login(login,password);
             if(userOptional.isPresent()){
@@ -30,18 +31,18 @@ public class LoginCommand implements Command {
                 if(user.isActive()){
                     HttpSession session = request.getSession(true);
                     session.setAttribute("user",user);
-                    page = CommandResult.forward(Page.MAIN.getPath());
+                    commandResult = CommandResult.redirect(Redirect.HOME.getPath());
                 }else{
                     request.setAttribute("blocked",true);
-                    page = CommandResult.forward(Page.LOGIN.getPath());
+                    commandResult = CommandResult.forward(Forward.LOGIN.getPath());
                 }
             }else {
-                page = CommandResult.forward(Page.LOGIN.getPath());
+                commandResult = CommandResult.forward(Forward.LOGIN.getPath());
                 request.setAttribute("wrongInput",true);
             }
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);
         }
-        return page;
+        return commandResult;
     }
 }

@@ -7,7 +7,6 @@ public class AudioTrack implements Entity {
     public static final String ID_LABEL = "audiotrack_id";
     public static final String ALBUM_ID_LABEL = "album_id";
     public static final String AUTHOR_ID_LABEL = "author_id";
-    public static final String AUTHOR_LABEL = "author";
     public static final String TITLE_LABEL = "title";
     public static final String PRICE_LABEL = "price";
     public static final String RELEASE_YEAR_LABEL = "release_year";

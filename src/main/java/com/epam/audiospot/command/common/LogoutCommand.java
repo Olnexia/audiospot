@@ -2,7 +2,7 @@ package com.epam.audiospot.command.common;
 
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
-import com.epam.audiospot.command.Page;
+import com.epam.audiospot.command.Forward;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -15,6 +15,6 @@ public class LogoutCommand implements Command {
         if(session!=null){
             session.invalidate();
         }
-        return CommandResult.forward(Page.LOGIN.getPath());
+        return CommandResult.forward(Forward.LOGIN.getPath());
     }
 }
