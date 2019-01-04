@@ -2,5 +2,5 @@
 <%@ page language = "java" contentType = "text/html;charset=utf-8"
     isELIgnored ="false"
     pageEncoding ="utf-8"%>
-    <jsp:forward page= "WEB-INF/pages/login.jsp"></jsp:forward>
+<jsp:forward page="WEB-INF/pages/login.jsp"/>
 </html>

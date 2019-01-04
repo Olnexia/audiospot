@@ -1,7 +1,8 @@
-package com.epam.audiospot.repository;
+package com.epam.audiospot.repository.creator;
 
 import com.epam.audiospot.connection.ConnectionPool;
 import com.epam.audiospot.connection.ConnectionWrapper;
+import com.epam.audiospot.repository.*;
 
 public class RepositoryCreator implements AutoCloseable {
     private ConnectionWrapper connection ;

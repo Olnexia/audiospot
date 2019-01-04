@@ -2,12 +2,10 @@ package com.epam.audiospot.service;
 
 import com.epam.audiospot.entity.Playlist;
 import com.epam.audiospot.entity.TrackAtPlaylist;
-import com.epam.audiospot.exception.CommandExecutionException;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
-import com.epam.audiospot.repository.OrderRepository;
 import com.epam.audiospot.repository.PlaylistRepository;
-import com.epam.audiospot.repository.RepositoryCreator;
+import com.epam.audiospot.repository.creator.RepositoryCreator;
 import com.epam.audiospot.repository.TrackAtPlaylistRepository;
 import com.epam.audiospot.repository.specification.PlaylistByIdSpecification;
 import com.epam.audiospot.repository.specification.PublicPlaylistsSpecification;

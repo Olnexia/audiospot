@@ -1,21 +1,50 @@
 package com.epam.audiospot.command.factory;
 
 import com.epam.audiospot.command.Command;
+import com.epam.audiospot.command.admin.AddTrackCommand;
+import com.epam.audiospot.command.admin.ChangeClientStatusCommand;
+import com.epam.audiospot.command.admin.ShowClientsCommand;
+import com.epam.audiospot.command.admin.SubmitTrackCommand;
+import com.epam.audiospot.command.client.*;
+import com.epam.audiospot.command.common.HomeCommand;
 import com.epam.audiospot.command.common.LoginCommand;
+import com.epam.audiospot.command.common.LogoutCommand;
 import com.epam.audiospot.exception.IllegalCommandException;
+import com.tngtech.java.junit.dataprovider.DataProvider;
+import com.tngtech.java.junit.dataprovider.DataProviderRunner;
+import com.tngtech.java.junit.dataprovider.UseDataProvider;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+@RunWith(DataProviderRunner.class)
 public class CommandFactoryTest {
-    private static final String TEST_COMMAND = "login";
+
+    @DataProvider
+    public static Object[][] commands() {
+        return new Object[][] {
+                { "login",LoginCommand.class },
+                { "home", HomeCommand.class},
+                { "addTrack", AddTrackCommand.class},
+                { "submitTrack", SubmitTrackCommand.class},
+                { "showClients", ShowClientsCommand.class},
+                { "changeClientStatus", ChangeClientStatusCommand.class},
+                { "showPlaylist", ShowPlaylistCommand.class},
+                { "buyTracks", BuyTracksCommand.class},
+                { "payOrder", PayForOrderCommand.class},
+                { "submitPayment", SubmitPaymentCommand.class},
+                { "logout", LogoutCommand.class},
+        };
+    }
 
     @Test
-    public void shouldCreateLoginCommandWhenInputIsLogin() throws IllegalCommandException {
+    @UseDataProvider("commands")
+    public void shouldCreateCorrectCommand(String commandText,Class expectedCommandClass) throws IllegalCommandException {
         //given
         //when
-        Command actual = CommandFactory.create(TEST_COMMAND);
+        Command actual = CommandFactory.create(commandText);
         //then
         Assert.assertNotEquals(null,actual);
-        Assert.assertEquals(LoginCommand.class,actual.getClass());
+        Assert.assertEquals(expectedCommandClass,actual.getClass());
     }
 }

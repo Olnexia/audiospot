@@ -5,6 +5,7 @@ import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.repository.*;
+import com.epam.audiospot.repository.creator.RepositoryCreator;
 import com.epam.audiospot.repository.specification.UserByIdSpecification;
 import com.epam.audiospot.repository.specification.UserByLoginAndPasswordSpecification;
 import com.epam.audiospot.repository.specification.UserByRoleSpecification;

@@ -4,7 +4,7 @@ import com.epam.audiospot.entity.*;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.repository.AudioRepository;
-import com.epam.audiospot.repository.RepositoryCreator;
+import com.epam.audiospot.repository.creator.RepositoryCreator;
 import com.epam.audiospot.repository.specification.AudioTrackByOrderIdSpecification;
 import com.epam.audiospot.repository.specification.AudioTracksByUserIdSpecification;
 import com.epam.audiospot.repository.specification.AvailableTracksByUserIdSpecification;
