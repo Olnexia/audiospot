@@ -48,7 +48,8 @@
 }
 .form-style textarea{
     resize:none;
-    overflow: hidden;
+    overflow: auto;
+    height: 125px;
 }
 .form-style input[type="button"],
 .form-style .button,

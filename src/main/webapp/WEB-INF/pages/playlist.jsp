@@ -14,6 +14,9 @@
     <title><fmt:message key="pageTitle"/></title>
     <jsp:include page = "../fragments/header.jsp"/>
     <style><jsp:include page = "/css/table.css"/></style>
+    <style><jsp:include page="/css/modal.css"/></style>
+    <style><jsp:include page="/css/form.css"></jsp:include></style>
+    <script type="text/javascript"><jsp:include page="/js/comment.js"/></script>
 </head>
     <body>
         <div class="content">
@@ -26,6 +29,7 @@
                         <th><fmt:message key="title"/></th>
                         <th><fmt:message key="year"/></th>
                         <th><fmt:message key="genre"/></th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -49,12 +53,33 @@
                                     <td><fmt:message key="pop"/></td>
                                 </c:when>
                             </c:choose>
+                            <td>
+                                <button onclick="showModal()"><fmt:message key="comment"/></button>
+                            </td>
                         </tr>
                     </c:forEach>
                     </tbody>
                 </table>
-            </c:if>
 
+                <div id="comment" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content form-style">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <h2><fmt:message key="addComment"/></h2>
+                        <form action = "${pageContext.servletContext.contextPath}/controller?command=submitComment" method ="post">
+                            <label title="title">
+                                <textarea name="comment" cols="30" rows="5" placeholder="<fmt:message key="commentPlaceholder"/>"></textarea>
+                            </label>
+                            <div class="buttons">
+                                <label title="<fmt:message key="add"/>">
+                                    <input type="submit" value="<fmt:message key="add"/>"/>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </c:if>
         </div>
     </body>
 </html>
