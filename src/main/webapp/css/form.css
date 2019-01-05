@@ -11,14 +11,11 @@
 
 }
 .form-style h2{
-    background: #4D4D4D;
     text-transform: uppercase;
     font-family: 'Open Sans Condensed', sans-serif;
     color: #848484;
     font-size: 18px;
     font-weight: 100;
-    padding: 20px;
-    margin: -30px -30px 30px -30px;
 }
 .form-style input[type="text"],
 .form-style input[type="date"],
@@ -77,20 +74,31 @@
     background: #34CACA linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
 }
 
+.form-style .fhead{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-flow: wrap;
+    background: #4D4D4D;
+    padding: 10px 20px;
+    margin: -30px -30px 30px -30px;
+}
+
 .form-style .buttons{
     display: flex;
     justify-content:space-around;
     flex-flow: wrap;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
+    .form-style .fhead{
+        margin-right: 30px;
+        padding-right: 20px;
+    }
     .form-style{
         width: 100%;
         margin: 0;
         padding-right: 0;
-    }
-    .form-style h2{
-        margin-right: 0;
     }
 }
 

@@ -5,7 +5,7 @@ import java.util.List;
 
 public enum Role {
     CLIENT("client", Arrays.asList("addComment","buyTracks","cancelOrder","orderTrack","payOrder"
-            ,"showPlaylist","submitPayment","changeLang","home","logout")),
+            ,"showPlaylist","submitComment","submitPayment","changeLang","home","logout")),
     ADMIN("admin",Arrays.asList("addTrack","changeClientStatus","showClients"
             ,"submitTrack","changeLang","home","logout"));
 

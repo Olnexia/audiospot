@@ -40,6 +40,10 @@ public class RepositoryCreator implements AutoCloseable {
         return new TrackAtPlaylistRepository(connection);
     }
 
+    public CommentRepository getCommentRepository(){
+        return new CommentRepository(connection);
+    }
+
     @Override
     public void close(){
         ConnectionPool connectionPool = ConnectionPool.getInstance();

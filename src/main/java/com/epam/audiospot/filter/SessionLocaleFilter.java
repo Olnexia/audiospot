@@ -8,22 +8,21 @@ import java.io.IOException;
 
 @WebFilter(filterName = "SessionLocaleFilter", urlPatterns = {"/*"})
 public class SessionLocaleFilter implements Filter {
+    private static final String LOCALE = "lang";
+
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
-
         HttpServletRequest httpRequest = (HttpServletRequest) request;
-
-        if (httpRequest.getParameter("lang") != null) {
+        if (httpRequest.getParameter(LOCALE) != null) {
             HttpSession session = httpRequest.getSession(true);
-            session.setAttribute("lang", httpRequest.getParameter("lang"));
+            String currentLocale = httpRequest.getParameter(LOCALE);
+            session.setAttribute(LOCALE, currentLocale);
         }
         chain.doFilter(request, response);
     }
-
     public void destroy() {
 
     }
-
     public void init(FilterConfig arg0){
 
     }

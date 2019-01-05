@@ -16,6 +16,7 @@ import java.util.Optional;
 public class LoginCommand implements Command {
     private static final String LOGIN_REQUEST_PARAMETER = "login";
     private static final String PASSWORD_REQUEST_PARAMETER = "password";
+    private static final String LOCALE ="lang";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws CommandExecutionException {
@@ -31,6 +32,8 @@ public class LoginCommand implements Command {
                 if(user.isActive()){
                     HttpSession session = request.getSession(true);
                     session.setAttribute("user",user);
+                    String currentLocale = request.getParameter(LOCALE);
+                    session.setAttribute(LOCALE,currentLocale);
                     commandResult = CommandResult.redirect(Redirect.HOME.getPath());
                 }else{
                     request.setAttribute("blocked",true);

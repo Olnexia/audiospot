@@ -1,17 +1,22 @@
 package com.epam.audiospot.repository;
 
 import com.epam.audiospot.builder.Builder;
+import com.epam.audiospot.command.admin.SubmitTrackCommand;
 import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.entity.Entity;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.repository.specification.Specification;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.sql.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public abstract class AbstractRepository<T extends Entity> implements Repository<T>{
     private static final String INSERT = "INSERT INTO";
+
     private ConnectionWrapper connection;
 
     public AbstractRepository(ConnectionWrapper connection){

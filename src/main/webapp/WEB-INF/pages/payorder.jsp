@@ -23,7 +23,9 @@
 
                 <c:if test="${orderedTracks ne null}">
                     <div class="form-style">
-                        <h2><fmt:message key="details"/></h2>
+                        <div class="fhead">
+                            <h2><fmt:message key="details"/></h2>
+                        </div>
                         <form action = "${pageContext.servletContext.contextPath}/controller?command=submitPayment" method ="post">
                             <label>
                                 <input type="text" name="cardNumber" required placeholder="<fmt:message key="cardNumber"/>" autocomplete="cc-number">

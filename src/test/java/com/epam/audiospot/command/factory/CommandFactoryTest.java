@@ -30,6 +30,7 @@ public class CommandFactoryTest {
                 { "showClients", ShowClientsCommand.class},
                 { "changeClientStatus", ChangeClientStatusCommand.class},
                 { "showPlaylist", ShowPlaylistCommand.class},
+                { "submitComment", SubmitCommentCommand.class},
                 { "buyTracks", BuyTracksCommand.class},
                 { "payOrder", PayForOrderCommand.class},
                 { "submitPayment", SubmitPaymentCommand.class},

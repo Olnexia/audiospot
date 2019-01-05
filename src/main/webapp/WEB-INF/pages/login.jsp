@@ -4,7 +4,6 @@
 <%@ page contentType = "text/html;charset=utf-8"
          isELIgnored ="false"
          pageEncoding ="utf-8"%>
-
 <fmt:setLocale value="${not empty sessionScope.lang?sessionScope.lang:not empty param.lang?param.lang:not empty requestScope.lang?requestScope.lang:'eng'}"/>
 <fmt:bundle basename="pagecontent" prefix ="login.">
 <html>
@@ -27,7 +26,7 @@
                        <%--<p class="message">Already registered? <a href="#" onclick="switchLoginRegister()">Sign In</a></p>--%>
                    <%--</form>--%>
 
-                   <form class="login-form" action = "${pageContext.servletContext.contextPath}/controller?command=login" method ="post">
+                   <form class="login-form" action = "${pageContext.servletContext.contextPath}/controller?command=login${not empty param.lang?"&lang=":""}${not empty param.lang?param.lang:""}" method ="post">
                        <label>
                            <input type="text" name="login" placeholder="<fmt:message key="login"/>"/>
                        </label>

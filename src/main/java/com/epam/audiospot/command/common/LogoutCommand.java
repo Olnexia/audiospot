@@ -8,15 +8,18 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class LogoutCommand implements Command {
-    private static final String LANGUAGE_SESSION_ATTRIBUTE = "lang";
+    private static final String LOCALE = "lang";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response){
         HttpSession session = request.getSession(false);
-        if(session!=null){
-            Object language = session.getAttribute(LANGUAGE_SESSION_ATTRIBUTE);
+        if (session == null) {
+            String currentLocale = request.getParameter(LOCALE);
+            request.setAttribute(LOCALE, currentLocale);
+        } else {
+            Object locale = session.getAttribute(LOCALE);
             session.invalidate();
-            request.setAttribute(LANGUAGE_SESSION_ATTRIBUTE,language);
+            request.setAttribute(LOCALE, locale);
         }
         return CommandResult.forward(Forward.LOGIN.getPath());
     }

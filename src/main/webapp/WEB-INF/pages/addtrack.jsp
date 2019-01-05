@@ -17,7 +17,9 @@
 <body>
 <div class="content">
     <div class ="form-style">
-    <h2><fmt:message key="title"/></h2>
+        <div class="fhead">
+            <h2><fmt:message key="title"/></h2>
+        </div>
     <form action = "${pageContext.servletContext.contextPath}/controller?command=submitTrack" method ="post">
         <label title="artist">
             <input type="text" name="artist" placeholder="<fmt:message key="artist"/>"/>

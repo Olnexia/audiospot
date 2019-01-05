@@ -53,8 +53,11 @@
                                     <td><fmt:message key="pop"/></td>
                                 </c:when>
                             </c:choose>
-                            <td>
-                                <button onclick="showModal()"><fmt:message key="comment"/></button>
+                            <td class="manage-buttons">
+                                <button class="positive-button" form="comment" onclick="showModal();
+                                        document.getElementById('audiotrack_id').value = '${track.id}';">
+                                    <fmt:message key="comment"/>
+                                </button>
                             </td>
                         </tr>
                     </c:forEach>
@@ -62,22 +65,23 @@
                 </table>
 
                 <div id="comment" class="modal">
-                    <!-- Modal content -->
-                    <div class="modal-content form-style">
-                        <span class="close" onclick="closeModal()">&times;</span>
-                        <h2><fmt:message key="addComment"/></h2>
-                        <form action = "${pageContext.servletContext.contextPath}/controller?command=submitComment" method ="post">
+                    <div class="form-style">
+                        <div class="fhead">
+                            <h2><fmt:message key="addComment"/></h2>
+                            <div class="close" onclick="closeModal()">&times;</div>
+                        </div>
+                        <form name="comment" action = "${pageContext.servletContext.contextPath}/controller?command=submitComment" method ="post">
                             <label title="title">
-                                <textarea name="comment" cols="30" rows="5" placeholder="<fmt:message key="commentPlaceholder"/>"></textarea>
+                                <textarea name="text" cols="30" rows="5" placeholder="<fmt:message key="commentPlaceholder"/>"></textarea>
                             </label>
+                            <input type="hidden" id="audiotrack_id" name ="audiotrack_id">
                             <div class="buttons">
-                                <label title="<fmt:message key="add"/>">
-                                    <input type="submit" value="<fmt:message key="add"/>"/>
+                                <label title="<fmt:message key="send"/>">
+                                    <input type="submit" value="<fmt:message key="send"/>"/>
                                 </label>
                             </div>
                         </form>
                     </div>
-
                 </div>
             </c:if>
         </div>

@@ -19,6 +19,7 @@ public enum CommandType {
     SHOW_CLIENTS("showClients",new ShowClientsCommand()),
     CHANGE_CLIENT_STATUS("changeClientStatus",new ChangeClientStatusCommand()),
     SHOW_PLAYLIST("showPlaylist",new ShowPlaylistCommand()),
+    SHOW_COMMENT("submitComment",new SubmitCommentCommand()),
     BUY_TRACKS("buyTracks",new BuyTracksCommand()),
     ORDER_TRACK("orderTrack",new OrderTrackCommand()),
     DELETE_ORDER("cancelOrder",new CancelOrderCommand()),

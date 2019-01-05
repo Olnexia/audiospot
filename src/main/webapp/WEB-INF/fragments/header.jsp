@@ -54,7 +54,7 @@
                 </c:url>"><fmt:message key="ru"/></a>
             </div>
             <c:if test="${sessionScope.user.role ne null}">
-                <a href="${pageContext.servletContext.contextPath}/controller?command=logout"><fmt:message key="logOut"/></a>
+                <a href="${pageContext.servletContext.contextPath}/controller?command=logout&lang=${sessionScope.lang}"><fmt:message key="logOut"/></a>
             </c:if>
         </nav>
     </header>
