@@ -13,7 +13,7 @@ import com.epam.audiospot.repository.specification.PublicPlaylistsSpecification;
 import java.util.List;
 import java.util.Optional;
 
-public class PlaylistService implements Service {
+public class PlaylistService {
 
     public Optional<Playlist> findPlaylist(Long playlistId) throws ServiceException {
         PlaylistByIdSpecification specification = new PlaylistByIdSpecification(playlistId);

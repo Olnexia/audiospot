@@ -48,14 +48,13 @@
                             </div>
                         </form>
                     </div>
-                    <div>
+
                         <table class="table">
                             <caption><fmt:message key="tableCaption"/> ${orderId}</caption>
                             <thead>
                             <tr>
                                 <th><fmt:message key="artist"/></th>
                                 <th><fmt:message key="title"/></th>
-                                <th><fmt:message key="year"/></th>
                                 <th><fmt:message key="genre"/></th>
                                 <th><fmt:message key="price"/></th>
                             </tr>
@@ -65,7 +64,6 @@
                                 <tr>
                                     <td>${track.artist.name}</td>
                                     <td>${track.title}</td>
-                                    <td>${track.releaseYear}</td>
                                     <c:choose>
                                         <c:when test = "${track.genre.value eq 'rock'}">
                                             <td><fmt:message key="rock"/></td>
@@ -88,13 +86,11 @@
                             <tr>
                                 <td></td>
                                 <td></td>
-                                <td></td>
                                 <td><fmt:message key="totalPrice"/></td>
                                 <td>${orderTotalPrice}</td>
                             </tr>
                             </tfoot>
                         </table>
-                    </div>
                 </c:if>
         </div>
     </body>

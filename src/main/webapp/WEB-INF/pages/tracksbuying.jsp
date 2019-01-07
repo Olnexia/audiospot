@@ -27,7 +27,6 @@
                 <tr>
                     <th><fmt:message key="artist"/></th>
                     <th><fmt:message key="title"/></th>
-                    <th><fmt:message key="year"/></th>
                     <th><fmt:message key="genre"/></th>
                     <th><fmt:message key="price"/></th>
                     <th></th>
@@ -38,7 +37,6 @@
                     <tr>
                         <td>${track.artist.name}</td>
                         <td>${track.title}</td>
-                        <td>${track.releaseYear}</td>
 
                         <c:choose>
                             <c:when test = "${track.genre.value eq 'rock'}">
@@ -56,7 +54,7 @@
                         </c:choose>
                         <td>${track.price}</td>
                         <td class = "manage-buttons">
-                            <a class="positive-button" href="${pageContext.servletContext.contextPath}/controller?command=orderTrack&trackId=${track.id}">
+                            <a class="neutral-button" href="${pageContext.servletContext.contextPath}/controller?command=orderTrack&trackId=${track.id}">
                                 <fmt:message key="order"/>
                             </a>
                         </td>

@@ -32,7 +32,6 @@ public class AudioRepository extends AbstractRepository<AudioTrack> {
         fields.put(AudioTrack.TITLE_LABEL,track.getTitle());
         fields.put(AudioTrack.GENRE_LABEL,track.getGenre());
         fields.put(AudioTrack.PRICE_LABEL,track.getPrice());
-        fields.put(AudioTrack.RELEASE_YEAR_LABEL,track.getReleaseYear());
         return fields;
     }
 }

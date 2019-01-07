@@ -38,8 +38,8 @@
 
 .content{
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
-    flex-direction: column;
     margin-top: 65px;
 }
 
@@ -56,6 +56,7 @@
     }
     .content{
         margin: initial;
+        justify-content: space-around;
     }
     .header{
         position:initial;
@@ -66,7 +67,7 @@ body{
     margin: 0;
     padding: 0;
 	font-family: Cookie, Arial, Helvetica, sans-serif;
-    background: url("images/bg.jpg") repeat;
+    background: url("/images/bg.jpg") repeat;
 }
 
 a.button{

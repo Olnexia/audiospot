@@ -22,14 +22,13 @@ public class SubmitTrackCommand implements Command {
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response){
         String title = request.getParameter(AudioTrack.TITLE_LABEL);
         BigDecimal price = new BigDecimal(request.getParameter(AudioTrack.PRICE_LABEL));
-        int releaseYear = Integer.parseInt(request.getParameter(AudioTrack.RELEASE_YEAR_LABEL));
         Genre genre = Genre.valueOf(request.getParameter(AudioTrack.GENRE_LABEL).toUpperCase());
         String artistName = request.getParameter(ARTIST_LABEL);
 
         AudioTrackService service = new AudioTrackService();
         CommandResult commandResult;
         try{
-            AudioTrack track = service.buildTrack(title,price,releaseYear,genre,artistName);
+            AudioTrack track = service.buildTrack(title,price,genre,artistName);
             service.submitTrack(track);
             logger.info("New track with id "+track.getId()+" added.");
             commandResult = CommandResult.redirect(Redirect.ADD_TRACK.getPath());

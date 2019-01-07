@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class OrderService implements Service {
+public class OrderService {
 
     public Optional<Order> findOrder(Long userId,boolean paid) throws ServiceException {
         OrderByUserIdAndStatusSpecification specification = new OrderByUserIdAndStatusSpecification(userId,paid);

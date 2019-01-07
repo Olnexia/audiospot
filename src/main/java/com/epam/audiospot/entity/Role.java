@@ -5,9 +5,9 @@ import java.util.List;
 
 public enum Role {
     CLIENT("client", Arrays.asList("addComment","buyTracks","cancelOrder","orderTrack","payOrder"
-            ,"showPlaylist","submitComment","submitPayment","changeLang","home","logout")),
-    ADMIN("admin",Arrays.asList("addTrack","changeClientStatus","showClients"
-            ,"submitTrack","changeLang","home","logout"));
+            ,"showPlaylist","submitComment","showAlbums","viewAlbum","submitPayment","changeLang","home","logout")),
+    ADMIN("admin",Arrays.asList("addTrack","addAlbum","submitAlbum","changeClientStatus","showClients"
+            ,"submitTrack","showAlbums","viewAlbum","changeLang","home","logout"));
 
     private String value;
     private List<String> permissions;

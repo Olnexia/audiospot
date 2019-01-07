@@ -7,16 +7,21 @@ import com.epam.audiospot.repository.ArtistRepository;
 import com.epam.audiospot.repository.creator.RepositoryCreator;
 import com.epam.audiospot.repository.specification.ArtistByIdSpecification;
 import com.epam.audiospot.repository.specification.ArtistByNameSpecification;
-
 import java.util.Optional;
 
-public class ArtistService implements Service{
+public class ArtistService {
 
-    public Optional<Artist> getArtist(String name) throws ServiceException {
+    public Optional<Artist> getArtist(String name,boolean create) throws ServiceException {
         ArtistByNameSpecification specification = new ArtistByNameSpecification(name);
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             ArtistRepository repository = repositoryCreator.getArtistRepository();
-            return repository.queryForSingleResult(specification);
+            Optional<Artist> artist = repository.queryForSingleResult(specification);
+            if(!artist.isPresent()&& create){
+                Artist newArtist = new Artist(null,name,null);
+                addArtist(newArtist);
+                artist = Optional.of(newArtist);
+            }
+            return artist;
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);
         }

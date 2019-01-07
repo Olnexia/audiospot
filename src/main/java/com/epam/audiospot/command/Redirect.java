@@ -4,6 +4,7 @@ public enum Redirect {
     HOME("/controller?command=home"),
     ADD_TRACK("/controller?command=addTrack"),
     SHOW_CLIENTS("/controller?command=showClients"),
+    VIEW_ALBUM("/controller?command=viewAlbum"),
     BUY_TRACKS("/controller?command=buyTracks"),
     SHOW_PLAYLIST("/controller?command=showPlaylist");
 

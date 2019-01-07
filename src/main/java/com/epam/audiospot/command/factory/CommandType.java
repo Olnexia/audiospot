@@ -3,10 +3,7 @@ package com.epam.audiospot.command.factory;
 import com.epam.audiospot.command.*;
 import com.epam.audiospot.command.admin.*;
 import com.epam.audiospot.command.client.*;
-import com.epam.audiospot.command.common.ChangeLanguageCommand;
-import com.epam.audiospot.command.common.HomeCommand;
-import com.epam.audiospot.command.common.LoginCommand;
-import com.epam.audiospot.command.common.LogoutCommand;
+import com.epam.audiospot.command.common.*;
 
 public enum CommandType {
     LOGIN("login", new LoginCommand()),
@@ -15,7 +12,9 @@ public enum CommandType {
     ADD_TRACK("addTrack",new AddTrackCommand()),
     SUBMIT_TRACK("submitTrack",new SubmitTrackCommand()),
     ADD_ALBUM("addAlbum",new AddAlbumCommand()),
-    SHOW_AUDIOSETS("showAudioSets",new ShowAudioSetsCommand()),
+    SUBMIT_ALBUM("submitAlbum",new SubmitAlbumCommand()),
+    SHOW_ALBUMS("showAlbums",new ShowAlbumsCommand()),
+    VIEW_ALBUM("viewAlbum",new ViewAlbumCommand()),
     SHOW_CLIENTS("showClients",new ShowClientsCommand()),
     CHANGE_CLIENT_STATUS("changeClientStatus",new ChangeClientStatusCommand()),
     SHOW_PLAYLIST("showPlaylist",new ShowPlaylistCommand()),

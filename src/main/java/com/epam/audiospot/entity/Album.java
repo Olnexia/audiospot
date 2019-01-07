@@ -1,14 +1,21 @@
 package com.epam.audiospot.entity;
 
 public class Album implements Entity {
+    public static final String ID_LABEL = "album_id";
+    public static final String TITLE_LABEL = "title";
+    public static final String AUTHOR_ID_LABEL = "author_id";
+    public static final String RELEASE_YEAR_LABEL = "release_year";
+
     private  Long id;
     private  String title;
-    private  Long artistId;
+    private  Artist artist;
+    private int releaseYear;
 
-    public Album(long id, String title, long artistId) {
+    public Album(Long id, String title, Artist artist, int releaseYear) {
         this.id = id;
         this.title = title;
-        this.artistId = artistId;
+        this.artist = artist;
+        this.releaseYear = releaseYear;
     }
 
     public Long getId() {
@@ -19,8 +26,12 @@ public class Album implements Entity {
         return title;
     }
 
-    public long getArtistId() {
-        return artistId;
+    public Artist getArtist() {
+        return artist;
+    }
+
+    public int getReleaseYear() {
+        return releaseYear;
     }
 
     public void setId(Long id) {

@@ -6,7 +6,7 @@ import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.repository.CommentRepository;
 import com.epam.audiospot.repository.creator.RepositoryCreator;
 
-public class CommentService implements Service {
+public class CommentService{
 
     public void save(Comment comment)throws ServiceException {
         try(RepositoryCreator repositoryCreator = new RepositoryCreator()){

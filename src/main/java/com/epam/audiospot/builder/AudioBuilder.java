@@ -21,12 +21,13 @@ public class AudioBuilder implements Builder<AudioTrack> {
 
         ArtistService artistService = new ArtistService();
         Optional<Artist> artistOptional = artistService.getArtist(authorId);
-        Artist artist = artistOptional.orElse(null);
+        if(!artistOptional.isPresent()){
+            throw new ServiceException("Missing artist");
+        }
 
-        int releaseYear = resultSet.getInt(AudioTrack.RELEASE_YEAR_LABEL);
         Long albumId = resultSet.getLong(AudioTrack.ALBUM_ID_LABEL);
         String genreContent = resultSet.getString(AudioTrack.GENRE_LABEL);
         Genre genre = Genre.valueOf(genreContent.toUpperCase());
-        return new AudioTrack(id,albumId,artist,title,price,releaseYear,genre);
+        return new AudioTrack(id,albumId,artistOptional.get(),title,price,genre);
     }
 }

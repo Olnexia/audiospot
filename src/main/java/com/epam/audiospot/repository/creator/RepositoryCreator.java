@@ -40,6 +40,10 @@ public class RepositoryCreator implements AutoCloseable {
         return new TrackAtPlaylistRepository(connection);
     }
 
+    public AlbumRepository getAlbumRepository(){
+        return new AlbumRepository(connection);
+    }
+
     public CommentRepository getCommentRepository(){
         return new CommentRepository(connection);
     }

@@ -9,39 +9,35 @@ public class AudioTrack implements Entity {
     public static final String AUTHOR_ID_LABEL = "author_id";
     public static final String TITLE_LABEL = "title";
     public static final String PRICE_LABEL = "price";
-    public static final String RELEASE_YEAR_LABEL = "release_year";
     public static final String GENRE_LABEL = "genre";
 
     private Long id;
     private Long albumId;
     private Artist artist;
     private String title;
-    private int releaseYear;
     private Genre genre;
     private BigDecimal price;
 
     public AudioTrack(Long id, Long albumId, Artist artist, String title,
-                      BigDecimal price, int releaseYear, Genre genre) {
+                      BigDecimal price, Genre genre) {
         this.id = id;
         this.albumId = albumId;
         this.artist = artist;
         this.title = title;
         this.price = price;
-        this.releaseYear = releaseYear;
         this.genre = genre;
     }
 
-    public static AudioTrack single(Artist artist, String title, BigDecimal price, int releaseYear, Genre genre){
-        return new AudioTrack(null,null,artist,title,price,releaseYear,genre);
+    public static AudioTrack single(Artist artist, String title, BigDecimal price, Genre genre){
+        return new AudioTrack(null,null,artist,title,price,genre);
     }
 
     public AudioTrack( Long albumId, Artist artist, String title,
-                      BigDecimal price, int releaseYear, Genre genre) {
+                      BigDecimal price, Genre genre) {
         this.albumId = albumId;
         this.artist = artist;
         this.title = title;
         this.price = price;
-        this.releaseYear = releaseYear;
         this.genre = genre;
     }
 
@@ -54,8 +50,7 @@ public class AudioTrack implements Entity {
             return false;
         }
         AudioTrack that = (AudioTrack)object;
-        return getReleaseYear() == that.getReleaseYear() &&
-                Objects.equals(getId(), that.getId()) &&
+        return  Objects.equals(getId(), that.getId()) &&
                 Objects.equals(getAlbumId(), that.getAlbumId()) &&
                 Objects.equals(getArtist(), that.getArtist()) &&
                 Objects.equals(getTitle(), that.getTitle()) &&
@@ -69,7 +64,6 @@ public class AudioTrack implements Entity {
         final int prime = 31;
         result = prime * result + getId().hashCode();
         result = prime * result + getTitle().hashCode();
-        result = prime * result + Integer.valueOf(getReleaseYear()).hashCode();
         result = prime * result + getAlbumId().hashCode();
         result = prime * result + getPrice().hashCode();
         result = prime * result + getArtist().hashCode();
@@ -95,10 +89,6 @@ public class AudioTrack implements Entity {
 
     public Long getAlbumId() {
         return albumId;
-    }
-
-    public int getReleaseYear() {
-        return releaseYear;
     }
 
     public Genre getGenre() {

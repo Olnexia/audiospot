@@ -1,8 +1,7 @@
 
 .form-style{
-    font-family: 'Open Sans Condensed', arial, sans;
+    font-family: 'Open Sans Condensed', arial, sans, serif;
     width: 600px;
-    padding: 30px;
     background: #FFFFFF;
     margin: 50px auto;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
@@ -10,6 +9,11 @@
     -webkit-box-shadow:  0 0 15px rgba(0, 0, 0, 0.22);
 
 }
+
+.form-style form{
+    padding: 30px;
+}
+
 .form-style h2{
     text-transform: uppercase;
     font-family: 'Open Sans Condensed', sans-serif;
@@ -81,7 +85,6 @@
     flex-flow: wrap;
     background: #4D4D4D;
     padding: 10px 20px;
-    margin: -30px -30px 30px -30px;
 }
 
 .form-style .buttons{
@@ -91,14 +94,12 @@
 }
 
 @media screen and (max-width: 660px) {
-    .form-style .fhead{
-        margin-right: 30px;
-        padding-right: 20px;
-    }
+
     .form-style{
         width: 100%;
         margin: 0;
-        padding-right: 0;
+        padding:0;
     }
+
 }
 

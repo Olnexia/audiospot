@@ -15,8 +15,8 @@
     <jsp:include page = "../fragments/header.jsp"/>
     <style><jsp:include page = "/css/table.css"/></style>
     <style><jsp:include page="/css/modal.css"/></style>
-    <style><jsp:include page="/css/form.css"></jsp:include></style>
-    <script type="text/javascript"><jsp:include page="/js/comment.js"/></script>
+    <style><jsp:include page="/css/form.css"/></style>
+    <script type="text/javascript"><jsp:include page="/js/modal/comment.js"/></script>
 </head>
     <body>
         <div class="content">
@@ -27,7 +27,6 @@
                     <tr>
                         <th><fmt:message key="artist"/></th>
                         <th><fmt:message key="title"/></th>
-                        <th><fmt:message key="year"/></th>
                         <th><fmt:message key="genre"/></th>
                         <th></th>
                     </tr>
@@ -37,7 +36,6 @@
                         <tr>
                             <td>${track.artist.name}</td>
                             <td>${track.title}</td>
-                            <td>${track.releaseYear}</td>
 
                             <c:choose>
                                 <c:when test = "${track.genre.value eq 'rock'}">
@@ -54,10 +52,10 @@
                                 </c:when>
                             </c:choose>
                             <td class="manage-buttons">
-                                <button class="positive-button" form="comment" onclick="showModal();
+                                <a class="neutral-button" form="comment" onclick="showModal();
                                         document.getElementById('audiotrack_id').value = '${track.id}';">
                                     <fmt:message key="comment"/>
-                                </button>
+                                </a>
                             </td>
                         </tr>
                     </c:forEach>

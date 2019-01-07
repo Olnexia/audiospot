@@ -13,7 +13,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 import java.util.List;
 import java.util.Optional;
 
-public class UserService implements Service {
+public class UserService{
 
     public Optional<User> login(String login , String password) throws ServiceException {
         String md5Password = DigestUtils.md5Hex(password).toUpperCase();

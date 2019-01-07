@@ -27,9 +27,6 @@
         <label title="title">
             <input type="text" name="title" placeholder="<fmt:message key="audioTitle"/>"/>
         </label>
-        <label title="release year">
-            <input type="text" name="release_year" placeholder="<fmt:message key="year"/>"/>
-        </label>
         <label title="genre">
             <select name = "genre">
                 <option value = "rock"> <fmt:message key="rock"/></option>
@@ -42,12 +39,14 @@
         <label title="<fmt:message key="price"/>">
             <input type="text" name="price" placeholder="<fmt:message key="price"/>"/>
         </label>
-        <label title="<fmt:message key="add"/>">
-            <input type="submit" value="<fmt:message key="add"/>"/>
-        </label>
-        <label title="<fmt:message key="cancel"/>">
-            <a class="button" href="${pageContext.servletContext.contextPath}/controller?command=home" ><fmt:message key="cancel"/></a>
-        </label>
+        <div class="buttons">
+            <label title="<fmt:message key="add"/>">
+                <input type="submit" value="<fmt:message key="add"/>"/>
+            </label>
+            <label title="<fmt:message key="cancel"/>">
+                <a class="button" href="${pageContext.servletContext.contextPath}/controller?command=home" ><fmt:message key="cancel"/></a>
+            </label>
+        </div>
     </form>
     </div>
 </div>

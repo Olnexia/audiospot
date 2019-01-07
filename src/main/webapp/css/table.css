@@ -33,22 +33,35 @@ tr:nth-of-type(odd) {
     width: 100%;
 }
 
-.manage-buttons a, .manage-buttons button {
-    text-decoration: none;
-    color: black;
-    border-radius: 3px;
-    border: none;
-    font-size: 16px;
-    margin: 0 0.25em;
-    padding: 3px;
+.manage-buttons{
+    display: flex;
+    justify-content: space-around;
 }
 
-.manage-buttons button:hover{
-    cursor: pointer;
+.manage-buttons a, .manage-buttons button {
+    display:inline-block;
+    padding:0.2em 1.45em;
+    margin:0.1em;
+    border:0.15em solid #CCCCCC;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:400;
+    color:#000000;
+    background-color:#CCCCCC;
+    text-align:center;
+    position:relative;
 }
 
 .manage-buttons > .positive-button { background: #6F9; }
+.manage-buttons > .neutral-button { background: #CCCCCC; }
 .manage-buttons > .negative-button { background: #F69; }
+
+.manage-buttons > .positive-button:hover,
+.manage-buttons > .neutral-button:hover,
+.manage-buttons > .negative-button:hover {
+    cursor: pointer;
+    border-color:#7a7a7a;
+}
 
 @media screen and (max-width: 800px) {
     tr {

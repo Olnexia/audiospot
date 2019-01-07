@@ -6,13 +6,14 @@ import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.repository.AudioRepository;
 import com.epam.audiospot.repository.creator.RepositoryCreator;
 import com.epam.audiospot.repository.specification.AudioTrackByOrderIdSpecification;
+import com.epam.audiospot.repository.specification.AudioTracksByAlbumIdSpecification;
 import com.epam.audiospot.repository.specification.AudioTracksByUserIdSpecification;
 import com.epam.audiospot.repository.specification.AvailableTracksByUserIdSpecification;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
-public class AudioTrackService implements Service {
+public class AudioTrackService {
 
     public void submitTrack(AudioTrack track) throws ServiceException{
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
@@ -23,18 +24,17 @@ public class AudioTrackService implements Service {
         }
     }
 
-    public AudioTrack buildTrack(String title, BigDecimal price, int releaseYear,
+    public AudioTrack buildTrack(String title, BigDecimal price,
                                  Genre genre,String artistName) throws  ServiceException{
         ArtistService artistService = new ArtistService();
-        Optional<Artist> artistOptional = artistService.getArtist(artistName);
+        Optional<Artist> artistOptional = artistService.getArtist(artistName,true);
         Artist artist;
         if(artistOptional.isPresent()) {
             artist = artistOptional.get();
         }else{
-            artist = new Artist(null,artistName,null);
-            artistService.addArtist(artist);
+            throw new ServiceException("Artist is missing");
         }
-        return AudioTrack.single(artist,title,price,releaseYear,genre);
+        return AudioTrack.single(artist,title,price,genre);
     }
 
     public List<AudioTrack> findOrderedTracks(Long orderId) throws ServiceException{
@@ -59,6 +59,16 @@ public class AudioTrackService implements Service {
 
     public List<AudioTrack> findAvailableTracks(Long userId) throws ServiceException{
         AvailableTracksByUserIdSpecification specification = new AvailableTracksByUserIdSpecification(userId);
+        try(RepositoryCreator repositoryCreator = new RepositoryCreator()) {
+            AudioRepository repository = repositoryCreator.getAudioRepository();
+            return repository.query(specification);
+        }catch (RepositoryException e){
+            throw new ServiceException(e.getMessage(),e);
+        }
+    }
+
+    public List<AudioTrack> findTracksAtAlbum(Long albumId) throws ServiceException{
+        AudioTracksByAlbumIdSpecification specification = new AudioTracksByAlbumIdSpecification(albumId);
         try(RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             AudioRepository repository = repositoryCreator.getAudioRepository();
             return repository.query(specification);
