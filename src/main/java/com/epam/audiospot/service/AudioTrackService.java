@@ -25,7 +25,7 @@ public class AudioTrackService {
     }
 
     public AudioTrack buildTrack(String title, BigDecimal price,
-                                 Genre genre,String artistName) throws  ServiceException{
+                                 Genre genre,String artistName,String albumId) throws  ServiceException{
         ArtistService artistService = new ArtistService();
         Optional<Artist> artistOptional = artistService.getArtist(artistName,true);
         Artist artist;
@@ -34,7 +34,8 @@ public class AudioTrackService {
         }else{
             throw new ServiceException("Artist is missing");
         }
-        return AudioTrack.single(artist,title,price,genre);
+        return (albumId==null) ?AudioTrack.single(artist,title,price,genre)
+                :AudioTrack.albumTrack(artist,title,price,genre,Long.parseLong(albumId));
     }
 
     public List<AudioTrack> findOrderedTracks(Long orderId) throws ServiceException{

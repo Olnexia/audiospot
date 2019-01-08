@@ -25,3 +25,52 @@
     cursor:pointer;
     border-color: #4CAF50;
 }
+
+.album-header{
+    min-height: 200px;
+    margin-bottom: 30px;
+    width: 850px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.album-info{
+
+}
+
+.order-icon{
+    width: 80px;
+    height: 80px;
+    background: url("/images/order.png") no-repeat top;
+    background-size: 100%;
+}
+
+.add-icon{
+    width: 80px;
+    height: 80px;
+    background: url("/images/add-new.png") no-repeat top;
+    background-size: 100%;
+}
+
+
+.b-text{
+    align-self: center;
+    font-size: 16px;
+}
+
+.icon-button{
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-self: center;
+    height: 80px;
+    border: 2px solid transparent;
+}
+
+.icon-button:hover {
+    cursor: pointer;
+    border-color:  #7a7a7a;
+}
+

@@ -15,6 +15,30 @@ public class Artist implements Entity {
         this.country = country;
     }
 
+    @Override
+    public boolean equals(Object object) {
+        if (this == object){
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
+        Artist artist = (Artist) object;
+        return  id.equals(artist.getId())
+                && name.equals(artist.getName())
+                && country.equals(artist.getCountry());
+    }
+
+    @Override
+    public int hashCode() {
+        int result =17;
+        final int prime = 31;
+        result = prime * result + id.hashCode();
+        result = prime * result + name.hashCode();
+        result = prime * result + country.hashCode();
+        return result;
+    }
+
     public Long getId() {
         return id;
     }

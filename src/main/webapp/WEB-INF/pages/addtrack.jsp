@@ -21,12 +21,19 @@
             <h2><fmt:message key="title"/></h2>
         </div>
     <form action = "${pageContext.servletContext.contextPath}/controller?command=submitTrack" method ="post">
+
         <label title="artist">
-            <input type="text" name="artist" placeholder="<fmt:message key="artist"/>"/>
+            <c:if test="${param.artistName ne null}">
+                <input type="text" name="artist" value="${param.artistName}" readonly>
+            </c:if>
+            <c:if test="${param.artistName eq null}">
+                <input type="text" name="artist" placeholder="<fmt:message key="artist"/>"/>
+            </c:if>
         </label>
         <label title="title">
             <input type="text" name="title" placeholder="<fmt:message key="audioTitle"/>"/>
         </label>
+        <input type="hidden" name = "albumId" value="${param.albumId}">
         <label title="genre">
             <select name = "genre">
                 <option value = "rock"> <fmt:message key="rock"/></option>
@@ -44,7 +51,16 @@
                 <input type="submit" value="<fmt:message key="add"/>"/>
             </label>
             <label title="<fmt:message key="cancel"/>">
-                <a class="button" href="${pageContext.servletContext.contextPath}/controller?command=home" ><fmt:message key="cancel"/></a>
+                <c:if test="${param.albumId eq null}">
+                    <a class="button" href="${pageContext.servletContext.contextPath}/controller?command=home" >
+                        <fmt:message key="cancel"/>
+                    </a>
+                </c:if>
+                <c:if test="${param.albumId ne null}">
+                    <a class="button" href="${pageContext.servletContext.contextPath}/controller?command=viewAlbum&albumId=${param.albumId}" >
+                        <fmt:message key="cancel"/>
+                    </a>
+                </c:if>
             </label>
         </div>
     </form>

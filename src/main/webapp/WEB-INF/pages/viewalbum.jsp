@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <%@ page contentType = "text/html;charset=utf-8"
          isELIgnored ="false"
@@ -10,20 +11,57 @@
 <fmt:bundle basename="pagecontent" prefix ="albumView.">
     <html>
     <head>
-        <title><fmt:message key="title"/></title>
+        <title>${album.title}</title>
         <style><jsp:include page = "/css/table.css"/></style>
         <style><jsp:include page = "/css/album.css"/></style>
         <jsp:include page = "../fragments/header.jsp"/>
     </head>
     <body>
     <div class="content">
-        <div>
-            <h1>${album.title}</h1>
+        <div class="album-header">
+            <div class="poster">
+            </div>
+            <div class="album-info">
+                <h1>${album.title}</h1>
+                <span>${album.artist.name}</span>
+                <span>${album.releaseYear}</span>
+            </div >
+
+                <c:if test="${sessionScope.user.role.value eq 'admin'}">
+                    <div class="icon-button" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=addTrack&albumId=${album.id}&artistName=${album.artist.name}'">
+                        <div class="add-icon"></div>
+                        <p class="b-text"><fmt:message key="addTrack"/></p>
+                    </div>
+                </c:if>
+                <c:if test="${sessionScope.user.role.value eq 'client'}">
+                    <div class="icon-button" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=orderAlbum&albumId=${album.id}'">
+                        <div class="order-icon"></div>
+                        <p class="b-text"><fmt:message key="order"/></p>
+                    </div>
+                </c:if>
         </div>
-        <div>
-            <span>${album.artist.name}</span>
-            <span>${album.releaseYear}</span>
-        </div>
+
+        <c:if test="${fn:length(tracks)ne 0}">
+                <table class="table">
+                    <caption><fmt:message key="tracks"/></caption>
+                    <thead>
+                    <tr>
+                        <th>№</th>
+                        <th><fmt:message key="title"/></th>
+                        <th><fmt:message key="price"/></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${tracks}" var="track"  varStatus="status">
+                        <tr>
+                            <td>${status.index+1}</td>
+                            <td>${track.title}</td>
+                            <td>${track.price}</td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+        </c:if>
     </div>
     </body>
     </html>

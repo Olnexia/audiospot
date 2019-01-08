@@ -30,7 +30,7 @@ public class RoleFilter implements Filter {
         }
         User user = (User)session.getAttribute(USER_SESSION_PARAMETER);
         if(user==null){
-            if(!command.equals("login")&&!command.equals("changeLang")){
+            if(!command.equals("login")){
                 httpRequest.getRequestDispatcher(Forward.LOGIN.getPath()).forward(request,response);
                 return;
             }

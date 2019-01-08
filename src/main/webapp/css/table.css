@@ -40,6 +40,7 @@ tr:nth-of-type(odd) {
 
 .manage-buttons a, .manage-buttons button {
     display:inline-block;
+    width: 180px;
     padding:0.2em 1.45em;
     margin:0.1em;
     border:0.15em solid #CCCCCC;

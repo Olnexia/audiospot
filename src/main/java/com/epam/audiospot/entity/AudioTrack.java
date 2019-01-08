@@ -32,6 +32,10 @@ public class AudioTrack implements Entity {
         return new AudioTrack(null,null,artist,title,price,genre);
     }
 
+    public static AudioTrack albumTrack(Artist artist, String title, BigDecimal price, Genre genre,Long albumId){
+        return new AudioTrack(null,albumId,artist,title,price,genre);
+    }
+
     public AudioTrack( Long albumId, Artist artist, String title,
                       BigDecimal price, Genre genre) {
         this.albumId = albumId;
@@ -49,25 +53,25 @@ public class AudioTrack implements Entity {
         if (object == null || getClass() != object.getClass()) {
             return false;
         }
-        AudioTrack that = (AudioTrack)object;
-        return  Objects.equals(getId(), that.getId()) &&
-                Objects.equals(getAlbumId(), that.getAlbumId()) &&
-                Objects.equals(getArtist(), that.getArtist()) &&
-                Objects.equals(getTitle(), that.getTitle()) &&
-                getGenre() == that.getGenre() &&
-                Objects.equals(getPrice(), that.getPrice());
+        AudioTrack track = (AudioTrack)object;
+        return  id.equals(track.getId())
+                && albumId.equals(track.getAlbumId())
+                && artist.equals(track.getArtist())
+                && title.equals(track.getTitle())
+                && genre.equals(track.getGenre())
+                &&price.equals(track.getPrice());
     }
 
     @Override
     public int hashCode() {
         int result =17;
         final int prime = 31;
-        result = prime * result + getId().hashCode();
-        result = prime * result + getTitle().hashCode();
-        result = prime * result + getAlbumId().hashCode();
-        result = prime * result + getPrice().hashCode();
-        result = prime * result + getArtist().hashCode();
-        result = prime * result + getGenre().hashCode();
+        result = prime * result + id.hashCode();
+        result = prime * result + title.hashCode();
+        result = prime * result + albumId.hashCode();
+        result = prime * result + price.hashCode();
+        result = prime * result + artist.hashCode();
+        result = prime * result + genre.hashCode();
         return result;
     }
 

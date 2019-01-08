@@ -15,6 +15,7 @@ public enum CommandType {
     SUBMIT_ALBUM("submitAlbum",new SubmitAlbumCommand()),
     SHOW_ALBUMS("showAlbums",new ShowAlbumsCommand()),
     VIEW_ALBUM("viewAlbum",new ViewAlbumCommand()),
+    ORDER_ALBUM("orderAlbum",new OrderAlbumCommand()),
     SHOW_CLIENTS("showClients",new ShowClientsCommand()),
     CHANGE_CLIENT_STATUS("changeClientStatus",new ChangeClientStatusCommand()),
     SHOW_PLAYLIST("showPlaylist",new ShowPlaylistCommand()),

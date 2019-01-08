@@ -5,9 +5,11 @@ import com.epam.audiospot.entity.Order;
 import com.epam.audiospot.entity.OrderedTrack;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
+import com.epam.audiospot.repository.AudioRepository;
 import com.epam.audiospot.repository.OrderRepository;
 import com.epam.audiospot.repository.OrderedTrackRepository;
 import com.epam.audiospot.repository.creator.RepositoryCreator;
+import com.epam.audiospot.repository.specification.AudioTracksByAlbumIdSpecification;
 import com.epam.audiospot.repository.specification.OrderByUserIdAndStatusSpecification;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -40,6 +42,23 @@ public class OrderService {
             OrderedTrackRepository repository = repositoryCreator.getOrderedTrackRepository();
             OrderedTrack orderedTrack = new OrderedTrack(null,order.getId(),trackId);
             repository.add(orderedTrack);
+        }catch (RepositoryException e){
+            throw new ServiceException(e.getMessage(),e);
+        }
+    }
+
+    public void orderAlbum(Long userId,Long albumId) throws ServiceException{
+        AudioTrackService trackService = new AudioTrackService();
+        List<AudioTrack> availableTracks = trackService.findAvailableTracks(userId);
+        AudioTracksByAlbumIdSpecification specification = new AudioTracksByAlbumIdSpecification(albumId);
+        try(RepositoryCreator repositoryCreator = new RepositoryCreator()){
+            AudioRepository repository = repositoryCreator.getAudioRepository();
+            List<AudioTrack> tracks = repository.query(specification);
+            for(AudioTrack track : tracks){
+                if(availableTracks.contains(track)){
+                    orderTrack(userId,track.getId());
+                }
+            }
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);
         }
