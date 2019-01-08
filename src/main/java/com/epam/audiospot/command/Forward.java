@@ -8,7 +8,8 @@ public enum Forward {
     VIEW_ALBUM("/WEB-INF/pages/viewalbum.jsp"),
     CLIENTS("/WEB-INF/pages/clients.jsp"),
     ALBUMS("/WEB-INF/pages/albums.jsp"),
-    TRACK_BUYING("/WEB-INF/pages/tracksbuying.jsp"),
+    TRACKS("/WEB-INF/pages/tracks.jsp"),
+    SHOW_COMMENTS("/WEB-INF/pages/comments.jsp"),
     PLAYLIST("/WEB-INF/pages/playlist.jsp"),
     PAY_ORDER("/WEB-INF/pages/payorder.jsp");
 

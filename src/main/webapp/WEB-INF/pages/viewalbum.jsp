@@ -14,6 +14,7 @@
         <title>${album.title}</title>
         <style><jsp:include page = "/css/table.css"/></style>
         <style><jsp:include page = "/css/album.css"/></style>
+        <style><jsp:include page = "/css/icon-button.css"/></style>
         <jsp:include page = "../fragments/header.jsp"/>
     </head>
     <body>
@@ -29,13 +30,13 @@
 
                 <c:if test="${sessionScope.user.role.value eq 'admin'}">
                     <div class="icon-button" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=addTrack&albumId=${album.id}&artistName=${album.artist.name}'">
-                        <div class="add-icon"></div>
+                        <div class="medium add-icon"></div>
                         <p class="b-text"><fmt:message key="addTrack"/></p>
                     </div>
                 </c:if>
                 <c:if test="${sessionScope.user.role.value eq 'client'}">
                     <div class="icon-button" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=orderAlbum&albumId=${album.id}'">
-                        <div class="order-icon"></div>
+                        <div class="medium order-icon"></div>
                         <p class="b-text"><fmt:message key="order"/></p>
                     </div>
                 </c:if>

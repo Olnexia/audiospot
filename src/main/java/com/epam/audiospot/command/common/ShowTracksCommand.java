@@ -1,4 +1,4 @@
-package com.epam.audiospot.command.client;
+package com.epam.audiospot.command.common;
 
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-public class BuyTracksCommand implements Command {
+public class ShowTracksCommand implements Command {
     private static final String USER_SESSION_PARAMETER = "user";
 
     @Override
@@ -27,6 +27,6 @@ public class BuyTracksCommand implements Command {
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);
         }
-        return CommandResult.forward(Forward.TRACK_BUYING.getPath());
+        return CommandResult.forward(Forward.TRACKS.getPath());
     }
 }

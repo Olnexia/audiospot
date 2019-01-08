@@ -4,10 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum Role {
-    CLIENT("client", Arrays.asList("addComment","buyTracks","cancelOrder","orderTrack","payOrder"
-            ,"showPlaylist","submitComment","orderAlbum","showAlbums","viewAlbum","submitPayment","changeLang","home","logout")),
+    CLIENT("client", Arrays.asList("addComment","showTracks","cancelOrder","orderTrack","payOrder"
+            ,"showPlaylist","submitComment","orderAlbum","showAlbums","showComments","viewAlbum","submitPayment","changeLang","home","logout")),
     ADMIN("admin",Arrays.asList("addTrack","addAlbum","submitAlbum","changeClientStatus","showClients"
-            ,"submitTrack","showAlbums","viewAlbum","changeLang","home","logout"));
+            ,"submitTrack","showAlbums","showTracks","showComments","viewAlbum","changeLang","home","logout"));
 
     private String value;
     private List<String> permissions;

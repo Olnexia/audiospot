@@ -13,6 +13,7 @@
 <head>
     <title><fmt:message key="pageTitle"/></title>
     <style><jsp:include page = "/css/table.css"/></style>
+    <style><jsp:include page="/css/icon-button.css"/></style>
     <jsp:include page = "../fragments/header.jsp"/>
 </head>
     <body>
@@ -53,10 +54,17 @@
                             </c:when>
                         </c:choose>
                         <td>${track.price}</td>
-                        <td class = "manage-buttons">
-                            <a class="neutral-button" href="${pageContext.servletContext.contextPath}/controller?command=orderTrack&trackId=${track.id}">
-                                <fmt:message key="order"/>
-                            </a>
+                        <td class="manage-buttons">
+                            <c:if test="${sessionScope.user.role.value eq 'client'}">
+                            <div class="icon-button " onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=orderTrack&trackId=${track.id}'">
+                                <div class="small order-icon"></div>
+                                <p class="b-text"><fmt:message key="order"/></p>
+                            </div>
+                            </c:if>
+                            <div class="icon-button " onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=showComments&trackId=${track.id}'">
+                                <div class="small comments-icon"></div>
+                                <p class="b-text"><fmt:message key="comments"/></p>
+                            </div>
                         </td>
                     </tr>
                 </c:forEach>

@@ -10,14 +10,14 @@ public class Comment implements Entity{
     public static final String DATE_TIME_LABEL = "date_time";
 
     private Long id;
-    private Long userId;
+    private User user;
     private Long trackId;
     private String text;
     private LocalDateTime dateTime;
 
-    public Comment(Long id, Long userId, Long trackId, String text, LocalDateTime dateTime) {
+    public Comment(Long id, User user, Long trackId, String text, LocalDateTime dateTime) {
         this.id = id;
-        this.userId = userId;
+        this.user = user;
         this.trackId = trackId;
         this.text = text;
         this.dateTime = dateTime;
@@ -35,8 +35,8 @@ public class Comment implements Entity{
         return dateTime;
     }
 
-    public Long getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
     public Long getTrackId() {

@@ -1,0 +1,50 @@
+.order-icon{
+    background: url("/images/icons/order.png") no-repeat top;
+    background-size: 100%;
+}
+
+.add-icon{
+    background: url("/images/icons/add-new.png") no-repeat top;
+    background-size: 100%;
+}
+
+.add-comment-icon{
+    background: url("/images/icons/add-comment.png") no-repeat top;
+    background-size: 100%;
+}
+
+.comments-icon{
+    background: url("/images/icons/comments.png") no-repeat top;
+    background-size: 100%;
+}
+
+.small{
+    width: 50px;
+    height: 50px;
+}
+
+.medium{
+    width: 80px;
+    height: 80px;
+}
+
+.b-text{
+    margin-left: 5px;
+    align-self: center;
+    font-size: 16px;
+}
+
+.icon-button{
+    display:flex;
+    flex-wrap: nowrap;
+    width: auto;
+    justify-content: space-between;
+    align-self: center;
+    padding: 2px;
+    border: 2px solid transparent;
+}
+
+.icon-button:hover {
+    cursor: pointer;
+    border-color:  #7a7a7a;
+}

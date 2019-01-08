@@ -16,6 +16,7 @@
     <style><jsp:include page = "/css/table.css"/></style>
     <style><jsp:include page="/css/modal.css"/></style>
     <style><jsp:include page="/css/form.css"/></style>
+    <style><jsp:include page="/css/icon-button.css"/></style>
     <script type="text/javascript"><jsp:include page="/js/modal/comment.js"/></script>
 </head>
     <body>
@@ -52,10 +53,11 @@
                                 </c:when>
                             </c:choose>
                             <td class="manage-buttons">
-                                <a class="neutral-button" form="comment" onclick="showModal();
+                                <div class="icon-button " onclick="showModal();
                                         document.getElementById('audiotrack_id').value = '${track.id}';">
-                                    <fmt:message key="comment"/>
-                                </a>
+                                    <div class="small add-comment-icon"></div>
+                                    <p class="b-text"><fmt:message key="comment"/></p>
+                                </div>
                             </td>
                         </tr>
                     </c:forEach>

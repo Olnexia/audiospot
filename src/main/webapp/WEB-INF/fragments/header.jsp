@@ -21,6 +21,7 @@
             <c:if test="${sessionScope.user.role.value eq 'admin'}">
                 <a href="${pageContext.servletContext.contextPath}/controller?command=addTrack"><fmt:message key="addTrack"/></a>
                 <a href="${pageContext.servletContext.contextPath}/controller?command=showAlbums"><fmt:message key="albums"/></a>
+                <a href="${pageContext.servletContext.contextPath}/controller?command=showTracks"><fmt:message key="tracks"/></a>
                 <%--<li class="menu_item"><a href="${pageContext.servletContext.contextPath}/controller?command=showPlaylists"><fmt:message key="audioSets"/></a></li>--%>
                 <a href="${pageContext.servletContext.contextPath}/controller?command=showClients"><fmt:message key="clients"/></a>
             </c:if>
@@ -28,7 +29,7 @@
             <c:if test="${sessionScope.user.role.value eq 'client'}">
                 <a href="${pageContext.servletContext.contextPath}/controller?command=showPlaylist"><fmt:message key="myPlaylist"/></a>
                 <a href="${pageContext.servletContext.contextPath}/controller?command=showAlbums"><fmt:message key="albums"/></a>
-                <a href="${pageContext.servletContext.contextPath}/controller?command=buyTracks"><fmt:message key="orderNewTrack"/></a>
+                <a href="${pageContext.servletContext.contextPath}/controller?command=showTracks"><fmt:message key="tracks"/></a>
                 <a href="${pageContext.servletContext.contextPath}/controller?command=payOrder"><fmt:message key="PayOrder"/></a>
             </c:if>
 

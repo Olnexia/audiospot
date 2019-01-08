@@ -9,6 +9,7 @@ import com.epam.audiospot.command.client.*;
 import com.epam.audiospot.command.common.HomeCommand;
 import com.epam.audiospot.command.common.LoginCommand;
 import com.epam.audiospot.command.common.LogoutCommand;
+import com.epam.audiospot.command.common.ShowTracksCommand;
 import com.epam.audiospot.exception.IllegalCommandException;
 import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
@@ -31,7 +32,7 @@ public class CommandFactoryTest {
                 { "changeClientStatus", ChangeClientStatusCommand.class},
                 { "showPlaylist", ShowPlaylistCommand.class},
                 { "submitComment", SubmitCommentCommand.class},
-                { "buyTracks", BuyTracksCommand.class},
+                { "buyTracks", ShowTracksCommand.class},
                 { "payOrder", PayForOrderCommand.class},
                 { "submitPayment", SubmitPaymentCommand.class},
                 { "logout", LogoutCommand.class},

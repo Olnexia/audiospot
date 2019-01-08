@@ -11,6 +11,8 @@ import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.CommentService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import javax.jws.soap.SOAPBinding;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -24,16 +26,15 @@ public class SubmitCommentCommand implements Command {
         String text = request.getParameter(Comment.TEXT_LABEL);
         Long trackId = Long.parseLong(request.getParameter(Comment.TRACK_ID_LABEL));
         LocalDateTime dateTime = LocalDateTime.now();
-        Long userId;
         HttpSession session = request.getSession(false);
+        User user;
         if(session!=null){
-            User user = (User)session.getAttribute("user");
-            userId = user.getId();
+            user = (User)session.getAttribute("user");
         }else{
             throw new CommandExecutionException("Session does not exist");
         }
 
-        Comment comment = new Comment(null,userId,trackId,text,dateTime);
+        Comment comment = new Comment(null,user,trackId,text,dateTime);
         CommentService service = new CommentService();
         try{
             service.save(comment);

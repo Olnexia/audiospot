@@ -30,7 +30,7 @@ public class CommentRepository extends AbstractRepository<Comment> {
         Map<String,Object> fields = new HashMap<>();
         fields.put(Comment.TEXT_LABEL,comment.getText());
         fields.put(Comment.DATE_TIME_LABEL,comment.getDateTime());
-        fields.put(Comment.USER_ID_LABEL,comment.getUserId());
+        fields.put(Comment.USER_ID_LABEL,comment.getUser().getId());
         fields.put(Comment.TRACK_ID_LABEL,comment.getTrackId());
         return fields;
     }
