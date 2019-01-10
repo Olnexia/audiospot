@@ -1,6 +1,8 @@
 package com.epam.audiospot.entity;
 
 public class Artist implements Entity {
+    private static final long serialVersionUID = -3557593784249973031L;
+
     public static final String ID_LABEL = "artist_id";
     public static final String NAME_LABEL = "name";
     public static final String COUNTRY_LABEL = "country";

@@ -1,9 +1,10 @@
 package com.epam.audiospot.entity;
 
 import java.math.BigDecimal;
-import java.util.Objects;
 
 public class AudioTrack implements Entity {
+    private static final long serialVersionUID = 1656277176990370384L;
+
     public static final String ID_LABEL = "audiotrack_id";
     public static final String ALBUM_ID_LABEL = "album_id";
     public static final String AUTHOR_ID_LABEL = "author_id";
@@ -36,15 +37,6 @@ public class AudioTrack implements Entity {
         return new AudioTrack(null,albumId,artist,title,price,genre);
     }
 
-    public AudioTrack( Long albumId, Artist artist, String title,
-                      BigDecimal price, Genre genre) {
-        this.albumId = albumId;
-        this.artist = artist;
-        this.title = title;
-        this.price = price;
-        this.genre = genre;
-    }
-
     @Override
     public boolean equals(Object object) {
         if (this == object){
@@ -59,7 +51,7 @@ public class AudioTrack implements Entity {
                 && artist.equals(track.getArtist())
                 && title.equals(track.getTitle())
                 && genre.equals(track.getGenre())
-                &&price.equals(track.getPrice());
+                && price.equals(track.getPrice());
     }
 
     @Override

@@ -1,6 +1,9 @@
 package com.epam.audiospot.entity;
 
+//TODO remake to set or delete
 public class Playlist implements Entity {
+    private static final long serialVersionUID = 7455159949452216440L;
+
     public static final String ID_LABEL = "playlist_id";
     public static final String TITLE_LABEL = "name";
     public static final String DESCRIPTION_LABEL = "description";

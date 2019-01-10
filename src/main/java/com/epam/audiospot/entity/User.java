@@ -1,8 +1,8 @@
 package com.epam.audiospot.entity;
 
-import java.io.Serializable;
+public class User implements Entity{
+    private static final long serialVersionUID = 646513000665422990L;
 
-public class User implements Entity, Serializable {
     public static final String ID_LABEL = "user_id";
     public static final String NAME_LABEL = "name";
     public static final String SURNAME_LABEL = "surname";
@@ -17,9 +17,9 @@ public class User implements Entity, Serializable {
     private String surname;
     private String login;
     private String password;
+    private Role role;
     private boolean active;
     private int discount;
-    private Role role;
 
     public User(Long id, String name, String surname, String login, String password,
                 boolean active, int discount, Role role) {
@@ -31,6 +31,40 @@ public class User implements Entity, Serializable {
         this.active = active;
         this.discount = discount;
         this.role = role;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object){
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
+        User user = (User) object;
+        return  id.equals(user.getId())
+                && name.equals(user.getName())
+                && surname.equals(user.getSurname())
+                && login.equals(user.getLogin())
+                && password.equals(user.getPassword())
+                && active == user.isActive()
+                && discount == user.getDiscount()
+                && role.equals(user.getRole());
+    }
+
+    @Override
+    public int hashCode() {
+        int result =17;
+        final int prime = 31;
+        result = prime * result + id.hashCode();
+        result = prime * result + name.hashCode();
+        result = prime * result + surname.hashCode();
+        result = prime * result + login.hashCode();
+        result = prime * result + password.hashCode();
+        result = prime * result + Boolean.hashCode(active);
+        result = prime * result + Integer.hashCode(discount);
+        result = prime * result + role.hashCode();
+        return result;
     }
 
     public Long getId() {

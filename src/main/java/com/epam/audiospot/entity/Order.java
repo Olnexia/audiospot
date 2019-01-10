@@ -3,6 +3,8 @@ package com.epam.audiospot.entity;
 import java.time.LocalDate;
 
 public class Order implements Entity {
+    private static final long serialVersionUID = -2575420337998768374L;
+
     public static final String ID_LABEL = "audio_order_id";
     public static final String USER_ID_LABEL = "user_id";
     public static final String ORDER_DATE_LABEL = "date";
@@ -18,6 +20,32 @@ public class Order implements Entity {
         this.orderDate = orderDate;
         this.userId = userId;
         this.paid = paid;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object){
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
+        Order order = (Order) object;
+        return  id.equals(order.getId())
+                && orderDate.equals(order.getOrderDate())
+                && userId.equals(order.getUserId())
+                && paid == order.isPaid();
+    }
+
+    @Override
+    public int hashCode() {
+        int result =17;
+        final int prime = 31;
+        result = prime * result + id.hashCode();
+        result = prime * result + orderDate.hashCode();
+        result = prime * result + userId.hashCode();
+        result = prime * result + Boolean.hashCode(paid);
+        return result;
     }
 
     public Long getId() {
