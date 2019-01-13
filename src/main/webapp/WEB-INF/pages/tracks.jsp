@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="ph" uri="/WEB-INF/customTags/pageHelper.tld" %>
 
 <%@ page contentType = "text/html;charset=utf-8"
          isELIgnored ="false"
@@ -21,9 +22,17 @@
         <c:if test="${fn:length(tracks)eq 0}">
             <h2>There are not available tracks now</h2>
         </c:if>
+        <c:if test="${sessionScope.user.role.value eq 'admin'}">
+            <div class="icon-button" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=addTrack'">
+                <div class="small add-icon"></div>
+                <p class="b-text"><fmt:message key="newTrack"/></p>
+            </div>
+        </c:if>
         <c:if test="${fn:length(tracks)ne 0}">
             <table class="table">
-                <caption><fmt:message key="pageTitle"/></caption>
+                <c:if test="${sessionScope.user.role.value eq 'client'}">
+                    <caption><fmt:message key="pageTitle"/></caption>
+                </c:if>
                 <thead>
                 <tr>
                     <th><fmt:message key="artist"/></th>
@@ -34,7 +43,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${tracks}" var="track"  varStatus="status">
+                <c:set var="tracksPerPage" value="10"/>
+                <c:set var="page" value="${not empty param.page and param.page>0?param.page:1}"/>
+                <c:forEach items="${tracks}" begin="${page*tracksPerPage-tracksPerPage}" end="${page*tracksPerPage}" var="track"  varStatus="status">
                     <tr>
                         <td>${track.artist.name}</td>
                         <td>${track.title}</td>
@@ -53,7 +64,7 @@
                                 <td><fmt:message key="pop"/></td>
                             </c:when>
                         </c:choose>
-                        <td>${track.price}</td>
+                        <td><fmt:formatNumber value="${track.price}" type="currency" currencySymbol="$"/></td>
                         <td class="manage-buttons">
                             <c:if test="${sessionScope.user.role.value eq 'client'}">
                             <div class="icon-button " onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=orderTrack&trackId=${track.id}'">
@@ -67,9 +78,14 @@
                             </div>
                         </td>
                     </tr>
+                    <%--</c:if>--%>
                 </c:forEach>
                 </tbody>
             </table>
+            <fmt:message key="prevPage" var="prev" />
+            <fmt:message key="nextPage" var="next" />
+            <ph:pagination entryAmount="${fn:length(tracks)}" amountByPage="${tracksPerPage}"
+            prevText= "${prev}" nextText="${next}" styleClass="prev-next"/>
         </c:if>
     </div>
     </body>

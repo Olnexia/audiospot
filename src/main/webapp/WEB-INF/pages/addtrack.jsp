@@ -52,7 +52,7 @@
             </label>
             <label title="<fmt:message key="cancel"/>">
                 <c:if test="${param.albumId eq null}">
-                    <a class="button" href="${pageContext.servletContext.contextPath}/controller?command=home" >
+                    <a class="button" href="${pageContext.servletContext.contextPath}/controller?command=showTracks" >
                         <fmt:message key="cancel"/>
                     </a>
                 </c:if>

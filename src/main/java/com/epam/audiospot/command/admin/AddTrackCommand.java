@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class AddTrackCommand implements Command {
-
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response){
         return CommandResult.forward(Forward.ADD_TRACK.getPath());

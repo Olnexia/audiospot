@@ -3,6 +3,7 @@ table.table {
     font-size: 16px;
     border-collapse: collapse;
     padding-left: 5px;
+    margin: 5px 0;
 }
 
 .table caption{
@@ -39,7 +40,7 @@ tr:nth-of-type(odd) {
     justify-content: space-around;
 }
 
-.manage-buttons a, .manage-buttons button {
+.manage-buttons a, .manage-buttons button , .prev-next {
     display:inline-block;
     width: 180px;
     padding:0.2em 1.45em;
@@ -61,6 +62,11 @@ tr:nth-of-type(odd) {
 .manage-buttons > .positive-button:hover,
 .manage-buttons > .neutral-button:hover,
 .manage-buttons > .negative-button:hover {
+    cursor: pointer;
+    border-color:#7a7a7a;
+}
+
+.prev-next:hover{
     cursor: pointer;
     border-color:#7a7a7a;
 }

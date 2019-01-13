@@ -26,6 +26,6 @@ public class OrderTrackCommand implements Command {
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);
         }
-        return CommandResult.redirect(Redirect.BUY_TRACKS.getPath());
+        return CommandResult.redirect(Redirect.SHOW_TRACKS.getPath());
     }
 }

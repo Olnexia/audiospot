@@ -16,7 +16,6 @@ import java.math.BigDecimal;
 import java.util.Optional;
 
 public class SubmitTrackCommand implements Command {
-    private static final String ARTIST_LABEL = "artist";
     private static final Logger logger = LogManager.getLogger(SubmitTrackCommand.class);
 
     @Override
@@ -24,7 +23,7 @@ public class SubmitTrackCommand implements Command {
         String title = request.getParameter(AudioTrack.TITLE_LABEL);
         BigDecimal price = new BigDecimal(request.getParameter(AudioTrack.PRICE_LABEL));
         Genre genre = Genre.valueOf(request.getParameter(AudioTrack.GENRE_LABEL).toUpperCase());
-        String artistName = request.getParameter(ARTIST_LABEL);
+        String artistName = request.getParameter("artist");
         String albumId = request.getParameter("albumId");
 
         AudioTrackService service = new AudioTrackService();
@@ -34,17 +33,14 @@ public class SubmitTrackCommand implements Command {
             service.submitTrack(track);
             logger.info("New track with id "+track.getId()+" added.");
             if(albumId==null){
-                commandResult = CommandResult.redirect(Redirect.ADD_TRACK.getPath());
+                commandResult = CommandResult.redirect(Redirect.SHOW_TRACKS.getPath());
             }else{
                 commandResult = CommandResult.redirect(Redirect.VIEW_ALBUM.getPath()+"&albumId="+albumId);
             }
         }catch (ServiceException e){
             logger.error("An error occurred while adding track: ",e);
-            commandResult = CommandResult.forward(Forward.ADD_TRACK.getPath()); //also set some text message?
+            commandResult = CommandResult.forward(Forward.ADD_TRACK.getPath()); //TODO also set some text message
         }
-
-        //TODO here need some message for success
-
         return commandResult;
     }
 }

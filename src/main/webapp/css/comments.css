@@ -1,16 +1,16 @@
+.comments{
+    width: 70%;
+    justify-items: flex-start;
+}
 
 .comment{
-    display: flex;
-    flex-direction: column;
     list-style: none;
     overflow: auto;
     padding: 10px 20px;
     background-color: #fff;
     border: 1px solid #e8e8e8;
     border-radius: 3px;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    min-width: 800px;
+    flex-basis: max-content;
 }
 
 .author-info{

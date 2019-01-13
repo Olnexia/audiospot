@@ -19,7 +19,7 @@
                 <a href="${pageContext.servletContext.contextPath}/controller?command=home">AudioSpot</a>
             </div>
             <c:if test="${sessionScope.user.role.value eq 'admin'}">
-                <a href="${pageContext.servletContext.contextPath}/controller?command=addTrack"><fmt:message key="addTrack"/></a>
+                <%--<a href="${pageContext.servletContext.contextPath}/controller?command=addTrack"><fmt:message key="addTrack"/></a>--%>
                 <a href="${pageContext.servletContext.contextPath}/controller?command=showAlbums"><fmt:message key="albums"/></a>
                 <a href="${pageContext.servletContext.contextPath}/controller?command=showTracks"><fmt:message key="tracks"/></a>
                 <%--<li class="menu_item"><a href="${pageContext.servletContext.contextPath}/controller?command=showPlaylists"><fmt:message key="audioSets"/></a></li>--%>

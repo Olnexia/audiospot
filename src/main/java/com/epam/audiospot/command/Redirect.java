@@ -5,7 +5,7 @@ public enum Redirect {
     ADD_TRACK("/controller?command=addTrack"),
     SHOW_CLIENTS("/controller?command=showClients"),
     VIEW_ALBUM("/controller?command=viewAlbum"),
-    BUY_TRACKS("/controller?command=buyTracks"),
+    SHOW_TRACKS("/controller?command=showTracks"),
     SHOW_PLAYLIST("/controller?command=showPlaylist");
 
     private String path;

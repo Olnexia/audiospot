@@ -3,6 +3,7 @@ package com.epam.audiospot.command.common;
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
 import com.epam.audiospot.command.Forward;
+import com.epam.audiospot.command.Redirect;
 import com.epam.audiospot.command.factory.CommandType;
 import com.epam.audiospot.entity.Comment;
 import com.epam.audiospot.exception.CommandExecutionException;
@@ -24,7 +25,7 @@ public class ShowCommentsCommand implements Command {
                 request.setAttribute("comments",comments);
                 return CommandResult.forward(Forward.SHOW_COMMENTS.getPath());
             }else{
-                return CommandType.SHOW_TRACKS.getCommand().execute(request,response);
+                return CommandResult.redirect(Redirect.SHOW_TRACKS.getPath());
             }
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);
