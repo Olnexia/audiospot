@@ -53,7 +53,7 @@
                                 </c:when>
                             </c:choose>
                             <td class="manage-buttons">
-                                <div class="icon-button " onclick="showModal();
+                                <div class="icon-button " onclick="showCommentModal();
                                         document.getElementById('audiotrack_id').value = '${track.id}';">
                                     <div class="small add-comment-icon"></div>
                                     <p class="b-text"><fmt:message key="comment"/></p>
@@ -68,7 +68,7 @@
                     <div class="form-style">
                         <div class="fhead">
                             <h2><fmt:message key="addComment"/></h2>
-                            <div class="close" onclick="closeModal()">&times;</div>
+                            <div class="close" onclick="closeCommentModal()">&times;</div>
                         </div>
                         <form name="comment" action = "${pageContext.servletContext.contextPath}/controller?command=submitComment" method ="post">
                             <label title="title">

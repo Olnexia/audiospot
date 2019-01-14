@@ -21,6 +21,7 @@
     font-size: 18px;
     font-weight: 100;
 }
+
 .form-style input[type="text"],
 .form-style input[type="date"],
 .form-style input[type="datetime"],
@@ -91,6 +92,18 @@
     display: flex;
     justify-content:space-around;
     flex-flow: wrap;
+}
+
+.inline-label{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: .5rem;
+}
+
+.inline-label input[type="text"]{
+    width: 85%;
+    margin-bottom: 0;
 }
 
 @media screen and (max-width: 660px) {

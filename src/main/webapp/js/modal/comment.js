@@ -1,9 +1,9 @@
 
-function showModal() {
+function showCommentModal() {
     document.getElementById("comment").style.display = "block";
 }
 
-function closeModal() {
+function closeCommentModal() {
     document.getElementById("comment").style.display = "none";
 }
 
