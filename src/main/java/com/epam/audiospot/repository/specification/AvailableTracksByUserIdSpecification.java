@@ -5,8 +5,8 @@ import java.util.List;
 
 public class AvailableTracksByUserIdSpecification implements Specification {
     private static final String AUDIOTRACK_PREPARED_QUERY = "WHERE audiotrack_id "+
-                                                            "NOT IN (SELECT ordered_tracks.audiotrack_id "+
-                                                            "FROM ordered_tracks "+
+                                                            "NOT IN (SELECT ordered_track.audiotrack_id "+
+                                                            "FROM ordered_track "+
                                                             "WHERE audio_order_id "+
                                                             "IN (SELECT audio_order.audio_order_id "+
                                                             "FROM audio_order "+

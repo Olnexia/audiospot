@@ -4,9 +4,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class AudioTracksByUserIdSpecification implements Specification {
-    private static final String AUDIOTRACK_PREPARED_QUERY = "INNER JOIN ordered_tracks "+
-                                                            "ON audiotrack.audiotrack_id=ordered_tracks.audiotrack_id "+
-                                                            "WHERE ordered_tracks.audio_order_id "+
+    private static final String AUDIOTRACK_PREPARED_QUERY = "INNER JOIN ordered_track "+
+                                                            "ON audiotrack.audiotrack_id=ordered_track.audiotrack_id "+
+                                                            "WHERE ordered_track.audio_order_id "+
                                                             "IN(SELECT audio_order.audio_order_id "+
                                                             "FROM audio_order "+
                                                             "WHERE paid = TRUE AND user_id = ?);";

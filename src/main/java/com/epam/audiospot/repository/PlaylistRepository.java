@@ -4,11 +4,8 @@ import com.epam.audiospot.builder.Builder;
 import com.epam.audiospot.builder.PlaylistBuilder;
 import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.entity.Playlist;
-import com.epam.audiospot.exception.RepositoryException;
-import com.epam.audiospot.repository.specification.Specification;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class PlaylistRepository extends AbstractRepository<Playlist> {

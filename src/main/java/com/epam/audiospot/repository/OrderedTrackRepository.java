@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class OrderedTrackRepository extends AbstractRepository<OrderedTrack> {
-    private static final String TABLE_NAME = "ordered_tracks";
+    private static final String TABLE_NAME = "ordered_track";
 
     public OrderedTrackRepository(ConnectionWrapper connection){
         super(connection);

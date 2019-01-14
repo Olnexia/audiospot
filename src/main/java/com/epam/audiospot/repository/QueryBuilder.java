@@ -12,7 +12,7 @@ public class QueryBuilder<T extends Entity> {
     }
 
     public String buildDeleteQuery(T object){
-        return String.join(" ","DELETE FROM",tableName,"WHERE",tableName+"_id='",object.getId().toString()+"';");
+        return String.join(" ","DELETE FROM",tableName,"WHERE",tableName+"_id='"+object.getId().toString()+"';");
     }
 
     public String buildInsertQuery(Map<String,Object> fields){
@@ -30,12 +30,11 @@ public class QueryBuilder<T extends Entity> {
     public String buildUpdateQuery(T object, Map<String,Object> fields){
         String setValues = "SET "+String.join(",", fields.entrySet()
                 .stream()
-                .map(entry -> entry.getKey()+"= '"+entry.getValue()+"'")
+                .map(entry -> entry.getKey()+"='"+entry.getValue()+"'")
                 .collect(Collectors.toList()));
         setValues = modifyLiterals(setValues);
 
-        return String.join(" ","update",tableName,setValues,"WHERE", tableName+"_id="+object.getId().toString()+";");
-
+        return String.join(" ","UPDATE",tableName,setValues,"WHERE", tableName+"_id="+object.getId().toString()+";");
     }
 
     private String modifyLiterals(String query){

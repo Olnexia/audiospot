@@ -9,7 +9,7 @@ import com.epam.audiospot.repository.specification.Specification;
 import java.sql.*;
 import java.util.*;
 
-public abstract class AbstractRepository<T extends Entity> implements Repository<T>{
+public abstract class AbstractRepository<T extends Entity> implements Repository<T> {
     private ConnectionWrapper connection;
     private QueryBuilder<T> queryBuilder = new QueryBuilder<T>(getTableName());
 
