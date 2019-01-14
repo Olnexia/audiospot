@@ -8,6 +8,7 @@ import com.epam.audiospot.repository.*;
 import com.epam.audiospot.repository.creator.RepositoryCreator;
 import com.epam.audiospot.repository.specification.UserByIdSpecification;
 import com.epam.audiospot.repository.specification.UserByLoginAndPasswordSpecification;
+import com.epam.audiospot.repository.specification.UserByLoginSpecification;
 import com.epam.audiospot.repository.specification.UserByRoleSpecification;
 import org.apache.commons.codec.digest.DigestUtils;
 import java.util.List;
@@ -50,6 +51,17 @@ public class UserService{
         try(RepositoryCreator repositoryCreator = new RepositoryCreator()){
             UserRepository repository = repositoryCreator.getUserRepository();
             repository.save(user);
+        }catch (RepositoryException e){
+            throw new ServiceException(e.getMessage(),e);
+        }
+    }
+
+    public boolean isLoginAvailable(String login) throws ServiceException{
+        UserByLoginSpecification specification = new UserByLoginSpecification(login);
+        try(RepositoryCreator repositoryCreator = new RepositoryCreator()){
+         UserRepository repository = repositoryCreator.getUserRepository();
+         Optional<User> userOptional = repository.queryForSingleResult(specification);
+         return !userOptional.isPresent();
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);
         }

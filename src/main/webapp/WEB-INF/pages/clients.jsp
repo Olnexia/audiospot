@@ -45,7 +45,7 @@
                             <c:if test="${client.active eq false}"><fmt:message key="blocked"/></c:if>
                         </td>
                         <td class="manage-buttons">
-                            <a class="positive-button" href ="#"onclick="showDiscountModal();
+                            <a class="positive-button" href ="#" onclick="showDiscountModal();
                                     document.getElementById('discountInput').value = '${client.discount}';
                                     document.getElementById('userId').value = '${client.id}';">
                                 <fmt:message key="changeDiscount"/>

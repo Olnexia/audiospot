@@ -1,9 +1,15 @@
 function switchLoginRegister() {
-    var registerForm = document.getElementsByClassName("register-form");
-    var loginForm = document.getElementsByClassName("login-form");
-    if (registerForm.style.display=== 'none') {
-        loginForm.style.display = 'none';
+    var register = document.getElementById("register");
+    var login = document.getElementById("login");
+    var form = document.getElementById("login-register");
+
+    if (register.style.display=== 'none') {
+        login.style.display = 'none';
+        register.style.display = 'block';
+        form.style.height='330px'
     } else {
-        registerForm.style.display = 'none';
+        register.style.display = 'none';
+        login.style.display = 'block';
+        form.style.height='230px'
     }
 }

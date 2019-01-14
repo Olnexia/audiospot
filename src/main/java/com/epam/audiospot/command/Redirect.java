@@ -2,6 +2,7 @@ package com.epam.audiospot.command;
 
 public enum Redirect {
     HOME("/controller?command=home"),
+    LOGIN("/controller?command=login"),
     ADD_TRACK("/controller?command=addTrack"),
     SHOW_CLIENTS("/controller?command=showClients"),
     VIEW_ALBUM("/controller?command=viewAlbum"),

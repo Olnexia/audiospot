@@ -1,7 +1,7 @@
 package com.epam.audiospot.command;
 
 public enum Forward {
-    LOGIN("/WEB-INF/pages/login.jsp"),
+    LOGIN("/WEB-INF/pages/landing.jsp"),
     MAIN("/WEB-INF/pages/main.jsp"),
     ADD_TRACK("/WEB-INF/pages/addtrack.jsp"),
     ADD_ALBUM("/WEB-INF/pages/addalbum.jsp"),

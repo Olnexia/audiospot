@@ -33,6 +33,10 @@ public class User implements Entity{
         this.role = role;
     }
 
+    public static User client(String login,String name, String surname,String password){
+        return new User(null,name,surname,login,password,true,0,Role.CLIENT);
+    }
+
     @Override
     public boolean equals(Object object) {
         if (this == object){
