@@ -36,14 +36,12 @@ public class LoginCommand implements Command {
                     session.setAttribute(LOCALE,currentLocale);
                     commandResult = CommandResult.redirect(Redirect.HOME.getPath());
                 }else{
-//                    request.setAttribute("blocked",true);
                     request.setAttribute("loginMessage","blocked");
                     commandResult = CommandResult.forward(Forward.LOGIN.getPath());
                 }
             }else {
                 commandResult = CommandResult.forward(Forward.LOGIN.getPath());
                 request.setAttribute("loginMessage","wrongInput");
-//                request.setAttribute("wrongInput",true);
             }
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);

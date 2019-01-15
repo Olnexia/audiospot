@@ -7,7 +7,7 @@
 
 <fmt:setLocale value="${sessionScope.lang}"/>
 
-<fmt:bundle basename="pagecontent" prefix ="payorder.">
+<fmt:bundle basename="pagecontent" prefix ="payOrder.">
 <html>
 <head>
     <title><fmt:message key="pageTitle"/></title>
@@ -28,13 +28,13 @@
                         </div>
                         <form action = "${pageContext.servletContext.contextPath}/controller?command=submitPayment" method ="post">
                             <label>
-                                <input type="text" name="cardNumber" required placeholder="<fmt:message key="cardNumber"/>" autocomplete="cc-number">
+                                <input type="text" name="cardNumber" pattern="[0-9]{13,16}" title="<fmt:message key="CcnDesc"/>" required placeholder="<fmt:message key="cardNumber"/>">
                             </label>
                             <label>
-                                <input type="text" name="cvc" required placeholder="<fmt:message key="cvc"/>" autocomplete="cc-csc">
+                                <input type="text" name="cvc" pattern="[0-9]{3}" title="<fmt:message key="CvcDesc"/>" required placeholder="<fmt:message key="cvc"/>" autocomplete="cc-csc">
                             </label>
                             <label>
-                                <input type="text" name="ccExp" required placeholder="<fmt:message key="expiry"/>" autocomplete="cc-exp">
+                                <input type="text" name="ccExp" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{2}" title="<fmt:message key="ccExpDesc"/>" required placeholder="<fmt:message key="expiry"/>" autocomplete="cc-exp">
                             </label>
                             <div class="buttons">
                                 <label>

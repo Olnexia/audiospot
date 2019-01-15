@@ -15,7 +15,7 @@ public class ChangeDiscountCommand implements Command {
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws CommandExecutionException {
-        int discount = Integer.parseInt(request.getParameter(User.DISCOUNT_LABEL));
+        float discount = Float.parseFloat(request.getParameter(User.DISCOUNT_LABEL));
         Long userId = Long.parseLong(request.getParameter(User.ID_LABEL));
 
         UserService service = new UserService();

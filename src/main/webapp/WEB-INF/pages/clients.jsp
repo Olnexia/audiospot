@@ -39,7 +39,7 @@
                         <td>${client.name}</td>
                         <td>${client.surname}</td>
                         <td>${client.login}</td>
-                        <td>${client.discount}</td>
+                        <td>${client.discount}%</td>
                         <td>
                             <c:if test="${client.active eq true}"><fmt:message key="active"/></c:if>
                             <c:if test="${client.active eq false}"><fmt:message key="blocked"/></c:if>
@@ -71,7 +71,7 @@
                     <form name="discount" action = "${pageContext.servletContext.contextPath}/controller?command=changeDiscount" method ="post">
                         <div class="inline-label">
                             <label for="discount"><fmt:message key="discount"/></label>
-                            <input id="discountInput" type="text" name="discount">
+                            <input id="discountInput" type="text" pattern="^100(\.0{0,2}?)?$|^\d{0,2}(\.\d{0,2})?$" title="<fmt:message key="discountDesc"/>" name="discount">
                         </div>
                         <input type="hidden" id="userId" name ="user_id">
                         <div class="buttons">

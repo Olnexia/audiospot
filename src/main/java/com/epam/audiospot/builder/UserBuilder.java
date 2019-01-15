@@ -16,7 +16,7 @@ public class UserBuilder implements Builder<User> {
         String password = resultSet.getString(User.PASSWORD_LABEL);
         boolean active = resultSet.getBoolean(User.ACTIVE_LABEL);
         String roleContent = resultSet.getString(User.ROLE_LABEL);
-        int discount = resultSet.getInt(User.DISCOUNT_LABEL);
+        float discount = resultSet.getFloat(User.DISCOUNT_LABEL);
         Role role = Role.valueOf(roleContent.toUpperCase());
         return new User(id,name,surname,login,password,active,discount,role);
     }

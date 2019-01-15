@@ -24,14 +24,14 @@
 
         <label title="artist">
             <c:if test="${param.artistName ne null}">
-                <input type="text" name="artist" value="${param.artistName}" readonly>
+                <input type="text" name="artist"  value="${param.artistName}" readonly>
             </c:if>
             <c:if test="${param.artistName eq null}">
-                <input type="text" name="artist" placeholder="<fmt:message key="artist"/>"/>
+                <input type="text" name="artist" pattern="[A-Za-z0-9 ]{1,32}" title="<fmt:message key="artistTitleDesc"/>" placeholder="<fmt:message key="artist"/>" required/>
             </c:if>
         </label>
         <label title="title">
-            <input type="text" name="title" placeholder="<fmt:message key="audioTitle"/>"/>
+            <input type="text" name="title" pattern="[A-Za-z0-9 ]{1,32}" title="<fmt:message key="artistTitleDesc"/>" placeholder="<fmt:message key="audioTitle"/>" required/>
         </label>
         <input type="hidden" name = "albumId" value="${param.albumId}">
         <label title="genre">
@@ -42,9 +42,8 @@
                 <option value = "rap"> <fmt:message key="rap"/></option>
             </select>
         </label>
-        <%--TODO Add some validation--%>
         <label title="<fmt:message key="price"/>">
-            <input type="text" name="price" placeholder="<fmt:message key="price"/>"/>
+            <input type="text" name="price" pattern="^[0-9]+(\.[0-9]{2})?$" title="<fmt:message key="priceDesc"/>" placeholder="<fmt:message key="price"/>" required/>
         </label>
         <div class="buttons">
             <label title="<fmt:message key="add"/>">

@@ -19,10 +19,10 @@ public class User implements Entity{
     private String password;
     private Role role;
     private boolean active;
-    private int discount;
+    private float discount;
 
     public User(Long id, String name, String surname, String login, String password,
-                boolean active, int discount, Role role) {
+                boolean active, float discount, Role role) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -66,7 +66,7 @@ public class User implements Entity{
         result = prime * result + login.hashCode();
         result = prime * result + password.hashCode();
         result = prime * result + Boolean.hashCode(active);
-        result = prime * result + Integer.hashCode(discount);
+        result = prime * result + Float.hashCode(discount);
         result = prime * result + role.hashCode();
         return result;
     }
@@ -91,7 +91,7 @@ public class User implements Entity{
         return password;
     }
 
-    public int getDiscount() {
+    public float getDiscount() {
         return discount;
     }
 
@@ -112,7 +112,7 @@ public class User implements Entity{
         this.active = active;
     }
 
-    public void setDiscount(int discount) {
+    public void setDiscount(float discount) {
         this.discount = discount;
     }
 }

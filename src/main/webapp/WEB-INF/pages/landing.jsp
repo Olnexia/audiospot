@@ -20,12 +20,12 @@
                     <c:if test="${requestScope.registrationMessage ne null}">style="height: 320px;"</c:if>>
                    <form id ="register" class="register-form"
                          <c:if test="${requestScope.registrationMessage ne null}">style="display: block;"</c:if>
-                         <c:if test="${requestScope.registrationMessage eq null}">style="display: none;"</c:if>"
-                         action = "${pageContext.servletContext.contextPath}/controller?command=register${not empty param.lang?"&lang=":""}${not empty param.lang?param.lang:""}" method ="post">
-                       <input type="text" name="login" placeholder="<fmt:message key="login"/>"/>
-                       <input type="text" name="name" placeholder="<fmt:message key="name"/>"/>
-                       <input type="text" name="surname" placeholder="<fmt:message key="surname"/>"/>
-                       <input type="password" name="password" placeholder="<fmt:message key="password"/>"/>
+                         <c:if test="${requestScope.registrationMessage eq null}">style="display: none;"</c:if>
+                         action = "${pageContext.servletContext.contextPath}/controller?command=register${not empty param.lang?"&lang=":""}${not empty param.lang?param.lang:"en"}" method = "post">
+                       <input type="text" name="login" pattern="[A-Za-z0-9_]{1,15}" title="<fmt:message key="loginDesc"/>" placeholder="<fmt:message key="login"/>" required/>
+                       <input type="text" name="name" pattern="[A-Za-z]{1,15}" title="<fmt:message key="nameDesc"/>" placeholder="<fmt:message key="name"/>" required/>
+                       <input type="text" name="surname" pattern="[A-Za-z]{1,32}" title="<fmt:message key="surnameDesc"/>" placeholder="<fmt:message key="surname"/>" required/>
+                       <input type="password" name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="<fmt:message key="passwordDesc"/>" placeholder="<fmt:message key="password"/>" required/>
                        <label>
                            <button type="submit"><fmt:message key="registrationButtonMessage"/></button>
                        </label>
@@ -41,10 +41,10 @@
                          <c:if test="${requestScope.registrationMessage ne null}">style="display: none;"</c:if>
                          action = "${pageContext.servletContext.contextPath}/controller?command=login${not empty param.lang?"&lang=":""}${not empty param.lang?param.lang:""}" method ="post">
                        <label>
-                           <input type="text" name="login" placeholder="<fmt:message key="login"/>"/>
+                           <input type="text" name="login" pattern="[A-Za-z0-9_]{1,15}" title="<fmt:message key="loginDesc"/>" placeholder="<fmt:message key="login"/>" required/>
                        </label>
                        <label>
-                           <input type="password" name="password" placeholder="<fmt:message key="password"/>"/>
+                           <input type="password" name="password" placeholder="<fmt:message key="password"/>" required/>
                        </label>
                        <label>
                            <button type="submit"><fmt:message key="loginButtonMessage"/></button>
