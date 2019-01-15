@@ -8,7 +8,7 @@
 <fmt:bundle basename="pagecontent" prefix ="landing.">
 <html>
 <head>
-    <title><fmt:message key="title"/></title>
+    <title>AudioSpot</title>
     <style><jsp:include page = "/css/login.css"/></style>
     <script><jsp:include page = "/js/loginRegisterSwitch.js"/></script>
     <jsp:include page = "../fragments/header.jsp"/>

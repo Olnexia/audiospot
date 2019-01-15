@@ -56,8 +56,8 @@
                     <c:forEach items="${tracks}" var="track"  varStatus="status">
                         <tr>
                             <td>${status.index+1}</td>
+                            <td>${track.title}</td>
                             <td><fmt:formatNumber value="${track.price}" type="currency" currencySymbol="$"/></td>
-                            <td>${track.price}</td>
                         </tr>
                     </c:forEach>
                     </tbody>

@@ -11,6 +11,7 @@
 <html>
 <head>
     <style><jsp:include page = "/css/header-fixed.css"/></style>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/icons/logo.png" />
 </head>
 <body>
     <header class="header">
