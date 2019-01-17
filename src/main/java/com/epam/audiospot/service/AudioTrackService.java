@@ -6,10 +6,8 @@ import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.repository.Repository;
 import com.epam.audiospot.repository.factory.AudioRepositoryFactory;
 import com.epam.audiospot.repository.factory.RepositoryFactory;
-import com.epam.audiospot.repository.specification.AudioTrackByOrderIdSpecification;
-import com.epam.audiospot.repository.specification.AudioTracksByAlbumIdSpecification;
-import com.epam.audiospot.repository.specification.AudioTracksByUserIdSpecification;
-import com.epam.audiospot.repository.specification.AvailableTracksByUserIdSpecification;
+import com.epam.audiospot.repository.specification.*;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
@@ -71,6 +69,26 @@ public class AudioTrackService {
 
     public List<AudioTrack> findTracksAtAlbum(Long albumId) throws ServiceException{
         AudioTracksByAlbumIdSpecification specification = new AudioTracksByAlbumIdSpecification(albumId);
+        try(RepositoryFactory<AudioTrack> factory = new AudioRepositoryFactory()) {
+            Repository<AudioTrack> repository = factory.createRepository();
+            return repository.query(specification);
+        }catch (RepositoryException e){
+            throw new ServiceException(e.getMessage(),e);
+        }
+    }
+
+    public List<AudioTrack> findTracksAtAudioSet(Long audioSetId) throws ServiceException{
+        AudioTracksByAudioSetIdSpecification specification = new AudioTracksByAudioSetIdSpecification(audioSetId);
+        try(RepositoryFactory<AudioTrack> factory = new AudioRepositoryFactory()) {
+            Repository<AudioTrack> repository = factory.createRepository();
+            return repository.query(specification);
+        }catch (RepositoryException e){
+            throw new ServiceException(e.getMessage(),e);
+        }
+    }
+
+    public List<AudioTrack> findNotSettedTracks(Long audioSetId) throws ServiceException{
+        AvailableTracksByAudioSetIdSpecification specification = new AvailableTracksByAudioSetIdSpecification(audioSetId);
         try(RepositoryFactory<AudioTrack> factory = new AudioRepositoryFactory()) {
             Repository<AudioTrack> repository = factory.createRepository();
             return repository.query(specification);

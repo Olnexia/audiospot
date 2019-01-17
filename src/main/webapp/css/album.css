@@ -1,31 +1,3 @@
-.album{
-    display: flex;
-    align-content: space-around;
-    flex-direction: column;
-    width: 200px;
-    height: 270px;
-    padding: 10px;
-    margin: 5px;
-    border: #2CBBBB solid;
-}
-
-.poster{
-    width: 200px;
-    height: 200px;
-    background: url("/images/music-plate.png") no-repeat top;
-    background-size: 100%;
-}
-
-.add-new{
-    background: url("/images/icons/add-new.png") no-repeat top;
-    background-size: 100%;
-}
-
-.album:hover{
-    cursor:pointer;
-    border-color: #4CAF50;
-}
-
 .album-header{
     min-height: 200px;
     margin-bottom: 30px;
@@ -35,8 +7,3 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
-.album-info{
-
-}
-

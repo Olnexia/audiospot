@@ -1,27 +1,28 @@
-package com.epam.audiospot.command.admin;
+package com.epam.audiospot.command.common;
 
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
 import com.epam.audiospot.command.Forward;
-import com.epam.audiospot.entity.Album;
+import com.epam.audiospot.entity.AudioSet;
 import com.epam.audiospot.exception.CommandExecutionException;
 import com.epam.audiospot.exception.ServiceException;
-import com.epam.audiospot.service.AlbumService;
-
+import com.epam.audiospot.service.AudioSetService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-public class ShowAlbumsCommand implements Command {
+public class ShowAudioSetsCommand implements Command {
+
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws CommandExecutionException {
-        AlbumService albumService = new AlbumService();
+        AudioSetService service = new AudioSetService();
+
         try{
-            List<Album> albums = albumService.findAllAlbums();
-            request.setAttribute("albums",albums);
+            List<AudioSet> audioSets = service.findAllAudioSets();
+            request.setAttribute("audioSets",audioSets);
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);
         }
-        return CommandResult.forward(Forward.ALBUMS.getPath());
+        return CommandResult.forward(Forward.AUDIOSETS.getPath());
     }
 }

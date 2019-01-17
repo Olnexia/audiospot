@@ -13,6 +13,7 @@
     <head>
         <title>${album.title}</title>
         <style><jsp:include page = "/css/table.css"/></style>
+        <style><jsp:include page = "/css/block.css"/></style>
         <style><jsp:include page = "/css/album.css"/></style>
         <style><jsp:include page = "/css/icon-button.css"/></style>
         <jsp:include page = "../fragments/header.jsp"/>

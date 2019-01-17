@@ -6,12 +6,16 @@ import com.epam.audiospot.entity.Entity;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.repository.specification.Specification;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.sql.*;
 import java.util.*;
 
 public abstract class AbstractRepository<T extends Entity> implements Repository<T> {
+    private static final Logger logger = LogManager.getLogger(AbstractRepository.class);
     private ConnectionWrapper connection;
-    private QueryBuilder<T> queryBuilder = new QueryBuilder<T>(getTableName());
+    private QueryBuilder<T> queryBuilder = new QueryBuilder<>(getTableName());
 
     public AbstractRepository(ConnectionWrapper connection){
         this.connection = connection;
@@ -23,6 +27,7 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
             for (int i = 0; i < params.size(); i++) {
                 preparedStatement.setObject(i + 1, params.get(i));
             }
+            logger.info(preparedStatement);
             ResultSet resultSet = preparedStatement.executeQuery();
             List <T> entities = new ArrayList <>();
             Builder <T> builder = getBuilder();

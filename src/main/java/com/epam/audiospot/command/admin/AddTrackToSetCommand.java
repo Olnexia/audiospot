@@ -1,33 +1,27 @@
-package com.epam.audiospot.command.common;
+package com.epam.audiospot.command.admin;
 
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
-import com.epam.audiospot.command.Forward;
 import com.epam.audiospot.command.Redirect;
-import com.epam.audiospot.entity.Comment;
 import com.epam.audiospot.exception.CommandExecutionException;
 import com.epam.audiospot.exception.ServiceException;
-import com.epam.audiospot.service.CommentService;
+import com.epam.audiospot.service.AudioSetService;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
-public class ShowCommentsCommand implements Command {
-
+public class AddTrackToSetCommand implements Command {
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws CommandExecutionException {
-        CommentService service = new CommentService();
         Long trackId = Long.parseLong(request.getParameter("trackId"));
-        try {
-            List<Comment> comments = service.findComments(trackId);
-            if(comments.size()!=0){
-                request.setAttribute("comments",comments);
-                return CommandResult.forward(Forward.SHOW_COMMENTS.getPath());
-            }else{
-                return CommandResult.redirect(Redirect.SHOW_TRACKS.getPath());
-            }
+        Long audioSetId = Long.parseLong(request.getParameter("audioSetId"));
+        AudioSetService service = new AudioSetService();
+        try{
+            service.addToSet(audioSetId,trackId);
         }catch (ServiceException e){
             throw new CommandExecutionException(e.getMessage(),e);
         }
+        return CommandResult.redirect(Redirect.ADD_TO_SET.getPath()+"&audioSetId="+audioSetId);
+
     }
 }

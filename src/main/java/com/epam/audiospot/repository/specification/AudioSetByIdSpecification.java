@@ -3,17 +3,17 @@ package com.epam.audiospot.repository.specification;
 import java.util.Arrays;
 import java.util.List;
 
-public class PlaylistByIdSpecification implements Specification{
-    private static final String PLAYLISTS_PREPARED_QUERY = "WHERE playlist_id=?";
+public class AudioSetByIdSpecification implements Specification{
+    private static final String AUDIOSETS_PREPARED_QUERY = "WHERE audioset_id=?";
     private Long id;
 
-    public PlaylistByIdSpecification(Long id) {
+    public AudioSetByIdSpecification(Long id) {
         this.id = id;
     }
 
     @Override
     public String toSql() {
-        return PLAYLISTS_PREPARED_QUERY;
+        return AUDIOSETS_PREPARED_QUERY;
     }
 
     @Override

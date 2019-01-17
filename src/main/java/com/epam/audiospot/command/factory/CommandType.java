@@ -27,6 +27,12 @@ public enum CommandType {
     DELETE_ORDER("cancelOrder",new CancelOrderCommand()),
     PAY_ORDER("payOrder",new PayForOrderCommand()),
     SUBMIT_PAYMENT("submitPayment",new SubmitPaymentCommand()),
+    SHOW_AUDIOSETS("showAudioSets",new ShowAudioSetsCommand()),
+    ADD_AUDIOSET("addAudioSet",new AddAudioSetCommand()),
+    SUBMIT_AUDIOSET("submitAudioSet",new SubmitAudioSetCommand()),
+    VIEW_AUDIOSET("viewAudioSet",new ViewAudioSetCommand()),
+    SELECT_TO_SET("addTracks",new SelectTracksToSetCommand()),
+    ADD_TO_SET("addToSet",new AddTrackToSetCommand()),
     LOGOUT("logout",new LogoutCommand());
 
     private Command command;

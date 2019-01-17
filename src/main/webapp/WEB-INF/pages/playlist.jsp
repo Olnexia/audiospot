@@ -71,7 +71,7 @@
                             <div class="close" onclick="closeCommentModal()">&times;</div>
                         </div>
                         <form name="comment" action = "${pageContext.servletContext.contextPath}/controller?command=submitComment" method ="post">
-                            <label title="title">
+                            <label title="comment">
                                 <textarea name="text" cols="30" rows="5" placeholder="<fmt:message key="commentPlaceholder"/>"></textarea>
                             </label>
                             <input type="hidden" id="audiotrack_id" name ="audiotrack_id">

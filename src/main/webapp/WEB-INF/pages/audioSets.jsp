@@ -7,7 +7,7 @@
 
 <fmt:setLocale value="${sessionScope.lang}"/>
 
-<fmt:bundle basename="pagecontent" prefix ="albums.">
+<fmt:bundle basename="pagecontent" prefix ="audioSets.">
     <html>
     <head>
         <title><fmt:message key="pageTitle"/></title>
@@ -18,7 +18,7 @@
     <body>
     <div class="content">
         <c:if test="${sessionScope.user.role.value eq 'admin'}">
-            <div class = "block" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=addAlbum'">
+            <div class = "block" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=addAudioSet'">
                 <div class="poster add-new">
                 </div>
                 <div>
@@ -26,14 +26,12 @@
                 </div>
             </div>
         </c:if>
-        <c:forEach items="${albums}" var="album" varStatus="status">
-            <div class = "block" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=viewAlbum&albumId=${album.id}'">
-                <div class="poster album">
+        <c:forEach items="${audioSets}" var="audioSet" varStatus="status">
+            <div class = "block" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=viewAudioSet&audioSetId=${audioSet.id}'">
+                <div class="poster set">
                 </div>
                 <div>
-                    <a>${album.title}</a>
-                    <span>${album.artist.name}</span>
-                    <span>${album.releaseYear}</span>
+                    <a>${audioSet.title}</a>
                 </div>
             </div>
         </c:forEach>

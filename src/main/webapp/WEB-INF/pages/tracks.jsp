@@ -72,6 +72,12 @@
                                 <p class="b-text"><fmt:message key="order"/></p>
                             </div>
                             </c:if>
+                            <c:if test="${sessionScope.user.role.value eq 'admin' and not empty param.audioSetId}">
+                                <div class="icon-button " onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=addToSet&trackId=${track.id}&audioSetId=${param.audioSetId}'">
+                                    <div class="small add-icon"></div>
+                                    <p class="b-text"><fmt:message key="addToSet"/></p>
+                                </div>
+                            </c:if>
                             <div class="icon-button " onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=showComments&trackId=${track.id}'">
                                 <div class="small comments-icon"></div>
                                 <p class="b-text"><fmt:message key="comments"/></p>

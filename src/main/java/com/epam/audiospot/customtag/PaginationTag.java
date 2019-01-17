@@ -7,14 +7,19 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class PaginationTag extends SimpleTagSupport {
     private static final String A_TAG_START = "<a class=";
-    private static final String A_TAG_HREF = " href=\"controller?command=";
+    private static final String A_TAG_HREF = " href=\"controller?";
     private static final String PAGE_PARAMETER_START = "&page=";
     private static final String PAGE_PARAM_END ="\">";
     private static final String A_TAG_END = "</a>";
-    private static final String CONTROLLER_CONTEXT="/controller?command=";
+    private static final String CONTROLLER_CONTEXT="/controller?";
     private int entryAmount;
     private int amountByPage;
     private String prevText;
@@ -42,7 +47,7 @@ public class PaginationTag extends SimpleTagSupport {
     }
 
     @Override
-    public void doTag() throws JspException, IOException {
+    public void doTag() throws IOException {
         JspWriter out = getJspContext().getOut();
         int pagesAmount = (entryAmount/amountByPage)+1;
 
@@ -52,40 +57,40 @@ public class PaginationTag extends SimpleTagSupport {
 
         request.setAttribute("pagesAmount",pagesAmount);
         String pageParameter = request.getParameter("page");
-        String command = request.getParameter("command");
 
+        Map<String,String[]> requestParameters = request.getParameterMap();
         int page;
         if(pageParameter==null){
             page=1;
-            String target = buildRedirect(command,page);
+            String target = buildRedirect(requestParameters,page);
             response.sendRedirect(target);
         }else{
             page= Integer.parseInt(pageParameter);
         }
 
         if(page>pagesAmount){
-            String target = buildRedirect(command,pagesAmount);
+            String target = buildRedirect(requestParameters,pagesAmount);
             response.sendRedirect(target);
         }else if(page<1){
-            String target = buildRedirect(command,1);
+            String target = buildRedirect(requestParameters,1);
             response.sendRedirect(target);
         }
 
         if(page>1){
             int prevPage = page-1;
-            out.print(buildATag(command,prevText,prevPage));
+            out.print(buildATag(prevText,requestParameters,prevPage));
         }
         if(page<pagesAmount){
             int nextPage = page+1;
-            out.print(buildATag(command,nextText,nextPage));
+            out.print(buildATag(nextText,requestParameters,nextPage));
         }
     }
 
-    private String buildATag(String command,String content,int pageNumber){
+    private String buildATag(String content,Map<String,String[]> params,int pageNumber){
         return A_TAG_START
                 +styleClass
                 +A_TAG_HREF
-                +command
+                +buildParamString(params)
                 +PAGE_PARAMETER_START
                 +pageNumber
                 +PAGE_PARAM_END
@@ -93,10 +98,27 @@ public class PaginationTag extends SimpleTagSupport {
                 +A_TAG_END;
     }
 
-    private String buildRedirect(String command,int pageNumber){
+    private String buildRedirect(Map<String,String[]> params, int pageNumber){
         return CONTROLLER_CONTEXT
-                +command
+                +buildParamString(params)
                 +PAGE_PARAMETER_START
                 +pageNumber;
+    }
+
+    private String buildParamString(Map<String,String[]> params){
+        StringBuilder paramString= new StringBuilder();
+        List<Map.Entry<String, String[]>> entries = new ArrayList <>(params.entrySet());
+        for(int i=0;i<params.size();i++){
+            if(entries.get(i).getKey().equals("page")){
+                continue;
+            }
+            if(i!=0){
+                paramString.append("&");
+            }
+            paramString.append(entries.get(i).getKey())
+                        .append("=")
+                        .append(entries.get(i).getValue()[0]);
+        }
+        return paramString.toString();
     }
 }

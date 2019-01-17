@@ -5,6 +5,7 @@ public enum Forward {
     MAIN("/WEB-INF/pages/main.jsp"),
     ADD_TRACK("/WEB-INF/pages/addTrack.jsp"),
     ADD_ALBUM("/WEB-INF/pages/addAlbum.jsp"),
+    ADD_SET("/WEB-INF/pages/addAudioSet.jsp"),
     VIEW_ALBUM("/WEB-INF/pages/viewAlbum.jsp"),
     CLIENTS("/WEB-INF/pages/clients.jsp"),
     ALBUMS("/WEB-INF/pages/albums.jsp"),
@@ -12,6 +13,8 @@ public enum Forward {
     SHOW_COMMENTS("/WEB-INF/pages/comments.jsp"),
     PLAYLIST("/WEB-INF/pages/playlist.jsp"),
     PAY_ORDER("/WEB-INF/pages/payOrder.jsp"),
+    AUDIOSETS("/WEB-INF/pages/audioSets.jsp"),
+    VIEW_AUDIOSET("/WEB-INF/pages/viewAudioSet.jsp"),
     ERROR_PAGE("\"/WEB-INF/pages/errors/defaultErrorPage.jsp");
 
     private String path;

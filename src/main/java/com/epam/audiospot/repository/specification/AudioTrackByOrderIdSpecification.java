@@ -6,7 +6,7 @@ import java.util.List;
 public class AudioTrackByOrderIdSpecification implements Specification {
     private static final String AUDIOTRACK_PREPARED_QUERY = "INNER JOIN ordered_track " +
                                                             "ON audiotrack.audiotrack_id=ordered_track.audiotrack_id " +
-                                                            "WHERE ordered_track.audio_order_id=?";
+                                                            "WHERE ordered_track.audio_order_id=?;";
     private Long orderId;
 
     public AudioTrackByOrderIdSpecification(Long orderId) {

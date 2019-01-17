@@ -33,7 +33,9 @@
         <label title="title">
             <input type="text" name="title" pattern="[A-Za-z0-9 ]{1,32}" title="<fmt:message key="artistTitleDesc"/>" placeholder="<fmt:message key="audioTitle"/>" required/>
         </label>
-        <input type="hidden" name = "albumId" value="${param.albumId}">
+        <c:if test="${not empty param.albumId}">
+            <input type="hidden" name = "albumId" value="${param.albumId}">
+        </c:if>
         <label title="genre">
             <select name = "genre">
                 <option value = "rock"> <fmt:message key="rock"/></option>
