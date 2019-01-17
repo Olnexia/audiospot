@@ -18,7 +18,12 @@
     <servlet-name>controller</servlet-name>
     <url-pattern>/controller</url-pattern>
   </servlet-mapping>
-  
+
+  <error-page>
+    <exception-type>javax.servlet.ServletException</exception-type>
+    <location>/WEB-INF/pages/errors/defaultErrorPage.jsp</location>
+  </error-page>
+
   <!--<error-page>-->
     <!--<error-code>404</error-code>-->
     <!--<location>/WEB-INF/pages/errors/error404.jsp</location>-->

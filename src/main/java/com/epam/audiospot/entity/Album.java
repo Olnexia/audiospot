@@ -46,6 +46,7 @@ public class Album implements Entity {
         return result;
     }
 
+    @Override
     public Long getId() {
         return id;
     }
@@ -62,6 +63,7 @@ public class Album implements Entity {
         return releaseYear;
     }
 
+    @Override
     public void setId(Long id) {
         this.id = id;
     }

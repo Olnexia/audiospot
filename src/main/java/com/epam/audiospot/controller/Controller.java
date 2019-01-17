@@ -21,16 +21,16 @@ public class Controller extends HttpServlet {
     }
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         processRequest(request,response);
     }
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response){
+    public void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException{
         processRequest(request, response);
     }
 
-    private void processRequest(HttpServletRequest request, HttpServletResponse response) {
+    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         try {
             String command = request.getParameter(COMMAND_REQUEST_PARAMETER);
             Command action = CommandFactory.create(command);
@@ -42,6 +42,7 @@ public class Controller extends HttpServlet {
             }
         }catch (CommandExecutionException | ServletException | IOException e) {
             logger.error(e.getMessage());
+            throw new ServletException(e.getMessage());
         }
     }
 }

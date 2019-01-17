@@ -41,6 +41,7 @@ public class Artist implements Entity {
         return result;
     }
 
+    @Override
     public Long getId() {
         return id;
     }
@@ -53,6 +54,7 @@ public class Artist implements Entity {
         return country;
     }
 
+    @Override
     public void setId(Long id) {
         this.id = id;
     }
