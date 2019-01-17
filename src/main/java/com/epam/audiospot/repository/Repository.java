@@ -5,6 +5,7 @@ import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.repository.specification.Specification;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface Repository<T extends Entity> {
     void save(T object) throws RepositoryException;
@@ -12,4 +13,6 @@ public interface Repository<T extends Entity> {
     void update (T object) throws RepositoryException;
     void remove (T object) throws RepositoryException;
     List<T> query(Specification specification) throws RepositoryException;
+    List<T> queryForAll() throws RepositoryException;
+    Optional<T> queryForSingleResult(Specification specification)throws RepositoryException;
 }

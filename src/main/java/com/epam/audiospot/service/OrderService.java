@@ -5,10 +5,11 @@ import com.epam.audiospot.entity.Order;
 import com.epam.audiospot.entity.OrderedTrack;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
-import com.epam.audiospot.repository.AudioRepository;
-import com.epam.audiospot.repository.OrderRepository;
-import com.epam.audiospot.repository.OrderedTrackRepository;
-import com.epam.audiospot.repository.creator.RepositoryCreator;
+import com.epam.audiospot.repository.Repository;
+import com.epam.audiospot.repository.factory.AudioRepositoryFactory;
+import com.epam.audiospot.repository.factory.OrderRepositoryFactory;
+import com.epam.audiospot.repository.factory.OrderedTrackRepositoryFactory;
+import com.epam.audiospot.repository.factory.RepositoryFactory;
 import com.epam.audiospot.repository.specification.AudioTracksByAlbumIdSpecification;
 import com.epam.audiospot.repository.specification.OrderByUserIdAndStatusSpecification;
 import java.math.BigDecimal;
@@ -21,8 +22,8 @@ public class OrderService {
 
     public Optional<Order> findOrder(Long userId,boolean paid) throws ServiceException {
         OrderByUserIdAndStatusSpecification specification = new OrderByUserIdAndStatusSpecification(userId,paid);
-        try(RepositoryCreator repositoryCreator = new RepositoryCreator()){
-            OrderRepository repository = repositoryCreator.getOrderRepository();
+        try(RepositoryFactory<Order> factory = new OrderRepositoryFactory()){
+            Repository<Order> repository = factory.createRepository();
             return repository.queryForSingleResult(specification);
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);
@@ -38,8 +39,8 @@ public class OrderService {
             order = new Order (null,userId,LocalDate.now(),false);
             saveOrder(order);
         }
-        try(RepositoryCreator repositoryCreator = new RepositoryCreator()){
-            OrderedTrackRepository repository = repositoryCreator.getOrderedTrackRepository();
+        try(RepositoryFactory<OrderedTrack> factory = new OrderedTrackRepositoryFactory()){
+            Repository<OrderedTrack> repository = factory.createRepository();
             OrderedTrack orderedTrack = new OrderedTrack(null,order.getId(),trackId);
             repository.add(orderedTrack);
         }catch (RepositoryException e){
@@ -51,8 +52,8 @@ public class OrderService {
         AudioTrackService trackService = new AudioTrackService();
         List<AudioTrack> availableTracks = trackService.findAvailableTracks(userId);
         AudioTracksByAlbumIdSpecification specification = new AudioTracksByAlbumIdSpecification(albumId);
-        try(RepositoryCreator repositoryCreator = new RepositoryCreator()){
-            AudioRepository repository = repositoryCreator.getAudioRepository();
+        try(RepositoryFactory<AudioTrack> factory = new AudioRepositoryFactory()){
+            Repository<AudioTrack> repository = factory.createRepository();
             List<AudioTrack> tracks = repository.query(specification);
             for(AudioTrack track : tracks){
                 if(availableTracks.contains(track)){
@@ -65,8 +66,8 @@ public class OrderService {
     }
 
     public void saveOrder(Order order)throws ServiceException{
-        try(RepositoryCreator repositoryCreator = new RepositoryCreator()){
-            OrderRepository repository = repositoryCreator.getOrderRepository();
+        try(RepositoryFactory<Order> factory = new OrderRepositoryFactory()){
+            Repository<Order> repository = factory.createRepository();
             repository.save(order);
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);
@@ -74,8 +75,8 @@ public class OrderService {
     }
 
     public void deleteOrder(Order order)throws ServiceException{
-        try(RepositoryCreator repositoryCreator = new RepositoryCreator()){
-            OrderRepository repository = repositoryCreator.getOrderRepository();
+        try(RepositoryFactory<Order> factory = new OrderRepositoryFactory()){
+            Repository<Order> repository = factory.createRepository();
             repository.remove(order);
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);

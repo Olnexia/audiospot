@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class RegisterCommand implements Command {
+    private static final String REGISTRATION_MESSAGE_REQUEST_PARAMETER = "registrationMessage";
+
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws CommandExecutionException {
         String login = request.getParameter("login");
@@ -24,7 +26,7 @@ public class RegisterCommand implements Command {
         UserService service = new UserService();
         try{
             if(!service.isLoginAvailable(login)){
-                request.setAttribute("registrationMessage","occupiedLogin");
+                request.setAttribute(REGISTRATION_MESSAGE_REQUEST_PARAMETER,"occupiedLogin");
                 return CommandResult.forward(Forward.LOGIN.getPath());
             }
             String md5Password = DigestUtils.md5Hex(password).toUpperCase();

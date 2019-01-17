@@ -36,11 +36,13 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
         }
     }
 
+    @Override
     public List<T> queryForAll() throws RepositoryException{
         String preparedQuery = String.join(" ","select",getTableName()+".*","from",getTableName());
         return executeQuery(preparedQuery, Collections.emptyList());
     }
 
+    @Override
     public Optional<T> queryForSingleResult(Specification specification) throws RepositoryException {
         List<T> entities = query(specification);
         return (!entities.isEmpty())?Optional.of(entities.get(0)):Optional.empty();

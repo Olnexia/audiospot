@@ -21,7 +21,7 @@
                    <form id ="register" class="register-form"
                          <c:if test="${requestScope.registrationMessage ne null}">style="display: block;"</c:if>
                          <c:if test="${requestScope.registrationMessage eq null}">style="display: none;"</c:if>
-                         action = "${pageContext.servletContext.contextPath}/controller?command=register${not empty param.lang?"&lang=":""}${not empty param.lang?param.lang:"en"}" method = "post">
+                         action = "${pageContext.servletContext.contextPath}/controller?command=register${not empty param.lang?"&lang=":""}${not empty param.lang?param.lang:""}" method = "post">
                        <input type="text" name="login" pattern="[A-Za-z0-9_]{1,15}" title="<fmt:message key="loginDesc"/>" placeholder="<fmt:message key="login"/>" required/>
                        <input type="text" name="name" pattern="[A-Za-z]{1,15}" title="<fmt:message key="nameDesc"/>" placeholder="<fmt:message key="name"/>" required/>
                        <input type="text" name="surname" pattern="[A-Za-z]{1,32}" title="<fmt:message key="surnameDesc"/>" placeholder="<fmt:message key="surname"/>" required/>
@@ -33,7 +33,9 @@
                            <a href="#" onclick="switchLoginRegister()"><fmt:message key="signIn"/></a>
                        </p>
                        <c:if test="${requestScope.registrationMessage ne null}">
-                           <p class ="error"><fmt:message key="${requestScope.registrationMessage}"/></p>
+                           <c:forEach items="${requestScope.registrationMessage}" var="registrationMessage">
+                               <p class ="error"><fmt:message key="${registrationMessage}"/></p>
+                           </c:forEach>
                        </c:if>
                    </form>
 

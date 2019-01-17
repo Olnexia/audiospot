@@ -3,8 +3,9 @@ package com.epam.audiospot.service;
 import com.epam.audiospot.entity.*;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
-import com.epam.audiospot.repository.AudioRepository;
-import com.epam.audiospot.repository.creator.RepositoryCreator;
+import com.epam.audiospot.repository.Repository;
+import com.epam.audiospot.repository.factory.AudioRepositoryFactory;
+import com.epam.audiospot.repository.factory.RepositoryFactory;
 import com.epam.audiospot.repository.specification.AudioTrackByOrderIdSpecification;
 import com.epam.audiospot.repository.specification.AudioTracksByAlbumIdSpecification;
 import com.epam.audiospot.repository.specification.AudioTracksByUserIdSpecification;
@@ -16,8 +17,8 @@ import java.util.Optional;
 public class AudioTrackService {
 
     public void submitTrack(AudioTrack track) throws ServiceException{
-        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
-            AudioRepository repository = repositoryCreator.getAudioRepository();
+        try (RepositoryFactory<AudioTrack> factory = new AudioRepositoryFactory()) {
+            Repository<AudioTrack> repository = factory.createRepository();
             repository.add(track);
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);
@@ -40,8 +41,8 @@ public class AudioTrackService {
 
     public List<AudioTrack> findOrderedTracks(Long orderId) throws ServiceException{
         AudioTrackByOrderIdSpecification specification = new AudioTrackByOrderIdSpecification(orderId);
-        try(RepositoryCreator repositoryCreator = new RepositoryCreator()) {
-            AudioRepository repository = repositoryCreator.getAudioRepository();
+        try(RepositoryFactory<AudioTrack> factory = new AudioRepositoryFactory()) {
+            Repository<AudioTrack> repository = factory.createRepository();
             return repository.query(specification);
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);
@@ -50,8 +51,8 @@ public class AudioTrackService {
 
     public List<AudioTrack> findTracksAtPlaylist(Long userId) throws ServiceException{
         AudioTracksByUserIdSpecification specification = new AudioTracksByUserIdSpecification(userId);
-        try(RepositoryCreator repositoryCreator = new RepositoryCreator()) {
-            AudioRepository repository = repositoryCreator.getAudioRepository();
+        try(RepositoryFactory<AudioTrack> factory = new AudioRepositoryFactory()) {
+            Repository<AudioTrack> repository = factory.createRepository();
             return repository.query(specification);
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);
@@ -60,8 +61,8 @@ public class AudioTrackService {
 
     public List<AudioTrack> findAvailableTracks(Long userId) throws ServiceException{
         AvailableTracksByUserIdSpecification specification = new AvailableTracksByUserIdSpecification(userId);
-        try(RepositoryCreator repositoryCreator = new RepositoryCreator()) {
-            AudioRepository repository = repositoryCreator.getAudioRepository();
+        try(RepositoryFactory<AudioTrack> factory = new AudioRepositoryFactory()) {
+            Repository<AudioTrack> repository = factory.createRepository();
             return repository.query(specification);
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);
@@ -70,8 +71,8 @@ public class AudioTrackService {
 
     public List<AudioTrack> findTracksAtAlbum(Long albumId) throws ServiceException{
         AudioTracksByAlbumIdSpecification specification = new AudioTracksByAlbumIdSpecification(albumId);
-        try(RepositoryCreator repositoryCreator = new RepositoryCreator()) {
-            AudioRepository repository = repositoryCreator.getAudioRepository();
+        try(RepositoryFactory<AudioTrack> factory = new AudioRepositoryFactory()) {
+            Repository<AudioTrack> repository = factory.createRepository();
             return repository.query(specification);
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);

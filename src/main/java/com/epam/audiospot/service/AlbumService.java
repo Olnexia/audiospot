@@ -4,18 +4,18 @@ import com.epam.audiospot.entity.Album;
 import com.epam.audiospot.entity.Artist;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
-import com.epam.audiospot.repository.AlbumRepository;
-import com.epam.audiospot.repository.creator.RepositoryCreator;
+import com.epam.audiospot.repository.Repository;
+import com.epam.audiospot.repository.factory.AlbumRepositoryFactory;
+import com.epam.audiospot.repository.factory.RepositoryFactory;
 import com.epam.audiospot.repository.specification.AlbumByIdSpecification;
-
 import java.util.List;
 import java.util.Optional;
 
 public class AlbumService {
 
     public void addAlbum(Album album) throws ServiceException {
-        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
-            AlbumRepository repository = repositoryCreator.getAlbumRepository();
+        try (RepositoryFactory<Album> factory = new AlbumRepositoryFactory()) {
+            Repository<Album> repository = factory.createRepository();
             repository.add(album);
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);
@@ -33,8 +33,8 @@ public class AlbumService {
 
     public Optional<Album> findAlbum(Long id) throws ServiceException {
         AlbumByIdSpecification specification = new AlbumByIdSpecification(id);
-        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
-            AlbumRepository repository = repositoryCreator.getAlbumRepository();
+        try (RepositoryFactory<Album> factory = new AlbumRepositoryFactory()) {
+            Repository<Album> repository = factory.createRepository();
             return repository.queryForSingleResult(specification);
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);
@@ -42,8 +42,8 @@ public class AlbumService {
     }
 
     public List<Album> findAllAlbums() throws ServiceException{
-        try(RepositoryCreator repositoryCreator = new RepositoryCreator()) {
-            AlbumRepository repository = repositoryCreator.getAlbumRepository();
+        try(RepositoryFactory<Album> factory = new AlbumRepositoryFactory()) {
+            Repository<Album> repository = factory.createRepository();
             return repository.queryForAll();
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);

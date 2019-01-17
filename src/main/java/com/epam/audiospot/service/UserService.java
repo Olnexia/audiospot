@@ -5,7 +5,8 @@ import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.repository.*;
-import com.epam.audiospot.repository.creator.RepositoryCreator;
+import com.epam.audiospot.repository.factory.RepositoryFactory;
+import com.epam.audiospot.repository.factory.UserRepositoryFactory;
 import com.epam.audiospot.repository.specification.UserByIdSpecification;
 import com.epam.audiospot.repository.specification.UserByLoginAndPasswordSpecification;
 import com.epam.audiospot.repository.specification.UserByLoginSpecification;
@@ -19,8 +20,8 @@ public class UserService{
     public Optional<User> login(String login , String password) throws ServiceException {
         String md5Password = DigestUtils.md5Hex(password).toUpperCase();
         UserByLoginAndPasswordSpecification specification = new UserByLoginAndPasswordSpecification(login,md5Password);
-        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
-            UserRepository repository = repositoryCreator.getUserRepository();
+        try (RepositoryFactory<User> factory = new UserRepositoryFactory()) {
+            Repository<User> repository = factory.createRepository();
             return repository.queryForSingleResult(specification);
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);
@@ -29,8 +30,8 @@ public class UserService{
 
     public List<User> findClients() throws ServiceException{
         UserByRoleSpecification userByRoleSpecification = new UserByRoleSpecification(Role.CLIENT);
-        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
-            UserRepository repository = repositoryCreator.getUserRepository();
+        try (RepositoryFactory<User> factory = new UserRepositoryFactory()) {
+            Repository<User> repository = factory.createRepository();
             return repository.query(userByRoleSpecification);
         } catch (RepositoryException e) {
             throw new ServiceException(e.getMessage(),e);
@@ -39,8 +40,8 @@ public class UserService{
 
     public Optional<User> findUser(Long userId)throws ServiceException{
         UserByIdSpecification specification = new UserByIdSpecification(userId);
-        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
-            UserRepository repository = repositoryCreator.getUserRepository();
+        try (RepositoryFactory<User> factory = new UserRepositoryFactory()) {
+            Repository<User> repository = factory.createRepository();
             return repository.queryForSingleResult(specification);
         } catch (RepositoryException e) {
             throw new ServiceException(e.getMessage(),e);
@@ -48,8 +49,8 @@ public class UserService{
     }
 
     public void saveUser(User user) throws ServiceException{
-        try(RepositoryCreator repositoryCreator = new RepositoryCreator()){
-            UserRepository repository = repositoryCreator.getUserRepository();
+        try(RepositoryFactory<User> factory = new UserRepositoryFactory()){
+            Repository<User> repository = factory.createRepository();
             repository.save(user);
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);
@@ -58,8 +59,8 @@ public class UserService{
 
     public boolean isLoginAvailable(String login) throws ServiceException{
         UserByLoginSpecification specification = new UserByLoginSpecification(login);
-        try(RepositoryCreator repositoryCreator = new RepositoryCreator()){
-         UserRepository repository = repositoryCreator.getUserRepository();
+        try(RepositoryFactory<User> factory = new UserRepositoryFactory()){
+         Repository<User> repository = factory.createRepository();
          Optional<User> userOptional = repository.queryForSingleResult(specification);
          return !userOptional.isPresent();
         }catch (RepositoryException e){

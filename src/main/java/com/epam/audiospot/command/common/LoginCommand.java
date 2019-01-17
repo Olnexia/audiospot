@@ -23,6 +23,7 @@ public class LoginCommand implements Command {
         String login = request.getParameter(LOGIN_REQUEST_PARAMETER);
         String password = request.getParameter(PASSWORD_REQUEST_PARAMETER);
 
+
         UserService service = new UserService();
         CommandResult commandResult;
         try{
