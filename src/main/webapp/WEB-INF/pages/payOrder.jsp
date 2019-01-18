@@ -13,12 +13,22 @@
     <title><fmt:message key="pageTitle"/></title>
     <style><jsp:include page = "/css/form.css"/></style>
     <style><jsp:include page = "/css/table.css"/></style>
+    <style><jsp:include page = "/css/payOrder.css"/></style>
     <jsp:include page = "../fragments/header.jsp"/>
 </head>
     <body>
         <div class="content">
                 <c:if test="${orderedTracks eq null}">
-                    <h3><fmt:message key="emptyOrder"/></h3>
+                    <div class = "empty-order">
+                        <h2><fmt:message key="emptyOrder"/></h2>
+                        <div class ="empty-order-img"></div>
+                        <h2><fmt:message key="buyNow"/></h2>
+                        <div>
+                            <a href="${pageContext.servletContext.contextPath}/controller?command=showTracks"><fmt:message key="tracks"/></a>
+                            <a href="${pageContext.servletContext.contextPath}/controller?command=showAlbums"><fmt:message key="albums"/></a>
+                            <a href="${pageContext.servletContext.contextPath}/controller?command=showAudioSets"><fmt:message key="audioSets"/></a>
+                        </div>
+                    </div>
                 </c:if>
 
                 <c:if test="${orderedTracks ne null}">
