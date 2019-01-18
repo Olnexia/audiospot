@@ -20,18 +20,17 @@ import java.util.stream.Collectors;
 
 public class OrderService {
 
-    public Optional<Order> findOrder(Long userId,boolean paid) throws ServiceException {
-        OrderByUserIdAndStatusSpecification specification = new OrderByUserIdAndStatusSpecification(userId,paid);
-        try(RepositoryFactory<Order> factory = new OrderRepositoryFactory()){
-            Repository<Order> repository = factory.createRepository();
-            return repository.queryForSingleResult(specification);
-        }catch (RepositoryException e){
-            throw new ServiceException(e.getMessage(),e);
+    public Order findOrder(Long userId,boolean paid) throws ServiceException {
+        Optional<Order> orderOptional = findOptionalOrder(userId,paid);
+        if(orderOptional.isPresent()){
+            return orderOptional.get();
+        }else{
+            throw new ServiceException("Order is missing");
         }
     }
 
     public void orderTrack(Long userId,Long trackId)throws ServiceException{
-        Optional<Order> orderOptional = findOrder(userId,false);
+        Optional<Order> orderOptional = findOptionalOrder(userId,false);
         Order order;
         if(orderOptional.isPresent()){
             order = orderOptional.get();
@@ -89,6 +88,16 @@ public class OrderService {
         List<AudioTrack> orderedTracks = trackService.findOrderedTracks(orderId);
         List<BigDecimal> prices = orderedTracks.stream().map(AudioTrack::getPrice).collect(Collectors.toList());
         return prices.stream().reduce(BigDecimal.ZERO,BigDecimal::add);
+    }
+
+    public Optional<Order> findOptionalOrder(Long userId,boolean paid) throws ServiceException{
+        OrderByUserIdAndStatusSpecification specification = new OrderByUserIdAndStatusSpecification(userId,paid);
+        try(RepositoryFactory<Order> factory = new OrderRepositoryFactory()){
+            Repository<Order> repository = factory.createRepository();
+            return repository.queryForSingleResult(specification);
+        }catch (RepositoryException e){
+            throw new ServiceException(e.getMessage(),e);
+        }
     }
 }
 

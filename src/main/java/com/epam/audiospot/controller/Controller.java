@@ -3,7 +3,7 @@ package com.epam.audiospot.controller;
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.factory.CommandFactory;
 import com.epam.audiospot.command.CommandResult;
-import com.epam.audiospot.exception.CommandExecutionException;
+import com.epam.audiospot.exception.ServiceException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.ServletException;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class Controller extends HttpServlet {
-    private static final String COMMAND_REQUEST_PARAMETER = "command";
+    private static final String COMMAND_PARAM = "command";
     private static final Logger logger = LogManager.getLogger(Controller.class);
 
     public void init() throws ServletException {
@@ -32,7 +32,7 @@ public class Controller extends HttpServlet {
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         try {
-            String command = request.getParameter(COMMAND_REQUEST_PARAMETER);
+            String command = request.getParameter(COMMAND_PARAM);
             Command action = CommandFactory.create(command);
             CommandResult commandResult = action.execute(request, response);
             if (commandResult.isRedirect()) {
@@ -40,7 +40,7 @@ public class Controller extends HttpServlet {
             } else {
                 request.getRequestDispatcher(commandResult.getPage()).forward(request, response);
             }
-        }catch (CommandExecutionException | ServletException | IOException e) {
+        }catch (ServiceException | ServletException | IOException e) {
             logger.error(e.getMessage(), e);
             throw new ServletException(e.getMessage(), e);
         }

@@ -38,11 +38,17 @@ public class UserService{
         }
     }
 
-    public Optional<User> findUser(Long userId)throws ServiceException{
+    public User findUser(Long userId)throws ServiceException{
         UserByIdSpecification specification = new UserByIdSpecification(userId);
         try (RepositoryFactory<User> factory = new UserRepositoryFactory()) {
             Repository<User> repository = factory.createRepository();
-            return repository.queryForSingleResult(specification);
+            Optional<User> userOptional = repository.queryForSingleResult(specification);
+            if(userOptional.isPresent()){
+                return userOptional.get();
+            }
+            else{
+                throw new ServiceException("User is missing");
+            }
         } catch (RepositoryException e) {
             throw new ServiceException(e.getMessage(),e);
         }

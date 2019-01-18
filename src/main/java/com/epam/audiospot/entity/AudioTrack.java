@@ -11,6 +11,7 @@ public class AudioTrack implements Entity {
     public static final String TITLE_LABEL = "title";
     public static final String PRICE_LABEL = "price";
     public static final String GENRE_LABEL = "genre";
+    public static final String ARTIST_LABEL = "artist";
 
     private Long id;
     private Long albumId;

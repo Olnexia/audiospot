@@ -8,11 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class HomeCommand implements Command {
+    private static final String USER_ATTR = "user";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
-        return (session.getAttribute("user")==null)
+        return (session.getAttribute(USER_ATTR)==null)
                 ?CommandResult.forward(Forward.LOGIN.getPath())
                 :CommandResult.forward(Forward.MAIN.getPath());
     }
