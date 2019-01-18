@@ -23,7 +23,7 @@
                 <caption><fmt:message key="title"/></caption>
                 <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>№</th>
                     <th><fmt:message key="name"/></th>
                     <th><fmt:message key="surname"/></th>
                     <th><fmt:message key="login"/></th>
@@ -35,7 +35,7 @@
                 <tbody>
                 <c:forEach items="${clients}" var="client" varStatus="status">
                     <tr>
-                        <td>${client.id}</td>
+                        <td>${status.index+1}</td>
                         <td>${client.name}</td>
                         <td>${client.surname}</td>
                         <td>${client.login}</td>
@@ -63,7 +63,7 @@
             </table>
 
             <div id="discount" class="modal">
-                <div class="form-style">
+                <div class="form-style discount">
                     <div class="fhead">
                         <h2><fmt:message key="changeDiscount"/></h2>
                         <div class="close" onclick="closeDiscountModal()">&times;</div>
@@ -72,6 +72,7 @@
                         <div class="inline-label">
                             <label for="discount"><fmt:message key="discount"/></label>
                             <input id="discountInput" type="text" pattern="^100(\.0{0,2}?)?$|^\d{0,2}(\.\d{0,2})?$" title="<fmt:message key="discountDesc"/>" name="discount">
+                            <p>%</p>
                         </div>
                         <input type="hidden" id="userId" name ="user_id">
                         <div class="buttons">

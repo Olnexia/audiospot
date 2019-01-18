@@ -1,9 +1,28 @@
-<%@ page isErrorPage="true" contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Error 404</title>
-</head>
-<body>
-<h1>Error 404</h1>
-</body>
-</html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<%@ page contentType = "text/html;charset=utf-8"
+         isELIgnored ="false"
+         pageEncoding ="utf-8"%>
+
+<fmt:setLocale value="${sessionScope.lang}"/>
+
+<fmt:bundle basename="pagecontent" prefix ="errorPage.">
+    <html>
+    <head>
+        <title><fmt:message key="err404"/></title>
+        <style><jsp:include page = "/css/error.css"/></style>
+        <jsp:include page = "../../fragments/header.jsp"/>
+    </head>
+    <body>
+    <div class = "content">
+        <div class = "error">
+            <h1><fmt:message key="errorMessage"/> ${pageContext.errorData.statusCode}</h1>
+            <h2>${pageContext.exception.message}</h2>
+        </div>
+        <div class ="error-img"></div>
+    </div>
+    </body>
+    </html>
+</fmt:bundle>

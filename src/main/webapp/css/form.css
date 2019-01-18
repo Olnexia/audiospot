@@ -96,23 +96,26 @@
 
 .inline-label{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     margin: .5rem;
 }
 
 .inline-label input[type="text"]{
-    width: 85%;
-    margin-bottom: 0;
+    text-align: center;
+    margin: 0 5px;
+    width: 20%;
+}
+
+.discount{
+    width: 400px;
 }
 
 @media screen and (max-width: 660px) {
-
-    .form-style{
+    .form-style .wide{
         width: 100%;
         margin: 0;
         padding:0;
     }
-
 }
 

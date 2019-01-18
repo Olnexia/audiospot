@@ -44,7 +44,7 @@
                                 <input type="text" name="cvc" pattern="[0-9]{3}" title="<fmt:message key="CvcDesc"/>" required placeholder="<fmt:message key="cvc"/>" autocomplete="cc-csc">
                             </label>
                             <label>
-                                <input type="text" name="ccExp" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{2}" title="<fmt:message key="ccExpDesc"/>" required placeholder="<fmt:message key="expiry"/>" autocomplete="cc-exp">
+                                <input type="text" name="ccExp" pattern="(0[1-9]|1[012])/[0-9]{2}" title="<fmt:message key="ccExpDesc"/>" required placeholder="<fmt:message key="expiry"/>" autocomplete="cc-exp">
                             </label>
                             <div class="buttons">
                                 <label>

@@ -28,6 +28,12 @@
 	display: inline-block;
 }
 
+.navbar a.selected{
+    color: #608bd2;
+    pointer-events: none;
+    opacity: 1;
+}
+
 .logo{
 
 }

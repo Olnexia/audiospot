@@ -61,6 +61,12 @@ public class ConnectionPool{
         semaphore.release();
     }
 
+    public void closeConnections(){
+        for(ConnectionWrapper connection : pool){
+            connection.close();
+        }
+    }
+
     private void setPool(Queue <ConnectionWrapper> pool) {
         this.pool = pool;
     }

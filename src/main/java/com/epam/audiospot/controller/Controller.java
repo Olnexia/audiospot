@@ -3,6 +3,7 @@ package com.epam.audiospot.controller;
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.factory.CommandFactory;
 import com.epam.audiospot.command.CommandResult;
+import com.epam.audiospot.connection.ConnectionPool;
 import com.epam.audiospot.exception.ServiceException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -44,5 +45,12 @@ public class Controller extends HttpServlet {
             logger.error(e.getMessage(), e);
             throw new ServletException(e.getMessage(), e);
         }
+    }
+
+    @Override
+    public void destroy() {
+        ConnectionPool pool = ConnectionPool.getInstance();
+        pool.closeConnections();
+        super.destroy();
     }
 }

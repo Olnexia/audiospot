@@ -43,4 +43,14 @@ public class ConnectionWrapper{
             }
         }
     }
+
+    public void close(){
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new ConnectionException(e.getMessage(),e);
+            }
+        }
+    }
 }

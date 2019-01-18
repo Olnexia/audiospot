@@ -1,19 +1,23 @@
 package com.epam.audiospot.filter;
 
 import com.epam.audiospot.command.Forward;
+import com.epam.audiospot.command.factory.CommandType;
 import com.epam.audiospot.entity.Role;
 import com.epam.audiospot.entity.User;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.*;
 
 @WebFilter( urlPatterns = { "/controller" })
 public class RoleFilter implements Filter {
-    private static final String COMMAND_REQUEST_PARAMETER = "command";
-    private static final String USER_SESSION_PARAMETER = "user";
+    private static final String COMMAND_PARAM = "command";
+    private static final String USER_ATTR = "user";
+    private static final Logger logger = LogManager.getLogger(RoleFilter.class);
+
 
     public void init(FilterConfig fConfig){
     }
@@ -21,25 +25,32 @@ public class RoleFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response,
                          FilterChain chain) throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
-        String command = request.getParameter(COMMAND_REQUEST_PARAMETER);
+        String command = request.getParameter(COMMAND_PARAM);
 
         HttpSession session = httpRequest.getSession(false);
         if(session==null){
-            httpRequest.getRequestDispatcher(Forward.LOGIN.getPath()).forward(request,response);
-            return;
-        }
-        User user = (User)session.getAttribute(USER_SESSION_PARAMETER);
-        if(user==null){
-            if(!command.equals("login")&&!command.equals("register")){
+            if(!command.equals("login") &&!command.equals("register")&&!command.equals("logout")){
+                logger.warn("Unauthorized access attempt to command " + command);
                 httpRequest.getRequestDispatcher(Forward.LOGIN.getPath()).forward(request,response);
                 return;
             }
         }else{
-            Role userRole = user.getRole();
-            List<String> permissions = userRole.getPermissions();
-            if(!permissions.contains(command)){
-                httpRequest.getRequestDispatcher(Forward.MAIN.getPath()).forward(request,response);
-                return;
+            User user = (User)session.getAttribute(USER_ATTR);
+            if(user==null){
+                if(!command.equals("login") &&!command.equals("register")&&!command.equals("logout")){
+                    logger.warn("Unauthorized access attempt to command " + command);
+                    httpRequest.getRequestDispatcher(Forward.LOGIN.getPath()).forward(request,response);
+                    return;
+                }
+            }else{
+                Role userRole = user.getRole();
+                CommandType commandType = CommandType.getCurrentCommand(command);
+                if(!commandType.isAuthorized(userRole)){
+                    logger.warn("Unauthorized access attempt by user "
+                            + user.getLogin() + " to command " + command);
+                    httpRequest.getRequestDispatcher(Forward.MAIN.getPath()).forward(request,response);
+                    return;
+                }
             }
         }
         chain.doFilter(request, response);

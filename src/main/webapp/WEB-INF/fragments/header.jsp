@@ -33,9 +33,8 @@
                 <a href="${pageContext.servletContext.contextPath}/controller?command=payOrder"><fmt:message key="PayOrder"/></a>
             </c:if>
 
-            <c:if test="${sessionScope.user.role ne null}">
-                <a href="#" class = "selected">${sessionScope.user.login}</a>
-            </c:if>
+
+
             <div>
                 <a href="<c:url value="">
                     <c:forEach items="${param}" var="entry">
@@ -45,7 +44,7 @@
                     </c:forEach>
                     <c:param name="lang" value="en" />
                 </c:url>"><fmt:message key="en"/></a>
-
+                <a class="selected">|</a>
                 <a href="<c:url value="">
                     <c:forEach items="${param}" var="entry">
                         <c:if test="${entry.key != 'lang'}">
@@ -55,6 +54,11 @@
                     <c:param name="lang" value="ru" />
                 </c:url>"><fmt:message key="ru"/></a>
             </div>
+
+            <c:if test="${sessionScope.user.role ne null}">
+                <a  class = "selected">${sessionScope.user.login}</a>
+            </c:if>
+
             <c:if test="${sessionScope.user.role ne null}">
                 <a href="${pageContext.servletContext.contextPath}/controller?command=logout${not empty sessionScope.lang?"&lang=":""}${not empty sessionScope.lang?sessionScope.lang:""}">
                     <fmt:message key="logOut"/>
