@@ -13,20 +13,23 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
+/**
+ *
+ */
 public class LoginCommand implements Command {
-    private static final String LOGIN_REQUEST_PARAMETER = "login";
-    private static final String PASSWORD_REQUEST_PARAMETER = "password";
+    private static final String LOGIN_PARAM = "login";
+    private static final String PASSWORD_PARAM = "password";
     private static final String LOCALE ="lang";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws CommandExecutionException {
-        String login = request.getParameter(LOGIN_REQUEST_PARAMETER);
-        String password = request.getParameter(PASSWORD_REQUEST_PARAMETER);
+        String login = request.getParameter(LOGIN_PARAM);
+        String password = request.getParameter(PASSWORD_PARAM);
 
 
-        UserService service = new UserService();
         CommandResult commandResult;
         try{
+            UserService service = new UserService();
             Optional<User> userOptional = service.login(login,password);
             if(userOptional.isPresent()){
                 User user = userOptional.get();

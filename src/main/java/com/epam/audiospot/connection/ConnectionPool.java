@@ -11,7 +11,8 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ConnectionPool{
     private static final int INITIAL_POOL_SIZE = 10;
     private static final AtomicBoolean initialized = new AtomicBoolean(false);
-    private static final Lock lock = new ReentrantLock();
+    private static final Lock instanceLock = new ReentrantLock();
+    private static final Lock connectionLock = new ReentrantLock();
     private static ConnectionPool instance = null;
 
     private final Semaphore semaphore = new Semaphore(INITIAL_POOL_SIZE);
@@ -20,14 +21,14 @@ public class ConnectionPool{
     public static ConnectionPool getInstance(){
         if(!initialized.get()) {
             try {
-                lock.lock();
+                instanceLock.lock();
                 if (!initialized.get()) {
                     instance = new ConnectionPool();
                     initConnectionPool(instance);
                     initialized.set(true);
                 }
             }finally {
-                lock.unlock();
+                instanceLock.unlock();
             }
         }
         return instance;
@@ -36,7 +37,8 @@ public class ConnectionPool{
     private static void initConnectionPool(ConnectionPool connectionPool){
         Queue<ConnectionWrapper> connections = new LinkedList <>();
         for (int i = 0; i < INITIAL_POOL_SIZE; i++) {
-            ConnectionWrapper connection = ConnectionFactory.getInstance();
+            ConnectionCreator creator = new ConnectionCreator();
+            ConnectionWrapper connection = creator.createConnection();
             connections.add(connection);
         }
         connectionPool.setPool(connections);
@@ -44,13 +46,13 @@ public class ConnectionPool{
 
     public ConnectionWrapper getConnection() {
         try {
-            lock.lock();
+            connectionLock.lock();
             semaphore.acquire();
             return pool.poll();
         } catch (InterruptedException e) {
             throw new ConnectionPoolException(e.getMessage(), e);
         }finally {
-            lock.unlock();
+            connectionLock.unlock();
         }
     }
 

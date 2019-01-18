@@ -41,8 +41,8 @@ public class Controller extends HttpServlet {
                 request.getRequestDispatcher(commandResult.getPage()).forward(request, response);
             }
         }catch (CommandExecutionException | ServletException | IOException e) {
-            logger.error(e.getMessage());
-            throw new ServletException(e.getMessage());
+            logger.error(e.getMessage(), e);
+            throw new ServletException(e.getMessage(), e);
         }
     }
 }

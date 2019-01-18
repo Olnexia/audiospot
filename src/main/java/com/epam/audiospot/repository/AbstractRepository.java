@@ -27,7 +27,7 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
             for (int i = 0; i < params.size(); i++) {
                 preparedStatement.setObject(i + 1, params.get(i));
             }
-            logger.info(preparedStatement);
+            logger.trace(preparedStatement);
             ResultSet resultSet = preparedStatement.executeQuery();
             List <T> entities = new ArrayList <>();
             Builder <T> builder = getBuilder();
@@ -50,14 +50,15 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
     @Override
     public Optional<T> queryForSingleResult(Specification specification) throws RepositoryException {
         List<T> entities = query(specification);
-        return (!entities.isEmpty())?Optional.of(entities.get(0)):Optional.empty();
+        return (!entities.isEmpty())? Optional.of(entities.get(0)) : Optional.empty();
     }
 
     @Override
     public List<T> query(Specification specification) throws RepositoryException{
         String specificationQuery = specification.toSql();
         List<Object> parameters = specification.getParameters();
-        String preparedQuery = String.join(" ","SELECT",getTableName()+".*","FROM",getTableName(),specificationQuery);
+        String preparedQuery =
+                String.join(" ","SELECT",getTableName()+".*","FROM",getTableName(),specificationQuery);
         return executeQuery(preparedQuery,parameters);
     }
 
