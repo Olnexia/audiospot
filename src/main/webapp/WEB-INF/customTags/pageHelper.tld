@@ -5,25 +5,17 @@
     <tag>
         <name>pagination</name>
         <tag-class>com.epam.audiospot.customtag.PaginationTag</tag-class>
-        <body-content>empty</body-content>
+        <body-content>scriptless</body-content>
         <attribute>
-            <name>entryAmount</name>
+            <name>items</name>
             <rtexprvalue>true</rtexprvalue>
         </attribute>
         <attribute>
-            <name>amountByPage</name>
+            <name>var</name>
             <rtexprvalue>true</rtexprvalue>
         </attribute>
         <attribute>
-            <name>prevText</name>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
-            <name>nextText</name>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
-            <name>styleClass</name>
+            <name>perPage</name>
             <rtexprvalue>true</rtexprvalue>
         </attribute>
     </tag>

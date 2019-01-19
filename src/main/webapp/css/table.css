@@ -23,6 +23,10 @@ table.table {
     padding: 8px;
 }
 
+.table td a{
+    justify-self: center;
+}
+
 tr:nth-of-type(even) {
     background-color: #f2f2f2;
 }
@@ -33,6 +37,12 @@ tr:nth-of-type(odd) {
 
 .table tr {
     width: 100%;
+}
+
+.table .pag tr{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
 }
 
 .manage-buttons{
@@ -53,6 +63,10 @@ tr:nth-of-type(odd) {
     background-color:#CCCCCC;
     text-align:center;
     position:relative;
+}
+
+.prev-next{
+    align-self: center;
 }
 
 .manage-buttons > .positive-button { background: #6F9; }

@@ -6,10 +6,17 @@
                 <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n</Pattern>
             </PatternLayout>
         </Console>
+
+        <FastFile name="ALog" fileName="${sys:catalina.base}/logs/test.log" immediateFlush="true" append="true">
+            <PatternLayout>
+                <pattern>%d %p %c{1.} [%t] %m%n</pattern>
+            </PatternLayout>
+        </FastFile>
     </Appenders>
     <Loggers>
         <Root level="INFO">
             <AppenderRef ref="Console"/>
+            <AppenderRef ref="ALog"/>
         </Root>
     </Loggers>
 </Configuration>

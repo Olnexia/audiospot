@@ -43,55 +43,55 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:set var="tracksPerPage" value="10"/>
-                <c:set var="page" value="${not empty param.page and param.page>0?param.page:1}"/>
-                <c:forEach items="${tracks}" begin="${page*tracksPerPage-tracksPerPage}" end="${page*tracksPerPage}" var="track"  varStatus="status">
-                    <tr>
-                        <td>${track.artist.name}</td>
-                        <td>${track.title}</td>
 
-                        <c:choose>
-                            <c:when test = "${track.genre.value eq 'rock'}">
-                                <td><fmt:message key="rock"/></td>
-                            </c:when>
-                            <c:when test = "${track.genre.value eq 'rap'}">
-                                <td><fmt:message key="rap"/></td>
-                            </c:when>
-                            <c:when test = "${track.genre.value eq 'classic'}">
-                                <td><fmt:message key="classic"/></td>
-                            </c:when>
-                            <c:when test = "${track.genre.value eq 'pop'}">
-                                <td><fmt:message key="pop"/></td>
-                            </c:when>
-                        </c:choose>
-                        <td><fmt:formatNumber value="${track.price}" type="currency" currencySymbol="$"/></td>
-                        <td class="manage-buttons">
-                            <c:if test="${sessionScope.user.role.value eq 'client'}">
-                            <div class="icon-button " onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=orderTrack&trackId=${track.id}'">
-                                <div class="small order-icon"></div>
-                                <p class="b-text"><fmt:message key="order"/></p>
-                            </div>
-                            </c:if>
-                            <c:if test="${sessionScope.user.role.value eq 'admin' and not empty param.audioSetId}">
-                                <div class="icon-button " onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=addToSet&trackId=${track.id}&audioSetId=${param.audioSetId}'">
-                                    <div class="small add-icon"></div>
-                                    <p class="b-text"><fmt:message key="addToSet"/></p>
+                <ph:pagination items="${tracks}" var="track" perPage="10" >
+                        <tr>
+                            <td>${track.artist.name}</td>
+                            <td>${track.title}</td>
+
+                            <c:choose>
+                                <c:when test = "${track.genre.value eq 'rock'}">
+                                    <td><fmt:message key="rock"/></td>
+                                </c:when>
+                                <c:when test = "${track.genre.value eq 'rap'}">
+                                    <td><fmt:message key="rap"/></td>
+                                </c:when>
+                                <c:when test = "${track.genre.value eq 'classic'}">
+                                    <td><fmt:message key="classic"/></td>
+                                </c:when>
+                                <c:when test = "${track.genre.value eq 'pop'}">
+                                    <td><fmt:message key="pop"/></td>
+                                </c:when>
+                            </c:choose>
+                            <td><fmt:formatNumber value="${track.price}" type="currency" currencySymbol="$"/></td>
+                            <td class="manage-buttons">
+                                <c:if test="${sessionScope.user.role.value eq 'client'}">
+                                    <div class="icon-button " onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=orderTrack&trackId=${track.id}'">
+                                        <div class="small order-icon"></div>
+                                        <p class="b-text"><fmt:message key="order"/></p>
+                                    </div>
+                                </c:if>
+                                <c:if test="${sessionScope.user.role.value eq 'admin' and not empty param.audioSetId}">
+                                    <div class="icon-button " onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=addToSet&trackId=${track.id}&audioSetId=${param.audioSetId}'">
+                                        <div class="small add-icon"></div>
+                                        <p class="b-text"><fmt:message key="addToSet"/></p>
+                                    </div>
+                                </c:if>
+                                <div class="icon-button " onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=showComments&trackId=${track.id}'">
+                                    <div class="small comments-icon"></div>
+                                    <p class="b-text"><fmt:message key="comments"/></p>
                                 </div>
-                            </c:if>
-                            <div class="icon-button " onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=showComments&trackId=${track.id}'">
-                                <div class="small comments-icon"></div>
-                                <p class="b-text"><fmt:message key="comments"/></p>
-                            </div>
-                        </td>
-                    </tr>
-                    <%--</c:if>--%>
-                </c:forEach>
+                            </td>
+                        </tr>
+                </ph:pagination>
                 </tbody>
             </table>
-            <fmt:message key="prevPage" var="prev" />
-            <fmt:message key="nextPage" var="next" />
-            <ph:pagination entryAmount="${fn:length(tracks)}" amountByPage="${tracksPerPage}"
-            prevText= "${prev}" nextText="${next}" styleClass="prev-next"/>
+            <c:if test="${not empty pageScope.prevHref}">
+                <a class="prev-next" href="${pageScope.prevHref}"><fmt:message key="prevPage"/></a>
+            </c:if>
+            <c:if test="${not empty pageScope.nextHref}">
+                <a class="prev-next" href="${pageScope.nextHref}"><fmt:message key="nextPage"/></a>
+            </c:if>
         </c:if>
     </div>
     </body>

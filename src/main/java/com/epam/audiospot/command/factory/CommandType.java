@@ -28,7 +28,7 @@ public enum CommandType {
     SHOW_COMMENT("submitComment",new SubmitCommentCommand(),Role.ADMIN,Role.CLIENT),
     SHOW_TRACKS("showTracks",new ShowTracksCommand(),Role.ADMIN,Role.CLIENT),
     ORDER_TRACK("orderTrack",new OrderTrackCommand(),Role.CLIENT),
-    DELETE_ORDER("cancelOrder",new CancelOrderCommand(),Role.ADMIN),
+    DELETE_ORDER("cancelOrder",new CancelOrderCommand(),Role.CLIENT),
     PAY_ORDER("payOrder",new PayForOrderCommand(),Role.CLIENT),
     SUBMIT_PAYMENT("submitPayment",new SubmitPaymentCommand(),Role.CLIENT),
     SHOW_AUDIOSETS("showAudioSets",new ShowAudioSetsCommand(),Role.ADMIN,Role.CLIENT),

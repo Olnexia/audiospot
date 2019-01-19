@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="ph" uri="/WEB-INF/customTags/pageHelper.tld" %>
 
 <%@ page contentType = "text/html;charset=utf-8"
          isELIgnored ="false"
@@ -23,7 +24,6 @@
                 <caption><fmt:message key="title"/></caption>
                 <thead>
                 <tr>
-                    <th>№</th>
                     <th><fmt:message key="name"/></th>
                     <th><fmt:message key="surname"/></th>
                     <th><fmt:message key="login"/></th>
@@ -33,9 +33,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${clients}" var="client" varStatus="status">
+
+                <ph:pagination items="${clients}" var="client" perPage="20">
                     <tr>
-                        <td>${status.index+1}</td>
                         <td>${client.name}</td>
                         <td>${client.surname}</td>
                         <td>${client.login}</td>
@@ -58,9 +58,16 @@
                             </c:if>
                         </td>
                     </tr>
-                </c:forEach>
+                </ph:pagination>
                 </tbody>
             </table>
+
+            <c:if test="${not empty pageScope.prevHref}">
+                <a class="prev-next" href="${pageScope.prevHref}"><fmt:message key="prevPage"/></a>
+            </c:if>
+            <c:if test="${not empty pageScope.nextHref}">
+                <a class="prev-next" href="${pageScope.nextHref}"><fmt:message key="nextPage"/></a>
+            </c:if>
 
             <div id="discount" class="modal">
                 <div class="form-style discount">

@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="ph" uri="/WEB-INF/customTags/pageHelper.tld" %>
 
 <%@ page contentType = "text/html;charset=utf-8"
          isELIgnored ="false"
@@ -33,7 +34,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${tracks}" var="track"  varStatus="status">
+
+                    <ph:pagination items="${tracks}" var="track" perPage="20">
                         <tr>
                             <td>${track.artist.name}</td>
                             <td>${track.title}</td>
@@ -60,9 +62,16 @@
                                 </div>
                             </td>
                         </tr>
-                    </c:forEach>
+                    </ph:pagination>
                     </tbody>
                 </table>
+
+                <c:if test="${not empty pageScope.prevHref}">
+                    <a class="prev-next" href="${pageScope.prevHref}"><fmt:message key="prevPage"/></a>
+                </c:if>
+                <c:if test="${not empty pageScope.nextHref}">
+                    <a class="prev-next" href="${pageScope.nextHref}"><fmt:message key="nextPage"/></a>
+                </c:if>
 
                 <div id="comment" class="modal">
                     <div class="form-style">

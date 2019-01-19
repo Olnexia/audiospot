@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="ph" uri="/WEB-INF/customTags/pageHelper.tld" %>
 
 <%@ page contentType = "text/html;charset=utf-8"
          isELIgnored ="false"
@@ -26,7 +27,8 @@
                 </div>
             </div>
         </c:if>
-        <c:forEach items="${albums}" var="album" varStatus="status">
+
+        <ph:pagination items="${albums}" var="album" perPage="20">
             <div class = "block" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=viewAlbum&albumId=${album.id}'">
                 <div class="poster album">
                 </div>
@@ -36,7 +38,14 @@
                     <span>${album.releaseYear}</span>
                 </div>
             </div>
-        </c:forEach>
+        </ph:pagination>
+
+        <c:if test="${not empty pageScope.prevHref}">
+            <a class="prev-next" href="${pageScope.prevHref}"><fmt:message key="prevPage"/></a>
+        </c:if>
+        <c:if test="${not empty pageScope.nextHref}">
+            <a class="prev-next" href="${pageScope.nextHref}"><fmt:message key="nextPage"/></a>
+        </c:if>
     </div>
     </body>
     </html>
