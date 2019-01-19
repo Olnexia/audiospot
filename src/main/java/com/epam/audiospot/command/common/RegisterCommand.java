@@ -8,11 +8,14 @@ import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.UserService;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class RegisterCommand implements Command {
+    private static final Logger logger = LogManager.getLogger(RegisterCommand.class);
     private static final String REGISTRATION_MESSAGE_PARAM = "registrationMessage";
     private static final String LOGIN_PARAM = "login";
     private static final String NAME_PARAM = "name";
@@ -41,9 +44,10 @@ public class RegisterCommand implements Command {
 
         HttpSession session = request.getSession(true);
         String currentLocale = request.getParameter(LOCALE);
-
         session.setAttribute(USER_ATTR,newClient);
         session.setAttribute(LOCALE,currentLocale);
+
+        logger.info("Registration is successful for client " + newClient.getLogin());
         return CommandResult.redirect(Redirect.HOME.getPath());
     }
 }

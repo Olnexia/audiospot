@@ -1,4 +1,4 @@
-package com.epam.audiospot.command.factory;
+package com.epam.audiospot.command.creator;
 
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.admin.AddTrackCommand;
@@ -19,7 +19,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(DataProviderRunner.class)
-public class CommandFactoryTest {
+public class CommandCreatorTest {
 
     @DataProvider
     public static Object[][] commands() {
@@ -44,7 +44,7 @@ public class CommandFactoryTest {
     public void shouldCreateCorrectCommand(String commandText,Class expectedCommandClass) throws IllegalCommandException {
         //given
         //when
-        Command actual = CommandFactory.create(commandText);
+        Command actual = CommandCreator.create(commandText);
         //then
         Assert.assertNotEquals(null,actual);
         Assert.assertEquals(expectedCommandClass,actual.getClass());

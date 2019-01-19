@@ -1,7 +1,7 @@
 package com.epam.audiospot.filter;
 
 import com.epam.audiospot.command.Forward;
-import com.epam.audiospot.command.factory.CommandType;
+import com.epam.audiospot.command.creator.CommandType;
 import com.epam.audiospot.entity.Role;
 import com.epam.audiospot.entity.User;
 import org.apache.logging.log4j.LogManager;
@@ -18,8 +18,8 @@ public class RoleFilter implements Filter {
     private static final String USER_ATTR = "user";
     private static final Logger logger = LogManager.getLogger(RoleFilter.class);
 
-
-    public void init(FilterConfig fConfig){
+    @Override
+    public void init(FilterConfig filterConfig) {
     }
 
     public void doFilter(ServletRequest request, ServletResponse response,
@@ -29,7 +29,8 @@ public class RoleFilter implements Filter {
 
         HttpSession session = httpRequest.getSession(false);
         if(session==null){
-            if(!command.equals("login") &&!command.equals("register")&&!command.equals("logout")){
+            if(!command.equals("login") &&!command.equals("register")
+                    &&!command.equals("logout")&&!command.equals("home")){
                 logger.warn("Unauthorized access attempt to command " + command);
                 httpRequest.getRequestDispatcher(Forward.LOGIN.getPath()).forward(request,response);
                 return;
@@ -37,7 +38,8 @@ public class RoleFilter implements Filter {
         }else{
             User user = (User)session.getAttribute(USER_ATTR);
             if(user==null){
-                if(!command.equals("login") &&!command.equals("register")&&!command.equals("logout")){
+                if(!command.equals("login") &&!command.equals("register")
+                        &&!command.equals("logout")&&!command.equals("home")){
                     logger.warn("Unauthorized access attempt to command " + command);
                     httpRequest.getRequestDispatcher(Forward.LOGIN.getPath()).forward(request,response);
                     return;
@@ -56,6 +58,7 @@ public class RoleFilter implements Filter {
         chain.doFilter(request, response);
     }
 
+    @Override
     public void destroy() {
     }
 }

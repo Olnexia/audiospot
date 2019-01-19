@@ -28,11 +28,16 @@ public class ArtistService {
         }
     }
 
-    public Optional<Artist> getArtist(Long id) throws ServiceException {
+    public Artist getArtist(Long id) throws ServiceException {
         ArtistByIdSpecification specification = new ArtistByIdSpecification(id);
         try (RepositoryFactory<Artist> factory = new ArtistRepositoryFactory()) {
             Repository<Artist> repository = factory.createRepository();
-            return repository.queryForSingleResult(specification);
+            Optional<Artist> optionalArtist = repository.queryForSingleResult(specification);
+            if(optionalArtist.isPresent()){
+                return optionalArtist.get();
+            }else{
+             throw new ServiceException("Artist is missing");
+            }
         }catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);
         }

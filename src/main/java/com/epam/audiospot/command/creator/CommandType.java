@@ -1,10 +1,12 @@
-package com.epam.audiospot.command.factory;
+package com.epam.audiospot.command.creator;
 
 import com.epam.audiospot.command.*;
 import com.epam.audiospot.command.admin.*;
 import com.epam.audiospot.command.client.*;
 import com.epam.audiospot.command.common.*;
 import com.epam.audiospot.entity.Role;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -39,6 +41,7 @@ public enum CommandType {
     ADD_TO_SET("addToSet",new AddTrackToSetCommand(),Role.ADMIN),
     LOGOUT("logout",new LogoutCommand(),Role.ADMIN,Role.CLIENT);
 
+    private static final Logger logger = LogManager.getLogger(CommandType.class);
     private Command command;
     private String commandText;
     private List<Role> permissions = new ArrayList <>();
@@ -68,6 +71,8 @@ public enum CommandType {
                 return commandType;
             }
         }
-        throw new IllegalArgumentException("An attempt to use illegal command ");
+        IllegalArgumentException exception = new IllegalArgumentException("An attempt to use illegal command ");
+        logger.error(exception.getMessage(),exception);
+        throw exception;
     }
 }

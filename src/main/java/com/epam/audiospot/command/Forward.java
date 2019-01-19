@@ -14,8 +14,7 @@ public enum Forward {
     PLAYLIST("/WEB-INF/pages/playlist.jsp"),
     PAY_ORDER("/WEB-INF/pages/payOrder.jsp"),
     AUDIOSETS("/WEB-INF/pages/audioSets.jsp"),
-    VIEW_AUDIOSET("/WEB-INF/pages/viewAudioSet.jsp"),
-    ERROR_PAGE("\"/WEB-INF/pages/errors/defaultErrorPage.jsp");
+    VIEW_AUDIOSET("/WEB-INF/pages/viewAudioSet.jsp");
 
     private String path;
 

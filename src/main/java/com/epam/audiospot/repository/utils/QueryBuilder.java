@@ -1,4 +1,4 @@
-package com.epam.audiospot.repository;
+package com.epam.audiospot.repository.utils;
 
 import com.epam.audiospot.entity.Entity;
 import java.util.Map;

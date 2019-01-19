@@ -7,6 +7,8 @@ import com.epam.audiospot.command.Redirect;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.UserService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,6 +18,7 @@ import java.util.Optional;
  *
  */
 public class LoginCommand implements Command {
+    private static final Logger logger = LogManager.getLogger(LoginCommand.class);
     private static final String LOGIN_PARAM = "login";
     private static final String PASSWORD_PARAM = "password";
     private static final String USER_ATTR ="user";
@@ -39,6 +42,7 @@ public class LoginCommand implements Command {
                 String currentLocale = request.getParameter(LOCALE);
                 session.setAttribute(LOCALE,currentLocale);
                 commandResult = CommandResult.redirect(Redirect.HOME.getPath());
+                logger.info("Authentication is successful for user " + user.getLogin());
             }else{
                 request.setAttribute(LOGIN_MESSAGE_ATTR,"blocked");
                 commandResult = CommandResult.forward(Forward.LOGIN.getPath());

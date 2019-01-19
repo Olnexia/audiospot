@@ -4,7 +4,6 @@ import com.epam.audiospot.builder.Builder;
 import com.epam.audiospot.builder.OrderedTrackBuilder;
 import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.entity.OrderedTrack;
-
 import java.util.HashMap;
 import java.util.Map;
 

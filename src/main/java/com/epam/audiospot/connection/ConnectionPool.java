@@ -1,6 +1,8 @@
 package com.epam.audiospot.connection;
 
 import com.epam.audiospot.exception.ConnectionPoolException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.Semaphore;
@@ -9,6 +11,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class ConnectionPool{
+    private static final Logger logger = LogManager.getLogger(ConnectionPool.class);
     private static final int INITIAL_POOL_SIZE = 10;
     private static final AtomicBoolean initialized = new AtomicBoolean(false);
     private static final Lock instanceLock = new ReentrantLock();
@@ -50,6 +53,7 @@ public class ConnectionPool{
             semaphore.acquire();
             return pool.poll();
         } catch (InterruptedException e) {
+            logger.error(e.getMessage(),e);
             throw new ConnectionPoolException(e.getMessage(), e);
         }finally {
             connectionLock.unlock();

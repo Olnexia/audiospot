@@ -3,7 +3,6 @@ package com.epam.audiospot.repository;
 import com.epam.audiospot.entity.Entity;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.repository.specification.Specification;
-
 import java.util.List;
 import java.util.Optional;
 

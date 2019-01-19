@@ -1,12 +1,13 @@
 package com.epam.audiospot.controller;
 
 import com.epam.audiospot.command.Command;
-import com.epam.audiospot.command.factory.CommandFactory;
+import com.epam.audiospot.command.creator.CommandCreator;
 import com.epam.audiospot.command.CommandResult;
 import com.epam.audiospot.connection.ConnectionPool;
 import com.epam.audiospot.exception.ServiceException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,8 +18,10 @@ public class Controller extends HttpServlet {
     private static final String COMMAND_PARAM = "command";
     private static final Logger logger = LogManager.getLogger(Controller.class);
 
-    public void init() throws ServletException {
-        super.init();
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+        logger.info("The controller has been initialized");
     }
 
     @Override
@@ -34,7 +37,7 @@ public class Controller extends HttpServlet {
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         try {
             String command = request.getParameter(COMMAND_PARAM);
-            Command action = CommandFactory.create(command);
+            Command action = CommandCreator.create(command);
             CommandResult commandResult = action.execute(request, response);
             if (commandResult.isRedirect()) {
                 response.sendRedirect(commandResult.getPage());
@@ -52,5 +55,6 @@ public class Controller extends HttpServlet {
         ConnectionPool pool = ConnectionPool.getInstance();
         pool.closeConnections();
         super.destroy();
+        logger.info("The controller has been destroyed");
     }
 }

@@ -1,6 +1,7 @@
 package com.epam.audiospot.repository;
 
 import com.epam.audiospot.entity.*;
+import com.epam.audiospot.repository.utils.QueryBuilder;
 import org.junit.Assert;
 import org.junit.Test;
 import java.util.HashMap;

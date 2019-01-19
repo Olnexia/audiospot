@@ -1,4 +1,4 @@
-package com.epam.audiospot.command;
+package com.epam.audiospot.command.utils;
 
 import java.math.BigDecimal;
 

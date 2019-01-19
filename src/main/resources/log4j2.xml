@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Configuration status="INFO">
     <Appenders>
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout>
-                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n</Pattern>
-            </PatternLayout>
-        </Console>
-
-        <FastFile name="ALog" fileName="${sys:catalina.base}/logs/test.log" immediateFlush="true" append="true">
+            <Console name="Console" target="SYSTEM_OUT">
+                <PatternLayout>
+                    <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n</Pattern>
+                </PatternLayout>
+            </Console>
+            <File name="ALog" fileName="${sys:catalina.home}/webapps/AudioSpot/logs/infoLog.log" append="true">
+                <PatternLayout>
+                    <pattern>%d %p %c{1.} [%t] %m%n</pattern>
+                </PatternLayout>
+            </File>
+        <File name="BLog" fileName="${sys:catalina.home}/webapps/AudioSpot/logs/errorLog.log" append="true">
             <PatternLayout>
                 <pattern>%d %p %c{1.} [%t] %m%n</pattern>
             </PatternLayout>
-        </FastFile>
+        </File>
     </Appenders>
     <Loggers>
-        <Root level="INFO">
+        <Root level="info">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="ALog"/>
         </Root>
+        <Logger name="com.epam.audiospot" level="error">
+            <AppenderRef ref="BLog"/>
+        </Logger>
     </Loggers>
 </Configuration>

@@ -25,7 +25,7 @@ public class ConnectionCreator {
             user = properties.getProperty(USER_PROPERTY);
             password = properties.getProperty(PASSWORD_PROPERTY);
         }catch ( IOException e){
-            logger.error("Connection creation is failed");
+            logger.error(e.getMessage(),e);
             throw new ConnectionException(e.getMessage(),e);
         }
     }

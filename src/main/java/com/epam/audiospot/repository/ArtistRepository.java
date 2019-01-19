@@ -4,7 +4,6 @@ import com.epam.audiospot.builder.ArtistBuilder;
 import com.epam.audiospot.builder.Builder;
 import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.entity.Artist;
-
 import java.util.HashMap;
 import java.util.Map;
 
