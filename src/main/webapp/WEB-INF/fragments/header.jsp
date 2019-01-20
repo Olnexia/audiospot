@@ -11,6 +11,7 @@
 <html>
 <head>
     <style><jsp:include page = "/css/header-fixed.css"/></style>
+    <style><jsp:include page = "/css/footer.css"/></style>
     <link rel="shortcut icon" type="image/x-icon" href="/images/icons/logo.png" />
 </head>
 <body>
@@ -33,9 +34,7 @@
                 <a href="${pageContext.servletContext.contextPath}/controller?command=payOrder"><fmt:message key="PayOrder"/></a>
             </c:if>
 
-
-
-            <div>
+            <div class="lang">
                 <a href="<c:url value="">
                     <c:forEach items="${param}" var="entry">
                         <c:if test="${entry.key != 'lang'}">
@@ -43,7 +42,8 @@
                         </c:if>
                     </c:forEach>
                     <c:param name="lang" value="en" />
-                </c:url>"><fmt:message key="en"/></a>
+                </c:url>"><fmt:message key="en"/>
+                </a>
                 <a class="selected">|</a>
                 <a href="<c:url value="">
                     <c:forEach items="${param}" var="entry">
@@ -52,7 +52,8 @@
                         </c:if>
                     </c:forEach>
                     <c:param name="lang" value="ru" />
-                </c:url>"><fmt:message key="ru"/></a>
+                </c:url>"><fmt:message key="ru"/>
+                </a>
             </div>
 
             <c:if test="${sessionScope.user.role ne null}">

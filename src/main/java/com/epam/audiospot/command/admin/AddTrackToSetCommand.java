@@ -20,7 +20,7 @@ public class AddTrackToSetCommand implements Command {
         AudioSetService service = new AudioSetService();
         service.addToSet(audioSetId,trackId);
 
-        return CommandResult.redirect(Redirect.ADD_TO_SET.getPath()
+        return CommandResult.redirect(Redirect.VIEW_AUDIOSET.getPath()
                                         + "&" + AUDIOSET_ID_PARAM
                                         + "=" + audioSetId);
     }

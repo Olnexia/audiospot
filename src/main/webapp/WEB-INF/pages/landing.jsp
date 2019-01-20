@@ -4,6 +4,11 @@
 <%@ page contentType = "text/html;charset=utf-8"
          isELIgnored ="false"
          pageEncoding ="utf-8"%>
+
+<c:if test="${not empty sessionScope.user}">
+    <jsp:forward page="main.jsp"/>
+</c:if>
+
 <fmt:setLocale value="${not empty sessionScope.lang?sessionScope.lang:not empty param.lang?param.lang:not empty requestScope.lang?requestScope.lang:'eng'}"/>
 <fmt:bundle basename="pagecontent" prefix ="landing.">
 <html>

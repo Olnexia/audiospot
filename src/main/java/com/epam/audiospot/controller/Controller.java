@@ -14,6 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * The main class of the application that is responsible for processing all GET and POST http requests from clients by
+ * {@code doGet} and {@code doPost} methods respectively
+ */
+
 public class Controller extends HttpServlet {
     private static final String COMMAND_PARAM = "command";
     private static final Logger logger = LogManager.getLogger(Controller.class);

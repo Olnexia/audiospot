@@ -39,8 +39,8 @@ public class ConnectionPool{
 
     private static void initConnectionPool(ConnectionPool connectionPool){
         Queue<ConnectionWrapper> connections = new LinkedList <>();
+        ConnectionCreator creator = new ConnectionCreator();
         for (int i = 0; i < INITIAL_POOL_SIZE; i++) {
-            ConnectionCreator creator = new ConnectionCreator();
             ConnectionWrapper connection = creator.createConnection();
             connections.add(connection);
         }

@@ -19,7 +19,8 @@ public class SubmitTrackCommand implements Command {
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException{
-        String title = request.getParameter(AudioTrack.TITLE_LABEL);
+        String title = request.getParameter(AudioTrack.TITLE_LABEL).replaceAll("'","\\\\'");
+        logger.info(title);
         BigDecimal price = new BigDecimal(request.getParameter(AudioTrack.PRICE_LABEL));
         Genre genre = Genre.valueOf(request.getParameter(AudioTrack.GENRE_LABEL).toUpperCase());
         String artistName = request.getParameter(AudioTrack.ARTIST_LABEL);

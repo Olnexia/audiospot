@@ -11,19 +11,11 @@
                     <pattern>%d %p %c{1.} [%t] %m%n</pattern>
                 </PatternLayout>
             </File>
-        <File name="BLog" fileName="${sys:catalina.home}/webapps/AudioSpot/logs/errorLog.log" append="true">
-            <PatternLayout>
-                <pattern>%d %p %c{1.} [%t] %m%n</pattern>
-            </PatternLayout>
-        </File>
     </Appenders>
     <Loggers>
         <Root level="info">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="ALog"/>
         </Root>
-        <Logger name="com.epam.audiospot" level="error">
-            <AppenderRef ref="BLog"/>
-        </Logger>
     </Loggers>
 </Configuration>

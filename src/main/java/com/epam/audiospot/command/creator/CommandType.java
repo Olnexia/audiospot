@@ -39,6 +39,7 @@ public enum CommandType {
     VIEW_AUDIOSET("viewAudioSet",new ViewAudioSetCommand(),Role.ADMIN,Role.CLIENT),
     SELECT_TO_SET("addTracks",new SelectTracksToSetCommand(),Role.ADMIN),
     ADD_TO_SET("addToSet",new AddTrackToSetCommand(),Role.ADMIN),
+    ORDER_SET("orderAudioSet",new OrderAudioSetCommand(),Role.CLIENT),
     LOGOUT("logout",new LogoutCommand(),Role.ADMIN,Role.CLIENT);
 
     private static final Logger logger = LogManager.getLogger(CommandType.class);

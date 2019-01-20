@@ -19,11 +19,13 @@ public class SubmitAudioSetCommand implements Command {
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         String title = request.getParameter(AudioSet.TITLE_LABEL);
         String description = request.getParameter(AudioSet.DESCRIPTION_LABEL);
+        String idParam = request.getParameter(AudioSet.ID_LABEL);
+        Long id = (idParam==null)?null:Long.parseLong(request.getParameter(AudioSet.ID_LABEL));
 
         AudioSetService service = new AudioSetService();
-        AudioSet audioSet = new AudioSet(null,title,description);
+        AudioSet audioSet = new AudioSet(id,title,description);
         service.saveAudioSet(audioSet);
-        logger.info("New audioset with id " + audioSet.getId() + " added.");
+        logger.info("New audioset with id " + audioSet.getId() + " saved");
         return CommandResult.redirect(Redirect.VIEW_AUDIOSET.getPath()
                 + "&" + AUDIOSET_ID_ATTR + "=" + audioSet.getId());
     }

@@ -6,6 +6,11 @@ import com.epam.audiospot.repository.specification.Specification;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * This interface is built on Repository pattern and it's medium level between database and service logic
+ * @param <T> the type of objects with which implementation operates. Required implementation of {@code Entity} interface
+ */
+
 public interface Repository<T extends Entity> {
     void save(T object) throws RepositoryException;
     void add(T object) throws RepositoryException;

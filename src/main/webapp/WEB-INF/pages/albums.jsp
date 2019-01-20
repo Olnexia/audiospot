@@ -22,20 +22,21 @@
             <div class = "block" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=addAlbum'">
                 <div class="poster add-new">
                 </div>
-                <div>
-                    <fmt:message key="addNew"/>
+                <div class="info">
+                    <a>
+                        <fmt:message key="addNew"/>
+                    </a>
                 </div>
             </div>
         </c:if>
 
-        <ph:pagination items="${albums}" var="album" perPage="20">
+        <ph:pagination items="${requestScope.albums}" var="album" perPage="20">
             <div class = "block" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=viewAlbum&albumId=${album.id}'">
                 <div class="poster album">
                 </div>
-                <div>
+                <div class="info">
                     <a>${album.title}</a>
-                    <span>${album.artist.name}</span>
-                    <span>${album.releaseYear}</span>
+                    <span>${album.artist.name} ${album.releaseYear}</span>
                 </div>
             </div>
         </ph:pagination>

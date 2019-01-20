@@ -18,7 +18,7 @@
 </head>
     <body>
         <div class="content">
-                <c:if test="${orderedTracks eq null}">
+                <c:if test="${requestScope.orderedTracks eq null}">
                     <div class = "empty-order">
                         <h2><fmt:message key="emptyOrder"/></h2>
                         <div class ="empty-order-img"></div>
@@ -31,7 +31,7 @@
                     </div>
                 </c:if>
 
-                <c:if test="${orderedTracks ne null}">
+                <c:if test="${requestScope.orderedTracks ne null}">
                     <div class="form-style">
                         <div class="fhead">
                             <h2><fmt:message key="details"/></h2>
@@ -60,7 +60,7 @@
                     </div>
 
                         <table class="table">
-                            <caption><fmt:message key="tableCaption"/> ${orderId}</caption>
+                            <caption><fmt:message key="tableCaption"/> ${requestScope.orderId}</caption>
                             <thead>
                             <tr>
                                 <th><fmt:message key="artist"/></th>
@@ -70,7 +70,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach items="${orderedTracks}" var="track"  varStatus="status">
+                            <c:forEach items="${requestScope.orderedTracks}" var="track"  varStatus="status">
                                 <tr>
                                     <td>${track.artist.name}</td>
                                     <td>${track.title}</td>
@@ -88,16 +88,24 @@
                                             <td><fmt:message key="pop"/></td>
                                         </c:when>
                                     </c:choose>
-                                    <td>${track.price}</td>
+                                    <td>
+                                        <fmt:formatNumber value="${track.price}" type="currency" currencySymbol="$"/>
+                                    </td>
                                 </tr>
                             </c:forEach>
                             </tbody>
                             <tfoot>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td><fmt:message key="totalPrice"/></td>
-                                <td>${orderTotalPrice}</td>
+                                <td><fmt:message key="discount"/> ${sessionScope.user.discount} %</td>
+                                <td><fmt:message key="totalPrice"/>
+                                    <fmt:formatNumber value="${requestScope.orderTotalPrice}" type="currency" currencySymbol="$"/>
+                                </td>
+                                <td><fmt:message key="finalPrice"/></td>
+                                <td>
+                                    <strong>
+                                        <fmt:formatNumber value="${requestScope.orderFinalPrice}" type="currency" minFractionDigits="2" currencySymbol="$"/>
+                                    </strong>
+                                </td>
                             </tr>
                             </tfoot>
                         </table>

@@ -1,9 +1,0 @@
-.album-header{
-    min-height: 200px;
-    margin-bottom: 30px;
-    width: 850px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}

@@ -8,6 +8,11 @@
     background-size: 100%;
 }
 
+.edit-icon{
+    background: url("/images/icons/edit.png") no-repeat top;
+    background-size: 100%;
+}
+
 .add-comment-icon{
     background: url("/images/icons/add-comment.png") no-repeat top;
     background-size: 100%;
@@ -37,8 +42,8 @@
 .icon-button{
     display:flex;
     flex-wrap: nowrap;
-    width: auto;
-    justify-content: space-between;
+    width: 280px;
+    justify-content: flex-start;
     align-self: center;
     padding: 2px;
     border: 2px solid transparent;

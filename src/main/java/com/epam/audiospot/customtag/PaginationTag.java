@@ -77,8 +77,9 @@ public class PaginationTag extends SimpleTagSupport {
 
     public void setItems(Collection items) {
         this.items = items;
-        if(items.size() > 0)
+        if(items.size() > 0){
             iterator = items.iterator();
+        }
     }
 
     public void setPerPage(int perPage) {

@@ -22,6 +22,7 @@ public class PayForOrderCommand implements Command {
     private static final String ORDER_ID_ATTR = "orderId";
     private static final String ORDERED_TRACKS_ATTR = "orderedTracks";
     private static final String ORDER_TOTAL_PRICE_ATTR = "orderTotalPrice";
+    private static final String ORDER_FINAL_PRICE_ATTR = "orderFinalPrice";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
@@ -36,10 +37,13 @@ public class PayForOrderCommand implements Command {
             List<AudioTrack> orderedTracks = trackService.findOrderedTracks(orderId);
             List<BigDecimal> prices = orderedTracks.stream().map(AudioTrack::getPrice).collect(Collectors.toList());
             BigDecimal orderTotalPrice = prices.stream().reduce(BigDecimal.ZERO,BigDecimal::add);
+            BigDecimal userDiscount = new BigDecimal(user.getDiscount());
+            BigDecimal orderFinalPrice = orderTotalPrice.subtract(orderTotalPrice.multiply(userDiscount.divide(new BigDecimal(100))));
 
             request.setAttribute(ORDER_ID_ATTR,orderId);
             request.setAttribute(ORDERED_TRACKS_ATTR,orderedTracks);
             request.setAttribute(ORDER_TOTAL_PRICE_ATTR,orderTotalPrice);
+            request.setAttribute(ORDER_FINAL_PRICE_ATTR,orderFinalPrice);
         }
         return CommandResult.forward(Forward.PAY_ORDER.getPath());
     }

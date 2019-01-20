@@ -22,17 +22,17 @@
             <div class = "block" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=addAudioSet'">
                 <div class="poster add-new">
                 </div>
-                <div>
-                    <fmt:message key="addNew"/>
+                <div class="info">
+                    <a><fmt:message key="addNew"/></a>
                 </div>
             </div>
         </c:if>
 
-        <ph:pagination items="${audioSets}" var="audioSet" perPage="20" >
+        <ph:pagination items="${requestScope.audioSets}" var="audioSet" perPage="20" >
             <div class = "block" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=viewAudioSet&audioSetId=${audioSet.id}'">
                 <div class="poster set">
                 </div>
-                <div>
+                <div class="info">
                     <a>${audioSet.title}</a>
                 </div>
             </div>

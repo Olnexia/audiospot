@@ -3,7 +3,6 @@ package com.epam.audiospot.connection;
 import com.epam.audiospot.exception.ConnectionException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.sql.*;
 
 public class ConnectionWrapper{

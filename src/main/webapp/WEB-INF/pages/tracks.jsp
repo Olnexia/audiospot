@@ -19,7 +19,7 @@
 </head>
     <body>
     <div class="content">
-        <c:if test="${fn:length(tracks)eq 0}">
+        <c:if test="${fn:length(requestScope.tracks)eq 0}">
             <h2>There are not available tracks now</h2>
         </c:if>
         <c:if test="${sessionScope.user.role.value eq 'admin'}">
@@ -28,7 +28,7 @@
                 <p class="b-text"><fmt:message key="newTrack"/></p>
             </div>
         </c:if>
-        <c:if test="${fn:length(tracks)ne 0}">
+        <c:if test="${fn:length(requestScope.tracks)ne 0}">
             <table class="table">
                 <c:if test="${sessionScope.user.role.value eq 'client'}">
                     <caption><fmt:message key="pageTitle"/></caption>
@@ -44,7 +44,7 @@
                 </thead>
                 <tbody>
 
-                <ph:pagination items="${tracks}" var="track" perPage="10" >
+                <ph:pagination items="${requestScope.tracks}" var="track" perPage="15" >
                         <tr>
                             <td>${track.artist.name}</td>
                             <td>${track.title}</td>

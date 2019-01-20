@@ -36,3 +36,22 @@
     border-color: #4CAF50;
 }
 
+.block .info{
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    height: 72px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.block .info a {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.block .info span {
+    font-size: 15px;
+    color: #4d4d4c;
+}
+

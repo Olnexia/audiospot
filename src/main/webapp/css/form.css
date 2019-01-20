@@ -1,4 +1,3 @@
-
 .form-style{
     font-family: 'Open Sans Condensed', arial, sans, serif;
     width: 600px;
@@ -7,7 +6,6 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
     -webkit-box-shadow:  0 0 15px rgba(0, 0, 0, 0.22);
-
 }
 
 .form-style form{

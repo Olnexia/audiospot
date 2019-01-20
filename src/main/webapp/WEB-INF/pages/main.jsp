@@ -21,7 +21,8 @@
            <h2><fmt:message key="slogan"/></h2>
        </div>
        <div class ="main-img"></div>
-       </div>
+   </div>
+   <footer id="sticky"><fmt:message key="copyright"/></footer>
    </body>
 </html>
 </fmt:bundle>

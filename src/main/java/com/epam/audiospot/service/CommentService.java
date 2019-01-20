@@ -11,7 +11,7 @@ import java.util.List;
 
 public class CommentService{
 
-    public void save(Comment comment)throws ServiceException {
+    public void saveComment(Comment comment)throws ServiceException {
         try(RepositoryFactory<Comment> factory = new CommentRepositoryFactory()){
             Repository<Comment> repository = factory.createRepository();
             repository.save(comment);

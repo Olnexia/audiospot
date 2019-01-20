@@ -11,7 +11,10 @@ import com.epam.audiospot.repository.factory.OrderRepositoryFactory;
 import com.epam.audiospot.repository.factory.OrderedTrackRepositoryFactory;
 import com.epam.audiospot.repository.factory.RepositoryFactory;
 import com.epam.audiospot.repository.specification.AudioTracksByAlbumIdSpecification;
+import com.epam.audiospot.repository.specification.AudioTracksByAudioSetIdSpecification;
 import com.epam.audiospot.repository.specification.OrderByUserIdAndStatusSpecification;
+import com.epam.audiospot.repository.specification.Specification;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
@@ -48,9 +51,18 @@ public class OrderService {
     }
 
     public void orderAlbum(Long userId,Long albumId) throws ServiceException{
+        AudioTracksByAlbumIdSpecification specification = new AudioTracksByAlbumIdSpecification(albumId);
+        orderAvailableTracks(userId,specification);
+    }
+
+    public void orderAudioSet(Long userId,Long audioSetId) throws ServiceException {
+        AudioTracksByAudioSetIdSpecification specification = new AudioTracksByAudioSetIdSpecification(audioSetId);
+        orderAvailableTracks(userId, specification);
+    }
+
+    private void orderAvailableTracks(Long userId, Specification specification) throws  ServiceException{
         AudioTrackService trackService = new AudioTrackService();
         List<AudioTrack> availableTracks = trackService.findAvailableTracks(userId);
-        AudioTracksByAlbumIdSpecification specification = new AudioTracksByAlbumIdSpecification(albumId);
         try(RepositoryFactory<AudioTrack> factory = new AudioRepositoryFactory()){
             Repository<AudioTrack> repository = factory.createRepository();
             List<AudioTrack> tracks = repository.query(specification);

@@ -3,31 +3,28 @@ package com.epam.audiospot.command.client;
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
 import com.epam.audiospot.command.Redirect;
-import com.epam.audiospot.entity.Comment;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.ServiceException;
-import com.epam.audiospot.service.CommentService;
+import com.epam.audiospot.service.OrderService;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.time.LocalDateTime;
 
-public class SubmitCommentCommand implements Command {
+public class OrderAudioSetCommand implements Command {
     private static final String USER_ATTR = "user";
+    private static final String AUDIOSET_ID_PARAM = "audioSetId";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
-        String text = request.getParameter(Comment.TEXT_LABEL);
-        Long trackId = Long.parseLong(request.getParameter(Comment.TRACK_ID_LABEL));
-        LocalDateTime dateTime = LocalDateTime.now();
-
         HttpSession session = request.getSession(false);
         User user = (User)session.getAttribute(USER_ATTR);
+        Long audioSetId = Long.parseLong(request.getParameter(AUDIOSET_ID_PARAM));
 
-        Comment comment = new Comment(null,user,trackId,text,dateTime);
-        CommentService service = new CommentService();
-        service.saveComment(comment);
+        OrderService service = new OrderService();
+        service.orderAudioSet(user.getId(),audioSetId);
 
-        return CommandResult.redirect(Redirect.SHOW_PLAYLIST.getPath());
+        return CommandResult.redirect(Redirect.VIEW_AUDIOSET.getPath()
+                + "&" + AUDIOSET_ID_PARAM + "=" + audioSetId);
     }
 }

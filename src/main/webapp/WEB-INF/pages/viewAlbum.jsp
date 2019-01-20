@@ -11,39 +11,38 @@
 <fmt:bundle basename="pagecontent" prefix ="albumView.">
     <html>
     <head>
-        <title>${album.title}</title>
+        <title>${requestScope.album.title}</title>
         <style><jsp:include page = "/css/table.css"/></style>
         <style><jsp:include page = "/css/block.css"/></style>
-        <style><jsp:include page = "/css/album.css"/></style>
+        <style><jsp:include page = "/css/view.css"/></style>
         <style><jsp:include page = "/css/icon-button.css"/></style>
         <jsp:include page = "../fragments/header.jsp"/>
     </head>
     <body>
     <div class="content">
-        <div class="album-header">
+        <div class="view-header">
             <div class="poster">
             </div>
-            <div class="album-info">
-                <h1>${album.title}</h1>
-                <span>${album.artist.name}</span>
-                <span>${album.releaseYear}</span>
+            <div class="view-info">
+                <h1>${requestScope.album.title}</h1>
+                <span>${requestScope.album.artist.name} ${requestScope.album.releaseYear}</span>
             </div >
 
                 <c:if test="${sessionScope.user.role.value eq 'admin'}">
-                    <div class="icon-button" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=addTrack&albumId=${album.id}&artistName=${album.artist.name}'">
+                    <div class="icon-button" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=addTrack&albumId=${requestScope.album.id}&artistName=${requestScope.album.artist.name}'">
                         <div class="medium add-icon"></div>
                         <p class="b-text"><fmt:message key="addTrack"/></p>
                     </div>
                 </c:if>
                 <c:if test="${sessionScope.user.role.value eq 'client'}">
-                    <div class="icon-button" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=orderAlbum&albumId=${album.id}'">
+                    <div class="icon-button" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=orderAlbum&albumId=${requestScope.album.id}'">
                         <div class="medium order-icon"></div>
                         <p class="b-text"><fmt:message key="order"/></p>
                     </div>
                 </c:if>
         </div>
 
-        <c:if test="${fn:length(tracks)ne 0}">
+        <c:if test="${fn:length(requestScope.tracks)ne 0}">
                 <table class="table">
                     <caption><fmt:message key="tracks"/></caption>
                     <thead>
@@ -54,7 +53,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${tracks}" var="track"  varStatus="status">
+                    <c:forEach items="${requestScope.tracks}" var="track"  varStatus="status">
                         <tr>
                             <td>${status.index+1}</td>
                             <td>${track.title}</td>

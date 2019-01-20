@@ -1,17 +1,14 @@
 package com.epam.audiospot.service;
 
-import com.epam.audiospot.entity.Album;
 import com.epam.audiospot.entity.AudioSet;
 import com.epam.audiospot.entity.TrackAtAudioSet;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.repository.Repository;
-import com.epam.audiospot.repository.factory.AlbumRepositoryFactory;
 import com.epam.audiospot.repository.factory.AudioSetRepositoryFactory;
 import com.epam.audiospot.repository.factory.RepositoryFactory;
 import com.epam.audiospot.repository.factory.TrackAtAudioSetRepositoryFactory;
 import com.epam.audiospot.repository.specification.AudioSetByIdSpecification;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -32,16 +29,6 @@ public class AudioSetService {
             Repository<AudioSet> repository = factory.createRepository();
             repository.save(audioSet);
         }catch (RepositoryException e){
-            throw new ServiceException(e.getMessage(),e);
-        }
-    }
-
-    public void addTrack(Long audioSetId, Long trackId) throws ServiceException{
-        try(RepositoryFactory<TrackAtAudioSet> factory = new TrackAtAudioSetRepositoryFactory()){
-            Repository<TrackAtAudioSet> repository = factory.createRepository();
-            TrackAtAudioSet trackAtAudioSet = new TrackAtAudioSet(null,audioSetId,trackId);
-            repository.save(trackAtAudioSet);
-        } catch (RepositoryException e){
             throw new ServiceException(e.getMessage(),e);
         }
     }
