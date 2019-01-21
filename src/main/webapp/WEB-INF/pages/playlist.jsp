@@ -17,11 +17,24 @@
     <style><jsp:include page = "/css/table.css"/></style>
     <style><jsp:include page="/css/modal.css"/></style>
     <style><jsp:include page="/css/form.css"/></style>
+    <style><jsp:include page="/css/playlist.css"/></style>
     <style><jsp:include page="/css/icon-button.css"/></style>
     <script type="text/javascript"><jsp:include page="/js/modal/comment.js"/></script>
 </head>
     <body>
         <div class="content">
+            <c:if test="${fn:length(tracks) eq 0}">
+                <div class = "empty-playlist">
+                    <h2><fmt:message key="emptyPlaylist"/></h2>
+                    <div class ="empty-playlist-img"></div>
+                    <h2><fmt:message key="buyNow"/></h2>
+                    <div>
+                        <a href="${pageContext.servletContext.contextPath}/controller?command=showTracks"><fmt:message key="tracks"/></a>
+                        <a href="${pageContext.servletContext.contextPath}/controller?command=showAlbums"><fmt:message key="albums"/></a>
+                        <a href="${pageContext.servletContext.contextPath}/controller?command=showAudioSets"><fmt:message key="audioSets"/></a>
+                    </div>
+                </div>
+            </c:if>
             <c:if test="${fn:length(tracks)ne 0}">
                 <table class="table">
                     <caption><fmt:message key="pageTitle"/></caption>

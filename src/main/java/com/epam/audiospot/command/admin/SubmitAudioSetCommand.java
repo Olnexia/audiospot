@@ -20,7 +20,7 @@ public class SubmitAudioSetCommand implements Command {
         String title = request.getParameter(AudioSet.TITLE_LABEL);
         String description = request.getParameter(AudioSet.DESCRIPTION_LABEL);
         String idParam = request.getParameter(AudioSet.ID_LABEL);
-        Long id = (idParam==null)?null:Long.parseLong(request.getParameter(AudioSet.ID_LABEL));
+        Long id = (idParam==null) ? null : Long.parseLong(request.getParameter(AudioSet.ID_LABEL));
 
         AudioSetService service = new AudioSetService();
         AudioSet audioSet = new AudioSet(id,title,description);

@@ -14,7 +14,6 @@ import com.epam.audiospot.repository.specification.AudioTracksByAlbumIdSpecifica
 import com.epam.audiospot.repository.specification.AudioTracksByAudioSetIdSpecification;
 import com.epam.audiospot.repository.specification.OrderByUserIdAndStatusSpecification;
 import com.epam.audiospot.repository.specification.Specification;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
@@ -94,12 +93,16 @@ public class OrderService {
         }
     }
 
-    //TODO make test
     public BigDecimal calculateTotalPrice(Long orderId) throws ServiceException{
         AudioTrackService trackService = new AudioTrackService();
         List<AudioTrack> orderedTracks = trackService.findOrderedTracks(orderId);
         List<BigDecimal> prices = orderedTracks.stream().map(AudioTrack::getPrice).collect(Collectors.toList());
         return prices.stream().reduce(BigDecimal.ZERO,BigDecimal::add);
+    }
+
+    public BigDecimal calculateFinalPrice(Long orderId,BigDecimal userDiscount) throws ServiceException{
+        BigDecimal totalPrice = calculateTotalPrice(orderId);
+        return totalPrice.subtract(totalPrice.multiply(userDiscount.divide(new BigDecimal(100))));
     }
 
     public Optional<Order> findOptionalOrder(Long userId,boolean paid) throws ServiceException{

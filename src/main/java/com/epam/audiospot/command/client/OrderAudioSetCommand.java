@@ -6,7 +6,6 @@ import com.epam.audiospot.command.Redirect;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.OrderService;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;

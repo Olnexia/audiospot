@@ -15,7 +15,6 @@ import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class PayForOrderCommand implements Command {
     private static final String USER_PARAM = "user";
@@ -35,10 +34,10 @@ public class PayForOrderCommand implements Command {
         if(orderOptional.isPresent()){
             Long orderId = orderOptional.get().getId();
             List<AudioTrack> orderedTracks = trackService.findOrderedTracks(orderId);
-            List<BigDecimal> prices = orderedTracks.stream().map(AudioTrack::getPrice).collect(Collectors.toList());
-            BigDecimal orderTotalPrice = prices.stream().reduce(BigDecimal.ZERO,BigDecimal::add);
+
+            BigDecimal orderTotalPrice = orderService.calculateTotalPrice(orderId);
             BigDecimal userDiscount = new BigDecimal(user.getDiscount());
-            BigDecimal orderFinalPrice = orderTotalPrice.subtract(orderTotalPrice.multiply(userDiscount.divide(new BigDecimal(100))));
+            BigDecimal orderFinalPrice = orderService.calculateFinalPrice(orderId,userDiscount);
 
             request.setAttribute(ORDER_ID_ATTR,orderId);
             request.setAttribute(ORDERED_TRACKS_ATTR,orderedTracks);

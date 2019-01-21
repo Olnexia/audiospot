@@ -32,10 +32,10 @@ public class SubmitPaymentCommand implements Command {
         OrderService service = new OrderService();
         Order order = service.findOrder(user.getId(),false);
 
-        BigDecimal orderTotalPrice = service.calculateTotalPrice(order.getId());
+        BigDecimal orderFinalPrice = service.calculateFinalPrice(order.getId(),new BigDecimal(user.getDiscount()));
 
-        PaymentVerifier verifier = (cn, cv, e, p)-> true;
-        if(verifier.verify(cardNumber,cvc,expiry,orderTotalPrice)){
+        PaymentVerifier verifier = (cn, cv, e, p)-> true;  //dummy payment verifier
+        if(verifier.verify(cardNumber,cvc,expiry,orderFinalPrice)){
             order.setPaid(true);
             service.saveOrder(order);
             logger.info("Payment of order " + order.getId() + " is successful.");
