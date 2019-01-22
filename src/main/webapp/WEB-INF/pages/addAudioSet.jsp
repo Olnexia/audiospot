@@ -21,12 +21,17 @@
                 <h2><fmt:message key="pageTitle"/></h2>
             </div>
             <form action = "${pageContext.servletContext.contextPath}/controller?command=submitAudioSet" method ="post">
-                <label title="<fmt:message key="title"/>">
-                    <input type="text" name="title" pattern="[A-Za-z0-9 ]{1,32}" title="<fmt:message key="artistTitleDesc"/>" placeholder="<fmt:message key="title"/>"/>
+                <label title="<fmt:message key="titleDesc"/>">
+                    <input type="text" name="title" pattern="[A-Za-z0-9 ]{1,32}" required placeholder="<fmt:message key="title"/>"/>
                 </label>
-                <label title="description">
+                <label title="<fmt:message key="descriptionDesc"/>">
                     <textarea name="description" cols="30" rows="5" placeholder="<fmt:message key="descriptionPlaceholder"/>"></textarea>
                 </label>
+                <c:if test="${requestScope.addAudioSetMessage ne null}">
+                    <c:forEach items="${requestScope.addAudioSetMessage}" var="addAudioSetMessage">
+                        <p class ="error"><fmt:message key="${addAudioSetMessage}"/></p>
+                    </c:forEach>
+                </c:if>
                 <div class="buttons">
                     <label title="<fmt:message key="add"/>">
                         <input type="submit" value="<fmt:message key="add"/>"/>

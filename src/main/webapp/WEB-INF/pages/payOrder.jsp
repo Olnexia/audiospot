@@ -46,6 +46,11 @@
                             <label>
                                 <input type="text" name="ccExp" pattern="(0[1-9]|1[012])/[0-9]{2}" title="<fmt:message key="ccExpDesc"/>" required placeholder="<fmt:message key="expiry"/>" autocomplete="cc-exp">
                             </label>
+                            <c:if test="${requestScope.payMessage ne null}">
+                                <c:forEach items="${requestScope.payMessage}" var="payMessage">
+                                    <p class ="error"><fmt:message key="${payMessage}"/></p>
+                                </c:forEach>
+                            </c:if>
                             <div class="buttons">
                                 <label>
                                     <input type="submit" value="<fmt:message key="pay"/>"/>

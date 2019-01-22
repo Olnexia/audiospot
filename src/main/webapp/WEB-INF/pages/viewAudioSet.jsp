@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="ph" uri="/WEB-INF/customTags/pageHelper.tld" %>
 
 <%@ page contentType = "text/html;charset=utf-8"
          isELIgnored ="false"
@@ -38,8 +39,8 @@
                         <p class="b-text"><fmt:message key="addTracks"/></p>
                     </div>
                     <div class="icon-button" onclick="showAudioSetModal();
-                            document.getElementById('audioSetTitle').value = '${requestScope.audioSet.title}';
-                            document.getElementById('audioSetDesc').value = '${requestScope.audioSet.description}';
+                            document.getElementById('audioSetTitle').value = '<ph:quoteEscape content="${requestScope.audioSet.title}"/>';
+                            document.getElementById('audioSetDesc').value = '<ph:quoteEscape content="${requestScope.audioSet.description}"/>';
                             document.getElementById('audioSetId').value = '${requestScope.audioSet.id}';">
                         <div class="medium edit-icon"></div>
                         <p class="b-text"><fmt:message key="editAudioSet"/></p>

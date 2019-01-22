@@ -22,14 +22,19 @@
             </div>
             <form action = "${pageContext.servletContext.contextPath}/controller?command=submitAlbum" method ="post">
                 <label title="<fmt:message key="artist"/>">
-                    <input type="text" name="artist" pattern="[A-Za-z0-9 ]{1,32}" title="<fmt:message key="artistTitleDesc"/>" placeholder="<fmt:message key="artist"/>"/>
+                    <input type="text" name="artist" pattern="[A-Za-z0-9',. ]{1,32}" required title="<fmt:message key="artistTitleDesc"/>" placeholder="<fmt:message key="artist"/>"/>
                 </label>
                 <label title="<fmt:message key="title"/>">
-                    <input type="text" name="title" pattern="[A-Za-z0-9 ]{1,32}" title="<fmt:message key="artistTitleDesc"/>" placeholder="<fmt:message key="title"/>"/>
+                    <input type="text" name="title" pattern="[A-Za-z0-9',. ]{1,32}" required title="<fmt:message key="artistTitleDesc"/>" placeholder="<fmt:message key="title"/>"/>
                 </label>
                 <label title="<fmt:message key="year"/>">
                     <input type="text" name="release_year" pattern="[0-9]{4}" title="<fmt:message key="yearDesc"/>" placeholder="<fmt:message key="year"/>"/>
                 </label>
+                <c:if test="${requestScope.addAlbumMessage ne null}">
+                    <c:forEach items="${requestScope.addAlbumMessage}" var="addAlbumMessage">
+                        <p class ="error"><fmt:message key="${addAlbumMessage}"/></p>
+                    </c:forEach>
+                </c:if>
                 <div class="buttons">
                     <label title="<fmt:message key="add"/>">
                         <input type="submit" value="<fmt:message key="add"/>"/>

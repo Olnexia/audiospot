@@ -1,15 +1,9 @@
 package com.epam.audiospot.command.creator;
 
 import com.epam.audiospot.command.Command;
-import com.epam.audiospot.command.admin.AddTrackCommand;
-import com.epam.audiospot.command.admin.ChangeClientStatusCommand;
-import com.epam.audiospot.command.admin.ShowClientsCommand;
-import com.epam.audiospot.command.admin.SubmitTrackCommand;
+import com.epam.audiospot.command.admin.*;
 import com.epam.audiospot.command.client.*;
-import com.epam.audiospot.command.common.HomeCommand;
-import com.epam.audiospot.command.common.LoginCommand;
-import com.epam.audiospot.command.common.LogoutCommand;
-import com.epam.audiospot.command.common.ShowTracksCommand;
+import com.epam.audiospot.command.common.*;
 import com.epam.audiospot.exception.IllegalCommandException;
 import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
@@ -20,11 +14,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(DataProviderRunner.class)
 public class CommandCreatorTest {
-
     @DataProvider
     public static Object[][] commands() {
         return new Object[][] {
                 { "login",LoginCommand.class },
+                { "register", RegisterCommand.class },
                 { "home", HomeCommand.class},
                 { "addTrack", AddTrackCommand.class},
                 { "submitTrack", SubmitTrackCommand.class},
@@ -35,6 +29,22 @@ public class CommandCreatorTest {
                 { "showTracks", ShowTracksCommand.class},
                 { "payOrder", PayForOrderCommand.class},
                 { "submitPayment", SubmitPaymentCommand.class},
+                { "addAlbum", AddAlbumCommand.class },
+                { "submitAlbum", SubmitAlbumCommand.class },
+                { "showAlbums", ShowAlbumsCommand.class },
+                { "viewAlbum", ViewAlbumCommand.class },
+                { "orderAlbum", OrderAlbumCommand.class },
+                { "changeDiscount", ChangeDiscountCommand.class },
+                { "showComments", ShowCommentsCommand.class },
+                { "orderTrack", OrderTrackCommand.class },
+                { "cancelOrder", CancelOrderCommand.class },
+                { "addAudioSet", AddAudioSetCommand.class },
+                { "submitAudioSet", SubmitAudioSetCommand.class },
+                { "showAudioSets", ShowAudioSetsCommand.class },
+                { "viewAudioSet", ViewAudioSetCommand.class },
+                { "addTracks", SelectTracksToSetCommand.class },
+                { "addToSet", AddTrackToSetCommand.class },
+                { "orderAudioSet", OrderAudioSetCommand.class },
                 { "logout", LogoutCommand.class},
         };
     }

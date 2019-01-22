@@ -27,11 +27,11 @@
                 <input type="text" name="artist"  value="${param.artistName}" readonly>
             </c:if>
             <c:if test="${param.artistName eq null}">
-                <input type="text" name="artist" pattern="[A-Za-z0-9 ]{1,32}" title="<fmt:message key="artistTitleDesc"/>" placeholder="<fmt:message key="artist"/>" required/>
+                <input type="text" name="artist" pattern="[A-Za-z0-9,.' ]{1,32}" title="<fmt:message key="artistTitleDesc"/>" placeholder="<fmt:message key="artist"/>" required/>
             </c:if>
         </label>
         <label title="title">
-            <input type="text" name="title" pattern="['A-Za-z0-9 ]{1,32}" title="<fmt:message key="artistTitleDesc"/>" placeholder="<fmt:message key="audioTitle"/>" required/>
+            <input type="text" name="title" pattern="['A-Za-z0-9,.' ]{1,32}" title="<fmt:message key="artistTitleDesc"/>" placeholder="<fmt:message key="audioTitle"/>" required/>
         </label>
         <c:if test="${not empty param.albumId}">
             <input type="hidden" name = "album_id" value="${param.albumId}">
@@ -47,6 +47,11 @@
         <label title="<fmt:message key="price"/>">
             <input type="text" name="price" pattern="^[0-9]+(\.[0-9]{2})?$" title="<fmt:message key="priceDesc"/>" placeholder="<fmt:message key="price"/>" required/>
         </label>
+        <c:if test="${requestScope.addTrackMessage ne null}">
+            <c:forEach items="${requestScope.addTrackMessage}" var="addTrackMessage">
+                <p class ="error"><fmt:message key="${addTrackMessage}"/></p>
+            </c:forEach>
+        </c:if>
         <div class="buttons">
             <label title="<fmt:message key="add"/>">
                 <input type="submit" value="<fmt:message key="add"/>"/>

@@ -9,6 +9,8 @@ import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.AudioTrackService;
 import com.epam.audiospot.service.OrderService;
+import com.epam.audiospot.command.utils.PriceCalculator;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -35,9 +37,10 @@ public class PayForOrderCommand implements Command {
             Long orderId = orderOptional.get().getId();
             List<AudioTrack> orderedTracks = trackService.findOrderedTracks(orderId);
 
-            BigDecimal orderTotalPrice = orderService.calculateTotalPrice(orderId);
+            PriceCalculator calculator = new PriceCalculator();
+            BigDecimal orderTotalPrice = calculator.calculateTotalPrice(orderId);
             BigDecimal userDiscount = new BigDecimal(user.getDiscount());
-            BigDecimal orderFinalPrice = orderService.calculateFinalPrice(orderId,userDiscount);
+            BigDecimal orderFinalPrice = calculator.calculateFinalPrice(orderId,userDiscount);
 
             request.setAttribute(ORDER_ID_ATTR,orderId);
             request.setAttribute(ORDERED_TRACKS_ATTR,orderedTracks);

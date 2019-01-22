@@ -3,6 +3,7 @@ package com.epam.audiospot.command.client;
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
 import com.epam.audiospot.command.Redirect;
+import com.epam.audiospot.command.utils.QuoteEscape;
 import com.epam.audiospot.entity.Comment;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.ServiceException;
@@ -23,6 +24,9 @@ public class SubmitCommentCommand implements Command {
 
         HttpSession session = request.getSession(false);
         User user = (User)session.getAttribute(USER_ATTR);
+
+        QuoteEscape quoteEscape = new QuoteEscape();
+        text = quoteEscape.escape(text);
 
         Comment comment = new Comment(null,user,trackId,text,dateTime);
         CommentService service = new CommentService();

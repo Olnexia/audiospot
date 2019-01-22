@@ -7,16 +7,20 @@ import com.epam.audiospot.command.Redirect;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.UserService;
+import com.epam.audiospot.validator.complex.ComplexValidator;
+import com.epam.audiospot.validator.complex.RegistrationComplexValidator;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.List;
+import java.util.Optional;
 
 public class RegisterCommand implements Command {
     private static final Logger logger = LogManager.getLogger(RegisterCommand.class);
-    private static final String REGISTRATION_MESSAGE_PARAM = "registrationMessage";
+    private static final String REGISTRATION_MESSAGE_ATTR = "registrationMessage";
     private static final String LOGIN_PARAM = "login";
     private static final String NAME_PARAM = "name";
     private static final String SURNAME_PARAM = "surname";
@@ -31,10 +35,16 @@ public class RegisterCommand implements Command {
         String surname = request.getParameter(SURNAME_PARAM);
         String password = request.getParameter(PASSWORD_PARAM);
 
-        UserService service = new UserService();
+        ComplexValidator<String> validator = new RegistrationComplexValidator(login,name,surname,password);
+        Optional<List<String>> validateMessages = validator.validate();
+        if (validateMessages.isPresent()){
+            request.setAttribute(REGISTRATION_MESSAGE_ATTR, validateMessages.get());
+            return CommandResult.forward(Forward.LOGIN.getPath());
+        }
 
+        UserService service = new UserService();
         if(!service.isLoginAvailable(login)) {
-            request.setAttribute(REGISTRATION_MESSAGE_PARAM, "occupiedLogin");
+            request.setAttribute(REGISTRATION_MESSAGE_ATTR, "occupiedLogin");
             return CommandResult.forward(Forward.LOGIN.getPath());
         }
 

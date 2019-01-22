@@ -19,4 +19,15 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
     </tag>
+
+    <tag>
+        <name>quoteEscape</name>
+        <tag-class>com.epam.audiospot.customtag.QuoteEscapeTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>content</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
 </taglib>
