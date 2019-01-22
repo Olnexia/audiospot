@@ -23,6 +23,8 @@ public class LogoutCommand implements Command {
         session.invalidate();
 
         logger.info("Session ended for user " + user.getLogin());
-        return CommandResult.redirect(LOCALE_PARAM + locale);
+        return (locale == null)
+                ? CommandResult.redirect(response.encodeRedirectURL(request.getContextPath() + "/"))
+                : CommandResult.redirect(LOCALE_PARAM + locale);
     }
 }

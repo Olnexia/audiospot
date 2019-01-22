@@ -22,8 +22,7 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
     }
 
     private List<T> executeQuery(String query, List<Object>params)throws RepositoryException {
-        try {
-            PreparedStatement preparedStatement = connection.getPreparedStatement(query);
+        try (PreparedStatement preparedStatement = connection.getPreparedStatement(query)) {
             for (int i = 0; i < params.size(); i++) {
                 preparedStatement.setObject(i + 1, params.get(i));
             }
@@ -36,9 +35,8 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
                 T entity = builder.build(resultSet);
                 entities.add(entity);
             }
-            preparedStatement.close();
             return entities;
-        } catch (SQLException| ServiceException e) {
+        } catch (SQLException | ServiceException e) {
             throw new RepositoryException(e.getMessage(), e);
         }
     }
@@ -77,8 +75,7 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
     public void add(T object) throws RepositoryException {
         Map<String,Object> fields = getFields(object);
         String insertQuery = queryBuilder.buildInsertQuery(fields);
-        try{
-            PreparedStatement preparedStatement = connection.getPreparedStatementGeneratedKeys(insertQuery);
+        try(PreparedStatement preparedStatement = connection.getPreparedStatementGeneratedKeys(insertQuery)){
             int affectedRows = preparedStatement.executeUpdate();
 
             if (affectedRows == 0) {
@@ -102,8 +99,7 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
     public void update(T object) throws RepositoryException {
         Map<String,Object> fields = getFields(object);
         String updateQuery = queryBuilder.buildUpdateQuery(object,fields);
-        try{
-            PreparedStatement preparedStatement = connection.getPreparedStatementGeneratedKeys(updateQuery);
+        try(PreparedStatement preparedStatement = connection.getPreparedStatementGeneratedKeys(updateQuery)){
             int affectedRows = preparedStatement.executeUpdate();
 
             if (affectedRows == 0) {
@@ -117,8 +113,7 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
     @Override
     public void remove(T object) throws RepositoryException{
         String deleteQuery = queryBuilder.buildDeleteQuery(object);
-        try{
-            PreparedStatement preparedStatement = connection.getPreparedStatementGeneratedKeys(deleteQuery);
+        try(PreparedStatement preparedStatement = connection.getPreparedStatementGeneratedKeys(deleteQuery)){
             int affectedRows = preparedStatement.executeUpdate();
 
             if (affectedRows == 0) {
