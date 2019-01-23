@@ -3,7 +3,6 @@ package com.epam.audiospot.command.common;
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
 import com.epam.audiospot.command.Forward;
-import com.epam.audiospot.command.Redirect;
 import com.epam.audiospot.entity.Comment;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.CommentService;
@@ -22,12 +21,8 @@ public class ShowCommentsCommand implements Command {
         CommentService service = new CommentService();
         List<Comment> comments = service.findComments(trackId);
 
-        if (comments.size() == 0) {
-            return CommandResult.redirect(Redirect.SHOW_TRACKS.getPath());
-        } else {
-            request.setAttribute(COMMENTS_ATTR,comments);
-            return CommandResult.forward(Forward.SHOW_COMMENTS.getPath());
-        }
-
+        request.setAttribute(TRACK_ID_PARAM,trackId);
+        request.setAttribute(COMMENTS_ATTR,comments);
+        return CommandResult.forward(Forward.SHOW_COMMENTS.getPath());
     }
 }

@@ -21,8 +21,8 @@
                 <h2><fmt:message key="pageTitle"/></h2>
             </div>
             <form action = "${pageContext.servletContext.contextPath}/controller?command=submitAudioSet" method ="post">
-                <label title="<fmt:message key="titleDesc"/>">
-                    <input type="text" name="title" pattern="[A-Za-z0-9 ]{1,32}" required placeholder="<fmt:message key="title"/>"/>
+                <label>
+                    <input type="text" name="title" title="<fmt:message key="titleDesc"/>" pattern="[A-Za-z0-9 ]{1,32}" required placeholder="<fmt:message key="title"/>"/>
                 </label>
                 <label title="<fmt:message key="descriptionDesc"/>">
                     <textarea name="description" cols="30" rows="5" placeholder="<fmt:message key="descriptionPlaceholder"/>"></textarea>

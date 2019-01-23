@@ -5,7 +5,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * This interface is basis of any command in the application. The method {@code execute} should contain code of
+ * This interface is basis of any command in the application.
+ * The method {@code execute} should contain code of
  * the processing of the parameters passed in the http request.
  */
 public interface Command {

@@ -4,6 +4,7 @@
 }
 
 .comment{
+    margin-bottom: 10px;
     list-style: none;
     overflow: auto;
     padding: 10px 20px;
@@ -23,4 +24,19 @@
 .author-info p{
     margin-top: 20px;
     margin-left: 5px;
+}
+
+.empty-comments{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.empty-comments-img{
+    background: url("/images/icons/comments.png") no-repeat center ;
+    background-size: contain, cover;
+    height: 300px;
+    margin-top: 10px;
+    display: block;
 }

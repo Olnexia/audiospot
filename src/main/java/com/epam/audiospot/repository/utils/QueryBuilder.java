@@ -12,7 +12,8 @@ public class QueryBuilder<T extends Entity> {
     }
 
     public String buildDeleteQuery(T object){
-        return String.join(" ","DELETE FROM",tableName,"WHERE",tableName+"_id='"+object.getId().toString()+"';");
+        return String.join(" ","DELETE FROM",tableName,"WHERE",
+                            tableName+"_id='"+object.getId().toString()+"';");
     }
 
     public String buildInsertQuery(Map<String,Object> fields){
@@ -34,7 +35,8 @@ public class QueryBuilder<T extends Entity> {
                 .collect(Collectors.toList()));
         setValues = modifyLiterals(setValues);
 
-        return String.join(" ","UPDATE",tableName,setValues,"WHERE", tableName+"_id="+object.getId().toString()+";");
+        return String.join(" ","UPDATE",tableName,setValues,"WHERE",
+                            tableName+"_id="+object.getId().toString()+";");
     }
 
     private String modifyLiterals(String query){

@@ -48,7 +48,6 @@
                         <tr>
                             <td>${track.artist.name}</td>
                             <td>${track.title}</td>
-
                             <c:choose>
                                 <c:when test = "${track.genre.value eq 'rock'}">
                                     <td><fmt:message key="rock"/></td>

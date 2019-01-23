@@ -4,6 +4,7 @@ import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
 import com.epam.audiospot.command.Forward;
 import com.epam.audiospot.command.Redirect;
+import com.epam.audiospot.command.creator.CommandType;
 import com.epam.audiospot.command.utils.QuoteEscape;
 import com.epam.audiospot.entity.AudioTrack;
 import com.epam.audiospot.entity.Genre;
@@ -20,6 +21,7 @@ import java.util.Optional;
 
 public class SubmitTrackCommand implements Command {
     private static final String ALBUM_ID_PARAM = "albumId";
+    private static final String ALBUM_ID_ATTR = "albumId";
     private static final String ADD_TRACK_MESSAGE_ATTR = "addTrackMessage";
     private static final Logger logger = LogManager.getLogger(SubmitTrackCommand.class);
 
@@ -35,7 +37,15 @@ public class SubmitTrackCommand implements Command {
         Optional<List<String>> validateMessages = validator.validate();
         if(validateMessages.isPresent()){
             request.setAttribute(ADD_TRACK_MESSAGE_ATTR, validateMessages.get());
-            return CommandResult.forward(Forward.ADD_TRACK.getPath());
+            String path;
+            if (albumId == null) {
+                path = Forward.ADD_TRACK.getPath();
+            } else {
+                request.setAttribute(ALBUM_ID_ATTR,albumId);
+                Command viewAlbumCommand = CommandType.VIEW_ALBUM.getCommand();
+                path = viewAlbumCommand.execute(request,response).getPage();
+            }
+            return CommandResult.forward(path);
         }
 
         QuoteEscape quoteEscape = new QuoteEscape();

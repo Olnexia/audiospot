@@ -3,6 +3,7 @@ package com.epam.audiospot.command.common;
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
 import com.epam.audiospot.command.Forward;
+import com.epam.audiospot.command.creator.CommandType;
 import com.epam.audiospot.entity.AudioSet;
 import com.epam.audiospot.entity.AudioTrack;
 import com.epam.audiospot.exception.ServiceException;
@@ -27,6 +28,10 @@ public class ViewAudioSetCommand implements Command {
         if(audioSetOptional.isPresent()) {
             AudioSet audioSet = audioSetOptional.get();
             request.setAttribute(AUDIOSET_ATTR, audioSet);
+        }else{
+            Command audioSetsCommand = CommandType.SHOW_AUDIOSETS.getCommand();
+            String page = audioSetsCommand.execute(request,response).getPage();
+            return CommandResult.forward(page);
         }
 
         AudioTrackService trackService = new AudioTrackService();
