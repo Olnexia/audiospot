@@ -2,7 +2,7 @@ package com.epam.audiospot.command.client;
 
 import com.epam.audiospot.command.*;
 import com.epam.audiospot.command.utils.PaymentVerifier;
-import com.epam.audiospot.command.utils.PriceCalculator;
+import com.epam.audiospot.service.utils.PriceCalculator;
 import com.epam.audiospot.entity.Order;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.ServiceException;
@@ -44,8 +44,7 @@ public class SubmitPaymentCommand implements Command {
         OrderService service = new OrderService();
         Order order = service.findOrder(user.getId(),false);
 
-        PriceCalculator calculator = new PriceCalculator();
-        BigDecimal orderFinalPrice = calculator.calculateFinalPrice(order.getId(),new BigDecimal(user.getDiscount()));
+        BigDecimal orderFinalPrice = service.calculateFinalPrice(order.getId(),new BigDecimal(user.getDiscount()));
 
         PaymentVerifier verifier = (cn, cv, e, p)-> true;  //dummy payment verifier
         if(verifier.verify(cardNumber,cvc,expiry,orderFinalPrice)){
