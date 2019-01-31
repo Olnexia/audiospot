@@ -66,6 +66,11 @@ public enum CommandType {
         return permissions.contains(role);
     }
 
+    public boolean isAvailableWithoutAuthorization(){
+        return commandText.equals("login") || commandText.equals("register")
+                || commandText.equals("logout") || commandText.equals("home");
+    }
+
     public static CommandType getCurrentCommand(String command) {
         for (CommandType commandType : CommandType.values()) {
             String commandText = commandType.getText();

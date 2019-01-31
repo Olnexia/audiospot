@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Optional;
 
 @WebFilter(urlPatterns = {"/controller"})
 public class RoleFilter implements Filter {
@@ -26,37 +27,44 @@ public class RoleFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response,
                          FilterChain chain) throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
-        String command = request.getParameter(COMMAND_PARAM);
-
-        HttpSession session = httpRequest.getSession(false);
-        if (session == null) {
-            if (!command.equals("login") && !command.equals("register")
-                    && !command.equals("logout") && !command.equals("home")) {
-                logger.warn("Unauthorized access attempt to command " + command);
-                httpRequest.getRequestDispatcher(Forward.LOGIN.getPath()).forward(request, response);
-                return;
-            }
+        if (checkAuthorization(httpRequest)) {
+            chain.doFilter(request, response);
         } else {
-            User user = (User) session.getAttribute(USER_ATTR);
-            if (user == null) {
-                if (!command.equals("login") && !command.equals("register")
-                        && !command.equals("logout") && !command.equals("home")) {
-                    logger.warn("Unauthorized access attempt to command " + command);
-                    httpRequest.getRequestDispatcher(Forward.LOGIN.getPath()).forward(request, response);
-                    return;
-                }
+            String command = request.getParameter(COMMAND_PARAM);
+            Optional <User> userOptional = getUserFromSession(httpRequest);
+            if (userOptional.isPresent()) {
+                User user = userOptional.get();
+                logger.warn("Unauthorized access attempt by user "
+                        + user.getLogin() + " to command " + command);
             } else {
-                Role userRole = user.getRole();
-                CommandType commandType = CommandType.getCurrentCommand(command);
-                if (!commandType.isAuthorized(userRole)) {
-                    logger.warn("Unauthorized access attempt by user "
-                            + user.getLogin() + " to command " + command);
-                    httpRequest.getRequestDispatcher(Forward.MAIN.getPath()).forward(request, response);
-                    return;
-                }
+                logger.warn("Unauthorized access attempt to command " + command);
             }
+            httpRequest.getRequestDispatcher(Forward.LOGIN.getPath()).forward(request, response);
         }
-        chain.doFilter(request, response);
+    }
+
+    private boolean checkAuthorization(HttpServletRequest request) {
+        String commandParamValue = request.getParameter(COMMAND_PARAM);
+        CommandType commandType = CommandType.getCurrentCommand(commandParamValue);
+        HttpSession session = request.getSession(false);
+        if (session == null) {
+            return commandType.isAvailableWithoutAuthorization();
+        }
+
+        Optional <User> userOptional = getUserFromSession(request);
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            Role userRole = user.getRole();
+            return commandType.isAuthorized(userRole);
+        } else {
+            return commandType.isAvailableWithoutAuthorization();
+        }
+    }
+
+    private Optional <User> getUserFromSession(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        User user = (User) session.getAttribute(USER_ATTR);
+        return (user == null) ? Optional.empty() : Optional.of(user);
     }
 
     @Override
