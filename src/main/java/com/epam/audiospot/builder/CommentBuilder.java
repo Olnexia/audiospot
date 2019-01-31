@@ -4,12 +4,13 @@ import com.epam.audiospot.entity.Comment;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.UserService;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
-public class CommentBuilder implements Builder<Comment> {
+public class CommentBuilder implements Builder <Comment> {
 
     @Override
     public Comment build(ResultSet resultSet) throws SQLException, ServiceException {
@@ -24,6 +25,6 @@ public class CommentBuilder implements Builder<Comment> {
         UserService service = new UserService();
         User user = service.findUser(userId);
 
-        return new Comment(commentId,user,trackId,text,dateTime);
+        return new Comment(commentId, user, trackId, text, dateTime);
     }
 }

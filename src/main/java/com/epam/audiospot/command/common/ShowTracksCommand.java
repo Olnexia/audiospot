@@ -7,6 +7,7 @@ import com.epam.audiospot.entity.AudioTrack;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.AudioTrackService;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -19,12 +20,12 @@ public class ShowTracksCommand implements Command {
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         HttpSession session = request.getSession(false);
-        User user = (User)session.getAttribute(USER_PARAM);
+        User user = (User) session.getAttribute(USER_PARAM);
 
         AudioTrackService service = new AudioTrackService();
-        List<AudioTrack> availableTracks = service.findAvailableTracks(user.getId());
+        List <AudioTrack> availableTracks = service.findAvailableTracks(user.getId());
 
-        request.setAttribute(TRACKS_ATTR,availableTracks);
+        request.setAttribute(TRACKS_ATTR, availableTracks);
         return CommandResult.forward(Forward.TRACKS.getPath());
     }
 }

@@ -9,6 +9,7 @@ import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.OrderService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -20,10 +21,10 @@ public class CancelOrderCommand implements Command {
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         HttpSession session = request.getSession(false);
-        User user = (User)session.getAttribute(USER_ATTR);
+        User user = (User) session.getAttribute(USER_ATTR);
 
         OrderService service = new OrderService();
-        Order order = service.findOrder(user.getId(),false);
+        Order order = service.findOrder(user.getId(), false);
         service.deleteOrder(order);
 
         logger.info("Order " + order.getId() + " canceled");

@@ -1,6 +1,6 @@
 package com.epam.audiospot.entity;
 
-public class User implements Entity{
+public class User implements Entity {
     private static final long serialVersionUID = 646513000665422990L;
 
     public static final String ID_LABEL = "user_id";
@@ -33,20 +33,20 @@ public class User implements Entity{
         this.role = role;
     }
 
-    public static User client(String login,String name, String surname,String password){
-        return new User(null,name,surname,login,password,true,0,Role.CLIENT);
+    public static User client(String login, String name, String surname, String password) {
+        return new User(null, name, surname, login, password, true, 0, Role.CLIENT);
     }
 
     @Override
     public boolean equals(Object object) {
-        if (this == object){
+        if (this == object) {
             return true;
         }
         if (object == null || getClass() != object.getClass()) {
             return false;
         }
         User user = (User) object;
-        return  id.equals(user.getId())
+        return id.equals(user.getId())
                 && name.equals(user.getName())
                 && surname.equals(user.getSurname())
                 && login.equals(user.getLogin())
@@ -58,7 +58,7 @@ public class User implements Entity{
 
     @Override
     public int hashCode() {
-        int result =17;
+        int result = 17;
         final int prime = 31;
         result = prime * result + id.hashCode();
         result = prime * result + name.hashCode();

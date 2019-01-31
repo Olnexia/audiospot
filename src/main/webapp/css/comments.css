@@ -1,9 +1,9 @@
-.comments{
+.comments {
     width: 70%;
     justify-items: flex-start;
 }
 
-.comment{
+.comment {
     margin-bottom: 10px;
     list-style: none;
     overflow: auto;
@@ -14,27 +14,27 @@
     flex-basis: max-content;
 }
 
-.author-info{
+.author-info {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-content: center;
 }
 
-.author-info p{
+.author-info p {
     margin-top: 20px;
     margin-left: 5px;
 }
 
-.empty-comments{
+.empty-comments {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
 }
 
-.empty-comments-img{
-    background: url("/images/icons/comments.png") no-repeat center ;
+.empty-comments-img {
+    background: url("/images/icons/comments.png") no-repeat center;
     background-size: contain, cover;
     height: 300px;
     margin-top: 10px;

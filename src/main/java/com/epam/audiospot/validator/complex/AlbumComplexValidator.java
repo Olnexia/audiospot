@@ -4,10 +4,11 @@ import com.epam.audiospot.validator.ArtistValidator;
 import com.epam.audiospot.validator.TitleValidator;
 import com.epam.audiospot.validator.Validator;
 import com.epam.audiospot.validator.YearValidator;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class AlbumComplexValidator extends ComplexValidator<String> {
+public class AlbumComplexValidator extends ComplexValidator <String> {
     private static final String ARTIST_VALIDATE_MESSAGE = "artistTitleDesc";
     private static final String TITLE_VALIDATE_MESSAGE = "artistTitleDesc";
     private static final String YEAR_VALIDATE_MESSAGE = "yearDesc";
@@ -22,11 +23,11 @@ public class AlbumComplexValidator extends ComplexValidator<String> {
     }
 
     @Override
-    Map<String, Validator<String>> getValidationData() {
-        HashMap<String,Validator<String>> validationData = new HashMap <>();
-        validationData.put(artist,new ArtistValidator(ARTIST_VALIDATE_MESSAGE));
-        validationData.put(title,new TitleValidator(TITLE_VALIDATE_MESSAGE));
-        validationData.put(year,new YearValidator(YEAR_VALIDATE_MESSAGE));
+    Map <String, Validator <String>> getValidationData() {
+        HashMap <String, Validator <String>> validationData = new HashMap <>();
+        validationData.put(artist, new ArtistValidator(ARTIST_VALIDATE_MESSAGE));
+        validationData.put(title, new TitleValidator(TITLE_VALIDATE_MESSAGE));
+        validationData.put(year, new YearValidator(YEAR_VALIDATE_MESSAGE));
         return validationData;
     }
 }

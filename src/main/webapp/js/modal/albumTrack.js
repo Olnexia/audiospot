@@ -6,7 +6,7 @@ function closeAlbumTrackModal() {
     document.getElementById("addTrackToAlbum").style.display = "none";
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target === document.getElementById("addTrackToAlbum")) {
         document.getElementById("addTrackToAlbum").style.display = "none";
     }

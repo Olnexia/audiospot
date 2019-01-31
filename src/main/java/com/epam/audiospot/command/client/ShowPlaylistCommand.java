@@ -7,6 +7,7 @@ import com.epam.audiospot.entity.AudioTrack;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.AudioTrackService;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -22,7 +23,7 @@ public class ShowPlaylistCommand implements Command {
         User user = (User) session.getAttribute(USER_PARAM);
 
         AudioTrackService service = new AudioTrackService();
-        List<AudioTrack> orderedTracks = service.findTracksAtPlaylist(user.getId());
+        List <AudioTrack> orderedTracks = service.findTracksAtPlaylist(user.getId());
 
         request.setAttribute(TRACKS_ATTR, orderedTracks);
         return CommandResult.forward(Forward.PLAYLIST.getPath());

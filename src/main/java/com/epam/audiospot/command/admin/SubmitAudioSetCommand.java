@@ -11,6 +11,7 @@ import com.epam.audiospot.service.AudioSetService;
 import com.epam.audiospot.validator.complex.AudioSetComplexValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
@@ -26,11 +27,11 @@ public class SubmitAudioSetCommand implements Command {
         String title = request.getParameter(AudioSet.TITLE_LABEL);
         String description = request.getParameter(AudioSet.DESCRIPTION_LABEL);
         String idParam = request.getParameter(AudioSet.ID_LABEL);
-        Long id = (idParam==null) ? null : Long.parseLong(request.getParameter(AudioSet.ID_LABEL));
+        Long id = (idParam == null) ? null : Long.parseLong(request.getParameter(AudioSet.ID_LABEL));
 
-        AudioSetComplexValidator validator = new AudioSetComplexValidator(title,description);
-        Optional<List<String>> validateMessages = validator.validate();
-        if(validateMessages.isPresent()){
+        AudioSetComplexValidator validator = new AudioSetComplexValidator(title, description);
+        Optional <List <String>> validateMessages = validator.validate();
+        if (validateMessages.isPresent()) {
             request.setAttribute(ADD_AUDIOSET_MESSAGE_ATTR, validateMessages.get());
             return CommandResult.forward(Forward.ADD_SET.getPath());
         }
@@ -40,7 +41,7 @@ public class SubmitAudioSetCommand implements Command {
         description = quoteEscape.escape(description);
 
         AudioSetService service = new AudioSetService();
-        AudioSet audioSet = new AudioSet(id,title,description);
+        AudioSet audioSet = new AudioSet(id, title, description);
         service.saveAudioSet(audioSet);
         logger.info("New audioset with id " + audioSet.getId() + " saved");
         return CommandResult.redirect(Redirect.VIEW_AUDIOSET.getPath()

@@ -18,7 +18,7 @@ public enum Forward {
 
     private String path;
 
-    Forward(String path){
+    Forward(String path) {
         this.path = path;
     }
 

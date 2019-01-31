@@ -1,11 +1,11 @@
-.empty-playlist{
+.empty-playlist {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
 }
 
-.empty-playlist a{
+.empty-playlist a {
     font-size: 20px;
     padding: 14px 20px;
     text-align: center;
@@ -19,8 +19,8 @@
     border-color: #4CAF50;
 }
 
-.empty-playlist-img{
-    background: url("/images/empty-playlist.png") no-repeat center ;
+.empty-playlist-img {
+    background: url("/images/empty-playlist.png") no-repeat center;
     background-size: contain, cover;
     height: 300px;
     margin-top: 10px;

@@ -19,21 +19,21 @@ public class AudioSet implements Entity {
 
     @Override
     public boolean equals(Object object) {
-        if (this == object){
+        if (this == object) {
             return true;
         }
         if (object == null || getClass() != object.getClass()) {
             return false;
         }
         AudioSet audioSet = (AudioSet) object;
-        return  id.equals(audioSet.getId())
+        return id.equals(audioSet.getId())
                 && title.equals(audioSet.getTitle())
                 && description.equals(audioSet.getDescription());
     }
 
     @Override
     public int hashCode() {
-        int result =17;
+        int result = 17;
         final int prime = 31;
         result = prime * result + id.hashCode();
         result = prime * result + title.hashCode();

@@ -3,7 +3,7 @@ package com.epam.audiospot.repository.specification;
 import java.util.Arrays;
 import java.util.List;
 
-public class AudioSetByIdSpecification implements Specification{
+public class AudioSetByIdSpecification implements Specification {
     private static final String AUDIOSETS_PREPARED_QUERY = "WHERE audioset_id=?";
     private Long id;
 
@@ -17,7 +17,7 @@ public class AudioSetByIdSpecification implements Specification{
     }
 
     @Override
-    public List<Object> getParameters() {
+    public List <Object> getParameters() {
         return Arrays.asList(id);
     }
 }

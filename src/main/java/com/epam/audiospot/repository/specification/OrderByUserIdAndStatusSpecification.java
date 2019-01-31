@@ -19,7 +19,7 @@ public class OrderByUserIdAndStatusSpecification implements Specification {
     }
 
     @Override
-    public List<Object> getParameters() {
-        return Arrays.asList(userId,paid);
+    public List <Object> getParameters() {
+        return Arrays.asList(userId, paid);
     }
 }

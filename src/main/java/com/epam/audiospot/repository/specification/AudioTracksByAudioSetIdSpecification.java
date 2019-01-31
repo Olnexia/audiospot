@@ -5,8 +5,8 @@ import java.util.List;
 
 public class AudioTracksByAudioSetIdSpecification implements Specification {
     private static final String TRACK_PREPARED_QUERY = "INNER JOIN track_at_audioset " +
-                                                        "ON audiotrack.audiotrack_id=track_at_audioset.audiotrack_id " +
-                                                        "WHERE track_at_audioset.audioset_id=?;";
+            "ON audiotrack.audiotrack_id=track_at_audioset.audiotrack_id " +
+            "WHERE track_at_audioset.audioset_id=?;";
     private Long audioSetId;
 
     public AudioTracksByAudioSetIdSpecification(Long audioSetId) {
@@ -19,7 +19,7 @@ public class AudioTracksByAudioSetIdSpecification implements Specification {
     }
 
     @Override
-    public List<Object> getParameters() {
+    public List <Object> getParameters() {
         return Arrays.asList(audioSetId);
     }
 }

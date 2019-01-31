@@ -1,4 +1,4 @@
-.block{
+.block {
     display: flex;
     align-content: space-around;
     flex-direction: column;
@@ -9,34 +9,34 @@
     border: #2CBBBB solid;
 }
 
-.poster{
+.poster {
     width: 200px;
     height: 200px;
     background: url("/images/music-plate.png") no-repeat top;
     background-size: 100%;
 }
 
-.album{
+.album {
     background: url("/images/icons/album.png") no-repeat top;
     background-size: 100%;
 }
 
-.set{
+.set {
     background: url("/images/icons/audioset.png") no-repeat top;
     background-size: 100%;
 }
 
-.add-new{
+.add-new {
     background: url("/images/icons/add-new.png") no-repeat top;
     background-size: 100%;
 }
 
-.block:hover{
-    cursor:pointer;
+.block:hover {
+    cursor: pointer;
     border-color: #4CAF50;
 }
 
-.block .info{
+.block .info {
     display: flex;
     flex-wrap: nowrap;
     align-content: space-around;

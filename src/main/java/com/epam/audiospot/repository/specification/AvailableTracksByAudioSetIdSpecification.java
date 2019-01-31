@@ -4,10 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class AvailableTracksByAudioSetIdSpecification implements Specification {
-    private static final String AUDIOTRACK_PREPARED_QUERY = "WHERE audiotrack_id "+
-                                                            "NOT IN (SELECT track_at_audioset.audiotrack_id "+
-                                                            "FROM track_at_audioset "+
-                                                            "WHERE audioset_id =?);";
+    private static final String AUDIOTRACK_PREPARED_QUERY = "WHERE audiotrack_id " +
+            "NOT IN (SELECT track_at_audioset.audiotrack_id " +
+            "FROM track_at_audioset " +
+            "WHERE audioset_id =?);";
     private Long audioSetId;
 
     public AvailableTracksByAudioSetIdSpecification(Long audioSetId) {
@@ -20,7 +20,7 @@ public class AvailableTracksByAudioSetIdSpecification implements Specification {
     }
 
     @Override
-    public List<Object> getParameters() {
+    public List <Object> getParameters() {
         return Arrays.asList(audioSetId);
     }
 }

@@ -18,7 +18,7 @@ public class UserByLoginSpecification implements Specification {
     }
 
     @Override
-    public List<Object> getParameters() {
-        return new ArrayList<Object>(Arrays.asList(login));
+    public List <Object> getParameters() {
+        return new ArrayList <Object>(Arrays.asList(login));
     }
 }

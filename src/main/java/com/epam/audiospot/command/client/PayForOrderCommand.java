@@ -9,6 +9,7 @@ import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.AudioTrackService;
 import com.epam.audiospot.service.OrderService;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -26,23 +27,23 @@ public class PayForOrderCommand implements Command {
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         HttpSession session = request.getSession(false);
-        User user = (User)session.getAttribute(USER_PARAM);
+        User user = (User) session.getAttribute(USER_PARAM);
 
         OrderService orderService = new OrderService();
-        Optional<Order> orderOptional = orderService.findOptionalOrder(user.getId(),false);
-        if(orderOptional.isPresent()){
+        Optional <Order> orderOptional = orderService.findOptionalOrder(user.getId(), false);
+        if (orderOptional.isPresent()) {
             Long orderId = orderOptional.get().getId();
             AudioTrackService trackService = new AudioTrackService();
-            List<AudioTrack> orderedTracks = trackService.findOrderedTracks(orderId);
+            List <AudioTrack> orderedTracks = trackService.findOrderedTracks(orderId);
 
             BigDecimal orderTotalPrice = orderService.calculateTotalPrice(orderId);
             BigDecimal userDiscount = new BigDecimal(user.getDiscount());
-            BigDecimal orderFinalPrice = orderService.calculateFinalPrice(orderId,userDiscount);
+            BigDecimal orderFinalPrice = orderService.calculateFinalPrice(orderId, userDiscount);
 
-            request.setAttribute(ORDER_ID_ATTR,orderId);
-            request.setAttribute(ORDERED_TRACKS_ATTR,orderedTracks);
-            request.setAttribute(ORDER_TOTAL_PRICE_ATTR,orderTotalPrice);
-            request.setAttribute(ORDER_FINAL_PRICE_ATTR,orderFinalPrice);
+            request.setAttribute(ORDER_ID_ATTR, orderId);
+            request.setAttribute(ORDERED_TRACKS_ATTR, orderedTracks);
+            request.setAttribute(ORDER_TOTAL_PRICE_ATTR, orderTotalPrice);
+            request.setAttribute(ORDER_FINAL_PRICE_ATTR, orderFinalPrice);
         }
         return CommandResult.forward(Forward.PAY_ORDER.getPath());
     }

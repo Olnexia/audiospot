@@ -17,7 +17,7 @@ public class ArtistByNameSpecification implements Specification {
     }
 
     @Override
-    public List<Object> getParameters() {
+    public List <Object> getParameters() {
         return Arrays.asList(name);
     }
 }

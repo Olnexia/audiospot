@@ -15,7 +15,7 @@ public class Order implements Entity {
     private LocalDate orderDate;
     private boolean paid;
 
-    public Order(Long orderId, Long userId, LocalDate orderDate,boolean paid) {
+    public Order(Long orderId, Long userId, LocalDate orderDate, boolean paid) {
         this.id = orderId;
         this.orderDate = orderDate;
         this.userId = userId;
@@ -24,14 +24,14 @@ public class Order implements Entity {
 
     @Override
     public boolean equals(Object object) {
-        if (this == object){
+        if (this == object) {
             return true;
         }
         if (object == null || getClass() != object.getClass()) {
             return false;
         }
         Order order = (Order) object;
-        return  id.equals(order.getId())
+        return id.equals(order.getId())
                 && orderDate.equals(order.getOrderDate())
                 && userId.equals(order.getUserId())
                 && paid == order.isPaid();
@@ -39,7 +39,7 @@ public class Order implements Entity {
 
     @Override
     public int hashCode() {
-        int result =17;
+        int result = 17;
         final int prime = 31;
         result = prime * result + id.hashCode();
         result = prime * result + orderDate.hashCode();

@@ -1,9 +1,10 @@
 package com.epam.audiospot.validator.complex;
 
 import com.epam.audiospot.validator.*;
+
 import java.util.*;
 
-public class RegistrationComplexValidator extends ComplexValidator<String> {
+public class RegistrationComplexValidator extends ComplexValidator <String> {
     private static final String LOGIN_VALIDATE_MESSAGE = "loginDesc";
     private static final String NAME_VALIDATE_MESSAGE = "nameDesc";
     private static final String SURNAME_VALIDATE_MESSAGE = "surnameDesc";
@@ -21,12 +22,12 @@ public class RegistrationComplexValidator extends ComplexValidator<String> {
     }
 
     @Override
-    Map<String, Validator<String>> getValidationData() {
-        HashMap<String,Validator<String>> validationData = new HashMap <>();
-        validationData.put(login,new LoginValidator(LOGIN_VALIDATE_MESSAGE));
-        validationData.put(name,new NameValidator(NAME_VALIDATE_MESSAGE));
-        validationData.put(surname,new SurnameValidator(SURNAME_VALIDATE_MESSAGE));
-        validationData.put(password,new PasswordValidator(PASSWORD_VALIDATE_MESSAGE));
+    Map <String, Validator <String>> getValidationData() {
+        HashMap <String, Validator <String>> validationData = new HashMap <>();
+        validationData.put(login, new LoginValidator(LOGIN_VALIDATE_MESSAGE));
+        validationData.put(name, new NameValidator(NAME_VALIDATE_MESSAGE));
+        validationData.put(surname, new SurnameValidator(SURNAME_VALIDATE_MESSAGE));
+        validationData.put(password, new PasswordValidator(PASSWORD_VALIDATE_MESSAGE));
         return validationData;
     }
 }

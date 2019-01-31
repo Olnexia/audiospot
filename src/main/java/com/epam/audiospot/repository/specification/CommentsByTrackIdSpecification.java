@@ -17,7 +17,7 @@ public class CommentsByTrackIdSpecification implements Specification {
     }
 
     @Override
-    public List<Object> getParameters() {
+    public List <Object> getParameters() {
         return Arrays.asList(trackId);
     }
 }

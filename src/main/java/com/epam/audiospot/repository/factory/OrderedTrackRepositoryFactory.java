@@ -4,9 +4,9 @@ import com.epam.audiospot.entity.OrderedTrack;
 import com.epam.audiospot.repository.OrderedTrackRepository;
 import com.epam.audiospot.repository.Repository;
 
-public class OrderedTrackRepositoryFactory extends RepositoryFactory<OrderedTrack> {
+public class OrderedTrackRepositoryFactory extends RepositoryFactory <OrderedTrack> {
     @Override
-    public Repository<OrderedTrack> createRepository() {
+    public Repository <OrderedTrack> createRepository() {
         return new OrderedTrackRepository(getConnection());
     }
 }

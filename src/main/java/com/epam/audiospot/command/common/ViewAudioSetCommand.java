@@ -9,6 +9,7 @@ import com.epam.audiospot.entity.AudioTrack;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.AudioSetService;
 import com.epam.audiospot.service.AudioTrackService;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
@@ -24,20 +25,20 @@ public class ViewAudioSetCommand implements Command {
         Long audioSetId = Long.parseLong(request.getParameter(AUDIOSET_ID_PARAM));
 
         AudioSetService audioSetService = new AudioSetService();
-        Optional<AudioSet> audioSetOptional = audioSetService.findAudioSet(audioSetId);
-        if(audioSetOptional.isPresent()) {
+        Optional <AudioSet> audioSetOptional = audioSetService.findAudioSet(audioSetId);
+        if (audioSetOptional.isPresent()) {
             AudioSet audioSet = audioSetOptional.get();
             request.setAttribute(AUDIOSET_ATTR, audioSet);
-        }else{
+        } else {
             Command audioSetsCommand = CommandType.SHOW_AUDIOSETS.getCommand();
-            String page = audioSetsCommand.execute(request,response).getPage();
+            String page = audioSetsCommand.execute(request, response).getPage();
             return CommandResult.forward(page);
         }
 
         AudioTrackService trackService = new AudioTrackService();
-        List<AudioTrack> tracks = trackService.findTracksAtAudioSet(audioSetId);
+        List <AudioTrack> tracks = trackService.findTracksAtAudioSet(audioSetId);
 
-        request.setAttribute(TRACKS_ATTR,tracks);
+        request.setAttribute(TRACKS_ATTR, tracks);
         return CommandResult.forward(Forward.VIEW_AUDIOSET.getPath());
     }
 }

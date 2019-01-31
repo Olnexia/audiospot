@@ -7,6 +7,7 @@ import com.epam.audiospot.connection.ConnectionPool;
 import com.epam.audiospot.exception.ServiceException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -31,11 +32,11 @@ public class Controller extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
-        processRequest(request,response);
+        processRequest(request, response);
     }
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException{
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         processRequest(request, response);
     }
 
@@ -49,7 +50,7 @@ public class Controller extends HttpServlet {
             } else {
                 request.getRequestDispatcher(commandResult.getPage()).forward(request, response);
             }
-        }catch (ServiceException | ServletException | IOException e) {
+        } catch (ServiceException | ServletException | IOException e) {
             logger.error(e.getMessage(), e);
             throw new ServletException(e.getMessage(), e);
         }

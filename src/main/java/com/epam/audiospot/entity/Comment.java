@@ -2,7 +2,7 @@ package com.epam.audiospot.entity;
 
 import java.time.LocalDateTime;
 
-public class Comment implements Entity{
+public class Comment implements Entity {
     private static final long serialVersionUID = 223618021188002931L;
 
     public static final String ID_LABEL = "comment_id";
@@ -27,14 +27,14 @@ public class Comment implements Entity{
 
     @Override
     public boolean equals(Object object) {
-        if (this == object){
+        if (this == object) {
             return true;
         }
         if (object == null || getClass() != object.getClass()) {
             return false;
         }
         Comment comment = (Comment) object;
-        return  id.equals(comment.getId())
+        return id.equals(comment.getId())
                 && user.equals(comment.getUser())
                 && trackId.equals(comment.getTrackId())
                 && text.equals(comment.getText())
@@ -43,7 +43,7 @@ public class Comment implements Entity{
 
     @Override
     public int hashCode() {
-        int result =17;
+        int result = 17;
         final int prime = 31;
         result = prime * result + id.hashCode();
         result = prime * result + user.hashCode();

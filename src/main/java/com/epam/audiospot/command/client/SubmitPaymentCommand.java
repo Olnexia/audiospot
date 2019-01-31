@@ -10,6 +10,7 @@ import com.epam.audiospot.service.OrderService;
 import com.epam.audiospot.validator.complex.PaymentComplexValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -31,27 +32,27 @@ public class SubmitPaymentCommand implements Command {
         String cvc = request.getParameter(CVC_PARAM);
         String expiry = request.getParameter(EXP_DATE_PARAM);
 
-        PaymentComplexValidator validator = new PaymentComplexValidator(cardNumber,cvc,expiry);
-        Optional<List<String>> validateMessages = validator.validate();
-        if(validateMessages.isPresent()){
+        PaymentComplexValidator validator = new PaymentComplexValidator(cardNumber, cvc, expiry);
+        Optional <List <String>> validateMessages = validator.validate();
+        if (validateMessages.isPresent()) {
             request.setAttribute(PAY_MESSAGE_ATTR, validateMessages.get());
             return CommandResult.forward(Forward.PAY_ORDER.getPath());
         }
 
         HttpSession session = request.getSession(false);
-        User user = (User)session.getAttribute(USER_ATTR);
+        User user = (User) session.getAttribute(USER_ATTR);
 
         OrderService service = new OrderService();
-        Order order = service.findOrder(user.getId(),false);
+        Order order = service.findOrder(user.getId(), false);
 
-        BigDecimal orderFinalPrice = service.calculateFinalPrice(order.getId(),new BigDecimal(user.getDiscount()));
+        BigDecimal orderFinalPrice = service.calculateFinalPrice(order.getId(), new BigDecimal(user.getDiscount()));
 
-        PaymentVerifier verifier = (cn, cv, e, p)-> true;  //dummy payment verifier
-        if(verifier.verify(cardNumber,cvc,expiry,orderFinalPrice)){
+        PaymentVerifier verifier = (cn, cv, e, p) -> true;  //dummy payment verifier
+        if (verifier.verify(cardNumber, cvc, expiry, orderFinalPrice)) {
             order.setPaid(true);
             service.saveOrder(order);
             logger.info("Payment of order " + order.getId() + " is successful.");
-        }else {
+        } else {
             logger.info("Payment of order " + order.getId() + " not passed.");
         }
 

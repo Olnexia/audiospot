@@ -19,21 +19,21 @@ public class OrderedTrack implements Entity {
 
     @Override
     public boolean equals(Object object) {
-        if (this == object){
+        if (this == object) {
             return true;
         }
         if (object == null || getClass() != object.getClass()) {
             return false;
         }
         OrderedTrack track = (OrderedTrack) object;
-        return  id.equals(track.getId())
+        return id.equals(track.getId())
                 && orderId.equals(track.getOrderId())
                 && trackId.equals(track.getTrackId());
     }
 
     @Override
     public int hashCode() {
-        int result =17;
+        int result = 17;
         final int prime = 31;
         result = prime * result + id.hashCode();
         result = prime * result + orderId.hashCode();

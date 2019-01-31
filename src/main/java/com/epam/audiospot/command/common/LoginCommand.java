@@ -9,6 +9,7 @@ import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -18,9 +19,9 @@ public class LoginCommand implements Command {
     private static final Logger logger = LogManager.getLogger(LoginCommand.class);
     private static final String LOGIN_PARAM = "login";
     private static final String PASSWORD_PARAM = "password";
-    private static final String USER_ATTR ="user";
-    private static final String LOGIN_MESSAGE_ATTR ="loginMessage";
-    private static final String LOCALE ="lang";
+    private static final String USER_ATTR = "user";
+    private static final String LOGIN_MESSAGE_ATTR = "loginMessage";
+    private static final String LOCALE = "lang";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
@@ -28,25 +29,25 @@ public class LoginCommand implements Command {
         String password = request.getParameter(PASSWORD_PARAM);
 
         UserService service = new UserService();
-        Optional<User> userOptional = service.login(login,password);
+        Optional <User> userOptional = service.login(login, password);
 
         CommandResult commandResult;
-        if(userOptional.isPresent()){
+        if (userOptional.isPresent()) {
             User user = userOptional.get();
-            if(user.isActive()){
+            if (user.isActive()) {
                 HttpSession session = request.getSession(true);
-                session.setAttribute(USER_ATTR,user);
+                session.setAttribute(USER_ATTR, user);
                 String currentLocale = request.getParameter(LOCALE);
-                session.setAttribute(LOCALE,currentLocale);
+                session.setAttribute(LOCALE, currentLocale);
                 commandResult = CommandResult.redirect(Redirect.HOME.getPath());
                 logger.info("Authentication is successful for user " + user.getLogin());
-            }else{
-                request.setAttribute(LOGIN_MESSAGE_ATTR,"blocked");
+            } else {
+                request.setAttribute(LOGIN_MESSAGE_ATTR, "blocked");
                 commandResult = CommandResult.forward(Forward.LOGIN.getPath());
             }
-        }else {
+        } else {
             commandResult = CommandResult.forward(Forward.LOGIN.getPath());
-            request.setAttribute(LOGIN_MESSAGE_ATTR,"wrongInput");
+            request.setAttribute(LOGIN_MESSAGE_ATTR, "wrongInput");
         }
         return commandResult;
     }

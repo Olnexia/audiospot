@@ -1,18 +1,18 @@
-.form-style{
+.form-style {
     font-family: 'Open Sans Condensed', arial, sans, serif;
     width: 600px;
     background: #FFFFFF;
     margin: 50px auto;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
-    -webkit-box-shadow:  0 0 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
 }
 
-.form-style form{
+.form-style form {
     padding: 30px;
 }
 
-.form-style h2{
+.form-style h2 {
     text-transform: uppercase;
     font-family: 'Open Sans Condensed', sans-serif;
     color: #848484;
@@ -30,8 +30,7 @@
 .form-style input[type="url"],
 .form-style input[type="password"],
 .form-style textarea,
-.form-style select
-{
+.form-style select {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -46,14 +45,16 @@
     font: 16px Arial, Helvetica, sans-serif;
     height: 45px;
 }
-.form-style textarea{
-    resize:none;
+
+.form-style textarea {
+    resize: none;
     overflow: auto;
     height: 125px;
 }
+
 .form-style input[type="button"],
 .form-style .button,
-.form-style input[type="submit"]{
+.form-style input[type="submit"] {
     -moz-box-shadow: inset 0 1px 0 0 #45D6D6;
     -webkit-box-shadow: inset 0 1px 0 0 #45D6D6;
     box-shadow: inset 0 1px 0 0 #45D6D6;
@@ -77,49 +78,49 @@
     background: #34CACA linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
 }
 
-.form-style .fhead{
+.form-style .fhead {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     flex-flow: wrap;
     background: #4D4D4D;
     padding: 10px 20px;
 }
 
-.form-style .buttons{
+.form-style .buttons {
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     flex-flow: wrap;
 }
 
-.inline-label{
+.inline-label {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: .5rem;
 }
 
-.inline-label input[type="text"]{
+.inline-label input[type="text"] {
     text-align: center;
     margin: 0 5px;
     width: 20%;
 }
 
-.discount{
+.discount {
     width: 400px;
 }
 
-.error{
-    color:red;
-    font-size:14px;
+.error {
+    color: red;
+    font-size: 14px;
     text-align: center;
 }
 
 @media screen and (max-width: 660px) {
-    .form-style .wide{
+    .form-style .wide {
         width: 100%;
         margin: 0;
-        padding:0;
+        padding: 0;
     }
 }
 

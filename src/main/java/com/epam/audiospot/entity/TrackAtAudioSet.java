@@ -19,21 +19,21 @@ public class TrackAtAudioSet implements Entity {
 
     @Override
     public boolean equals(Object object) {
-        if (this == object){
+        if (this == object) {
             return true;
         }
         if (object == null || getClass() != object.getClass()) {
             return false;
         }
         TrackAtAudioSet trackAtAudioSet = (TrackAtAudioSet) object;
-        return  id.equals(trackAtAudioSet.getId())
+        return id.equals(trackAtAudioSet.getId())
                 && audioSetId.equals(trackAtAudioSet.getAudioSetId())
                 && trackId.equals(trackAtAudioSet.getTrackId());
     }
 
     @Override
     public int hashCode() {
-        int result =17;
+        int result = 17;
         final int prime = 31;
         result = prime * result + id.hashCode();
         result = prime * result + audioSetId.hashCode();

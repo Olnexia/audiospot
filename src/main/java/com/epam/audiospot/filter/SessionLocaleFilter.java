@@ -20,7 +20,7 @@ public class SessionLocaleFilter implements Filter {
         if (httpRequest.getParameter(LOCALE) != null) {
             HttpSession session = httpRequest.getSession(true);
             String currentLocale = httpRequest.getParameter(LOCALE);
-            if(currentLocale.equals("en")||currentLocale.equals("ru")){
+            if (currentLocale.equals("en") || currentLocale.equals("ru")) {
                 session.setAttribute(LOCALE, currentLocale);
             }
         }

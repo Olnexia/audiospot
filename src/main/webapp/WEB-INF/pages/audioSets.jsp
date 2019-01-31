@@ -2,24 +2,29 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib prefix="ph" uri="/WEB-INF/customTags/pageHelper.tld" %>
 
-<%@ page contentType = "text/html;charset=utf-8"
-         isELIgnored ="false"
-         pageEncoding ="utf-8"%>
+<%@ page contentType="text/html;charset=utf-8"
+         isELIgnored="false"
+         pageEncoding="utf-8" %>
 
 <fmt:setLocale value="${sessionScope.lang}"/>
 
-<fmt:bundle basename="pagecontent" prefix ="audioSets.">
+<fmt:bundle basename="pagecontent" prefix="audioSets.">
     <html>
     <head>
         <title><fmt:message key="pageTitle"/></title>
-        <style><jsp:include page = "/css/table.css"/></style>
-        <style><jsp:include page = "/css/block.css"/></style>
-        <jsp:include page = "../fragments/header.jsp"/>
+        <style>
+            <jsp:include page="/css/table.css"/>
+        </style>
+        <style>
+            <jsp:include page="/css/block.css"/>
+        </style>
+        <jsp:include page="../fragments/header.jsp"/>
     </head>
     <body>
     <div class="content">
         <c:if test="${sessionScope.user.role.value eq 'admin'}">
-            <div class = "block" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=addAudioSet'">
+            <div class="block"
+                 onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=addAudioSet'">
                 <div class="poster add-new">
                 </div>
                 <div class="info">
@@ -28,8 +33,9 @@
             </div>
         </c:if>
 
-        <ph:pagination items="${requestScope.audioSets}" var="audioSet" perPage="20" >
-            <div class = "block" onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=viewAudioSet&audioSetId=${audioSet.id}'">
+        <ph:pagination items="${requestScope.audioSets}" var="audioSet" perPage="20">
+            <div class="block"
+                 onclick="window.location='${pageContext.servletContext.contextPath}/controller?command=viewAudioSet&audioSetId=${audioSet.id}'">
                 <div class="poster set">
                 </div>
                 <div class="info">

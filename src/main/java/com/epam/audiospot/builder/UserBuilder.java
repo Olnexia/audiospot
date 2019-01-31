@@ -2,10 +2,11 @@ package com.epam.audiospot.builder;
 
 import com.epam.audiospot.entity.Role;
 import com.epam.audiospot.entity.User;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UserBuilder implements Builder<User> {
+public class UserBuilder implements Builder <User> {
 
     @Override
     public User build(ResultSet resultSet) throws SQLException {
@@ -18,6 +19,6 @@ public class UserBuilder implements Builder<User> {
         String roleContent = resultSet.getString(User.ROLE_LABEL);
         float discount = resultSet.getFloat(User.DISCOUNT_LABEL);
         Role role = Role.valueOf(roleContent.toUpperCase());
-        return new User(id,name,surname,login,password,active,discount,role);
+        return new User(id, name, surname, login, password, active, discount, role);
     }
 }

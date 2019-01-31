@@ -6,21 +6,21 @@ import com.epam.audiospot.entity.Entity;
 import com.epam.audiospot.repository.*;
 
 public abstract class RepositoryFactory<T extends Entity> implements AutoCloseable {
-    private ConnectionWrapper connection ;
+    private ConnectionWrapper connection;
 
     public RepositoryFactory() {
         ConnectionPool connectionPool = ConnectionPool.getInstance();
         this.connection = connectionPool.getConnection();
     }
 
-    public abstract Repository<T> createRepository();
+    public abstract Repository <T> createRepository();
 
     public ConnectionWrapper getConnection() {
         return connection;
     }
 
     @Override
-    public void close(){
+    public void close() {
         ConnectionPool connectionPool = ConnectionPool.getInstance();
         connectionPool.releaseConnection(connection);
     }

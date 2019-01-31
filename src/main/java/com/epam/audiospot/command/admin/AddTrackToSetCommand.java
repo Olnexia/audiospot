@@ -5,6 +5,7 @@ import com.epam.audiospot.command.CommandResult;
 import com.epam.audiospot.command.Redirect;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.AudioSetService;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -18,10 +19,10 @@ public class AddTrackToSetCommand implements Command {
         Long audioSetId = Long.parseLong(request.getParameter(AUDIOSET_ID_PARAM));
 
         AudioSetService service = new AudioSetService();
-        service.addToSet(audioSetId,trackId);
+        service.addToSet(audioSetId, trackId);
 
         return CommandResult.redirect(Redirect.VIEW_AUDIOSET.getPath()
-                                        + "&" + AUDIOSET_ID_PARAM
-                                        + "=" + audioSetId);
+                + "&" + AUDIOSET_ID_PARAM
+                + "=" + audioSetId);
     }
 }

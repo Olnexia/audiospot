@@ -11,7 +11,7 @@ public class UserByRoleSpecification implements Specification {
     private static final String USERS_PREPARED_QUERY = "WHERE role=?";
     private Role role;
 
-    public UserByRoleSpecification(Role role){
+    public UserByRoleSpecification(Role role) {
         this.role = role;
     }
 
@@ -21,7 +21,7 @@ public class UserByRoleSpecification implements Specification {
     }
 
     @Override
-    public List<Object> getParameters() {
-        return new ArrayList<Object>(Arrays.asList(role.getValue()));
+    public List <Object> getParameters() {
+        return new ArrayList <Object>(Arrays.asList(role.getValue()));
     }
 }

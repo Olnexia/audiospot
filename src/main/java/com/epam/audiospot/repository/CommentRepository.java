@@ -4,18 +4,19 @@ import com.epam.audiospot.builder.Builder;
 import com.epam.audiospot.builder.CommentBuilder;
 import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.entity.Comment;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class CommentRepository extends AbstractRepository<Comment> {
+public class CommentRepository extends AbstractRepository <Comment> {
     private static final String TABLE_NAME = "comment";
 
-    public CommentRepository(ConnectionWrapper connection){
+    public CommentRepository(ConnectionWrapper connection) {
         super(connection);
     }
 
     @Override
-    public Builder<Comment> getBuilder() {
+    public Builder <Comment> getBuilder() {
         return new CommentBuilder();
     }
 
@@ -25,12 +26,12 @@ public class CommentRepository extends AbstractRepository<Comment> {
     }
 
     @Override
-    public Map<String, Object> getFields(Comment comment) {
-        Map<String,Object> fields = new HashMap<>();
-        fields.put(Comment.TEXT_LABEL,comment.getText());
-        fields.put(Comment.DATE_TIME_LABEL,comment.getDateTime());
-        fields.put(Comment.USER_ID_LABEL,comment.getUser().getId());
-        fields.put(Comment.TRACK_ID_LABEL,comment.getTrackId());
+    public Map <String, Object> getFields(Comment comment) {
+        Map <String, Object> fields = new HashMap <>();
+        fields.put(Comment.TEXT_LABEL, comment.getText());
+        fields.put(Comment.DATE_TIME_LABEL, comment.getDateTime());
+        fields.put(Comment.USER_ID_LABEL, comment.getUser().getId());
+        fields.put(Comment.TRACK_ID_LABEL, comment.getTrackId());
         return fields;
     }
 }

@@ -6,6 +6,7 @@ import com.epam.audiospot.command.Forward;
 import com.epam.audiospot.entity.User;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.UserService;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
@@ -17,8 +18,8 @@ public class ShowClientsCommand implements Command {
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         UserService userService = new UserService();
 
-        List<User> clients = userService.findClients();
-        request.setAttribute(CLIENTS_ATTR,clients);
+        List <User> clients = userService.findClients();
+        request.setAttribute(CLIENTS_ATTR, clients);
 
         return CommandResult.forward(Forward.CLIENTS.getPath());
     }

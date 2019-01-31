@@ -8,9 +8,9 @@ public class Album implements Entity {
     public static final String AUTHOR_ID_LABEL = "author_id";
     public static final String RELEASE_YEAR_LABEL = "release_year";
 
-    private  Long id;
-    private  String title;
-    private  Artist artist;
+    private Long id;
+    private String title;
+    private Artist artist;
     private int releaseYear;
 
     public Album(Long id, String title, Artist artist, int releaseYear) {
@@ -22,14 +22,14 @@ public class Album implements Entity {
 
     @Override
     public boolean equals(Object object) {
-        if (this == object){
+        if (this == object) {
             return true;
         }
         if (object == null || getClass() != object.getClass()) {
             return false;
         }
         Album album = (Album) object;
-        return  id.equals(album.getId())
+        return id.equals(album.getId())
                 && title.equals(album.getTitle())
                 && artist.equals(album.getArtist())
                 && releaseYear == album.getReleaseYear();
@@ -37,7 +37,7 @@ public class Album implements Entity {
 
     @Override
     public int hashCode() {
-        int result =17;
+        int result = 17;
         final int prime = 31;
         result = prime * result + id.hashCode();
         result = prime * result + title.hashCode();

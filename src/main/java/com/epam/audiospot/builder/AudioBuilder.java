@@ -5,11 +5,12 @@ import com.epam.audiospot.entity.AudioTrack;
 import com.epam.audiospot.entity.Genre;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.ArtistService;
+
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class AudioBuilder implements Builder<AudioTrack> {
+public class AudioBuilder implements Builder <AudioTrack> {
 
     @Override
     public AudioTrack build(ResultSet resultSet) throws SQLException, ServiceException {
@@ -24,6 +25,6 @@ public class AudioBuilder implements Builder<AudioTrack> {
         ArtistService artistService = new ArtistService();
         Artist artist = artistService.getArtist(authorId);
 
-        return new AudioTrack(id,albumId,artist,title,price,genre);
+        return new AudioTrack(id, albumId, artist, title, price, genre);
     }
 }

@@ -4,9 +4,9 @@ import com.epam.audiospot.entity.Artist;
 import com.epam.audiospot.repository.ArtistRepository;
 import com.epam.audiospot.repository.Repository;
 
-public class ArtistRepositoryFactory extends RepositoryFactory<Artist> {
+public class ArtistRepositoryFactory extends RepositoryFactory <Artist> {
     @Override
-    public Repository<Artist> createRepository() {
+    public Repository <Artist> createRepository() {
         return new ArtistRepository(getConnection());
     }
 }

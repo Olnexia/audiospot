@@ -4,18 +4,19 @@ import com.epam.audiospot.builder.Builder;
 import com.epam.audiospot.builder.AudioSetBuilder;
 import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.entity.AudioSet;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class AudioSetRepository extends AbstractRepository<AudioSet> {
+public class AudioSetRepository extends AbstractRepository <AudioSet> {
     private static final String TABLE_NAME = "audioset";
 
-    public AudioSetRepository(ConnectionWrapper connection){
+    public AudioSetRepository(ConnectionWrapper connection) {
         super(connection);
     }
 
     @Override
-    public Builder<AudioSet> getBuilder() {
+    public Builder <AudioSet> getBuilder() {
         return new AudioSetBuilder();
     }
 
@@ -25,11 +26,11 @@ public class AudioSetRepository extends AbstractRepository<AudioSet> {
     }
 
     @Override
-    public Map<String, Object> getFields(AudioSet audioSet) {
-        Map<String,Object> fields = new HashMap<>();
-        fields.put(AudioSet.ID_LABEL,audioSet.getId());
-        fields.put(AudioSet.TITLE_LABEL,audioSet.getTitle());
-        fields.put(AudioSet.DESCRIPTION_LABEL,audioSet.getDescription());
+    public Map <String, Object> getFields(AudioSet audioSet) {
+        Map <String, Object> fields = new HashMap <>();
+        fields.put(AudioSet.ID_LABEL, audioSet.getId());
+        fields.put(AudioSet.TITLE_LABEL, audioSet.getTitle());
+        fields.put(AudioSet.DESCRIPTION_LABEL, audioSet.getDescription());
         return fields;
     }
 }

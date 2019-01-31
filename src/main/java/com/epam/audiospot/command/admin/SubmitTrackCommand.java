@@ -13,6 +13,7 @@ import com.epam.audiospot.service.AudioTrackService;
 import com.epam.audiospot.validator.complex.TrackComplexValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
@@ -26,24 +27,24 @@ public class SubmitTrackCommand implements Command {
     private static final Logger logger = LogManager.getLogger(SubmitTrackCommand.class);
 
     @Override
-    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException{
+    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         String title = request.getParameter(AudioTrack.TITLE_LABEL);
         Genre genre = Genre.valueOf(request.getParameter(AudioTrack.GENRE_LABEL).toUpperCase());
         String artistName = request.getParameter(AudioTrack.ARTIST_LABEL);
         String albumId = request.getParameter(AudioTrack.ALBUM_ID_LABEL);
         String priceParam = request.getParameter(AudioTrack.PRICE_LABEL);
 
-        TrackComplexValidator validator = new TrackComplexValidator(artistName,title,priceParam);
-        Optional<List<String>> validateMessages = validator.validate();
-        if(validateMessages.isPresent()){
+        TrackComplexValidator validator = new TrackComplexValidator(artistName, title, priceParam);
+        Optional <List <String>> validateMessages = validator.validate();
+        if (validateMessages.isPresent()) {
             request.setAttribute(ADD_TRACK_MESSAGE_ATTR, validateMessages.get());
             String path;
             if (albumId == null) {
                 path = Forward.ADD_TRACK.getPath();
             } else {
-                request.setAttribute(ALBUM_ID_ATTR,albumId);
+                request.setAttribute(ALBUM_ID_ATTR, albumId);
                 Command viewAlbumCommand = CommandType.VIEW_ALBUM.getCommand();
-                path = viewAlbumCommand.execute(request,response).getPage();
+                path = viewAlbumCommand.execute(request, response).getPage();
             }
             return CommandResult.forward(path);
         }
@@ -54,12 +55,12 @@ public class SubmitTrackCommand implements Command {
 
         BigDecimal price = new BigDecimal(priceParam);
         AudioTrackService service = new AudioTrackService();
-        AudioTrack track = service.buildTrack(title,price,genre,artistName,albumId);
+        AudioTrack track = service.buildTrack(title, price, genre, artistName, albumId);
         service.submitTrack(track);
 
-        logger.info("New track with id "+track.getId()+" added.");
-        return (albumId==null)? CommandResult.redirect(Redirect.SHOW_TRACKS.getPath())
-                                : CommandResult.redirect(Redirect.VIEW_ALBUM.getPath()
+        logger.info("New track with id " + track.getId() + " added.");
+        return (albumId == null) ? CommandResult.redirect(Redirect.SHOW_TRACKS.getPath())
+                : CommandResult.redirect(Redirect.VIEW_ALBUM.getPath()
                 + "&" + ALBUM_ID_PARAM + "=" + albumId);
     }
 }

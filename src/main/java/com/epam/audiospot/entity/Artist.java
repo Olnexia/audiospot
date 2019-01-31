@@ -19,21 +19,21 @@ public class Artist implements Entity {
 
     @Override
     public boolean equals(Object object) {
-        if (this == object){
+        if (this == object) {
             return true;
         }
         if (object == null || getClass() != object.getClass()) {
             return false;
         }
         Artist artist = (Artist) object;
-        return  id.equals(artist.getId())
+        return id.equals(artist.getId())
                 && name.equals(artist.getName())
                 && country.equals(artist.getCountry());
     }
 
     @Override
     public int hashCode() {
-        int result =17;
+        int result = 17;
         final int prime = 31;
         result = prime * result + id.hashCode();
         result = prime * result + name.hashCode();

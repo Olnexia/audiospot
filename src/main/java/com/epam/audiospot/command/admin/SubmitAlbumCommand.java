@@ -11,6 +11,7 @@ import com.epam.audiospot.service.AlbumService;
 import com.epam.audiospot.validator.complex.AlbumComplexValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
@@ -28,9 +29,9 @@ public class SubmitAlbumCommand implements Command {
         String yearParam = request.getParameter(Album.RELEASE_YEAR_LABEL);
         String artistName = request.getParameter(ARTIST_PARAM);
 
-        AlbumComplexValidator validator = new AlbumComplexValidator(artistName,title,yearParam);
-        Optional<List<String>> validateMessages = validator.validate();
-        if(validateMessages.isPresent()){
+        AlbumComplexValidator validator = new AlbumComplexValidator(artistName, title, yearParam);
+        Optional <List <String>> validateMessages = validator.validate();
+        if (validateMessages.isPresent()) {
             request.setAttribute(ADD_ALBUM_MESSAGE_ATTR, validateMessages.get());
             return CommandResult.forward(Forward.ADD_ALBUM.getPath());
         }
@@ -42,7 +43,7 @@ public class SubmitAlbumCommand implements Command {
         int releaseYear = Integer.parseInt(yearParam);
 
         AlbumService service = new AlbumService();
-        Album album = service.buildAlbum(title,artistName,releaseYear);
+        Album album = service.buildAlbum(title, artistName, releaseYear);
         service.addAlbum(album);
 
         logger.info("New album with id " + album.getId() + " added.");

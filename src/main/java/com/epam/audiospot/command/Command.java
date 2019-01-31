@@ -1,6 +1,7 @@
 package com.epam.audiospot.command;
 
 import com.epam.audiospot.exception.ServiceException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public interface Command {
     /**
-     * @param request http request from client
+     * @param request  http request from client
      * @param response http response
      * @return instance of {@code CommandResult} class, which is stands for target for forward or redirect from command
      * @throws ServiceException if some unforeseen circumstances arose in the code of service methods

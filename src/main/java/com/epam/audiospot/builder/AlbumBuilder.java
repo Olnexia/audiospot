@@ -4,10 +4,11 @@ import com.epam.audiospot.entity.Album;
 import com.epam.audiospot.entity.Artist;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.ArtistService;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class AlbumBuilder implements Builder<Album> {
+public class AlbumBuilder implements Builder <Album> {
 
     @Override
     public Album build(ResultSet resultSet) throws SQLException, ServiceException {
@@ -19,6 +20,6 @@ public class AlbumBuilder implements Builder<Album> {
         ArtistService artistService = new ArtistService();
         Artist artist = artistService.getArtist(authorId);
 
-        return new Album(id,title,artist,releaseYear);
+        return new Album(id, title, artist, releaseYear);
     }
 }

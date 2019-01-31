@@ -8,6 +8,7 @@ import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 

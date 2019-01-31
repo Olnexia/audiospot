@@ -30,24 +30,24 @@ public class AudioTrack implements Entity {
         this.genre = genre;
     }
 
-    public static AudioTrack single(Artist artist, String title, BigDecimal price, Genre genre){
-        return new AudioTrack(null,null,artist,title,price,genre);
+    public static AudioTrack single(Artist artist, String title, BigDecimal price, Genre genre) {
+        return new AudioTrack(null, null, artist, title, price, genre);
     }
 
-    public static AudioTrack albumTrack(Artist artist, String title, BigDecimal price, Genre genre,Long albumId){
-        return new AudioTrack(null,albumId,artist,title,price,genre);
+    public static AudioTrack albumTrack(Artist artist, String title, BigDecimal price, Genre genre, Long albumId) {
+        return new AudioTrack(null, albumId, artist, title, price, genre);
     }
 
     @Override
     public boolean equals(Object object) {
-        if (this == object){
+        if (this == object) {
             return true;
         }
         if (object == null || getClass() != object.getClass()) {
             return false;
         }
-        AudioTrack track = (AudioTrack)object;
-        return  id.equals(track.getId())
+        AudioTrack track = (AudioTrack) object;
+        return id.equals(track.getId())
                 && albumId.equals(track.getAlbumId())
                 && artist.equals(track.getArtist())
                 && title.equals(track.getTitle())
@@ -57,7 +57,7 @@ public class AudioTrack implements Entity {
 
     @Override
     public int hashCode() {
-        int result =17;
+        int result = 17;
         final int prime = 31;
         result = prime * result + id.hashCode();
         result = prime * result + title.hashCode();

@@ -20,7 +20,7 @@ public class UserByLoginAndPasswordSpecification implements Specification {
     }
 
     @Override
-    public List<Object> getParameters() {
-        return new ArrayList <Object>(Arrays.asList(login,password));
+    public List <Object> getParameters() {
+        return new ArrayList <Object>(Arrays.asList(login, password));
     }
 }

@@ -12,6 +12,7 @@ import com.epam.audiospot.validator.complex.RegistrationComplexValidator;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -35,27 +36,27 @@ public class RegisterCommand implements Command {
         String surname = request.getParameter(SURNAME_PARAM);
         String password = request.getParameter(PASSWORD_PARAM);
 
-        ComplexValidator<String> validator = new RegistrationComplexValidator(login,name,surname,password);
-        Optional<List<String>> validateMessages = validator.validate();
-        if (validateMessages.isPresent()){
+        ComplexValidator <String> validator = new RegistrationComplexValidator(login, name, surname, password);
+        Optional <List <String>> validateMessages = validator.validate();
+        if (validateMessages.isPresent()) {
             request.setAttribute(REGISTRATION_MESSAGE_ATTR, validateMessages.get());
             return CommandResult.forward(Forward.LOGIN.getPath());
         }
 
         UserService service = new UserService();
-        if(!service.isLoginAvailable(login)) {
+        if (!service.isLoginAvailable(login)) {
             request.setAttribute(REGISTRATION_MESSAGE_ATTR, "occupiedLogin");
             return CommandResult.forward(Forward.LOGIN.getPath());
         }
 
         String md5Password = DigestUtils.md5Hex(password).toUpperCase();
-        User newClient = User.client(login,name,surname,md5Password);
+        User newClient = User.client(login, name, surname, md5Password);
         service.saveUser(newClient);
 
         HttpSession session = request.getSession(true);
         String currentLocale = request.getParameter(LOCALE);
-        session.setAttribute(USER_ATTR,newClient);
-        session.setAttribute(LOCALE,currentLocale);
+        session.setAttribute(USER_ATTR, newClient);
+        session.setAttribute(LOCALE, currentLocale);
 
         logger.info("Registration is successful for client " + newClient.getLogin());
         return CommandResult.redirect(Redirect.HOME.getPath());

@@ -18,7 +18,7 @@ public class UserByIdSpecification implements Specification {
     }
 
     @Override
-    public List<Object> getParameters() {
-        return new ArrayList<Object>(Arrays.asList(userId));
+    public List <Object> getParameters() {
+        return new ArrayList <Object>(Arrays.asList(userId));
     }
 }

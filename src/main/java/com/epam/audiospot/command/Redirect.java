@@ -10,7 +10,7 @@ public enum Redirect {
 
     private String path;
 
-    Redirect(String path){
+    Redirect(String path) {
         this.path = path;
     }
 

@@ -9,9 +9,9 @@ public class QuoteEscapeTag extends SimpleTagSupport {
 
     @Override
     public void doTag() throws IOException {
-            JspWriter out = getJspContext().getOut();
-            String escapedContent = content.replaceAll("'","\\\\'").trim();
-            out.print(escapedContent);
+        JspWriter out = getJspContext().getOut();
+        String escapedContent = content.replaceAll("'", "\\\\'").trim();
+        out.print(escapedContent);
     }
 
     public void setContent(String content) {
