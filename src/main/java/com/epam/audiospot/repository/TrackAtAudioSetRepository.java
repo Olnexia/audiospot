@@ -5,7 +5,7 @@ import com.epam.audiospot.builder.TrackAtAudioSetBuilder;
 import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.entity.TrackAtAudioSet;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class TrackAtAudioSetRepository extends AbstractRepository <TrackAtAudioSet> {
@@ -27,7 +27,7 @@ public class TrackAtAudioSetRepository extends AbstractRepository <TrackAtAudioS
 
     @Override
     public Map <String, Object> getFields(TrackAtAudioSet trackAtAudioSet) {
-        Map <String, Object> fields = new HashMap <>();
+        Map <String, Object> fields = new LinkedHashMap <>();
         fields.put(TrackAtAudioSet.ID_LABEL, trackAtAudioSet.getId());
         fields.put(TrackAtAudioSet.AUDIOSET_ID_LABEL, trackAtAudioSet.getAudioSetId());
         fields.put(TrackAtAudioSet.AUDIOTRACK_LABEL, trackAtAudioSet.getTrackId());

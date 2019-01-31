@@ -1,11 +1,11 @@
 package com.epam.audiospot.repository;
 
-import com.epam.audiospot.builder.Builder;
 import com.epam.audiospot.builder.AudioSetBuilder;
+import com.epam.audiospot.builder.Builder;
 import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.entity.AudioSet;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class AudioSetRepository extends AbstractRepository <AudioSet> {
@@ -27,7 +27,7 @@ public class AudioSetRepository extends AbstractRepository <AudioSet> {
 
     @Override
     public Map <String, Object> getFields(AudioSet audioSet) {
-        Map <String, Object> fields = new HashMap <>();
+        Map <String, Object> fields = new LinkedHashMap <>();
         fields.put(AudioSet.ID_LABEL, audioSet.getId());
         fields.put(AudioSet.TITLE_LABEL, audioSet.getTitle());
         fields.put(AudioSet.DESCRIPTION_LABEL, audioSet.getDescription());

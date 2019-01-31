@@ -5,7 +5,7 @@ import com.epam.audiospot.builder.Builder;
 import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.entity.AudioTrack;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class AudioRepository extends AbstractRepository <AudioTrack> {
@@ -27,11 +27,11 @@ public class AudioRepository extends AbstractRepository <AudioTrack> {
 
     @Override
     public Map <String, Object> getFields(AudioTrack track) {
-        Map <String, Object> fields = new HashMap <>();
+        Map <String, Object> fields = new LinkedHashMap <>();
         fields.put(AudioTrack.AUTHOR_ID_LABEL, track.getArtist().getId());
         fields.put(AudioTrack.ALBUM_ID_LABEL, track.getAlbumId());
         fields.put(AudioTrack.TITLE_LABEL, track.getTitle());
-        fields.put(AudioTrack.GENRE_LABEL, track.getGenre());
+        fields.put(AudioTrack.GENRE_LABEL, track.getGenre().getValue());
         fields.put(AudioTrack.PRICE_LABEL, track.getPrice());
         return fields;
     }

@@ -66,7 +66,7 @@ public enum CommandType {
         return permissions.contains(role);
     }
 
-    public boolean isAvailableWithoutAuthorization(){
+    public boolean isAvailableWithoutAuthorization() {
         return commandText.equals("login") || commandText.equals("register")
                 || commandText.equals("logout") || commandText.equals("home");
     }

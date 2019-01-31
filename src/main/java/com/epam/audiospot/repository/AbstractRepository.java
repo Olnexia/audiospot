@@ -6,7 +6,7 @@ import com.epam.audiospot.entity.Entity;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.repository.specification.Specification;
-import com.epam.audiospot.repository.utils.QueryBuilder;
+import com.epam.audiospot.repository.utils.StatementBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,7 +16,7 @@ import java.util.*;
 public abstract class AbstractRepository<T extends Entity> implements Repository <T> {
     private static final Logger logger = LogManager.getLogger(AbstractRepository.class);
     private ConnectionWrapper connection;
-    private QueryBuilder <T> queryBuilder = new QueryBuilder <>(getTableName());
+    private StatementBuilder statementBuilder = new StatementBuilder(getTableName());
 
     public AbstractRepository(ConnectionWrapper connection) {
         this.connection = connection;
@@ -24,9 +24,7 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
 
     private List <T> executeQuery(String query, List <Object> params) throws RepositoryException {
         try (PreparedStatement preparedStatement = connection.getPreparedStatement(query)) {
-            for (int i = 0; i < params.size(); i++) {
-                preparedStatement.setObject(i + 1, params.get(i));
-            }
+            setPreparedStatementParams(preparedStatement, params);
             logger.trace(preparedStatement);
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -75,8 +73,11 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
     @Override
     public void add(T object) throws RepositoryException {
         Map <String, Object> fields = getFields(object);
-        String insertQuery = queryBuilder.buildInsertQuery(fields);
+        String insertQuery = statementBuilder.buildInsertQuery(fields.entrySet());
+
         try (PreparedStatement preparedStatement = connection.getPreparedStatementGeneratedKeys(insertQuery)) {
+            setPreparedStatementParams(preparedStatement, new ArrayList <>(fields.values()));
+            logger.trace(preparedStatement);
             int affectedRows = preparedStatement.executeUpdate();
 
             if (affectedRows == 0) {
@@ -98,8 +99,10 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
     @Override
     public void update(T object) throws RepositoryException {
         Map <String, Object> fields = getFields(object);
-        String updateQuery = queryBuilder.buildUpdateQuery(object, fields);
+        String updateQuery = statementBuilder.buildUpdateQuery(object.getId(), fields);
         try (PreparedStatement preparedStatement = connection.getPreparedStatementGeneratedKeys(updateQuery)) {
+            setPreparedStatementParams(preparedStatement, new ArrayList <>(fields.values()));
+            logger.trace(preparedStatement);
             int affectedRows = preparedStatement.executeUpdate();
 
             if (affectedRows == 0) {
@@ -112,8 +115,9 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
 
     @Override
     public void remove(T object) throws RepositoryException {
-        String deleteQuery = queryBuilder.buildDeleteQuery(object);
+        String deleteQuery = statementBuilder.buildDeleteQuery(object.getId());
         try (PreparedStatement preparedStatement = connection.getPreparedStatementGeneratedKeys(deleteQuery)) {
+            logger.trace(preparedStatement);
             int affectedRows = preparedStatement.executeUpdate();
 
             if (affectedRows == 0) {
@@ -124,9 +128,17 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
         }
     }
 
+    private void setPreparedStatementParams(PreparedStatement statement, List <Object> params) throws SQLException {
+        for (int i = 0; i < params.size(); i++) {
+            statement.setObject(i + 1, params.get(i));
+        }
+    }
+
     public abstract Builder <T> getBuilder();
 
     public abstract String getTableName();
 
     public abstract Map <String, Object> getFields(T object);
+
+
 }

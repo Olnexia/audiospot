@@ -5,7 +5,7 @@ import com.epam.audiospot.builder.OrderedTrackBuilder;
 import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.entity.OrderedTrack;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class OrderedTrackRepository extends AbstractRepository <OrderedTrack> {
@@ -27,7 +27,7 @@ public class OrderedTrackRepository extends AbstractRepository <OrderedTrack> {
 
     @Override
     public Map <String, Object> getFields(OrderedTrack orderedTrack) {
-        Map <String, Object> fields = new HashMap <>();
+        Map <String, Object> fields = new LinkedHashMap <>();
         fields.put(OrderedTrack.ID_LABEL, orderedTrack.getId());
         fields.put(OrderedTrack.ORDER_ID_LABEL, orderedTrack.getOrderId());
         fields.put(OrderedTrack.AUDIOTRACK_LABEL, orderedTrack.getTrackId());

@@ -1,6 +1,6 @@
 package com.epam.audiospot.repository.specification;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class AudioTracksByAlbumIdSpecification implements Specification {
@@ -18,6 +18,6 @@ public class AudioTracksByAlbumIdSpecification implements Specification {
 
     @Override
     public List <Object> getParameters() {
-        return Arrays.asList(albumId);
+        return Collections.singletonList(albumId);
     }
 }

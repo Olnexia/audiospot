@@ -1,6 +1,6 @@
 package com.epam.audiospot.repository.specification;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class CommentsByTrackIdSpecification implements Specification {
@@ -18,6 +18,6 @@ public class CommentsByTrackIdSpecification implements Specification {
 
     @Override
     public List <Object> getParameters() {
-        return Arrays.asList(trackId);
+        return Collections.singletonList(trackId);
     }
 }

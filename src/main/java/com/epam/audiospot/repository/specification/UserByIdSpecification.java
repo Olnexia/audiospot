@@ -1,7 +1,7 @@
 package com.epam.audiospot.repository.specification;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class UserByIdSpecification implements Specification {
@@ -19,6 +19,6 @@ public class UserByIdSpecification implements Specification {
 
     @Override
     public List <Object> getParameters() {
-        return new ArrayList <Object>(Arrays.asList(userId));
+        return new ArrayList <Object>(Collections.singletonList(userId));
     }
 }

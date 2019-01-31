@@ -5,7 +5,7 @@ import com.epam.audiospot.builder.Builder;
 import com.epam.audiospot.connection.ConnectionWrapper;
 import com.epam.audiospot.entity.Artist;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class ArtistRepository extends AbstractRepository <Artist> {
@@ -27,7 +27,7 @@ public class ArtistRepository extends AbstractRepository <Artist> {
 
     @Override
     public Map <String, Object> getFields(Artist artist) {
-        Map <String, Object> fields = new HashMap <>();
+        Map <String, Object> fields = new LinkedHashMap <>();
         fields.put(Artist.ID_LABEL, artist.getId());
         fields.put(Artist.NAME_LABEL, artist.getName());
         fields.put(Artist.COUNTRY_LABEL, artist.getCountry());

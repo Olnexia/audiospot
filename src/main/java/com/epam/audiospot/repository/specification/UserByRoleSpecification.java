@@ -1,10 +1,9 @@
 package com.epam.audiospot.repository.specification;
 
 import com.epam.audiospot.entity.Role;
-import com.epam.audiospot.repository.specification.Specification;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class UserByRoleSpecification implements Specification {
@@ -22,6 +21,6 @@ public class UserByRoleSpecification implements Specification {
 
     @Override
     public List <Object> getParameters() {
-        return new ArrayList <Object>(Arrays.asList(role.getValue()));
+        return new ArrayList <Object>(Collections.singletonList(role.getValue()));
     }
 }
