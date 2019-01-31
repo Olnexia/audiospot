@@ -16,7 +16,8 @@ public class ConnectionPool {
     private static final int INITIAL_POOL_SIZE = 10;
     private static final AtomicBoolean initialized = new AtomicBoolean(false);
     private static final Lock instanceLock = new ReentrantLock();
-    private static final Lock connectionLock = new ReentrantLock();
+    private static final Lock getConnectionLock = new ReentrantLock();
+    private static final Lock releaseConnectionLock = new ReentrantLock();
     private static ConnectionPool instance = null;
 
     private final Semaphore semaphore = new Semaphore(INITIAL_POOL_SIZE);
@@ -50,20 +51,25 @@ public class ConnectionPool {
 
     public ConnectionWrapper getConnection() {
         try {
-            connectionLock.lock();
+            getConnectionLock.lock();
             semaphore.acquire();
             return pool.poll();
         } catch (InterruptedException e) {
             logger.error(e.getMessage(), e);
             throw new ConnectionPoolException(e.getMessage(), e);
         } finally {
-            connectionLock.unlock();
+            getConnectionLock.unlock();
         }
     }
 
     public void releaseConnection(ConnectionWrapper connection) {
-        pool.add(connection);
-        semaphore.release();
+        try {
+            releaseConnectionLock.lock();
+            pool.add(connection);
+            semaphore.release();
+        } finally {
+            releaseConnectionLock.unlock();
+        }
     }
 
     public void closeConnections() {

@@ -31,7 +31,7 @@ public class PaginationTag extends SimpleTagSupport {
 
         if (pageParameter == null) {
             page = 1;
-            if (!(items.size() <= perPage)) {
+            if (items.size() > perPage) {
                 String target = buildRedirect(requestParameters, page);
                 response.sendRedirect(target);
             }
