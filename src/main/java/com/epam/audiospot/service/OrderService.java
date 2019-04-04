@@ -62,7 +62,7 @@ public class OrderService {
 
     private void orderAvailableTracks(Long userId, Specification specification) throws ServiceException {
         AudioTrackService trackService = new AudioTrackService();
-        List <AudioTrack> availableTracks = trackService.findAvailableTracks(userId);
+        List <AudioTrack> availableTracks = trackService.findAvailableTracks(userId,null);
         try (RepositoryFactory <AudioTrack> factory = new AudioRepositoryFactory()) {
             Repository <AudioTrack> repository = factory.createRepository();
             List <AudioTrack> tracks = repository.query(specification);

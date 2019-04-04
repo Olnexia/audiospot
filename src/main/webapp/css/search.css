@@ -1,0 +1,25 @@
+.searchContainer {
+    display: inline-flex;
+    width: 25rem;
+    height: 2rem;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 1rem;
+    overflow: hidden;
+}
+
+.searchBox {
+    border: 0;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    flex: 1;
+}
+
+.searchButton {
+    cursor: pointer;
+    background: #538AC5;
+    border: 0;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0;
+}

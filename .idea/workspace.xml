@@ -1,0 +1,1822 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="AudioSpot:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2962fdb9-6661-4f0f-8049-f7b1ae298cf1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/search.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/changeClientStatus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/trackSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/common/ShowTracksCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/common/ShowTracksCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/service/AudioTrackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/service/AudioTrackService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pagecontent_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pagecontent_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pagecontent_ru.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pagecontent_ru.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/clients.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/clients.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/tracks.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/tracks.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/header-fixed.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/header-fixed.css" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="audiospot: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="audiospot: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="audiotrack: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ErrorTreeViewConfiguration">
+    <option name="autoscrollToSource" value="true" />
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/tracks.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/trackSearch.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="26" column="13" selection-start-line="16" selection-start-column="11" selection-end-line="26" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/common/ShowTracksCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/admin/ChangeClientStatusCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/Redirect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/changeClientStatus.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/comments.jsp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/loginRegisterSwitch.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/css/login.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/clients.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="28" column="17" selection-start-line="26" selection-start-column="8" selection-end-line="28" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="jsf" />
+        <option value="Jsp File" />
+        <option value="Class" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>getConnection</find>
+      <find>hidden</find>
+      <find>hashSet</find>
+      <find>get</find>
+      <find>null</find>
+      <find>Entry</find>
+      <find>LinkedList</find>
+      <find>order_id</find>
+      <find>set</find>
+      <find>favicon</find>
+      <find>ordered_tracks</find>
+      <find>discount</find>
+      <find>hashcode</find>
+      <find>HashMap</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Olnexia &lt;olnexia@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Calculator" />
+      </map>
+    </option>
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/connection/ConnectionPool.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/filter/RoleFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/creator/CommandType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/utils/QueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/connection/ConnectionWrapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/statement/PreparedStatementWrapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/AudioSetRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/CommentRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/OrderedTrackRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/OrderRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/TrackAtAudioSetRepository.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/epam/audiospot/repository/QueryBuilderTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/utils/StatementBuilder.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/epam/audiospot/repository/StatementBuilderTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AlbumByIdSpecification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/ArtistByIdSpecification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/ArtistByNameSpecification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AudioSetByIdSpecification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AudioTrackByOrderIdSpecification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AudioTracksByAlbumIdSpecification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AudioTracksByAudioSetIdSpecification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AudioTracksByUserIdSpecification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AvailableTracksByAudioSetIdSpecification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/CommentsByTrackIdSpecification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/UserByIdSpecification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/UserByLoginSpecification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/UserByRoleSpecification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/AbstractRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/AlbumRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/ArtistRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/AudioRepository.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/controller/Controller.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/TrackSearch.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/playlist.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/common/ShowTracksCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AvailableTracksByUserIdSpecification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/service/OrderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/service/AudioTrackService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/Search.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/search.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/pagecontent_en.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/pagecontent_ru.properties" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/header-fixed.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/payOrder.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/admin/ChangeClientStatusCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/clients.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/tracks.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/trackSearch.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/changeClientStatus.js" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="AudioSpot Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="AudioSpot Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="AudioSpot Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Invalid elementsCSS</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Numeric issuesJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>BigDecimalMethodWithoutRoundingCalled</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="builder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="customtag" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+              <item name="specification" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="modal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/Some Code/Java/Epam courses/AudioSpot/src/main/webapp/WEB-INF/pages/login.jsp&#10;Docker&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552901593213" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last.edited.regexp" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.epam.audiospot" />
+      <recent name="com.epam.audiospot.connection" />
+      <recent name="com.epam.audiospot.command.factory" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Some Code\Java\Epam courses\AudioSpot\src\main\java\com\epam\audiospot\command\common" />
+      <recent name="E:\Some Code\Java\Epam courses\AudioSpot\src\main\webapp\images\icons" />
+      <recent name="E:\Some Code\Java\Epam courses\AudioSpot\src\main\webapp\js\modal" />
+      <recent name="E:\Some Code\Java\Epam courses\AudioSpot\src\main\webapp" />
+      <recent name="E:\Some Code\Java\Epam courses\AudioSpot\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat">
+    <configuration name="ConnectionFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AudioSpot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.audiospot.connection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.epam.audiospot.connection" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.audiospot.connection.ConnectionFactoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryBuilderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AudioSpot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.audiospot.repository.utils.StatementBuilder" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.epam.audiospot.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.audiospot.repository.QueryBuilderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryBuilderTest.shouldBuildInsertQuery" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AudioSpot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.audiospot.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.epam.audiospot.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.audiospot.repository.QueryBuilderTest" />
+      <option name="METHOD_NAME" value="shouldBuildInsertQuery" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StatementBuilderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AudioSpot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.audiospot.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.epam.audiospot.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.audiospot.repository.StatementBuilderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.shouldReturnListOfUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AudioSpot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.audiospot.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.epam.audiospot.service" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.audiospot.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="shouldReturnListOfUsers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.13" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="AudioSpot:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_AudioSpot" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="56428" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean" />
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="AudioSpot:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.13" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_AudioSpot" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="56428" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.ConnectionFactoryTest" />
+      <item itemvalue="JUnit.UserServiceTest.shouldReturnListOfUsers" />
+      <item itemvalue="JUnit.QueryBuilderTest" />
+      <item itemvalue="JUnit.QueryBuilderTest.shouldBuildInsertQuery" />
+      <item itemvalue="JUnit.StatementBuilderTest" />
+      <item itemvalue="Tomcat Server.Tomcat" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.StatementBuilderTest" />
+        <item itemvalue="JUnit.QueryBuilderTest" />
+        <item itemvalue="JUnit.QueryBuilderTest.shouldBuildInsertQuery" />
+        <item itemvalue="JUnit.UserServiceTest.shouldReturnListOfUsers" />
+        <item itemvalue="JUnit.ConnectionFactoryTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2962fdb9-6661-4f0f-8049-f7b1ae298cf1" name="Default Changelist" comment="" />
+      <created>1543579286652</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1543579286652</updated>
+      <workItem from="1543579288321" duration="3064000" />
+      <workItem from="1543598817356" duration="1825000" />
+      <workItem from="1543787795600" duration="41000" />
+      <workItem from="1543934356556" duration="3432000" />
+      <workItem from="1543939870559" duration="12610000" />
+      <workItem from="1543995828767" duration="1400000" />
+      <workItem from="1544023105787" duration="8671000" />
+      <workItem from="1544097661252" duration="1206000" />
+      <workItem from="1544114179831" duration="9701000" />
+      <workItem from="1544161186369" duration="10471000" />
+      <workItem from="1544195845461" duration="319000" />
+      <workItem from="1544227030793" duration="67000" />
+      <workItem from="1544474209331" duration="3533000" />
+      <workItem from="1544534437785" duration="24752000" />
+      <workItem from="1544566091692" duration="2491000" />
+      <workItem from="1544600753480" duration="2638000" />
+      <workItem from="1544627746767" duration="1384000" />
+      <workItem from="1544643160142" duration="12500000" />
+      <workItem from="1544657930125" duration="1228000" />
+      <workItem from="1544737319632" duration="3888000" />
+      <workItem from="1544743556496" duration="8931000" />
+      <workItem from="1544766976466" duration="5192000" />
+      <workItem from="1544784119093" duration="9391000" />
+      <workItem from="1544800835145" duration="1499000" />
+      <workItem from="1544946031632" duration="69000" />
+      <workItem from="1545202598797" duration="12814000" />
+      <workItem from="1545248616904" duration="9668000" />
+      <workItem from="1545327306579" duration="21832000" />
+      <workItem from="1545377177084" duration="6893000" />
+      <workItem from="1545395996765" duration="1380000" />
+      <workItem from="1545407119344" duration="1186000" />
+      <workItem from="1545421589715" duration="33523000" />
+      <workItem from="1545494014984" duration="20378000" />
+      <workItem from="1545549830742" duration="39179000" />
+      <workItem from="1545667158838" duration="23736000" />
+      <workItem from="1545717501741" duration="25170000" />
+      <workItem from="1545839923742" duration="3873000" />
+      <workItem from="1545981147238" duration="3711000" />
+      <workItem from="1546084221211" duration="5323000" />
+      <workItem from="1546100137679" duration="17465000" />
+      <workItem from="1546156119224" duration="23456000" />
+      <workItem from="1546241034010" duration="18645000" />
+      <workItem from="1546369187784" duration="11389000" />
+      <workItem from="1546528536196" duration="25277000" />
+      <workItem from="1546625617345" duration="20689000" />
+      <workItem from="1546670428981" duration="17726000" />
+      <workItem from="1546728667911" duration="6000" />
+      <workItem from="1546811530753" duration="13058000" />
+      <workItem from="1546846583311" duration="13119000" />
+      <workItem from="1546943852955" duration="37228000" />
+      <workItem from="1547082950458" duration="352000" />
+      <workItem from="1547083382543" duration="2106000" />
+      <workItem from="1547299531134" duration="19726000" />
+      <workItem from="1547366817857" duration="35688000" />
+      <workItem from="1547449309283" duration="15039000" />
+      <workItem from="1547534947684" duration="23344000" />
+      <workItem from="1547714979989" duration="39822000" />
+      <workItem from="1547792707243" duration="36748000" />
+      <workItem from="1547879290266" duration="32024000" />
+      <workItem from="1547965513392" duration="37658000" />
+      <workItem from="1548054486380" duration="8122000" />
+      <workItem from="1548081786234" duration="1958000" />
+      <workItem from="1548137924582" duration="36570000" />
+      <workItem from="1548222862631" duration="28034000" />
+      <workItem from="1548311461392" duration="12242000" />
+      <workItem from="1548344006509" duration="1733000" />
+      <workItem from="1548929658164" duration="18900000" />
+      <workItem from="1549400591464" duration="145000" />
+      <workItem from="1549401241821" duration="156000" />
+      <workItem from="1549402116096" duration="764000" />
+      <workItem from="1549403142026" duration="594000" />
+      <workItem from="1550123400100" duration="1192000" />
+      <workItem from="1551615500830" duration="2612000" />
+      <workItem from="1551676188796" duration="135000" />
+      <workItem from="1552060295303" duration="10480000" />
+      <workItem from="1552204855079" duration="9100000" />
+      <workItem from="1552281128993" duration="108000" />
+      <workItem from="1552293681466" duration="2575000" />
+      <workItem from="1552337969994" duration="6000" />
+      <workItem from="1552415228559" duration="38000" />
+      <workItem from="1552886630165" duration="9538000" />
+      <workItem from="1553417398048" duration="4080000" />
+      <workItem from="1553426300205" duration="344000" />
+      <workItem from="1553502803045" duration="2448000" />
+      <workItem from="1553540279017" duration="100000" />
+    </task>
+    <task id="LOCAL-00007" summary="Modified model classes.">
+      <created>1544487146122</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1544487146122</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Implemented query methods ( not tested)">
+      <created>1544569874345</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1544569874346</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Implemented login with bd connection (FINALLY) and clients page">
+      <created>1544659143226</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1544659143236</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added RepositoryCreator class; changed login page design; minor refactoring.">
+      <created>1545261383577</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1545261383577</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Finished save insert implementation; audio now store author entity.">
+      <created>1545490974795</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1545490974795</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Implemented update method for abstract repository.">
+      <created>1545516317792</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1545516317792</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Implemented mock payment">
+      <created>1545589303921</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1545589303937</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Deleted playListId from user. Now playlist contains from paid tracks.">
+      <created>1545701457454</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1545701457601</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Implemented enum for pages paths; changed payment; minor refactoring.">
+      <created>1546105596820</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1546105596820</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Passwords now hashing to MD5.">
+      <created>1546107547596</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1546107547596</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Worked on the admin's design; add changeClientStatus command; deleted account field from table and added active field.">
+      <created>1546181165127</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1546181165127</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Worked on ordering page.">
+      <created>1546250737698</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1546250737698</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Worked on payment page.">
+      <created>1546258470863</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1546258470863</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Worked on playlist page; implemented blocking.">
+      <created>1546263708113</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1546263708113</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Added some logging and changed exception system.">
+      <created>1546380123610</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1546380123610</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Implemented Post/Redirect/Get pattern vs F5.">
+      <created>1546538569751</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1546538569751</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Added locale filter.">
+      <created>1546644330271</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1546644330271</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Added modal window for comments; deleted .idea from repo.">
+      <created>1546650284130</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1546650284130</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Implemented comments; Fixed locale;minor refactoring.">
+      <created>1546688383071</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1546688383071</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Added base implementation of albums(adding and view); fixed css.">
+      <created>1546859599093</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1546859599093</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Add album ordering and album view page design; code refactoring.">
+      <created>1546970381750</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1546970381750</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Add comments showing page; add new button style">
+      <created>1546989091911</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1546989091911</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Add serialVersionUID and override hashCode and Equals for all currently used entity classes.">
+      <created>1547085138724</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1547085138724</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Add pagination to tracks page with custom; refactor code.">
+      <created>1547395851431</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1547395851431</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Add separate class for building queries.">
+      <created>1547422126353</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1547422126353</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Add QueryBuilder test.">
+      <created>1547425147148</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1547425147148</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Implement discount changing.">
+      <created>1547455002097</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1547455002097</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Implement registration; change principle of passing messages to login/register form.">
+      <created>1547462367700</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1547462367700</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Add client-side validation.">
+      <created>1547546194065</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1547546194065</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Fix view; add logo.">
+      <created>1547548153476</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1547548153476</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Refactor code: implement Repository factory according to factory method pattern with usage of abstract class.">
+      <created>1547722426120</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1547722426120</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Implement error page; fix locale saving during logout;">
+      <created>1547736598632</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1547736598632</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Implement base version of audiosets.">
+      <created>1547762601933</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1547762601933</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Refactor connection creator and pool.">
+      <created>1547806201762</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1547806201762</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Delete Command execution exception and refactor all commands.">
+      <created>1547817631023</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1547817631023</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Fix empty order view.">
+      <created>1547822206064</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1547822206064</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Implement connection closure at servlet destroying time;&#10;refactor role filter and change principle of permissions storage;&#10;add error pages for 500 and 404; minor view changes.">
+      <created>1547830212765</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1547830212765</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Redesign custom pagination tag and apply it to all pages with lists.">
+      <created>1547899446789</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1547899446789</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Fix logging and exceptions;">
+      <created>1547909349970</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1547909349970</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Extend audioset functionality; fix view; refactor code; add documentation to main interfaces.">
+      <created>1548003836815</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1548003836815</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Add database script; Add missing images; refactor code.">
+      <created>1548069875571</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1548069875571</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Add server-side validation; fix patterns; add new custom tag to escape quotes in js.">
+      <created>1548164102178</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1548164102178</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Fix logout command and refactor abstract repository.">
+      <created>1548188383434</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1548188383434</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Fix view and commands;">
+      <created>1548255696105</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1548255696105</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Refactor price calculator; Add test.">
+      <created>1548322146510</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1548322146510</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Refactor all source files.">
+      <created>1548931013429</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1548931013429</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Synchronize connection release.">
+      <created>1548932447098</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1548932447098</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Refactor role filter.">
+      <created>1548942916633</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1548942916633</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Change statement building principle for insert/update/delete with LikedHashMap and PreparedStatement features.">
+      <created>1548954054585</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1548954054585</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="QueryBuilderTest - 2019.01.31 at 17h 01m 05s.xml">
+      <configuration name="QueryBuilderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryBuilderTest_shouldBuildInsertQuery - 2019.01.31 at 17h 33m 28s.xml">
+      <configuration name="QueryBuilderTest.shouldBuildInsertQuery" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryBuilderTest - 2019.01.31 at 17h 37m 25s.xml">
+      <configuration name="QueryBuilderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryBuilderTest - 2019.01.31 at 17h 38m 05s.xml">
+      <configuration name="QueryBuilderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StatementBuilderTest - 2019.01.31 at 19h 08m 50s.xml">
+      <configuration name="StatementBuilderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StatementBuilderTest - 2019.01.31 at 19h 09m 33s.xml">
+      <configuration name="StatementBuilderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StatementBuilderTest - 2019.01.31 at 19h 10m 22s.xml">
+      <configuration name="StatementBuilderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StatementBuilderTest - 2019.01.31 at 19h 12m 20s.xml">
+      <configuration name="StatementBuilderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StatementBuilderTest - 2019.01.31 at 19h 24m 50s.xml">
+      <configuration name="StatementBuilderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StatementBuilderTest - 2019.01.31 at 20h 02m 05s.xml">
+      <configuration name="StatementBuilderTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="931508000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" weight="0.3295082" />
+      <window_info anchor="bottom" id="Terminal" order="6" weight="0.30441898" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5030257" side_tool="true" weight="0.2967213" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49621785" weight="0.26022914" />
+      <window_info anchor="bottom" id="Java Enterprise" order="9" weight="0.3289689" />
+      <window_info anchor="bottom" id="Database Changes" order="10" weight="0.3295082" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3295082" />
+      <window_info anchor="bottom" id="Application Servers" order="12" weight="0.25531915" />
+      <window_info anchor="bottom" id="Database Console" order="13" weight="0.3295082" />
+      <window_info anchor="bottom" id="Run" order="14" sideWeight="0.4969743" weight="0.2782324" />
+      <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
+      <window_info anchor="bottom" id="SonarLint" order="16" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32980332" />
+      <window_info anchor="right" id="Database" order="6" weight="0.26096824" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Maven" order="9" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Add separate class for building queries." />
+    <MESSAGE value="Add QueryBuilder test." />
+    <MESSAGE value="Implement discount changing." />
+    <MESSAGE value="Implement registration; change principle of passing messages to login/register form." />
+    <MESSAGE value="Add client-side validation." />
+    <MESSAGE value="Fix view; add logo." />
+    <MESSAGE value="Refactor code: implement Repository factory according to factory method pattern with usage of abstract class." />
+    <MESSAGE value="Implement error page; fix locale saving during logout;" />
+    <MESSAGE value="Implement base version of audiosets." />
+    <MESSAGE value="Refactor connection creator and pool." />
+    <MESSAGE value="Delete Command execution exception and refactor all commands." />
+    <MESSAGE value="Fix empty order view." />
+    <MESSAGE value="Implement connection closure at servlet destroying time;&#10;refactor role filter and change principle of permissions storage;&#10;add error pages for 500 and 404; minor view changes." />
+    <MESSAGE value="Redesign custom pagination tag and apply it to all pages with lists." />
+    <MESSAGE value="Fix logging and exceptions;" />
+    <MESSAGE value="Extend audioset functionality; fix view; refactor code; add documentation to main interfaces." />
+    <MESSAGE value="Add database script; Add missing images; refactor code." />
+    <MESSAGE value="Add server-side validation; fix patterns; add new custom tag to escape quotes in js." />
+    <MESSAGE value="Fix logout command and refactor abstract repository." />
+    <MESSAGE value="Fix view and commands;" />
+    <MESSAGE value="Refactor price calculator; Add test." />
+    <MESSAGE value="Refactor all source files." />
+    <MESSAGE value="Synchronize connection release." />
+    <MESSAGE value="Refactor role filter." />
+    <MESSAGE value="Change statement building principle for insert/update/delete with LikedHashMap and PreparedStatement features." />
+    <option name="LAST_COMMIT_MESSAGE" value="Change statement building principle for insert/update/delete with LikedHashMap and PreparedStatement features." />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="preparedStatement " language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>preparedStatement</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/ArtistRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/AudioSetRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/ArtistByIdSpecification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AudioSetByIdSpecification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/complex/ComplexValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/utils/StatementBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/service/utils/PriceCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="12" column="74" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/AlbumRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://39a0403b-5d6d-4154-a562-d8d78694eefa/schema/audiospot/table/audiotrack">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addTrack.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="954">
+          <caret line="53" column="28" selection-start-line="51" selection-start-column="20" selection-end-line="53" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addAlbum.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/CommandResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/AbstractRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2178">
+          <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/audiospot/repository/StatementBuilderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/OrderedTrackRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/OrderRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/TrackAtAudioSetRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/modal/albumTrack.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/AudioRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#662#663#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/customTags/pageHelper.tld">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/builder/AudioBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AvailableTracksByUserIdSpecification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding>
+            <element signature="e#614#615#0" expanded="true" />
+            <element signature="e#650#651#0" expanded="true" />
+            <element signature="e#693#694#0" expanded="true" />
+            <element signature="e#741#742#0" expanded="true" />
+            <element signature="e#799#800#0" expanded="true" />
+            <element signature="e#855#856#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/service/AudioTrackService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="75" column="45" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/customtag/PaginationTag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/albums.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-486" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/service/OrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="69" column="51" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/table.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1749" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/block.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-741" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/view.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-183" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/search.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pagecontent_ru.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="74" column="64" selection-start-line="74" selection-start-column="64" selection-end-line="74" selection-end-column="64" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pagecontent_en.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="74" selection-start-line="74" selection-end-line="74" selection-end-column="25" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/jquery.js" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1908">
+          <caret line="106" column="32" selection-start-line="106" selection-start-column="32" selection-end-line="106" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/main.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/modal.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/header-fixed.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/form.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/payOrder.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/playlist.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="59" column="55" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/tracks.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/trackSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="13" selection-start-line="16" selection-start-column="11" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/common/ShowTracksCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/admin/ChangeClientStatusCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/Redirect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/comments.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/loginRegisterSwitch.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/login.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/clients.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="17" selection-start-line="26" selection-start-column="8" selection-end-line="28" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/changeClientStatus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>AudioSpot:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>AudioSpot</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: javax.servlet:javax.servlet-api:3.0.1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

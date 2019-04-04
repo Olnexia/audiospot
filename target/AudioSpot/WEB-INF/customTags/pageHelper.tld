@@ -1,0 +1,33 @@
+<taglib>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>2.0</jsp-version>
+    <short-name>Page helper</short-name>
+    <tag>
+        <name>pagination</name>
+        <tag-class>com.epam.audiospot.customtag.PaginationTag</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>items</name>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>var</name>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>perPage</name>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>quoteEscape</name>
+        <tag-class>com.epam.audiospot.customtag.QuoteEscapeTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>content</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>

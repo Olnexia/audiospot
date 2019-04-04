@@ -9,6 +9,7 @@ import com.epam.audiospot.repository.factory.RepositoryFactory;
 import com.epam.audiospot.repository.specification.*;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,11 +58,25 @@ public class AudioTrackService {
         }
     }
 
-    public List <AudioTrack> findAvailableTracks(Long userId) throws ServiceException {
+    public List <AudioTrack> findAvailableTracks(Long userId,String searchRequest) throws ServiceException {
         AvailableTracksByUserIdSpecification specification = new AvailableTracksByUserIdSpecification(userId);
         try (RepositoryFactory <AudioTrack> factory = new AudioRepositoryFactory()) {
             Repository <AudioTrack> repository = factory.createRepository();
-            return repository.query(specification);
+            List<AudioTrack> allTracks = repository.query(specification);
+            if(searchRequest==null){
+                return allTracks;
+            }
+            List<AudioTrack> matchedTracks = new ArrayList <>();
+            for(AudioTrack track:allTracks){
+                String title = track.getTitle().toLowerCase();
+                String artistName = track.getArtist().getName().toLowerCase();
+                String lowerCaseRequest = searchRequest.toLowerCase();
+                if(title.contains(lowerCaseRequest)
+                        ||artistName.contains(lowerCaseRequest)){
+                    matchedTracks.add(track);
+                }
+            }
+            return matchedTracks;
         } catch (RepositoryException e) {
             throw new ServiceException(e.getMessage(), e);
         }
