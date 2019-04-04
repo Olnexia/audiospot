@@ -4,8 +4,8 @@ import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
 import com.epam.audiospot.command.Redirect;
 import com.epam.audiospot.command.utils.QuoteEscape;
-import com.epam.audiospot.entity.Comment;
-import com.epam.audiospot.entity.User;
+import by.belstu.losik.audiospot.entity.Comment;
+import by.belstu.losik.audiospot.entity.User;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.CommentService;
 

@@ -1,7 +1,7 @@
 package com.epam.audiospot.builder;
 
-import com.epam.audiospot.entity.Album;
-import com.epam.audiospot.entity.Artist;
+import by.belstu.losik.audiospot.entity.Album;
+import by.belstu.losik.audiospot.entity.Artist;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.ArtistService;
 

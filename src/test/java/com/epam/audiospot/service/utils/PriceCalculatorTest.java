@@ -1,8 +1,8 @@
 package com.epam.audiospot.service.utils;
 
-import com.epam.audiospot.entity.Artist;
-import com.epam.audiospot.entity.AudioTrack;
-import com.epam.audiospot.entity.Genre;
+import by.belstu.losik.audiospot.entity.Artist;
+import by.belstu.losik.audiospot.entity.AudioTrack;
+import by.belstu.losik.audiospot.entity.Genre;
 import org.junit.Assert;
 import org.junit.Test;
 

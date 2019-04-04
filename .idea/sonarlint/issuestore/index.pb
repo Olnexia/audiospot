@@ -35,3 +35,9 @@ Z
 *src/main/webapp/WEB-INF/pages/comments.jsp,f\3\f3bfb4dc68c3777b3e0d0dc89775937fda94387a
 Y
 )src/main/webapp/WEB-INF/pages/clients.jsp,2\7\27ac45283ce4a2595e2f8a7f151791cb67b8b8c0
+b
+2src/main/java/com/epam/audiospot/entity/Album.java,a\1\a1f9c6cf55161851d206083a5a3ea93e95eac285
+H
+AudioSpotService/pom.xml,c\8\c89f7b3dce5ba4be06f27a51cbbbd267404b437f
+F
+AudioSpotModel/pom.xml,c\5\c5906f91b9c5bba922190cdc51d6f19c1c374c1a

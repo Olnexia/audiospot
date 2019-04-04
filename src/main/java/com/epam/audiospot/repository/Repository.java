@@ -1,6 +1,6 @@
 package com.epam.audiospot.repository;
 
-import com.epam.audiospot.entity.Entity;
+import by.belstu.losik.audiospot.entity.Entity;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.repository.specification.Specification;
 

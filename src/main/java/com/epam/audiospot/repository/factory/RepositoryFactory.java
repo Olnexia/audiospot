@@ -2,7 +2,7 @@ package com.epam.audiospot.repository.factory;
 
 import com.epam.audiospot.connection.ConnectionPool;
 import com.epam.audiospot.connection.ConnectionWrapper;
-import com.epam.audiospot.entity.Entity;
+import by.belstu.losik.audiospot.entity.Entity;
 import com.epam.audiospot.repository.*;
 
 public abstract class RepositoryFactory<T extends Entity> implements AutoCloseable {

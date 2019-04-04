@@ -1,6 +1,6 @@
 package com.epam.audiospot.builder;
 
-import com.epam.audiospot.entity.AudioSet;
+import by.belstu.losik.audiospot.entity.AudioSet;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -3,8 +3,8 @@ package com.epam.audiospot.command.client;
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
 import com.epam.audiospot.command.Forward;
-import com.epam.audiospot.entity.AudioTrack;
-import com.epam.audiospot.entity.User;
+import by.belstu.losik.audiospot.entity.AudioTrack;
+import by.belstu.losik.audiospot.entity.User;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.AudioTrackService;
 

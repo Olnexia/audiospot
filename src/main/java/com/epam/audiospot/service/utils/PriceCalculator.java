@@ -1,6 +1,6 @@
 package com.epam.audiospot.service.utils;
 
-import com.epam.audiospot.entity.AudioTrack;
+import by.belstu.losik.audiospot.entity.AudioTrack;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

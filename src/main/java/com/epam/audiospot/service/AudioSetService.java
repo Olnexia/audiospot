@@ -1,7 +1,7 @@
 package com.epam.audiospot.service;
 
-import com.epam.audiospot.entity.AudioSet;
-import com.epam.audiospot.entity.TrackAtAudioSet;
+import by.belstu.losik.audiospot.entity.AudioSet;
+import by.belstu.losik.audiospot.entity.TrackAtAudioSet;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.repository.Repository;

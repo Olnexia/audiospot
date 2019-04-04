@@ -2,9 +2,8 @@ package com.epam.audiospot.command.client;
 
 import com.epam.audiospot.command.*;
 import com.epam.audiospot.command.utils.PaymentVerifier;
-import com.epam.audiospot.service.utils.PriceCalculator;
-import com.epam.audiospot.entity.Order;
-import com.epam.audiospot.entity.User;
+import by.belstu.losik.audiospot.entity.Order;
+import by.belstu.losik.audiospot.entity.User;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.OrderService;
 import com.epam.audiospot.validator.complex.PaymentComplexValidator;

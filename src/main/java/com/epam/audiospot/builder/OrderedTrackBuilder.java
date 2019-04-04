@@ -1,6 +1,6 @@
 package com.epam.audiospot.builder;
 
-import com.epam.audiospot.entity.OrderedTrack;
+import by.belstu.losik.audiospot.entity.OrderedTrack;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

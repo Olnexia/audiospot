@@ -1,6 +1,6 @@
 package com.epam.audiospot.repository.specification;
 
-import com.epam.audiospot.entity.Role;
+import by.belstu.losik.audiospot.entity.Role;
 
 import java.util.ArrayList;
 import java.util.Collections;

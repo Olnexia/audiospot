@@ -1,6 +1,6 @@
 package com.epam.audiospot.repository.factory;
 
-import com.epam.audiospot.entity.Comment;
+import by.belstu.losik.audiospot.entity.Comment;
 import com.epam.audiospot.repository.CommentRepository;
 import com.epam.audiospot.repository.Repository;
 

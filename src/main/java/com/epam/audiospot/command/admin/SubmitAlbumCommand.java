@@ -5,7 +5,7 @@ import com.epam.audiospot.command.CommandResult;
 import com.epam.audiospot.command.Forward;
 import com.epam.audiospot.command.Redirect;
 import com.epam.audiospot.command.utils.QuoteEscape;
-import com.epam.audiospot.entity.Album;
+import by.belstu.losik.audiospot.entity.Album;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.AlbumService;
 import com.epam.audiospot.validator.complex.AlbumComplexValidator;

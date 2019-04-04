@@ -2,8 +2,8 @@ package com.epam.audiospot.filter;
 
 import com.epam.audiospot.command.Forward;
 import com.epam.audiospot.command.creator.CommandType;
-import com.epam.audiospot.entity.Role;
-import com.epam.audiospot.entity.User;
+import by.belstu.losik.audiospot.entity.Role;
+import by.belstu.losik.audiospot.entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

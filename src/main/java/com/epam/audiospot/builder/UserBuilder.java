@@ -1,7 +1,7 @@
 package com.epam.audiospot.builder;
 
-import com.epam.audiospot.entity.Role;
-import com.epam.audiospot.entity.User;
+import by.belstu.losik.audiospot.entity.Role;
+import by.belstu.losik.audiospot.entity.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

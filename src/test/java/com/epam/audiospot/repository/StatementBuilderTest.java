@@ -1,6 +1,6 @@
 package com.epam.audiospot.repository;
 
-import com.epam.audiospot.entity.*;
+import by.belstu.losik.audiospot.entity.*;
 import com.epam.audiospot.repository.utils.StatementBuilder;
 import org.junit.Assert;
 import org.junit.Test;

@@ -3,7 +3,7 @@ package com.epam.audiospot.repository;
 import com.epam.audiospot.builder.Builder;
 import com.epam.audiospot.builder.UserBuilder;
 import com.epam.audiospot.connection.ConnectionWrapper;
-import com.epam.audiospot.entity.User;
+import by.belstu.losik.audiospot.entity.User;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

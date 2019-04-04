@@ -1,9 +1,9 @@
 package com.epam.audiospot.service;
 
 import com.epam.audiospot.service.utils.PriceCalculator;
-import com.epam.audiospot.entity.AudioTrack;
-import com.epam.audiospot.entity.Order;
-import com.epam.audiospot.entity.OrderedTrack;
+import by.belstu.losik.audiospot.entity.AudioTrack;
+import by.belstu.losik.audiospot.entity.Order;
+import by.belstu.losik.audiospot.entity.OrderedTrack;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.repository.Repository;

@@ -1,6 +1,6 @@
 package com.epam.audiospot.repository.factory;
 
-import com.epam.audiospot.entity.OrderedTrack;
+import by.belstu.losik.audiospot.entity.OrderedTrack;
 import com.epam.audiospot.repository.OrderedTrackRepository;
 import com.epam.audiospot.repository.Repository;
 

@@ -1,6 +1,6 @@
 package com.epam.audiospot.repository.factory;
 
-import com.epam.audiospot.entity.Artist;
+import by.belstu.losik.audiospot.entity.Artist;
 import com.epam.audiospot.repository.ArtistRepository;
 import com.epam.audiospot.repository.Repository;
 

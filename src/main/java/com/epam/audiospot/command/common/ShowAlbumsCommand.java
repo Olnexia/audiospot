@@ -3,7 +3,7 @@ package com.epam.audiospot.command.common;
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
 import com.epam.audiospot.command.Forward;
-import com.epam.audiospot.entity.Album;
+import by.belstu.losik.audiospot.entity.Album;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.service.AlbumService;
 

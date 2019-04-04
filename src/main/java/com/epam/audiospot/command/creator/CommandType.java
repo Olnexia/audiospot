@@ -4,7 +4,7 @@ import com.epam.audiospot.command.*;
 import com.epam.audiospot.command.admin.*;
 import com.epam.audiospot.command.client.*;
 import com.epam.audiospot.command.common.*;
-import com.epam.audiospot.entity.Role;
+import by.belstu.losik.audiospot.entity.Role;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

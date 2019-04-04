@@ -1,4 +1,4 @@
-package com.epam.audiospot.entity;
+package by.belstu.losik.audiospot.entity;
 
 public enum Role {
     CLIENT("client"),
@@ -13,5 +13,4 @@ public enum Role {
     public String getValue() {
         return value;
     }
-
 }

@@ -1,6 +1,6 @@
 package com.epam.audiospot.builder;
 
-import com.epam.audiospot.entity.Order;
+import by.belstu.losik.audiospot.entity.Order;
 
 import java.sql.Date;
 import java.sql.ResultSet;

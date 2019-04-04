@@ -2,7 +2,7 @@ package com.epam.audiospot.command.common;
 
 import com.epam.audiospot.command.Command;
 import com.epam.audiospot.command.CommandResult;
-import com.epam.audiospot.entity.User;
+import by.belstu.losik.audiospot.entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

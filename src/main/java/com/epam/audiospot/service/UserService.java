@@ -1,7 +1,7 @@
 package com.epam.audiospot.service;
 
-import com.epam.audiospot.entity.Role;
-import com.epam.audiospot.entity.User;
+import by.belstu.losik.audiospot.entity.Role;
+import by.belstu.losik.audiospot.entity.User;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.repository.*;

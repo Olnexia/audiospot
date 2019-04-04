@@ -2,7 +2,7 @@ package com.epam.audiospot.repository;
 
 import com.epam.audiospot.builder.Builder;
 import com.epam.audiospot.connection.ConnectionWrapper;
-import com.epam.audiospot.entity.Entity;
+import by.belstu.losik.audiospot.entity.Entity;
 import com.epam.audiospot.exception.RepositoryException;
 import com.epam.audiospot.exception.ServiceException;
 import com.epam.audiospot.repository.specification.Specification;

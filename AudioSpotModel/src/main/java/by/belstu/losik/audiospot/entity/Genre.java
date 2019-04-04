@@ -1,4 +1,4 @@
-package com.epam.audiospot.entity;
+package by.belstu.losik.audiospot.entity;
 
 public enum Genre {
     CLASSIC("classic"),
