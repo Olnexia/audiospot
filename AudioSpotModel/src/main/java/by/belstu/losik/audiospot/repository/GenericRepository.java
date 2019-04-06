@@ -83,35 +83,6 @@ public class GenericRepository<T> implements Repository<T> {
     }
 
     @Override
-    public List<T> findWithNamedQuery(String queryName, Map<String, Object> parameters) {
-        TypedQuery<T> query = prepareNamedQuery(queryName, parameters);
-        return query.getResultList();
-    }
-
-    @Override
-    public List<T> findWithNamedQuery(String queryName, Map<String, Object> parameters, int pageNumber, int pageSize) {
-        TypedQuery<T> query = prepareNamedQuery(queryName, parameters);
-        query.setFirstResult((pageNumber - 1) * pageSize);
-        query.setMaxResults(pageSize);
-        return query.getResultList();
-    }
-
-    private TypedQuery<T> prepareNamedQuery(String queryName, Map<String, Object> parameters) {
-        TypedQuery<T> query = entityManager.createNamedQuery(queryName, entityClass);
-        parameters.forEach(query::setParameter);
-        return query;
-    }
-
-    @Override
-    public List<T> findWithNativeQuery(String nativeQuery, List<Object> parameters) {
-        Query query = entityManager.createNativeQuery(nativeQuery, entityClass);
-        for (int i = 0; i < parameters.size(); i++) {
-            query.setParameter(i + 1, parameters.get(i));
-        }
-        return query.getResultList();
-    }
-
-    @Override
     public Optional<T> findSingleResult(Specification<T> specification) {
         List<T> fullSearchResult = findByCriteria(specification);
         return fullSearchResult.isEmpty()

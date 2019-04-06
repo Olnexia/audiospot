@@ -2,6 +2,7 @@ package by.belstu.losik.audiospot.springconfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -21,6 +22,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
+@ComponentScan("by.belstu.losik.audiospot")
 public class PersistenceConfig {
 
     private final DataSource dataSource;
@@ -35,7 +37,7 @@ public class PersistenceConfig {
         LocalContainerEntityManagerFactoryBean em
                 = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
-        em.setPackagesToScan("com.epam.javalab.travelagency.entity");
+        em.setPackagesToScan("by.belstu.losik.audiospot.entity");
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
@@ -48,7 +50,7 @@ public class PersistenceConfig {
         Properties properties = new Properties();
         properties.setProperty("hibernate.hbm2ddl.auto", "validate");
         properties.setProperty(
-                "hibernate.dialect", "org.hibernate.dialect.PostgreSQL94Dialect");
+                "hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
 
         return properties;
     }

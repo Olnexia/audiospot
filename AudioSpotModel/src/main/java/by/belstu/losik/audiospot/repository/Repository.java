@@ -55,34 +55,6 @@ public interface Repository<T> {
      */
     Optional<T> findSingleResult(Specification<T> specification);
 
-    /**
-     * @param namedQuery A name of some {@code NamedQuery} or {@code NamedNativeQuery} from entity class
-     * @param parameters Map of parameters with names of parameters as keys
-     * @return List of found items which fit the namedQuery with search parameters
-     */
-    List<T> findWithNamedQuery(String namedQuery, Map<String, Object> parameters);
-
-    /**
-     * Paginated analog of {@code findWithNamedQuery} method
-     * @param pageNumber a number of current page
-     * @param pageSize an amount of entities per page
-     */
-    List<T> findWithNamedQuery(String queryName, Map<String, Object> parameters, int pageNumber, int pageSize);
-
-    /**
-     * @param nativeQuery SQL query with ? instead of real parameters
-     * @param parameters  List of parameters for substitution
-     * @return List of found items which fit the SQL query with search parameters
-     */
-    List<T> findWithNativeQuery(String nativeQuery, List<Object> parameters);
-
-    /**
-     * This method can be used to get single value of type {@code M} as a result of native query
-     * @param nativeQuery a query that return a single result
-     * @param parameters actual parameters of query
-     * @param mClass result's class
-     * @return query result
-     */
     <M> M getSingleValue(String nativeQuery, Map<String, Object> parameters, Class<M> mClass);
 
     /**

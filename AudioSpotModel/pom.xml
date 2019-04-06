@@ -18,6 +18,7 @@
         <hibernate-jpa.ver>1.0.0.Final</hibernate-jpa.ver>
 
         <hikari.ver>2.6.1</hikari.ver>
+        <wix.ver>4.2.0</wix.ver>
 
         <annotation-api.ver>1.2</annotation-api.ver>
         <aspectj.ver>1.9.2</aspectj.ver>
@@ -64,6 +65,12 @@
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
             <version>5.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wix</groupId>
+            <artifactId>wix-embedded-mysql</artifactId>
+            <version>${wix.ver}</version>
         </dependency>
 
         <dependency>
