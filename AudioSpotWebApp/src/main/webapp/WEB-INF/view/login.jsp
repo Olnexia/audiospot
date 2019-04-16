@@ -15,10 +15,10 @@
     <head>
         <title>AudioSpot</title>
         <style>
-            <jsp:include page="/css/login.css"/>
+            <jsp:include page="/gin.css"/>
         </style>
         <script>
-            <jsp:include page="/js/loginRegisterSwitch.js"/>
+            <jsp:include page="/inRegisterSwitch.js"/>
         </script>
         <jsp:include page="../fragments/header.jsp"/>
     </head>

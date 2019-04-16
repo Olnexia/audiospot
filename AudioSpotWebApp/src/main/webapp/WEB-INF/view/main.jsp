@@ -12,7 +12,7 @@
     <head>
         <title>AudioSpot</title>
         <style>
-            <jsp:include page="/css/main.css"/>
+            <jsp:include page="/in.css"/>
         </style>
         <jsp:include page="../fragments/header.jsp"/>
     </head>
