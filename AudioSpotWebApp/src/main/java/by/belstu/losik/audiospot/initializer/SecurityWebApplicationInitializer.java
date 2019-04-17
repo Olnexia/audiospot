@@ -1,4 +1,4 @@
-package com.epam.javalab.travelagency.initializer;
+package by.belstu.losik.audiospot.initializer;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 

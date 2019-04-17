@@ -1,7 +1,7 @@
-package com.epam.javalab.travelagency.initializer;
+package by.belstu.losik.audiospot.initializer;
 
-import com.epam.javalab.travelagency.configuration.SecurityConfig;
-import com.epam.javalab.travelagency.configuration.WebConfig;
+import by.belstu.losik.audiospot.configuration.SecurityConfig;
+import by.belstu.losik.audiospot.configuration.WebConfig;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;

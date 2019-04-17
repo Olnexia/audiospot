@@ -1,6 +1,6 @@
-package com.epam.javalab.travelagency.validation.annotation;
+package by.belstu.losik.audiospot.validation.annotation;
 
-import com.epam.javalab.travelagency.validation.validator.PasswordMatchesValidator;
+import by.belstu.losik.audiospot.validation.validator.PasswordMatchesValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

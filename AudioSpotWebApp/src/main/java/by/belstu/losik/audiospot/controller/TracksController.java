@@ -6,7 +6,6 @@ import by.belstu.losik.audiospot.entity.AudioTrack;
 import by.belstu.losik.audiospot.entity.Genre;
 import by.belstu.losik.audiospot.pagination.PaginationDetails;
 import by.belstu.losik.audiospot.service.AudioService;
-import lombok.extern.java.Log;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,11 +17,10 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.validation.Valid;
 import java.util.List;
 
-@Log
 @Controller
-@RequestMapping("tracks/")
+@RequestMapping("/tracks")
 @ComponentScan("by.belstu.losik.audiospot")
-public class AudioTrackController {
+public class TracksController {
     private static final String PAGINATION_DETAILS_ATTR = "paginationDetails";
     private static final String TRACKS_ATTR = "tracks";
     private static final String SEARCH_DTO_ATTR = "searchDto";
@@ -30,13 +28,12 @@ public class AudioTrackController {
     private static final String TARGET_VIEW = "tracks";
     private AudioService audioService;
 
-    public AudioTrackController(AudioService audioService) {
+    public TracksController(AudioService audioService) {
         this.audioService = audioService;
     }
 
     @GetMapping("")
     public ModelAndView showTracksFirstPage() {
-        log.info("here");
         return showPaginatedTracksPage(new TrackSearchDto(), 1, PaginationUtils.DEFAULT_PAGE_SIZE);
     }
 

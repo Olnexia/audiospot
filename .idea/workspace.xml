@@ -6,41 +6,230 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2962fdb9-6661-4f0f-8049-f7b1ae298cf1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/specification/EqualsSpecification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/specification/LessSpecification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AudioSpotModel/src/main/resources/db/prodDbInit.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/integration/AlbumRepositoryIT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/integration/ArtistRepositoryIT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/integration/AudioSetRepositoryIT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/integration/AudioTrackRepositoryIT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/integration/CommentRepositoryIT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/integration/OrderRepositoryIT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/integration/UserRepositoryIT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/query/CriteriaQueryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AudioSpotModel/src/test/resources/db/testDbInit.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/39a0403b-5d6d-4154-a562-d8d78694eefa.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/444358c9-7f48-4491-a3e6-a263409773b3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="ef0c9ee5-fb88-49d0-b7db-d447a4f3e33c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioSpotModel/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotModel/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Album.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Artist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/AudioSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/AudioSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/AudioTrack.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/AudioTrack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/repository/GenericRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/repository/GenericRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/repository/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/specification/AbstractSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/specification/AbstractSpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/springconfig/EmbeddedDataSourceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/springconfig/EmbeddedDataSourceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/springconfig/PersistenceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/springconfig/PersistenceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioSpotModel/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotModel/src/main/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbscript.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dbscript.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotService/src/main/java/by/belstu/losik/audiospot/exception/EntityNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotService/src/main/java/by/belstu/losik/audiospot/exception/EntityNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotService/src/main/java/by/belstu/losik/audiospot/service/AudioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotService/src/main/java/by/belstu/losik/audiospot/service/AudioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/configuration/MethodSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/configuration/MethodSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/configuration/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/configuration/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/TracksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/TracksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/utils/ControllerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/utils/ControllerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/utils/PaginationUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/utils/PaginationUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/dto/TrackSearchDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/dto/TrackSearchDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/exceptionhandler/ApplicationExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/exceptionhandler/ApplicationExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/initializer/SecurityWebApplicationInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/initializer/SecurityWebApplicationInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/initializer/WebApplicationInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/initializer/WebApplicationInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/pagination/PaginationDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/pagination/PaginationDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/validation/annotation/PasswordMatches.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/validation/annotation/PasswordMatches.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/validation/annotation/ValidPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/validation/annotation/ValidPassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/validation/validator/PasswordConstraintValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/validation/validator/PasswordConstraintValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/validation/validator/PasswordMatchesValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/validation/validator/PasswordMatchesValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/builder/AlbumBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/builder/ArtistBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/builder/AudioBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/builder/AudioSetBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/builder/Builder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/builder/CommentBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/builder/OrderBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/builder/OrderedTrackBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/builder/TrackAtAudioSetBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/builder/UserBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/Command.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/CommandResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/Forward.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/Redirect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/admin/AddAlbumCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/admin/AddAudioSetCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/admin/AddTrackCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/admin/AddTrackToSetCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/admin/ChangeClientStatusCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/admin/ChangeDiscountCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/admin/SelectTracksToSetCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/admin/ShowClientsCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/admin/SubmitAlbumCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/admin/SubmitAudioSetCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/admin/SubmitTrackCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/client/CancelOrderCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/client/OrderAlbumCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/client/OrderAudioSetCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/client/OrderTrackCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/client/PayForOrderCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/client/ShowPlaylistCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/client/SubmitCommentCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/client/SubmitPaymentCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/common/HomeCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/common/LoginCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/common/LogoutCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/common/RegisterCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/common/ShowAlbumsCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/common/ShowAudioSetsCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/common/ShowCommentsCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/common/ShowTracksCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/common/ViewAlbumCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/common/ViewAudioSetCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/creator/CommandCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/creator/CommandType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/utils/PaymentVerifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/utils/QuoteEscape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/connection/ConnectionCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/connection/ConnectionPool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/connection/ConnectionWrapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/controller/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/customtag/PaginationTag.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/customtag/QuoteEscapeTag.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/exception/ConnectionException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/exception/ConnectionPoolException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/exception/IllegalCommandException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/exception/RepositoryException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/exception/ServiceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/filter/RoleFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/filter/SessionLocaleFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/AbstractRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/AlbumRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/ArtistRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/AudioRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/AudioSetRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/CommentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/OrderRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/OrderedTrackRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/Repository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/TrackAtAudioSetRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/factory/AlbumRepositoryFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/factory/ArtistRepositoryFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/factory/AudioRepositoryFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/factory/AudioSetRepositoryFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/factory/CommentRepositoryFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/factory/OrderRepositoryFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/factory/OrderedTrackRepositoryFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/factory/RepositoryFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/factory/TrackAtAudioSetRepositoryFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/factory/UserRepositoryFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AlbumByIdSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/ArtistByIdSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/ArtistByNameSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AudioSetByIdSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AudioTrackByOrderIdSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AudioTracksByAlbumIdSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AudioTracksByAudioSetIdSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AudioTracksByUserIdSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AvailableTracksByAudioSetIdSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/AvailableTracksByUserIdSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/CommentsByTrackIdSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/OrderByUserIdAndStatusSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/Specification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/UserByIdSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/UserByLoginAndPasswordSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/UserByLoginSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/specification/UserByRoleSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/repository/utils/StatementBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/service/AlbumService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/service/ArtistService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/service/AudioSetService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/service/AudioTrackService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/service/CommentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/service/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/service/utils/PriceCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/AbstractStringValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/ArtistValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/CardNumberValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/CvcValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/DescriptionValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/ExpiryDateValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/LoginValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/NameValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/PasswordValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/PriceValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/SurnameValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/TitleValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/Validator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/YearValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/complex/AlbumComplexValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/complex/AudioSetComplexValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/complex/ComplexValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/complex/PaymentComplexValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/complex/RegistrationComplexValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/audiospot/validator/complex/TrackComplexValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pagecontent_en.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pagecontent_ru.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/audiospot/command/creator/CommandCreatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/audiospot/repository/StatementBuilderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/audiospot/service/utils/PriceCalculatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/customTags/pageHelper.tld" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/fragments/header.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/pages/addAlbum.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/pages/addAudioSet.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/pages/addTrack.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/pages/albums.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/pages/audioSets.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/pages/clients.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/pages/comments.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/pages/errors/defaultErrorPage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/pages/errors/error404.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/pages/errors/error500.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/pages/landing.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/pages/main.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/pages/payOrder.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/pages/playlist.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/pages/tracks.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/pages/viewAlbum.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/pages/viewAudioSet.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/css/block.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/css/comments.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/css/error.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/css/footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/css/form.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/css/header-fixed.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/css/icon-button.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/css/modal.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/css/payOrder.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/css/playlist.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/css/search.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/css/table.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/css/view.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/images/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/images/empty-order.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/images/empty-playlist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/images/error.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/images/icons/add-comment.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/images/icons/add-new.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/images/icons/album.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/images/icons/audioset.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/images/icons/comments.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/images/icons/edit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/images/icons/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/images/icons/order.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/images/loginbg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/images/main-little.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/images/main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/images/music-plate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/js/changeClientStatus.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/js/jquery/jquery-3.2.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/js/jquery/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/js/jquery/jquery.flot.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/js/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/js/loginRegisterSwitch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/js/modal/albumTrack.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/js/modal/audioSet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/js/modal/comment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/js/modal/discount.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AudioSpot/js/trackSearch.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/AudioSpotModel/target/" />
@@ -97,12 +286,26 @@
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/query/CriteriaQueryTest.java">
+        <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/TracksController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="56" column="48" lean-forward="true" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
+            <state relative-caret-position="-45">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1409#1410#0" expanded="true" />
+                <element signature="e#1457#1458#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/exceptionhandler/ApplicationExceptionHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-481">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,191 +314,76 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/resources/db/prodDbInit.sql">
+        <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/initializer/SecurityWebApplicationInitializer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2862">
-              <caret line="183" column="29" selection-start-line="183" selection-start-column="29" selection-end-line="183" selection-end-column="29" />
+            <state relative-caret-position="72">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="uml://DATABASE/6c2155a0-4b90-4cc6-8865-f5b27c38b91e.SCHEMA:audiospot">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>DATABASE</ID>
-              <OriginalElement>6c2155a0-4b90-4cc6-8865-f5b27c38b91e.SCHEMA:audiospot</OriginalElement>
-              <nodes>
-                <node x="205.125" y="402.0">6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.audiotrack</node>
-                <node x="422.375" y="658.0">6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.ordered_track</node>
-                <node x="49.06818181818187" y="658.0">6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.track_at_audioset</node>
-                <node x="389.375" y="146.0">6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.user</node>
-                <node x="202.125" y="0.0">6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.artist</node>
-                <node x="246.375" y="636.0">6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.comment</node>
-                <node x="159.625" y="179.0">6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.album</node>
-                <node x="487.125" y="435.0">6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.audio_order</node>
-                <node x="0.0" y="435.0">6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.audioset</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.audiotrack" target="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.artist">
-                  <point x="38.0" y="-92.0" />
-                  <point x="319.125" y="377.0" />
-                  <point x="325.125" y="377.0" />
-                  <point x="325.125" y="121.0" />
-                  <point x="320.625" y="121.0" />
-                  <point x="39.5" y="48.0" />
-                </edge>
-                <edge source="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.ordered_track" target="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.audio_order">
-                  <point x="45.25" y="-48.0" />
-                  <point x="0.0" y="59.0" />
-                </edge>
-                <edge source="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.comment" target="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.audiotrack">
-                  <point x="-39.0" y="-70.0" />
-                  <point x="285.375" y="616.0" />
-                  <point x="281.125" y="616.0" />
-                  <point x="0.0" y="92.0" />
-                </edge>
-                <edge source="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.ordered_track" target="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.audiotrack">
-                  <point x="-45.25" y="-48.0" />
-                  <point x="467.625" y="606.0" />
-                  <point x="331.79166666666663" y="606.0" />
-                  <point x="50.66666666666663" y="92.0" />
-                </edge>
-                <edge source="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.comment" target="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.user">
-                  <point x="39.0" y="-70.0" />
-                  <point x="363.375" y="616.0" />
-                  <point x="385.3257575757576" y="616.0" />
-                  <point x="385.3257575757576" y="377.0" />
-                  <point x="431.125" y="377.0" />
-                  <point x="-41.75" y="103.0" />
-                </edge>
-                <edge source="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.track_at_audioset" target="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.audioset">
-                  <point x="-44.25" y="-48.0" />
-                  <point x="93.31818181818187" y="616.0" />
-                  <point x="91.5" y="616.0" />
-                  <point x="0.0" y="59.0" />
-                </edge>
-                <edge source="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.audio_order" target="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.user">
-                  <point x="0.0" y="-59.0" />
-                  <point x="558.125" y="377.0" />
-                  <point x="514.625" y="377.0" />
-                  <point x="41.75" y="103.0" />
-                </edge>
-                <edge source="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.track_at_audioset" target="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.audiotrack">
-                  <point x="44.25" y="-48.0" />
-                  <point x="181.81818181818187" y="616.0" />
-                  <point x="230.45833333333331" y="616.0" />
-                  <point x="-50.666666666666686" y="92.0" />
-                </edge>
-                <edge source="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.audiotrack" target="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.album">
-                  <point x="-38.0" y="-92.0" />
-                  <point x="243.125" y="377.0" />
-                  <point x="237.125" y="377.0" />
-                  <point x="0.0" y="70.0" />
-                </edge>
-                <edge source="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.album" target="6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.artist">
-                  <point x="0.0" y="-70.0" />
-                  <point x="237.125" y="121.0" />
-                  <point x="241.625" y="121.0" />
-                  <point x="-39.5" y="48.0" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="0.7035175879396985" x="216.92142857142858" y="321.1428571428571" />
-              <SelectedNodes>
-                <node>6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.audioset</node>
-              </SelectedNodes>
-              <Categories>
-                <Category>Key columns</Category>
-                <Category>Columns</Category>
-              </Categories>
+        <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/initializer/WebApplicationInitializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/pagination/PaginationDetails.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/validation/annotation/PasswordMatches.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/validation/annotation/ValidPassword.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/validation/validator/PasswordConstraintValidator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/validation/validator/PasswordMatchesValidator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/springconfig/EmbeddedDataSourceConfig.java">
+        <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="46" column="37" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/repository/Repository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="954">
-              <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/springconfig/AppConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/specification/LessSpecification.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#185#186#0" expanded="true" />
-                <element signature="e#224#225#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/specification/EqualsSpecification.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" selection-start-line="6" selection-end-line="16" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/specification/Specification.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/repository/GenericRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="83" selection-start-line="83" selection-end-line="83" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1206#1207#0" expanded="true" />
-                <element signature="e#1249#1250#0" expanded="true" />
-                <element signature="e#1492#1493#0" expanded="true" />
-                <element signature="e#1533#1534#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="99">
+              <caret line="105" column="34" selection-start-line="105" selection-start-column="34" selection-end-line="105" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -374,14 +462,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/audiospot/command/admin/ChangeClientStatusCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/clients.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/tracks.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/trackSearch.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/changeClientStatus.js" />
-        <option value="$PROJECT_DIR$/AudioSpotService/pom.xml" />
-        <option value="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Role.java" />
-        <option value="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/specification/tour/CountrySpecification.java" />
         <option value="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/exception/NotImplementedMethodException.java" />
         <option value="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/specification/AndSpecification.java" />
         <option value="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/springconfig/AppConfig.java" />
@@ -425,6 +505,14 @@
         <option value="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/repository/Repository.java" />
         <option value="$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/repository/GenericRepository.java" />
         <option value="$PROJECT_DIR$/AudioSpotModel/src/main/resources/db/prodDbInit.sql" />
+        <option value="$PROJECT_DIR$/AudioSpotService/pom.xml" />
+        <option value="$PROJECT_DIR$/AudioSpotWebApp/pom.xml" />
+        <option value="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/utils/PaginationUtils.java" />
+        <option value="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/utils/ControllerUtils.java" />
+        <option value="$PROJECT_DIR$/AudioSpotService/src/main/java/by/belstu/losik/audiospot/service/AudioService.java" />
+        <option value="$PROJECT_DIR$/AudioSpotService/src/main/java/by/belstu/losik/audiospot/exception/EntityNotFoundException.java" />
+        <option value="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/configuration/WebConfig.java" />
+        <option value="$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/TracksController.java" />
       </list>
     </option>
   </component>
@@ -454,8 +542,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -552,7 +639,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="audiospot" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
@@ -562,7 +649,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="audiospot" type="462c0819:PsiDirectoryNode" />
-              <item name="specification" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
@@ -577,59 +664,57 @@
             <path>
               <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
               <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
-              <item name="AudioSpotModel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
-              <item name="AudioSpotModel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
-              <item name="AudioSpotModel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
-              <item name="AudioSpotModel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
-              <item name="AudioSpotModel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-              <item name="integration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
-              <item name="AudioSpotModel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-              <item name="query" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotService" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
               <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
               <item name="AudioSpotService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
@@ -639,17 +724,20 @@
             <path>
               <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
               <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotWebApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
               <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotWebApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
               <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotWebApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -657,9 +745,122 @@
             <path>
               <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
               <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotWebApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="configuration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptionhandler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="initializer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="pagination" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="validation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="validation" type="462c0819:PsiDirectoryNode" />
+              <item name="annotation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="audiospot" type="462c0819:PsiDirectoryNode" />
+              <item name="validation" type="462c0819:PsiDirectoryNode" />
+              <item name="validator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AudioSpot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AudioSpot" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioSpotWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -673,7 +874,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/Some Code/Java/Epam courses/AudioSpot/src/main/webapp/WEB-INF/pages/login.jsp&#10;Docker&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554583602976" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555459630647" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last.edited.regexp" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -687,23 +888,24 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.epam.audiospot" />
-      <recent name="com.epam.audiospot.connection" />
-      <recent name="com.epam.audiospot.command.factory" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\SomeCode\Java\Epam courses\AudioSpot\AudioSpotModel\src\main\resources\db" />
-      <recent name="E:\SomeCode\Java\Epam courses\AudioSpot\AudioSpotModel\src\test\java\by\belstu\losik\audiospot\repository" />
-      <recent name="E:\SomeCode\Java\Epam courses\AudioSpot\AudioSpotModel\src\main\resources" />
-      <recent name="E:\SomeCode\Java\Epam courses\AudioSpot\AudioSpotModel\src\main\java\by\belstu\losik\audiospot" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\SomeCode\Java\Epam courses\AudioSpot\AudioSpotModel\src\test\resources" />
       <recent name="E:\Some Code\Java\Epam courses\AudioSpot\src\main\java\com\epam\audiospot\command\common" />
       <recent name="E:\Some Code\Java\Epam courses\AudioSpot\src\main\webapp\images\icons" />
       <recent name="E:\Some Code\Java\Epam courses\AudioSpot\src\main\webapp\js\modal" />
       <recent name="E:\Some Code\Java\Epam courses\AudioSpot\src\main\webapp" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.epam.audiospot" />
+      <recent name="com.epam.audiospot.connection" />
+      <recent name="com.epam.audiospot.command.factory" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\SomeCode\Java\Epam courses\AudioSpot\AudioSpotService\src\main\java\by\belstu\losik\audiospot\service" />
+      <recent name="E:\SomeCode\Java\Epam courses\AudioSpot\AudioSpotModel\src\main\java\by\belstu\losik\audiospot\repository" />
+      <recent name="E:\SomeCode\Java\Epam courses\AudioSpot\AudioSpotModel\src\main\resources\db" />
+      <recent name="E:\SomeCode\Java\Epam courses\AudioSpot\AudioSpotModel\src\test\java\by\belstu\losik\audiospot\repository" />
+      <recent name="E:\SomeCode\Java\Epam courses\AudioSpot\AudioSpotModel\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -718,7 +920,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.by.belstu.losik.audiospot.repository in AudiospotModel">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.13">
     <configuration name="ArtistRepositoryIT and 1 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AudiospotModel" />
       <option name="TEST_OBJECT" value="pattern" />
@@ -787,6 +989,79 @@
       <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.13" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="AudioSpot:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_9_0_13_AudioSpot_2" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="56428" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="AudioSpot:war exploded" />
+        </option>
       </method>
     </configuration>
     <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.13" ALTERNATIVE_JRE_ENABLED="false">
@@ -929,11 +1204,12 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.UserRepositoryIT" />
-      <item itemvalue="Tomcat Server.Tomcat" />
       <item itemvalue="JUnit.ArtistRepositoryIT and 1 more" />
       <item itemvalue="JUnit.by.belstu.losik.audiospot.repository.integration in AudiospotModel" />
       <item itemvalue="JUnit.CriteriaQueryTest.shouldFindBySingleCriteria" />
       <item itemvalue="JUnit.by.belstu.losik.audiospot.repository in AudiospotModel" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.13" />
+      <item itemvalue="Tomcat Server.Tomcat" />
     </list>
     <recent_temporary>
       <list>
@@ -1426,7 +1702,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="973067000" />
+    <option name="totallyTimeSpent" value="974581000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1441,7 +1717,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4974227" visible="true" weight="0.27155825" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4974227" visible="true" weight="0.24962178" />
       <window_info id="Structure" order="1" sideWeight="0.5025773" side_tool="true" weight="0.27155825" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1463,7 +1739,46 @@
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3295082" />
       <window_info anchor="bottom" id="Application Servers" order="12" weight="0.25531915" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3295082" />
-      <window_info anchor="bottom" id="Run" order="14" sideWeight="0.4969743" weight="0.36497545" />
+      <window_info anchor="bottom" id="Run" order="14" sideWeight="0.4969743" visible="true" weight="0.41243863" />
+      <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
+      <window_info anchor="bottom" id="SonarLint" order="16" weight="0.3289689" />
+      <window_info anchor="bottom" id="Spring" order="17" weight="0.3289689" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32980332" />
+      <window_info anchor="right" id="Database" order="6" weight="0.26096824" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Maven" order="9" weight="0.32980332" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4974227" visible="true" weight="0.24962178" />
+      <window_info id="Structure" order="1" sideWeight="0.5025773" side_tool="true" weight="0.27155825" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" weight="0.3295082" />
+      <window_info anchor="bottom" id="Terminal" order="6" weight="0.30441898" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5030257" side_tool="true" weight="0.29623568" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49621785" weight="0.26022914" />
+      <window_info anchor="bottom" id="Java Enterprise" order="9" weight="0.3289689" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" weight="0.3295082" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3295082" />
+      <window_info anchor="bottom" id="Application Servers" order="12" weight="0.25531915" />
+      <window_info anchor="bottom" id="Database Console" order="13" weight="0.3295082" />
+      <window_info anchor="bottom" id="Run" order="14" sideWeight="0.4969743" weight="0.41243863" />
       <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
       <window_info anchor="bottom" id="SonarLint" order="16" weight="0.3289689" />
       <window_info anchor="bottom" id="Spring" order="17" />
@@ -1473,12 +1788,12 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Maven Projects" order="5" weight="0.32980332" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.26096824" />
+      <window_info anchor="right" id="Database" order="6" weight="0.26096824" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Maven" order="9" weight="0.32980332" />
       <window_info anchor="right" id="Bean Validation" order="10" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1530,332 +1845,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/exception/SpecificationException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/specification/AndSpecification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1036#1037#0" expanded="true" />
-            <element signature="e#1093#1094#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://DATABASE/39a0403b-5d6d-4154-a562-d8d78694eefa.SCHEMA:audiospot">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>39a0403b-5d6d-4154-a562-d8d78694eefa.SCHEMA:audiospot</OriginalElement>
-          <nodes>
-            <node x="203.0" y="402.0">39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.audiotrack</node>
-            <node x="556.5265151515151" y="636.0">39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.comment</node>
-            <node x="543.0265151515151" y="146.0">39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.user</node>
-            <node x="0.0" y="435.0">39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.audioset</node>
-            <node x="209.5" y="179.0">39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.album</node>
-            <node x="355.1515151515151" y="658.0">39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.ordered_track</node>
-            <node x="255.9431818181818" y="0.0">39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.artist</node>
-            <node x="488.0" y="435.0">39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.audio_order</node>
-            <node x="76.69318181818181" y="658.0">39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.track_at_audioset</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.track_at_audioset" target="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.audioset">
-              <point x="-41.0" y="-48.0" />
-              <point x="117.69318181818181" y="616.0" />
-              <point x="91.5" y="616.0" />
-              <point x="0.0" y="59.0" />
-            </edge>
-            <edge source="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.audio_order" target="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.user">
-              <point x="0.0" y="-59.0" />
-              <point x="552.5" y="377.0" />
-              <point x="592.5265151515151" y="377.0" />
-              <point x="-49.5" y="103.0" />
-            </edge>
-            <edge source="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.album" target="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.artist">
-              <point x="0.0" y="-70.0" />
-              <point x="290.0" y="121.0" />
-              <point x="295.4431818181818" y="121.0" />
-              <point x="-39.5" y="48.0" />
-            </edge>
-            <edge source="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.ordered_track" target="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.audiotrack">
-              <point x="-42.75" y="-48.0" />
-              <point x="397.9015151515151" y="616.0" />
-              <point x="335.5" y="616.0" />
-              <point x="0.0" y="92.0" />
-            </edge>
-            <edge source="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.ordered_track" target="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.audio_order">
-              <point x="42.75" y="-48.0" />
-              <point x="483.4015151515151" y="616.0" />
-              <point x="552.5" y="616.0" />
-              <point x="0.0" y="59.0" />
-            </edge>
-            <edge source="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.comment" target="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.audiotrack">
-              <point x="-41.0" y="-70.0" />
-              <point x="597.5265151515151" y="606.0" />
-              <point x="423.8333333333333" y="606.0" />
-              <point x="88.33333333333331" y="92.0" />
-            </edge>
-            <edge source="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.audiotrack" target="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.album">
-              <point x="-66.25" y="-92.0" />
-              <point x="269.25" y="377.0" />
-              <point x="290.0" y="377.0" />
-              <point x="0.0" y="70.0" />
-            </edge>
-            <edge source="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.track_at_audioset" target="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.audiotrack">
-              <point x="41.0" y="-48.0" />
-              <point x="199.6931818181818" y="616.0" />
-              <point x="247.16666666666669" y="616.0" />
-              <point x="-88.33333333333331" y="92.0" />
-            </edge>
-            <edge source="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.audiotrack" target="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.artist">
-              <point x="66.25" y="-92.0" />
-              <point x="401.75" y="377.0" />
-              <point x="381.0" y="377.0" />
-              <point x="381.0" y="121.0" />
-              <point x="374.4431818181818" y="121.0" />
-              <point x="39.5" y="48.0" />
-            </edge>
-            <edge source="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.comment" target="39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.user">
-              <point x="41.0" y="-70.0" />
-              <point x="679.5265151515151" y="377.0" />
-              <point x="691.5265151515151" y="377.0" />
-              <point x="49.5" y="103.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.1035175879396986" x="145.0" y="197.0" />
-          <SelectedNodes>
-            <node>39a0403b-5d6d-4154-a562-d8d78694eefa.TABLE:audiospot.track_at_audioset</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Key columns</Category>
-            <Category>Columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbscript.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3294">
-          <caret line="183" column="29" lean-forward="true" selection-start-line="183" selection-start-column="29" selection-end-line="183" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar!/javax/validation/constraints/Max.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar!/javax/persistence/Enumerated.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/specification/AbstractSpecification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/resources/log4j2.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="72" column="41" selection-start-line="72" selection-start-column="41" selection-end-line="72" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.46/mysql-connector-java-5.1.46.jar!/com/mysql/jdbc/jdbc2/optional/MysqlDataSource.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-345">
-          <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6c2155a0-4b90-4cc6-8865-f5b27c38b91e/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/database.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/resources/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/integration/CountryRepositoryIntegrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="52" column="3" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="52" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/integration/HotelRepositoryIntegrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" selection-start-line="2" selection-start-column="2" selection-end-line="67" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/integration/ReviewRepositoryIntegrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="94" column="3" selection-start-line="2" selection-start-column="2" selection-end-line="94" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/integration/TourRepositoryIntegrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="93" column="3" selection-start-line="2" selection-start-column="2" selection-end-line="93" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2520">
-          <caret line="140" column="17" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/springconfig/PersistenceConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1215#1216#0" expanded="true" />
-            <element signature="e#1259#1260#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Genre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#223#224#0" expanded="true" />
-            <element signature="e#255#256#0" expanded="true" />
-            <element signature="e#283#284#0" expanded="true" />
-            <element signature="e#329#330#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar!/javax/persistence/Entity.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Album.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Artist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Comment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/AudioSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-412">
-          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-orm/5.1.4.RELEASE/spring-orm-5.1.4.RELEASE.jar!/org/springframework/orm/jpa/LocalContainerEntityManagerFactoryBean.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="132" selection-start-line="132" selection-end-line="132" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#155#156#0" expanded="true" />
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#221#222#0" expanded="true" />
-            <element signature="e#249#250#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/integration/UserRepositoryIT.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-675">
@@ -1880,35 +1869,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/AudioTrack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="55" column="14" lean-forward="true" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/springconfig/HikariDataSourceConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="31" column="34" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1054#1055#0" expanded="true" />
-            <element signature="e#1084#1085#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/query/RepositoryNativeQueryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="813">
-          <caret line="49" selection-start-line="2" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/query/RepositoryNativeQueryTest.java" />
     <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/test/resources/db/testDbInit.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -1928,13 +1889,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/query/RepositoryNamedQueryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1180">
-          <caret line="75" column="2" lean-forward="true" selection-start-line="75" selection-start-column="2" selection-end-line="75" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/query/RepositoryNamedQueryTest.java" />
     <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/test/java/by/belstu/losik/audiospot/repository/integration/OrderRepositoryIT.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -2002,40 +1957,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#185#186#0" expanded="true" />
             <element signature="e#224#225#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/springconfig/AppConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/repository/GenericRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1206#1207#0" expanded="true" />
-            <element signature="e#1249#1250#0" expanded="true" />
-            <element signature="e#1492#1493#0" expanded="true" />
-            <element signature="e#1533#1534#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/repository/Repository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
-          <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2138,7 +2059,7 @@
               <point x="-39.5" y="48.0" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.7035175879396985" x="216.92142857142858" y="321.1428571428571" />
+          <settings layout="Hierarchic Group" zoom="0.7035175879396985" x="217.0" y="321.0" />
           <SelectedNodes>
             <node>6c2155a0-4b90-4cc6-8865-f5b27c38b91e.TABLE:audiospot.audioset</node>
           </SelectedNodes>
@@ -2146,16 +2067,311 @@
             <Category>Key columns</Category>
             <Category>Columns</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/audiospot/builder/AlbumBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2250">
+          <caret line="140" column="17" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotService/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="13" selection-start-line="9" selection-start-column="4" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/repository/Repository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../AudioSpot/AudioSpotService/src/main/java/by/belstu/losik/audiospot/service/AudioService.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/dto/TrackSearchDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/repository/GenericRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Album.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Artist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/AudioSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/AudioTrack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="55" column="14" lean-forward="true" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/entity/Comment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/springconfig/AppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/springconfig/EmbeddedDataSourceConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
+        <state relative-caret-position="298">
           <caret line="46" column="37" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/springconfig/HikariDataSourceConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="31" column="34" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1054#1055#0" expanded="true" />
+            <element signature="e#1084#1085#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotModel/src/main/java/by/belstu/losik/audiospot/springconfig/PersistenceConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1215#1216#0" expanded="true" />
+            <element signature="e#1259#1260#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotService/src/main/java/by/belstu/losik/audiospot/service/AudioService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotService/src/main/java/by/belstu/losik/audiospot/exception/EntityNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="44" lean-forward="true" selection-start-column="44" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/configuration/MethodSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/configuration/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-504">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/configuration/WebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/utils/ControllerUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/utils/PaginationUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/AuthenticationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/controller/TracksController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1409#1410#0" expanded="true" />
+            <element signature="e#1457#1458#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/exceptionhandler/ApplicationExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-481">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/initializer/SecurityWebApplicationInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/initializer/WebApplicationInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/pagination/PaginationDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/validation/annotation/PasswordMatches.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/validation/annotation/ValidPassword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/validation/validator/PasswordConstraintValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/src/main/java/by/belstu/losik/audiospot/validation/validator/PasswordMatchesValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioSpotWebApp/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="105" column="34" selection-start-line="105" selection-start-column="34" selection-end-line="105" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -2213,7 +2429,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>AudioSpot</last-edited>
+          <last-edited>AudioSpotWebApp</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

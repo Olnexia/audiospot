@@ -13,4 +13,12 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <dependencies>
+        <dependency>
+            <groupId>by.belstu.losik</groupId>
+            <artifactId>AudiospotModel</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 </project>

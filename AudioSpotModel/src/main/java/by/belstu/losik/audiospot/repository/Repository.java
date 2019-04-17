@@ -34,6 +34,10 @@ public interface Repository<T> {
      */
     void remove(Long id);
 
+    List<T> findAll();
+
+    List<T> findPage(int page, int size);
+
     /**
      * @param specification A class that implements {@code Specification} interface
      *                      and can be used by {@code CriteriaBuilder} for searching items by {@code Predicate}
@@ -44,10 +48,10 @@ public interface Repository<T> {
 
     /**
      * Paginated analog of {@code findByCriteria} method
-     * @param pageNumber a number of current page
-     * @param pageSize an amount of entities per page
+     * @param page a number of current page
+     * @param size an amount of entities per page
      */
-    List<T> findByCriteria(Specification<T> specification, int pageNumber, int pageSize);
+    List<T> findByCriteria(Specification<T> specification, int page, int size);
 
     /**
      * An analog of {@code findByCriteria} method that returns just a single value

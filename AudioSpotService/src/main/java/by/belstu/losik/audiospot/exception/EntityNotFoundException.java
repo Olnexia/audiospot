@@ -1,4 +1,4 @@
-package by.belstu.losik.exception;
+package by.belstu.losik.audiospot.exception;
 
 /**
  * {@code EntityNotFoundException} is thrown when a non-existing entity is requested

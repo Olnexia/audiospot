@@ -1,4 +1,4 @@
-package com.epam.javalab.travelagency.configuration;
+package by.belstu.losik.audiospot.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;

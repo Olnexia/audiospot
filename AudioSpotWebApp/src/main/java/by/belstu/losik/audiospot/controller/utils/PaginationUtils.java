@@ -1,4 +1,4 @@
-package com.epam.javalab.travelagency.controller.utils;
+package by.belstu.losik.audiospot.controller.utils;
 
 public class PaginationUtils {
     public static final int DEFAULT_PAGE_SIZE = 10;

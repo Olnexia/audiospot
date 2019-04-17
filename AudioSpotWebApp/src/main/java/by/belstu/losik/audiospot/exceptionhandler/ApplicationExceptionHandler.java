@@ -1,6 +1,6 @@
-package com.epam.javalab.travelagency.exceptionhandler;
+package by.belstu.losik.audiospot.exceptionhandler;
 
-import com.epam.javalab.travelagency.exception.EntityNotFoundException;
+import by.belstu.losik.audiospot.exception.EntityNotFoundException;
 import lombok.extern.java.Log;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.AccessDeniedException;

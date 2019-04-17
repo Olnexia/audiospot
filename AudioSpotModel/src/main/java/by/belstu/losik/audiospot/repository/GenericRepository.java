@@ -59,6 +59,20 @@ public class GenericRepository<T> implements Repository<T> {
     }
 
     @Override
+    public List<T> findAll() {
+        TypedQuery<T> query = entityManager.createQuery(createQuery());
+        return query.getResultList();
+    }
+
+    @Override
+    public List<T> findPage(int page, int size) {
+        TypedQuery<T> query = entityManager.createQuery(createQuery());
+        query.setFirstResult(getFirstResult(page,size));
+        query.setMaxResults(size);
+        return query.getResultList();
+    }
+
+    @Override
     public List<T> findByCriteria(Specification<T> specification) {
         TypedQuery<T> query = prepareCriteriaQuery(specification);
         return query.getResultList();
@@ -70,6 +84,15 @@ public class GenericRepository<T> implements Repository<T> {
         query.setFirstResult((pageNumber - 1) * pageSize);
         query.setMaxResults(pageSize);
         return query.getResultList();
+    }
+
+    private int getFirstResult(int page, int size){
+        return (page - 1) * size;
+    }
+
+    private CriteriaQuery<T> createQuery(){
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        return criteriaBuilder.createQuery(entityClass);
     }
 
     private TypedQuery<T> prepareCriteriaQuery(Specification<T> specification) {

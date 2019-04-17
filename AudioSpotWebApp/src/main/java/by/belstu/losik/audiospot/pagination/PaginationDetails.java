@@ -1,4 +1,4 @@
-package com.epam.javalab.travelagency.pagination;
+package by.belstu.losik.audiospot.pagination;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

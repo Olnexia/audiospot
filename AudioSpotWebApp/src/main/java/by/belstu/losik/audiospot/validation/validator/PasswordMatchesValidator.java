@@ -1,7 +1,7 @@
-package com.epam.javalab.travelagency.validation.validator;
+package by.belstu.losik.audiospot.validation.validator;
 
-import com.epam.javalab.travelagency.dto.UserDto;
-import com.epam.javalab.travelagency.validation.annotation.PasswordMatches;
+import by.belstu.losik.audiospot.validation.annotation.PasswordMatches;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -9,7 +9,6 @@ import javax.validation.ConstraintValidatorContext;
 public class PasswordMatchesValidator implements ConstraintValidator<PasswordMatches, Object> {
     @Override
     public boolean isValid(Object obj, ConstraintValidatorContext context) {
-        UserDto userDto = (UserDto) obj;
-        return userDto.getPassword().equals(userDto.getMatchingPassword());
+       throw new NotImplementedException();
     }
 }

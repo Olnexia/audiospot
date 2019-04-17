@@ -1,6 +1,6 @@
-package com.epam.javalab.travelagency.controller.utils;
+package by.belstu.losik.audiospot.controller.utils;
 
-import com.epam.javalab.travelagency.pagination.PaginationDetails;
+import by.belstu.losik.audiospot.pagination.PaginationDetails;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;

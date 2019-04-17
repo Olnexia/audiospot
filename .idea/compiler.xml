@@ -8,10 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="AudiospotModel" />
         <module name="AudioSpotService" />
+        <module name="AudioSpotWebApp" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="AudioSpotWebApp" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>
